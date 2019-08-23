@@ -45,12 +45,32 @@
         if (schemas[project]) {
           var container = document.getElementById('myschema');
           var inner = "";
+          inner += "<h2>Service: " + project + "</h2>";
+
           schemas[project].forEach(function(schema) {
-            inner += "<h3>" + schema.table + "</h3>";
+            inner += "<h3>Table: " + schema.table + "</h3>";
             inner += "<table>";
             schema.columns.forEach(function(column) {
               inner += "<tr><td>" + column.name + "</td><td>" + column.type + "</td></tr>";
             })
+            inner += "</table>";
+            inner += "<br/><table>";
+
+            inner += "<thead><tr>"
+            schema.columns.forEach(function(column) {
+              inner += "<th>" + column.name + "</th>";
+            });
+            inner += "</tr></thead>"
+
+            inner += "<tbody>";
+            schema.rows.forEach(function(columns) {
+              inner += "<tr>";
+              columns.forEach(function(col) {
+                inner += "<td>" + col + "</td>";
+              });
+              inner += "</tr>";
+            })
+            inner += "</tbody>";
             inner += "</table>";
           })
 

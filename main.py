@@ -1,4 +1,5 @@
 from graphbuilder import GraphBuilder
+from dbretriever import DbRetriever
 
 def render(g):
     from jinja2 import Environment, FileSystemLoader, select_autoescape
@@ -16,4 +17,8 @@ def render(g):
 if __name__ == "__main__":
     builder = GraphBuilder('/Users/levifikri/go/src/gitlab.com/ruangguru/source')
     g = builder.generate()
-    render(g)
+    for project in g:
+        print(project)
+        db = DbRetriever(project)
+        db.retrieve_schema()
+    # render(g)

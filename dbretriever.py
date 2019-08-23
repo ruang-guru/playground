@@ -30,11 +30,10 @@ class DbRetriever:
                     cur.execute("SELECT name, database_name FROM crdb_internal.tables WHERE database_name = %s", (self.db_name, ))
                     tables = [item[0] for item in cur.fetchall()]
                     for table in tables:
-                        # cur.execute("SELECT column_name, column_type FROM crdb_internal.table_columns WHERE descriptor_name = %s", (table, ))
-                        cur.execute("SELECT column_name FROM crdb_internal.table_columns WHERE descriptor_name = %s", (table, ))
-                        columns = [item[0] for item in cur.fetchall()]
-                        res.append((table, columns))
-                        print(table, columns)
+                        cur.execute("SELECT column_name, column_type FROM crdb_internal.table_columns WHERE descriptor_name = %s", (table, ))
+                        columns = [{"name": item[0], "type": item[1]} for item in cur.fetchall()]
+                        res.append({"table": table, "columns": columns})
+                        # print(table, columns)
             except psycopg2.OperationalError:
                 return []
 

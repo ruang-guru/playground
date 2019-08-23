@@ -9,18 +9,25 @@
     <style type="text/css">
         #mynetwork {
             width: 100%;
-            height: 1200px;
-            border: 1px solid lightgray;
+            height: 600px;
+        }
+        #myschema {
+            width: 100%;
+        }
+        table, th, td {
+          border: 1px solid black;
         }
     </style>
 </head>
 <body>
   <div id="mynetwork"></div>
+  <div id="myschema"></div>
   <script type="text/javascript">
    // create an array with nodes
     var nodes = new vis.DataSet({{ nodes|safe }})
     // create an array with edges
     var edges = new vis.DataSet({{ edges|safe }})
+    var schemas = {{ schemas|safe }}
 
     // create a network
     var container = document.getElementById('mynetwork');
@@ -31,12 +38,24 @@
 			manipulation: { enabled: true },
       edges: { arrows: { to: {enabled: true, scaleFactor: 1, type: 'arrow'} } }
 		};
-
     var network = new vis.Network(container, data, options);
     network.on('click', function(params) {
       if (params.nodes.length > 0) {
-        var node = params.nodes[0]
-        console.log(node)
+        var project = params.nodes[0]
+        if (schemas[project]) {
+          var container = document.getElementById('myschema');
+          var inner = "";
+          schemas[project].forEach(function(schema) {
+            inner += "<h3>" + schema.table + "</h3>";
+            inner += "<table>";
+            schema.columns.forEach(function(column) {
+              inner += "<tr><td>" + column.name + "</td><td>" + column.type + "</td></tr>";
+            })
+            inner += "</table>";
+          })
+
+          container.innerHTML = inner;
+        }
       }
     });
   </script>

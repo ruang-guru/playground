@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+    <title>Network | Interaction events</title>
+
+    <script type="text/javascript" src="https://visjs.github.io/vis-network/dist/vis-network.min.js"></script>
+    <link href="https://visjs.github.io/vis-network/dist/vis-network.min.css" rel="stylesheet" type="text/css"/>
+
+    <style type="text/css">
+        #mynetwork {
+            width: 100%;
+            height: 600px;
+        }
+        #myschema {
+            width: 100%;
+        }
+        table, th, td {
+          border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+  <div id="mynetwork"></div>
+  <div id="myschema"></div>
+  <script type="text/javascript">
+   // create an array with nodes
+    var nodes = new vis.DataSet({{ nodes|safe }})
+    // create an array with edges
+    var edges = new vis.DataSet({{ edges|safe }})
+    var schemas = {{ schemas|safe }}
+
+    // create a network
+    var container = document.getElementById('mynetwork');
+    var data = { nodes: nodes, edges: edges };
+
+    var options = {
+			interaction:{hover:true},
+			manipulation: { enabled: true },
+      edges: { arrows: { to: {enabled: true, scaleFactor: 1, type: 'arrow'} } }
+		};
+    var network = new vis.Network(container, data, options);
+    network.on('click', function(params) {
+      if (params.nodes.length > 0) {
+        var project = params.nodes[0]
+        if (schemas[project]) {
+          var container = document.getElementById('myschema');
+          var inner = "";
+          inner += "<h2>Service: " + project + "</h2>";
+
+          schemas[project].forEach(function(schema) {
+            inner += "<h3>Table: " + schema.table + "</h3>";
+            inner += "<table>";
+            schema.columns.forEach(function(column) {
+              inner += "<tr><td>" + column.name + "</td><td>" + column.type + "</td></tr>";
+            })
+            inner += "</table>";
+            inner += "<br/><table>";
+
+            inner += "<thead><tr>"
+            schema.columns.forEach(function(column) {
+              inner += "<th>" + column.name + "</th>";
+            });
+            inner += "</tr></thead>"
+
+            inner += "<tbody>";
+            schema.rows.forEach(function(columns) {
+              inner += "<tr>";
+              columns.forEach(function(col) {
+                inner += "<td>" + col + "</td>";
+              });
+              inner += "</tr>";
+            })
+            inner += "</tbody>";
+            inner += "</table>";
+          })
+
+          container.innerHTML = inner;
+        }
+      }
+    });
+  </script>
+</body>
+</html>

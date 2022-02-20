@@ -9,7 +9,8 @@ const DIRECTION = {
 }
 
 let snake = {
-    position: { x: 0, y: 0 },
+    head: { x: 0, y: 0 },
+    body: [],
     direction: DIRECTION.RIGHT,
     move: function() {
         let actions = {
@@ -22,46 +23,55 @@ let snake = {
         setTimeout(this.move.bind(this), MOVE_INTERVAL);
     },
     moveDown: function() { 
-        this.position.y++; 
+        this.head.y++; 
         this.teleport();
         this.eat();
+        this.moveBody();
     },
     moveUp: function() { 
-        this.position.y--; 
+        this.head.y--; 
         this.teleport();
         this.eat();
+        this.moveBody();
     },
     moveLeft: function() { 
-        this.position.x--;
+        this.head.x--;
         this.teleport();
         this.eat();
+        this.moveBody();
     },
     moveRight: function() { 
-        this.position.x++; 
+        this.head.x++; 
         this.teleport();
         this.eat();
+        this.moveBody();
+    },
+    moveBody: function() {
+        this.body.unshift({ x: this.head.x, y: this.head.y });
+        this.body.pop();
     },
     turn: function(direction) {
         this.direction = direction;
     },
     eat: function() {
-        if (this.position.x == apple.position.x && this.position.y == apple.position.y) {
+        if (this.head.x == apple.position.x && this.head.y == apple.position.y) {
             score++;
+            this.body.push(this.head)
             initApple();
         }
     },
     teleport: function() {
-        if (this.position.x < 0) {
-            this.position.x = width - 1;
+        if (this.head.x < 0) {
+            this.head.x = width - 1;
         }
-        if (this.position.y < 0) {
-            this.position.y = height - 1;
+        if (this.head.y < 0) {
+            this.head.y = height - 1;
         }
-        if (this.position.x == width) {
-            this.position.x = 0;
+        if (this.head.x == width) {
+            this.head.x = 0;
         }
-        if (this.position.y == height) {
-            this.position.y = 0;
+        if (this.head.y == height) {
+            this.head.y = 0;
         }
     }
 }
@@ -80,8 +90,8 @@ function random(minValue, maxValue) {
     return Math.floor(Math.random() * (maxValue - minValue + 1)) + minValue;
 }
 function initSnake() {
-    snake.position.x = random(0, width - 1);
-    snake.position.y = random(0, height - 1);
+    snake.head.x = random(0, width - 1);
+    snake.head.y = random(0, height - 1);
     snake.direction = random(0, 3);
     snake.move();
 }
@@ -103,7 +113,12 @@ function draw() {
         boardCtx.clearRect(0, 0, canvasSize, canvasSize);
 
         boardCtx.fillStyle = "purple";
-        boardCtx.fillRect(snake.position.x * size, snake.position.y * size, size, size);
+        boardCtx.fillRect(snake.head.x * size, snake.head.y * size, size, size);
+
+        for (let i = 0; i < snake.body.length; i++) {
+            boardCtx.fillStyle = "green";
+            boardCtx.fillRect(snake.body[i].x * size, snake.body[i].y * size, size, size);
+        }
 
         boardCtx.fillStyle = "red";
         boardCtx.fillRect(apple.position.x * size, apple.position.y * size, size, size);

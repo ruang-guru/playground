@@ -10,7 +10,7 @@ const DIRECTION = {
 
 let snake = {
     head: { x: 0, y: 0 },
-    body: [],
+    body: [{ x: 0, y: 0 }],
     direction: DIRECTION.RIGHT,
     move: function() {
         let actions = {
@@ -92,6 +92,7 @@ function random(minValue, maxValue) {
 function initSnake() {
     snake.head.x = random(0, width - 1);
     snake.head.y = random(0, height - 1);
+    snake.body = [{ x: snake.head.x, y: snake.head.y }];
     snake.direction = random(0, 3);
     snake.move();
 }
@@ -112,10 +113,11 @@ function draw() {
         let boardCtx = snakeCanvas.getContext("2d");
         boardCtx.clearRect(0, 0, canvasSize, canvasSize);
 
-        boardCtx.fillStyle = "purple";
-        boardCtx.fillRect(snake.head.x * size, snake.head.y * size, size, size);
 
-        for (let i = 0; i < snake.body.length; i++) {
+        boardCtx.fillStyle = "purple";
+        boardCtx.fillRect(snake.body[0].x * size, snake.body[0].y * size, size, size);
+
+        for (let i = 1; i < snake.body.length; i++) {
             boardCtx.fillStyle = "green";
             boardCtx.fillRect(snake.body[i].x * size, snake.body[i].y * size, size, size);
         }

@@ -7,4 +7,21 @@
         <canvas id="snakeBoard" width="400" height="400" style="border:1px solid #000000;"></canvas>
         <canvas id="score" width="100" height="100" style="border:1px solid #000000;"></canvas>
     </body>
+    <table>
+        <tr>
+            <td></td>
+            <td><button id="up" onclick="snake.turn(DIRECTION.UP);">Up</button></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><button id="left" onclick="snake.turn(DIRECTION.LEFT);">Left</button></td>
+            <td></td>
+            <td><button id="right" onclick="snake.turn(DIRECTION.RIGHT);">Right</button></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button id="down" onclick="snake.turn(DIRECTION.DOWN);"">Down</button></td>
+            <td></td>
+        </tr>
+    </table>
 </html>

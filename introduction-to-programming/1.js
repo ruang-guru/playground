@@ -51,7 +51,16 @@ let snake = {
         this.body.pop();
     },
     turn: function(direction) {
-        this.direction = direction;
+        let oppositeDirections = {
+            [DIRECTION.UP]: DIRECTION.DOWN,
+            [DIRECTION.RIGHT]: DIRECTION.LEFT,
+            [DIRECTION.DOWN]: DIRECTION.UP,
+            [DIRECTION.LEFT]: DIRECTION.RIGHT
+        }
+
+        if (direction !== oppositeDirections[this.direction]) {
+            this.direction = direction;
+        }
     },
     eat: function() {
         if (this.head.x == apple.position.x && this.head.y == apple.position.y) {

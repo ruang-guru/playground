@@ -3,18 +3,28 @@ let snake = {
     moveDown: function() { 
         this.position.y++; 
         this.teleport();
+        this.eat();
     },
     moveUp: function() { 
         this.position.y--; 
         this.teleport();
+        this.eat();
     },
     moveLeft: function() { 
         this.position.x--;
         this.teleport();
+        this.eat();
     },
     moveRight: function() { 
         this.position.x++; 
         this.teleport();
+        this.eat();
+    },
+    eat: function() {
+        if (this.position.x == apple.position.x && this.position.y == apple.position.y) {
+            score++;
+            initApple();
+        }
     },
     teleport: function() {
         if (this.position.x < 0) {

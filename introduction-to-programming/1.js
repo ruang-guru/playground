@@ -1,5 +1,5 @@
-const MOVE_INTERVAL = 150;
-const DRAW_INTERVAL = 100;
+const MOVE_INTERVAL = 120;
+const DRAW_INTERVAL = 50;
 
 const DIRECTION = {
     UP: 0,
@@ -20,31 +20,36 @@ let snake = {
             [DIRECTION.LEFT]: this.moveLeft
         }
         actions[this.direction].bind(this)();
+        this.teleport();
+        this.eat();
+        this.moveBody();
+        this.checkCollision();
         setTimeout(this.move.bind(this), MOVE_INTERVAL);
     },
     moveDown: function() { 
         this.head.y++; 
-        this.teleport();
-        this.eat();
-        this.moveBody();
     },
     moveUp: function() { 
         this.head.y--; 
-        this.teleport();
-        this.eat();
-        this.moveBody();
     },
     moveLeft: function() { 
         this.head.x--;
-        this.teleport();
-        this.eat();
-        this.moveBody();
     },
     moveRight: function() { 
         this.head.x++; 
-        this.teleport();
-        this.eat();
-        this.moveBody();
+    },
+    checkCollision: function() {
+        let isCollide = false;
+        for (let i = 1; i < this.body.length; i++) {
+            if (this.body[i].x == this.head.x && this.body[i].y == this.head.y) {
+                isCollide = true;
+                alert("Game over")
+            }
+        }
+        if (isCollide) {
+            initSnake();
+            score = 0;
+        }
     },
     moveBody: function() {
         this.body.unshift({ x: this.head.x, y: this.head.y });
@@ -103,7 +108,6 @@ function initSnake() {
     snake.head.y = random(0, height - 1);
     snake.body = [{ x: snake.head.x, y: snake.head.y }];
     snake.direction = random(0, 3);
-    snake.move();
 }
 
 function initApple() {
@@ -114,6 +118,7 @@ function initApple() {
 function init() {
     initSnake();
     initApple();
+    snake.move();
 }
 
 function draw() {

@@ -8,86 +8,94 @@ const DIRECTION = {
     LEFT: 3
 }
 
+function move(snake) {
+    switch (snake.direction) {
+        case DIRECTION.UP:
+            moveUp(snake);
+            break;
+        case DIRECTION.RIGHT:
+            moveRight(snake);
+            break;
+        case DIRECTION.DOWN:
+            moveDown(snake);
+            break;
+        case DIRECTION.LEFT:
+            moveLeft(snake);
+            break;
+    }
+
+    teleport(snake);
+    eat(snake);
+    moveBody(snake);
+    checkCollision(snake);
+    setTimeout(function() {
+        move(snake)
+    }, MOVE_INTERVAL);
+}
+function moveDown(snake) { snake.head.y++; }
+function moveUp(snake) { snake.head.y--; }
+function moveLeft(snake) { snake.head.x--; }
+function moveRight(snake) { snake.head.x++; }
+
+function checkCollision(snake) {
+    let isCollide = false;
+    for (let i = 1; i < snake.body.length; i++) {
+        if (snake.body[i].x == snake.head.x && snake.body[i].y == snake.head.y) {
+            isCollide = true;
+            alert("Game over")
+        }
+    }
+    if (isCollide) {
+        initSnake();
+        score = 0;
+    }
+}
+
+function moveBody(snake) {
+    snake.body.unshift({ x: snake.head.x, y: snake.head.y });
+    snake.body.pop();
+}
+
+function turn(snake, direction) {
+    let oppositeDirections = {
+        [DIRECTION.UP]: DIRECTION.DOWN,
+        [DIRECTION.RIGHT]: DIRECTION.LEFT,
+        [DIRECTION.DOWN]: DIRECTION.UP,
+        [DIRECTION.LEFT]: DIRECTION.RIGHT
+    }
+
+    if (direction !== oppositeDirections[snake.direction]) {
+        snake.direction = direction;
+    }
+};
+
+function eat(snake) {
+    if (snake.head.x == apple.position.x && snake.head.y == apple.position.y) {
+        score++;
+        snake.body.push(snake.head)
+        initApple();
+    }
+}
+
+function teleport(snake) {
+    if (snake.head.x < 0) {
+        snake.head.x = width - 1;
+    }
+    if (snake.head.y < 0) {
+        snake.head.y = height - 1;
+    }
+    if (snake.head.x == width) {
+        snake.head.x = 0;
+    }
+    if (snake.head.y == height) {
+        snake.head.y = 0;
+    }
+}
+
 let snake = {
     head: { x: 0, y: 0 },
     body: [{ x: 0, y: 0 }],
     direction: DIRECTION.RIGHT,
-    move: function() {
-        let actions = {
-            [DIRECTION.UP]: this.moveUp,
-            [DIRECTION.RIGHT]: this.moveRight,
-            [DIRECTION.DOWN]: this.moveDown,
-            [DIRECTION.LEFT]: this.moveLeft
-        }
-        actions[this.direction].bind(this)();
-        this.teleport();
-        this.eat();
-        this.moveBody();
-        this.checkCollision();
-        setTimeout(this.move.bind(this), MOVE_INTERVAL);
-    },
-    moveDown: function() { 
-        this.head.y++; 
-    },
-    moveUp: function() { 
-        this.head.y--; 
-    },
-    moveLeft: function() { 
-        this.head.x--;
-    },
-    moveRight: function() { 
-        this.head.x++; 
-    },
-    checkCollision: function() {
-        let isCollide = false;
-        for (let i = 1; i < this.body.length; i++) {
-            if (this.body[i].x == this.head.x && this.body[i].y == this.head.y) {
-                isCollide = true;
-                alert("Game over")
-            }
-        }
-        if (isCollide) {
-            initSnake();
-            score = 0;
-        }
-    },
-    moveBody: function() {
-        this.body.unshift({ x: this.head.x, y: this.head.y });
-        this.body.pop();
-    },
-    turn: function(direction) {
-        let oppositeDirections = {
-            [DIRECTION.UP]: DIRECTION.DOWN,
-            [DIRECTION.RIGHT]: DIRECTION.LEFT,
-            [DIRECTION.DOWN]: DIRECTION.UP,
-            [DIRECTION.LEFT]: DIRECTION.RIGHT
-        }
-
-        if (direction !== oppositeDirections[this.direction]) {
-            this.direction = direction;
-        }
-    },
-    eat: function() {
-        if (this.head.x == apple.position.x && this.head.y == apple.position.y) {
-            score++;
-            this.body.push(this.head)
-            initApple();
-        }
-    },
-    teleport: function() {
-        if (this.head.x < 0) {
-            this.head.x = width - 1;
-        }
-        if (this.head.y < 0) {
-            this.head.y = height - 1;
-        }
-        if (this.head.x == width) {
-            this.head.x = 0;
-        }
-        if (this.head.y == height) {
-            this.head.y = 0;
-        }
-    }
 }
 
 let apple = {
@@ -118,7 +126,7 @@ function initApple() {
 function init() {
     initSnake();
     initApple();
-    snake.move();
+    move(snake);
 }
 
 function draw() {
@@ -155,16 +163,16 @@ document.addEventListener("keydown", function (event) {
     
     switch (event.key) {
     case "ArrowDown":
-        snake.turn(DIRECTION.DOWN);
+        turn(snake, DIRECTION.DOWN);
         break;
     case "ArrowUp":
-        snake.turn(DIRECTION.UP);
+        turn(snake, DIRECTION.UP);
         break;
     case "ArrowLeft":
-        snake.turn(DIRECTION.LEFT);
+        turn(snake, DIRECTION.LEFT);
         break;
     case "ArrowRight":
-        snake.turn(DIRECTION.RIGHT);
+        turn(snake, DIRECTION.RIGHT);
         break;
     default:
         return; 

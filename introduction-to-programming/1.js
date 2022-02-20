@@ -1,5 +1,26 @@
+const MOVE_INTERVAL = 150;
+const DRAW_INTERVAL = 100;
+
+const DIRECTION = {
+    UP: 0,
+    RIGHT: 1,
+    DOWN: 2,
+    LEFT: 3
+}
+
 let snake = {
     position: { x: 0, y: 0 },
+    direction: DIRECTION.RIGHT,
+    move: function() {
+        let actions = {
+            [DIRECTION.UP]: this.moveUp,
+            [DIRECTION.RIGHT]: this.moveRight,
+            [DIRECTION.DOWN]: this.moveDown,
+            [DIRECTION.LEFT]: this.moveLeft
+        }
+        actions[this.direction].bind(this)();
+        setTimeout(this.move.bind(this), MOVE_INTERVAL);
+    },
     moveDown: function() { 
         this.position.y++; 
         this.teleport();
@@ -19,6 +40,9 @@ let snake = {
         this.position.x++; 
         this.teleport();
         this.eat();
+    },
+    turn: function(direction) {
+        this.direction = direction;
     },
     eat: function() {
         if (this.position.x == apple.position.x && this.position.y == apple.position.y) {
@@ -58,6 +82,8 @@ function random(minValue, maxValue) {
 function initSnake() {
     snake.position.x = random(0, width - 1);
     snake.position.y = random(0, height - 1);
+    snake.direction = random(0, 3);
+    snake.move();
 }
 
 function initApple() {
@@ -88,7 +114,7 @@ function draw() {
         scoreCtx.clearRect(0, 0, scoreCanvas.scrollWidth, scoreCanvas.scrollHeight);
         scoreCtx.font = "30px Arial";
         scoreCtx.fillText(score, 10, scoreCanvas.scrollHeight / 2);
-    }, 100)
+    }, DRAW_INTERVAL)
 }
 
 document.addEventListener("keydown", function (event) {
@@ -98,16 +124,16 @@ document.addEventListener("keydown", function (event) {
     
     switch (event.key) {
     case "ArrowDown":
-        snake.moveDown();
+        snake.turn(DIRECTION.DOWN);
         break;
     case "ArrowUp":
-        snake.moveUp();
+        snake.turn(DIRECTION.UP);
         break;
     case "ArrowLeft":
-        snake.moveLeft();
+        snake.turn(DIRECTION.LEFT);
         break;
     case "ArrowRight":
-        snake.moveRight();
+        snake.turn(DIRECTION.RIGHT);
         break;
     default:
         return; 

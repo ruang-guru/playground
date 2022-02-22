@@ -71,7 +71,7 @@ let apple2 = { // apple2
 let apple3 = { // apple3
     color: "red",
     position: initPosition(),
-    bonus:true,
+    bonus:true, //baru
 }
 
 function drawCell(ctx, x, y, color) {
@@ -150,7 +150,7 @@ function eat(snake, apple) {
     if (snake.head.x == apple.position.x && snake.head.y == apple.position.y) {
         apple.position = initPosition();
         if (apple.bonus) {
-            snake.score = snake.score + 5
+            snake.score = snake.score + 5 //baru
         }
         else {
 

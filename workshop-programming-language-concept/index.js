@@ -10,12 +10,13 @@ const CANVAS_SIZE = 600; // nomor 1
 const REDRAW_INTERVAL = 50;
 const WIDTH = CANVAS_SIZE / CELL_SIZE;
 const HEIGHT = CANVAS_SIZE / CELL_SIZE;
-const APPLE_IMAGE = new Image();
+const APPLE_IMAGE = new Image(); //baru
 APPLE_IMAGE.src = "apple.png";
 
-const APPLE_EMAS_IMAGE = new Image();
+const APPLE_EMAS_IMAGE = new Image(); //baru
 APPLE_EMAS_IMAGE.src = "apple-emas.jpg";
-const ULER_IMAGE = new Image();
+
+const ULER_IMAGE = new Image(); 
 ULER_IMAGE.src = "uler.jpeg";
 
 const DIRECTION = {
@@ -58,7 +59,7 @@ let snake1 = initSnake("purple");
 let snake2 = initSnake("blue");
 let snake3 = initSnake("yellow");
 
-let apple1 = {
+let apple1 = { // apple1
     color: "red",
     position: initPosition(),
 }
@@ -97,7 +98,7 @@ function drawScore(snake) {
     scoreCtx.fillText(snake.score, 10, scoreCanvas.scrollHeight / 2);
 }
 
-function drawImage(ctx, x, y, Image) {
+function drawImage(ctx, x, y, Image) { //drawImage
     ctx.drawImage(Image, x * CELL_SIZE, y * CELL_SIZE, CELL_SIZE, CELL_SIZE);
 }
 
@@ -173,7 +174,7 @@ function moveRight(snake) {
     teleport(snake);
     eat(snake, apple1);
     eat(snake, apple2);
-    eat(snake, apple3);
+    eat(snake, apple3); //baru
 }
 
 function moveDown(snake) {
@@ -181,7 +182,7 @@ function moveDown(snake) {
     teleport(snake);
     eat(snake, apple1);
     eat(snake, apple2);
-    eat(snake, apple3);
+    eat(snake, apple3); //baru
 }
 
 function moveUp(snake) {
@@ -189,7 +190,7 @@ function moveUp(snake) {
     teleport(snake);
     eat(snake, apple1);
     eat(snake, apple2);
-    eat(snake, apple3);
+    eat(snake, apple3); //baru
 }
 
 function checkCollision(snakes) {
@@ -208,7 +209,7 @@ function checkCollision(snakes) {
         alert("Game over");
         snake1 = initSnake("purple");
         snake2 = initSnake("blue");
-        snake3 = initSnake("yellow");
+        snake3 = initSnake("yellow"); //baru
     }
     return isCollide;
 }
@@ -277,7 +278,7 @@ document.addEventListener("keydown", function (event) {
         turn(snake2, DIRECTION.DOWN);
     }
 
-    if (event.key === "j") {
+    if (event.key === "j") { //baru
         turn(snake3, DIRECTION.LEFT);
     } else if (event.key === "l") {
         turn(snake3, DIRECTION.RIGHT);
@@ -291,7 +292,7 @@ document.addEventListener("keydown", function (event) {
 function initGame() {
     move(snake1);
     move(snake2);
-    move(snake3);
+    move(snake3); //baru
 }
 
 initGame();

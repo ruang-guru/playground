@@ -1,3 +1,10 @@
+// Kelompok 5
+// Muhammad Ariefuddin Satria Dharma
+// Reza Irfan Wijaya
+// shandini apriliany
+// Putra Prawira
+
+
 const CELL_SIZE = 20;
 const CANVAS_SIZE = 600; // nomor 1
 const REDRAW_INTERVAL = 50;

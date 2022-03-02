@@ -1,19 +1,27 @@
 package main
 
 import (
-	"log"
-	"net/http"
-
-	"github.com/gorilla/mux"
+	"github.com/gin-gonic/gin"
+	"github.com/prometheus/client_golang/prometheus"
+	"github.com/ruangguru/playground/performance-testing/api"
 	"github.com/ruangguru/playground/performance-testing/handlers"
+	"github.com/ruangguru/playground/performance-testing/metrics"
+	"github.com/ruangguru/playground/performance-testing/middleware"
+	"github.com/ruangguru/playground/performance-testing/repository"
 )
 
 func main() {
-	router := mux.NewRouter().StrictSlash(true)
-	router.HandleFunc("/movies", handlers.GetMovies)
-	router.HandleFunc("/movie", handlers.AddMovie)
-	router.HandleFunc("/movie/{id}", handlers.GetMovie)
-	router.HandleFunc("/", handlers.Home)
 
-	log.Fatal(http.ListenAndServe(":8090", router))
+	prometheus.Register(metrics.HttpRequestCounter)
+	engine := gin.New()
+	engine.Use(middleware.MetricsMiddleware())
+
+	repo := repository.NewRepo()
+
+	svc := handlers.New(repo)
+	serviceApi := api.New(engine, svc)
+	serviceApi.InitAPI()
+	serviceApi.InitPromeHandler()
+
+	engine.Run(":8090")
 }

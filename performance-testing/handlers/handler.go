@@ -1,99 +1,86 @@
 package handlers
 
 import (
-	"encoding/json"
+	"fmt"
 	"log"
 	"net/http"
 	"strconv"
 
-	"github.com/gorilla/mux"
+	"github.com/gin-gonic/gin"
+	"github.com/ruangguru/playground/performance-testing/repository"
 )
 
-type Movie struct {
-	Id      int    `json:"id"`
-	Episode int    `json:"episode"`
-	Name    string `json:"name"`
+type Handler interface {
+	GetMovies(c *gin.Context)
+	GetMovie(c *gin.Context)
+	AddMovie(c *gin.Context)
+	Home(c *gin.Context)
 }
 
-var movies []Movie
+type handler struct {
+	movies repository.Repository
+}
 
-func GetMovies(w http.ResponseWriter, r *http.Request) {
-	if r.Method != http.MethodGet {
-		http.Error(w, "Invalid request method.", http.StatusMethodNotAllowed)
+func New(repo repository.Repository) Handler {
+	return &handler{repo}
+}
+
+func (h *handler) GetMovies(c *gin.Context) {
+	if c.Request.Method != http.MethodGet {
+		c.JSON(http.StatusMethodNotAllowed, fmt.Errorf("invalid request method"))
 		return
 	}
-	result, err := json.Marshal(movies)
+	result, err := h.movies.GetAll()
+	resultSlice := []repository.Movie{}
+	for _, movie := range result {
+		resultSlice = append(resultSlice, movie)
+	}
 	if err != nil {
-		w.WriteHeader(http.StatusBadRequest)
+		c.JSON(http.StatusBadRequest, "bad request")
 		log.Printf("error %s", err)
 		return
 	}
-	w.Header().Set("Content-Type", "application/json")
-	w.WriteHeader(http.StatusOK)
-	w.Write(result)
+	c.JSON(http.StatusOK, resultSlice)
 }
 
-func AddMovie(w http.ResponseWriter, r *http.Request) {
-	if r.Method != http.MethodPost {
-		http.Error(w, "Invalid request method.", http.StatusMethodNotAllowed)
+func (h *handler) AddMovie(c *gin.Context) {
+	if c.Request.Method != http.MethodPost {
+		c.JSON(http.StatusMethodNotAllowed, fmt.Errorf("invalid request method"))
 		return
 	}
-	var newMovie Movie
-	err := json.NewDecoder(r.Body).Decode(&newMovie)
+	var newMovie repository.Movie
+	c.BindJSON(&newMovie)
+	err := h.movies.Store(&newMovie)
 	if err != nil {
-		w.WriteHeader(http.StatusBadRequest)
+		c.JSON(http.StatusBadRequest, "bad request")
 		log.Printf("error %s", err)
 		return
 	}
-	newMovie.Id = len(movies) + 1
 	log.Printf("added new movie : %+v", newMovie)
-	movies = append(movies, newMovie)
-	w.Header().Set("Content-Type", "application/json")
-	w.WriteHeader(http.StatusOK)
+	c.JSON(http.StatusOK, "new movie added")
 }
 
-func GetMovie(w http.ResponseWriter, r *http.Request) {
-	if r.Method != http.MethodGet {
-		http.Error(w, "Invalid request method.", http.StatusMethodNotAllowed)
+func (h *handler) GetMovie(c *gin.Context) {
+	if c.Request.Method != http.MethodGet {
+		c.JSON(http.StatusMethodNotAllowed, fmt.Errorf("invalid request method"))
 		return
 	}
-	vars := mux.Vars(r)
-	key := vars["id"]
+	key := c.Param("id")
 	intKey, err := strconv.Atoi(key)
 	if err != nil {
-		w.WriteHeader(http.StatusBadRequest)
+		c.JSON(http.StatusBadRequest, "bad request")
 		log.Printf("error %s", err)
 		return
 	}
-	var result []byte
-	id, available := findFilm(intKey)
-	if available {
-		result, err = json.Marshal(movies[id])
-		if err != nil {
-			w.WriteHeader(http.StatusBadRequest)
-			log.Printf("error %s", err)
-		}
-		w.Header().Set("Content-Type", "application/json")
-		w.WriteHeader(http.StatusOK)
-		w.Write(result)
-	} else {
-		w.Header().Set("Content-Type", "application/json")
-		w.WriteHeader(http.StatusNotFound)
-		json.NewEncoder(w).Encode("not found")
+	result, err := h.movies.Get(intKey)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, "bad request")
+		log.Printf("error %s", err)
+		return
 	}
+	c.JSON(http.StatusOK, result)
 }
 
-func Home(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/json")
-	w.WriteHeader(http.StatusOK)
-}
-
-func findFilm(key int) (int, bool) {
-	for i := 0; i < len(movies); i++ {
-		if key == movies[i].Id {
-
-			return i, true
-		}
-	}
-	return -1, false
+func (h *handler) Home(c *gin.Context) {
+	c.Writer.WriteHeader(http.StatusOK)
 }

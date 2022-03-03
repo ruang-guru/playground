@@ -1,6 +1,9 @@
 name: Lighthouse CI
 on:
   pull_request:
+    paths:
+      - "site/**"
+
 jobs:
   lighthouse:
     runs-on: ubuntu-latest

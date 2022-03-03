@@ -1,3 +1,4 @@
 .DS_Store
 .vscode
-ci-cd/rg-km/public
+site/public
+site/.hugo_build.lock

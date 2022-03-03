@@ -1,0 +1,3 @@
+[submodule "ci-cd/rg-km/themes/minimal"]
+	path = ci-cd/rg-km/themes/minimal
+	url = https://github.com/calintat/minimal.git

@@ -2,8 +2,8 @@ name: Discord PR Merged Notification
 
 on:
   pull_request:
-    types:
-      - closed
+    # types:
+    #   - closed
 
 jobs:
   if_merged:

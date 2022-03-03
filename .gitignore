@@ -1,2 +1,4 @@
 .DS_Store
 .vscode
+site/public
+site/.hugo_build.lock

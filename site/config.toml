@@ -1,4 +1,4 @@
-baseURL = "http://example.com/"
+baseURL = "https://rg-km.github.io/playground/"
 languageCode = "en-us"
 title = "Ruangguru Engineering"
 theme = "minimal"

@@ -9,6 +9,9 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-20.04
+    defaults:
+      run:
+        working-directory: ./ci-cd/rg-km
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:
@@ -25,10 +28,8 @@ jobs:
 
       - name: Build
         run: hugo --minify
-        working-directory: ./ci-cd/rg-km
 
       - name: Deploy
-        working-directory: ./ci-cd/rg-km
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.ref == 'refs/heads/main' }}
         with:

@@ -20,4 +20,4 @@ jobs:
         with:
           url: ${{ secrets.DISCORD_WEBHOOK_URL }}
           headers: '{"repository": "joelwmale/webhook-action"}'
-          body: '{"username": "github", "content": "PR is merged: ${{ github.event.pull_request.url }}"}'
+          body: '{"username": "github", "content": "PR is merged: ${{ github.event.pull_request.html_url }}"}'

@@ -1,2 +1,4 @@
 website:
 - "site/**"
+ci:
+- ".github/**"

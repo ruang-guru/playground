@@ -12,7 +12,7 @@ jobs:
     - name: Checkout Actions Repository
       uses: actions/checkout@v2
 
-    - name: Check spelling of file.txt
+    - name: Check spelling of site
       uses: crate-ci/typos@master
       with: 
-        files: ./site/content/**
+        files: ./site/content/posts/*

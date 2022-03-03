@@ -15,12 +15,9 @@ jobs:
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:
-      - name: Get PR URL
-        uses: kceb/pull-request-url-action@v1
-        id: pr-url
       - name: Post to Discord
         uses: joelwmale/webhook-action@master
         with:
           url: ${{ secrets.DISCORD_WEBHOOK_URL }}
           headers: '{"repository": "joelwmale/webhook-action"}'
-          body: '{"username": "github", "content": "PR is merged: ${{ steps.pr-url.outputs.url }}"}'
+          body: '{"username": "github", "content": "PR is merged: ${{ github.event.pull_request.url }}"}'

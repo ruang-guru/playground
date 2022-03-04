@@ -1,0 +1,14 @@
+{
+  "name": "playground",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/ruang-guru/playground.git",
+  "author": "",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^27.5.1"
+  }
+}

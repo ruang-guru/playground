@@ -2,3 +2,7 @@ website:
 - "site/**"
 ci:
 - ".github/**"
+frontend:
+- "frontend/**"
+backend:
+- "backend/**"

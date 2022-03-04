@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func Sum(a int, b int) int {
-	return 0
+	return a + b
 }
 
 func main() {

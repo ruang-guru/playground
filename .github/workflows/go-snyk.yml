@@ -1,8 +1,8 @@
 name: Snyk Golang
 on:
   pull_request:
-    paths:
-      - "backend/**"
+    # paths:
+    #   - "backend/**"
 jobs:
   security:
     runs-on: ubuntu-latest

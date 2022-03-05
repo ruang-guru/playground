@@ -32,13 +32,13 @@ func main() {
 		output = number1 - number2
 		break
 	case "*":
-		output = number1 * number2
+		output = number1 + number2
 		break
 	case "/":
 		output = number1 / number2
 		break
 	case "%":
-		output = number1 % number2
+		output = number2 % number1
 		break
 	default:
 		fmt.Println("Invalid Operation")

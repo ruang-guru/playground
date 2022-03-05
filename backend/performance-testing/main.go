@@ -1,6 +1,8 @@
 package main
 
 import (
+	"log"
+
 	"github.com/gin-gonic/gin"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/ruang-guru/playground/backend/performance-testing/api"
@@ -12,16 +14,19 @@ import (
 
 func main() {
 
-	prometheus.Register(metrics.HttpRequestCounter)
+	err := prometheus.Register(metrics.HTTPRequestCounter)
+	if err != nil {
+		panic("error registering prometheus metric")
+	}
 	engine := gin.New()
 	engine.Use(middleware.MetricsMiddleware())
 
 	repo := repository.NewRepo()
 
 	svc := handlers.New(repo)
-	serviceApi := api.New(engine, svc)
-	serviceApi.InitAPI()
-	serviceApi.InitPromeHandler()
+	serviceAPI := api.New(engine, svc)
+	serviceAPI.InitAPI()
+	serviceAPI.InitPromeHandler()
 
-	engine.Run(":8090")
+	log.Fatal(engine.Run(":8090"))
 }

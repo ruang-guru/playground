@@ -19,7 +19,7 @@ import (
 )
 
 type Movie struct {
-	Id      int    `json:"id"`
+	ID      int    `json:"id"`
 	Episode int    `json:"episode"`
 	Name    string `json:"name"`
 }
@@ -90,7 +90,7 @@ var _ = Describe("handlers", func() {
 				log.Fatal(err)
 			}
 			Expect(w.Code).To(Equal(200))
-			Expect(movie.Id).To(Equal(1))
+			Expect(movie.ID).To(Equal(1))
 		})
 
 		It("can test GET method", func() {
@@ -121,8 +121,8 @@ func setupRouter() *gin.Engine {
 	engine := gin.New()
 	repo := repository.NewRepo()
 	svc := handlers.New(repo)
-	serviceApi := api.New(engine, svc)
-	serviceApi.InitAPI()
+	serviceAPI := api.New(engine, svc)
+	serviceAPI.InitAPI()
 	return engine
 }
 

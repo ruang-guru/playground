@@ -51,9 +51,14 @@ func (h *handler) AddMovie(c *gin.Context) {
 		return
 	}
 	var newMovie repository.Movie
-	c.BindJSON(&newMovie)
+	err := c.BindJSON(&newMovie)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, "bad request")
+		log.Printf("error %s", err)
+		return
+	}
 	// mtx.Lock()
-	err := h.movies.Store(&newMovie)
+	err = h.movies.Store(&newMovie)
 	// mtx.Unlock()
 	if err != nil {
 		c.JSON(http.StatusBadRequest, "bad request")

@@ -13,11 +13,11 @@ const (
 )
 
 var (
-	HttpRequestCounter *prometheus.CounterVec
+	HTTPRequestCounter *prometheus.CounterVec
 )
 
 func init() {
-	HttpRequestCounter = prometheus.NewCounterVec(prometheus.CounterOpts{
+	HTTPRequestCounter = prometheus.NewCounterVec(prometheus.CounterOpts{
 		Name: httpCounterMetrics,
 		Help: httpCounterMetricsHelp,
 	},
@@ -25,6 +25,6 @@ func init() {
 	)
 }
 
-func IncrIncomingHttpRequest(status string, respCode string) {
-	HttpRequestCounter.WithLabelValues(status, respCode).Inc()
+func IncrIncomingHTTPRequest(status string, respCode string) {
+	HTTPRequestCounter.WithLabelValues(status, respCode).Inc()
 }

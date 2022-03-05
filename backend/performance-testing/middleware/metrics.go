@@ -20,7 +20,7 @@ func MetricsMiddleware() gin.HandlerFunc {
 		}
 
 		if c.FullPath() != "/metrics" {
-			metrics.IncrIncomingHttpRequest(status, respCode)
+			metrics.IncrIncomingHTTPRequest(status, respCode)
 		}
 	}
 }

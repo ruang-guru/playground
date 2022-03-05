@@ -2,7 +2,9 @@ package handlers_test
 
 import (
 	"encoding/json"
+	"fmt"
 	"strings"
+	"sync"
 
 	"github.com/gin-gonic/gin"
 	. "github.com/onsi/ginkgo"
@@ -26,24 +28,37 @@ type Movie struct {
 var router *gin.Engine
 var _ = Describe("handlers", func() {
 	When("the handlers implemented", func() {
-		It("can add new movie with method POST", func() {
-
+		FIt("can add new movie with method POST", func() {
+			var wg sync.WaitGroup
+			var mtx sync.Mutex
 			w := httptest.NewRecorder()
-
-			payload, err := json.Marshal(Movie{
-				Episode: 1,
-				Name:    "baru",
-			})
-
-			if err != nil {
-				log.Fatal(err)
+			// var req *http.Request
+			for i := 0; i < 1000; i++ {
+				wg.Add(1)
+				go func(i int) {
+					defer wg.Done()
+					payload, err := json.Marshal(Movie{
+						Episode: i,
+						Name:    "baru",
+					})
+					// fmt.Println(payload)
+					if err != nil {
+						log.Fatal(err)
+					}
+					req, err := http.NewRequest("POST", "/movie", strings.NewReader(string(payload)))
+					if err != nil {
+						log.Fatal(err)
+					}
+					mtx.Lock()
+					router.ServeHTTP(w, req)
+					mtx.Unlock()
+				}(i)
 			}
-			req, err := http.NewRequest("POST", "/movie", strings.NewReader(string(payload)))
-			if err != nil {
-				log.Fatal(err)
-			}
-			router.ServeHTTP(w, req)
+			wg.Wait()
+			// time.Sleep(2 * time.Second)
+			mtx.Lock()
 			Expect(w.Code).To(Equal(200))
+			mtx.Unlock()
 			// Expect(res.StatusCode).To(Equal(200))
 		})
 
@@ -60,8 +75,9 @@ var _ = Describe("handlers", func() {
 			if err != nil {
 				log.Fatal(err)
 			}
+			fmt.Println(movies)
 			Expect(w.Code).To(Equal(200))
-			Expect(len(movies)).To(Equal(1))
+			Expect(len(movies)).To(Equal(10))
 		})
 
 		It("can get a movie", func() {

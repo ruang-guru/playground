@@ -17,7 +17,7 @@
 
 ### Grafana setting
 
-- use `http://km-prometheus:9090` for prometheus url
+- use `http://km-prometheus:9090` for prometheus URL
 - scrape interval set to 3s
 - create new panel and use this metric browser
 

@@ -16,7 +16,7 @@ type Repository interface {
 }
 
 type Movie struct {
-	Id      int    `json:"id"`
+	ID      int    `json:"id"`
 	Episode int    `json:"episode"`
 	Name    string `json:"name"`
 }
@@ -32,22 +32,21 @@ var mtx sync.Mutex
 func (r *repository) GetAll() (map[int]Movie, error) {
 	if len(r.movies) > 0 {
 		return r.movies, nil
-	} else {
-		return nil, errors.New("data not found")
 	}
+	return nil, errors.New("data not found")
 }
 
 func (r *repository) Get(id int) (interface{}, error) {
 	if v, ok := r.movies[id]; ok {
 		return v, nil
-	} else {
-		return nil, errors.New("data not found")
 	}
+	return nil, errors.New("data not found")
+
 }
 
 func (r *repository) Store(movie *Movie) error {
 	id := len(r.movies) + 1
-	movie.Id = id
+	movie.ID = id
 	mtx.Lock()
 	r.movies[id] = *movie
 	mtx.Unlock()

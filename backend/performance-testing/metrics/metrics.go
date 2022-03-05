@@ -5,10 +5,8 @@ import (
 )
 
 const (
-	unit      = "unit"
-	status    = "status"
-	respCode  = "response_code"
-	queueName = "queue_name"
+	status   = "status"
+	respCode = "response_code"
 
 	httpCounterMetrics     = "http_request_count"
 	httpCounterMetricsHelp = "Total count incoming request"

@@ -2,7 +2,6 @@ package handlers_test
 
 import (
 	"encoding/json"
-	"fmt"
 	"strings"
 	"sync"
 
@@ -28,11 +27,10 @@ type Movie struct {
 var router *gin.Engine
 var _ = Describe("handlers", func() {
 	When("the handlers implemented", func() {
-		FIt("can add new movie with method POST", func() {
+		It("can add new movie with method POST", func() {
 			var wg sync.WaitGroup
 			var mtx sync.Mutex
 			w := httptest.NewRecorder()
-			// var req *http.Request
 			for i := 0; i < 1000; i++ {
 				wg.Add(1)
 				go func(i int) {
@@ -41,7 +39,6 @@ var _ = Describe("handlers", func() {
 						Episode: i,
 						Name:    "baru",
 					})
-					// fmt.Println(payload)
 					if err != nil {
 						log.Fatal(err)
 					}
@@ -55,11 +52,9 @@ var _ = Describe("handlers", func() {
 				}(i)
 			}
 			wg.Wait()
-			// time.Sleep(2 * time.Second)
 			mtx.Lock()
 			Expect(w.Code).To(Equal(200))
 			mtx.Unlock()
-			// Expect(res.StatusCode).To(Equal(200))
 		})
 
 		It("can get all movies", func() {
@@ -75,9 +70,8 @@ var _ = Describe("handlers", func() {
 			if err != nil {
 				log.Fatal(err)
 			}
-			fmt.Println(movies)
 			Expect(w.Code).To(Equal(200))
-			Expect(len(movies)).To(Equal(10))
+			Expect(len(movies)).To(Equal(1000))
 		})
 
 		It("can get a movie", func() {

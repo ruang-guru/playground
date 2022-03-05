@@ -25,6 +25,8 @@ func New(repo repository.Repository) Handler {
 	return &handler{repo}
 }
 
+// var mtx sync.Mutex
+
 func (h *handler) GetMovies(c *gin.Context) {
 	if c.Request.Method != http.MethodGet {
 		c.JSON(http.StatusMethodNotAllowed, fmt.Errorf("invalid request method"))
@@ -50,7 +52,9 @@ func (h *handler) AddMovie(c *gin.Context) {
 	}
 	var newMovie repository.Movie
 	c.BindJSON(&newMovie)
+	// mtx.Lock()
 	err := h.movies.Store(&newMovie)
+	// mtx.Unlock()
 	if err != nil {
 		c.JSON(http.StatusBadRequest, "bad request")
 		log.Printf("error %s", err)

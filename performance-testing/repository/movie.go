@@ -1,6 +1,9 @@
 package repository
 
-import "errors"
+import (
+	"errors"
+	"sync"
+)
 
 type repository struct {
 	movies map[int]Movie
@@ -24,6 +27,8 @@ func NewRepo() Repository {
 	}
 }
 
+var mtx sync.Mutex
+
 func (r *repository) GetAll() (map[int]Movie, error) {
 	if len(r.movies) > 0 {
 		return r.movies, nil
@@ -43,6 +48,8 @@ func (r *repository) Get(id int) (interface{}, error) {
 func (r *repository) Store(movie *Movie) error {
 	id := len(r.movies) + 1
 	movie.Id = id
+	mtx.Lock()
 	r.movies[id] = *movie
+	mtx.Unlock()
 	return nil
 }

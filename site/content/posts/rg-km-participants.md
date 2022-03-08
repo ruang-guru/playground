@@ -7,3 +7,4 @@ draft: false
 
 - Pahlevi Fikri Auliya (levi) - Computer Science NTU - <fikriauliya.github.io>
 - Elroy Pedro Kameo - Universitas Kristen Satya Wacana - <elroypedrokameo.github.io>
+- Adiya Hari Saputra - Universitas teknologi Ygyakarta

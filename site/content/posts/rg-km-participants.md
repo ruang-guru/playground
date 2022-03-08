@@ -6,3 +6,4 @@ draft: false
 ---
 
 - Pahlevi Fikri Auliya (levi) - Computer Science NTU - <fikriauliya.github.io>
+- Rudiansyah Wijaya Pratama (Rudi) - Computer Science UNJ - <github.com/reezyx>

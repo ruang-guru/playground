@@ -6,7 +6,7 @@ draft: false
 ---
 
 - Pahlevi Fikri Auliya (levi) - Computer Science NTU - <fikriauliya.github.io>
-- Cicely Patricia Sinaulan (cicel) - Computer Science UNJ 
+- Cicely Patricia Sinaulan (cicel) - Computer Science UNJ <http://cicelpupuy27.github.io/cicelypatricia.github.io/>
 - Irfan Kurniawan (Irfan) - Fakultas Ilmu Komputer Universitas Dharmas Indonesia
 - Muhammad Farhan Syahputra Harahap (Farhan) - Metallurgical Engineering
 - Elroy Pedro Kameo - Universitas Kristen Satya Wacana - <elroypedrokameo.github.io>

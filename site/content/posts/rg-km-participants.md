@@ -13,3 +13,4 @@ draft: false
 - Sefen Giawa - ?
 - Richardo Ehbet Rejuli Lumban Raja (Richardo) - Universitas Methodist Indonesia
 - Damara Syaidil Fitrayatulloh (Damara) - Universitas Gunadarma - <https://damarasf.github.io/playground/>
+- Dhani Fajar Nugroho - Politeknik Elektronika Negeri Surabaya - <dhanifajar15.github.io>

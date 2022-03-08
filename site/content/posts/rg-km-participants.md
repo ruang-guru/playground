@@ -6,4 +6,4 @@ draft: false
 ---
 
 - Pahlevi Fikri Auliya (levi) - Computer Science NTU - <fikriauliya.github.io>
-- Nyomantrimakna (nyoman) - Universitas Udayana - <>
+- Nyomantrimakna (nyoman) - Universitas Udayana <>

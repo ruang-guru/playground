@@ -10,4 +10,4 @@ draft: false
 - Muhammad Farhan Syahputra Harahap (Farhan) - Metallurgical Engineering
 - Elroy Pedro Kameo - Universitas Kristen Satya Wacana - <elroypedrokameo.github.io>
 - Akhner Frisca - President University - <Akhnerf24.github.io>
-
+- Sefen Giawa - ?

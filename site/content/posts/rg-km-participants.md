@@ -6,3 +6,4 @@ draft: false
 ---
 
 - Pahlevi Fikri Auliya (levi) - Computer Science NTU - <fikriauliya.github.io>
+- Agung Rahmatsyah (Agung) - Informatika UNIB - <Agungrahmatsya.github.io>

@@ -12,4 +12,4 @@ draft: false
 - Akhner Frisca - President University - <Akhnerf24.github.io>
 - Sefen Giawa - ?
 - Richardo Ehbet Rejuli Lumban Raja (Richardo) - Universitas Methodist Indonesia
-- Muhammad Agung Sadarullah (Agung) - Universitas Komputer Indonesia - <shinkiro467.me>
+- Muhammad Agung Sadarullah (Agung) - Universitas Komputer Indonesia - <uragiristereo.github.io>

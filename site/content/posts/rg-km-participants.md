@@ -6,3 +6,4 @@ draft: false
 ---
 
 - Pahlevi Fikri Auliya (levi) - Computer Science NTU - <fikriauliya.github.io>
+- Jasmine Erina Firdaus (Jasmine) - Informatics UII - <jasmineerina.github.io>

@@ -6,4 +6,6 @@ draft: false
 ---
 
 - Pahlevi Fikri Auliya (levi) - Computer Science NTU - <fikriauliya.github.io>
-- Wilbert Chen (wilbert) - Information Technology PU - <wchen19.github.io>
+- Muhammad Farhan Syahputra Harahap (Farhan) - Metallurgical Engineering
+- Wilbert Chen (wilbert) - President University - <wchen19.github.io>
+- Elroy Pedro Kameo - Universitas Kristen Satya Wacana - <elroypedrokameo.github.io>

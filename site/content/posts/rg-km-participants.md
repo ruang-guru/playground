@@ -14,3 +14,4 @@ draft: false
 - Richardo Ehbet Rejuli Lumban Raja (Richardo) - Universitas Methodist Indonesia
 - Dhani Fajar Nugroho - Politeknik Elektronika Negeri Surabaya - <dhanifajar15.github.io>
 - Muhammad Ilham Rasyid Ridha - ilhamrasyid111.github.io/blog/
+- Muhammad Ilham Rasyid Ridha - ilhamrasyid111.github.io

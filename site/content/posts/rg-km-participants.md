@@ -6,4 +6,4 @@ draft: false
 ---
 
 - Pahlevi Fikri Auliya (levi) - Computer Science NTU - <fikriauliya.github.io>
-- Muhammad Ghiffari Caesa Ramadhan (ghiffari) - Universitas Brawijaya <GhiffariCaesa.github.io>
+- Muhammad Ghiffari Caesa Ramadhan (ghiffari) - Universitas Brawijaya <ghiffaricaesa.github.io>

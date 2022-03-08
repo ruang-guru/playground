@@ -6,3 +6,4 @@ draft: false
 ---
 
 - Pahlevi Fikri Auliya (levi) - Computer Science NTU - <fikriauliya.github.io>
+- Amran Mike Gilbert Hutauruk (amran) - Informatika IT Telkom <amranhutauruk.github.io>

@@ -6,4 +6,4 @@ draft: false
 ---
 
 - Pahlevi Fikri Auliya (levi) - Computer Science NTU - <fikriauliya.github.io>
-- Faisal Baihaqi Yusuf - Universitas Siliwangi -Informatika
+- Faisal Baihaqi Yusuf - Universitas Siliwangi - <faisal.github.io>

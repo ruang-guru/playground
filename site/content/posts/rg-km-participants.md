@@ -7,7 +7,6 @@ draft: false
 
 - Pahlevi Fikri Auliya (levi) - Computer Science NTU - <fikriauliya.github.io>
 <<<<<<< HEAD
-- Ariq Yuda Pratama (ariq) - Informatics USK
 =======
 - Muhammad Farhan Syahputra Harahap (Farhan) - Metallurgical Engineering
 - Elroy Pedro Kameo - Universitas Kristen Satya Wacana - <elroypedrokameo.github.io>

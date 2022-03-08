@@ -6,4 +6,4 @@ draft: false
 ---
 
 - Pahlevi Fikri Auliya (levi) - Computer Science NTU - <fikriauliya.github.io>
-- ervina Norvita (ervina) - UII
+- ervina Norvita (ervina) - UII<ervina13.github.io>

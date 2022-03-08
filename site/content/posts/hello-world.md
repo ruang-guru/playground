@@ -7,3 +7,4 @@ draft: false
 Hi, welcome to RG KM repository
 
 We are here playing with CI/CD
+Dimas Julian Pramudya - Universitas Banten Jaya - <https://dimazzs.github.io/Dimasj.github.io/>

@@ -6,4 +6,4 @@ draft: false
 ---
 
 - Pahlevi Fikri Auliya (levi) - Computer Science NTU - <fikriauliya.github.io>
-- Satrio Wibowo - Backend
+- Satrio Wibowo - Backend 3

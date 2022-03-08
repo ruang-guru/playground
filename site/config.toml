@@ -1,58 +1,52 @@
-baseURL = "https://ruang-guru.github.io/playground/"
+baseurl      = "localhost"
+title        = "My Blog"
 languageCode = "en-us"
-title = "Ruangguru Engineering"
-theme = "minimal"
-disqusShortname = "username" # delete this to disable disqus comments
-googleAnalytics = ""
+theme        = "hello-friend-ng"
+paginate     = 10
 
 [params]
-    author = "Calin Tataru"
-    description = "Learn, Ask, Share, and Solve"
-    githubUsername = "#"
-    accent = "red"
-    showBorder = true
-    backgroundColor = "white"
-    font = "Raleway" # should match the name on Google Fonts!
-    highlight = true
-    highlightStyle = "default"
-    highlightLanguages = ["go", "haskell", "kotlin", "scala", "swift"]
+  dateform        = "Jan 2, 2006"
+  dateformShort   = "Jan 2"
+  dateformNum     = "2006-01-02"
+  dateformNumTime = "2006-01-02 15:04"
 
-[[menu.main]]
-    url = "/"
-    name = "Home"
-    weight = 1
+  # Subtitle for home
+  homeSubtitle = "Hello folks, let's connect with me...."
 
-[[menu.main]]
-    url = "/posts/"
-    name = "Posts"
-    weight = 3
+  # Set disableReadOtherPosts to true in order to hide the links to other posts.
+  disableReadOtherPosts = false
 
+  # Enable sharing buttons, if you like
+  enableSharingButtons = true
 
-# Social icons to be shown on the right-hand side of the navigation bar.
-# The "name" field should match the name of the icon in Font Awesome.
-# The list of available icons can be found at http://fontawesome.io/icons.
+  # Metadata mostly used in document's head
+  description = "My new homepage or blog"
+  keywords = "homepage, blog"
+  images = [""]
 
-[[menu.icon]]
-    url = "mailto:me@example.com"
-    name = "fas fa-envelope"
-    weight = 1
+[taxonomies]
+    category = "blog"
+    tag      = "tags"
+    series   = "series"
 
-[[menu.icon]]
-    url = "https://github.com/username/"
-    name = "fab fa-github"
-    weight = 2
+[languages]
+  [languages.en]
+    title = "Fiki Alamsyah - Ruang Guru CAMP"
+    subtitle = "A simple theme for Hugo"
+    keywords = ""
+    copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
+    readOtherPosts = "Read other posts"
 
-[[menu.icon]]
-    url = "https://twitter.com/username/"
-    name = "fab fa-twitter"
-    weight = 3
+    [languages.en.params.logo]
+      logoText = "My Portofolio"
+      logoHomeLink = "/"
+    # or
+    #
+    # path = "/img/your-example-logo.svg"
+    # alt = "Your example logo alt text"
 
-[[menu.icon]]
-    url = "https://www.linkedin.com/in/username/"
-    name = "fab fa-linkedin"
-    weight = 4
-
-[[menu.icon]]
-    url = "https://www.stackoverflow.com/username/"
-    name = "fab fa-stack-overflow"
-    weight = 5
+  # And you can even create generic menu
+  [[menu.main]]
+    identifier = "blog"
+    name       = "Blog"
+    url        = "/posts"

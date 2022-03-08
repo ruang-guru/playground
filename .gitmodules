@@ -1,3 +1,6 @@
 [submodule "site/themes/minimal"]
 	path = site/themes/minimal
 	url = https://github.com/calintat/minimal.git
+[submodule "site/themes/hello-friend-ng"]
+	path = site/themes/hello-friend-ng
+	url = https://github.com/rhazdon/hugo-theme-hello-friend-ng.git

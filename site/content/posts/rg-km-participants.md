@@ -12,3 +12,5 @@ draft: false
 - Akhner Frisca - President University - <Akhnerf24.github.io>
 - Sefen Giawa - ?
 - Richardo Ehbet Rejuli Lumban Raja (Richardo) - Universitas Methodist Indonesia
+- Fachriansyah Muhammad Nur Ihsan - Universitas Komputer Indonesia - <fachriansyahmni.github.io>
+

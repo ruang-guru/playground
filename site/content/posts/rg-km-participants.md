@@ -6,4 +6,4 @@ draft: false
 ---
 
 - Pahlevi Fikri Auliya (levi) - Computer Science NTU - <fikriauliya.github.io>
-- Hatta Sugirto - Computer Science Unindra - <Hatta56.github.io>
+- Hatta Sugirto - Teknik Informatika Unindra - <Hatta56.github.io>

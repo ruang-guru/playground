@@ -6,3 +6,4 @@ draft: false
 ---
 
 - Pahlevi Fikri Auliya (levi) - Computer Science NTU - <fikriauliya.github.io>
+- Dicky Manurung (Dicky) - Ilmu Komputer USU - <DickyManurung046.github.io>

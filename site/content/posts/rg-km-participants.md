@@ -6,3 +6,4 @@ draft: false
 ---
 
 - Pahlevi Fikri Auliya (levi) - Computer Science NTU - <fikriauliya.github.io>
+- Muhammad fahmi ady susilo (fahmi) - front end - <fahmiady11.........>

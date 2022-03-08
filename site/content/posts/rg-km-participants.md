@@ -9,4 +9,10 @@ draft: false
 - Irfan Kurniawan (Irfan) - Fakultas Ilmu Komputer Universitas Dharmas Indonesia
 - Muhammad Farhan Syahputra Harahap (Farhan) - Metallurgical Engineering
 - Elroy Pedro Kameo - Universitas Kristen Satya Wacana - <elroypedrokameo.github.io>
+<<<<<<< HEAD
 - Esa Putra - Universitas Bhayangkara Jakarta Raya
+=======
+- Akhner Frisca - President University - <Akhnerf24.github.io>
+- Sefen Giawa - ?
+- Richardo Ehbet Rejuli Lumban Raja (Richardo) - Universitas Methodist Indonesia
+>>>>>>> ecd883c243c858ca75c4bf35ddb4037826411df7

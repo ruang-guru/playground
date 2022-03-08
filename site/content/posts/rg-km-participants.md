@@ -6,3 +6,18 @@ draft: false
 ---
 
 - Pahlevi Fikri Auliya (levi) - Computer Science NTU - <fikriauliya.github.io>
+- Muhammad Riko Bediatra (Riko) - Universitas Islam Indonesia
+
+
+
+
+
+
+
+
+
+
+
+
+
+

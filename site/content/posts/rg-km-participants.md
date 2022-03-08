@@ -6,3 +6,4 @@ draft: false
 ---
 
 - Pahlevi Fikri Auliya (levi) - Computer Science NTU - <fikriauliya.github.io>
+- Saleh Zaidan (saleh) - Teknik Fisika ITB - <salehzaidan.vercel.app>

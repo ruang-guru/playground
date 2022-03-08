@@ -6,3 +6,4 @@ draft: false
 ---
 
 - Pahlevi Fikri Auliya (levi) - Computer Science NTU - <fikriauliya.github.io>
+- Achmad Musyaffa Taufiqi (Musa) - Teknik Informatika - <amusfq.github.io>

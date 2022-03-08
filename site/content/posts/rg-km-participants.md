@@ -6,4 +6,4 @@ draft: false
 ---
 
 - Pahlevi Fikri Auliya (levi) - Computer Science NTU - <fikriauliya.github.io>
-- Mohammad Zaki Mushoddaq (Zaki) - Universitas Pembangunan Veteran Jawa Timur - <MohammadZakiMushoddaq.github.io>
+- Mohammad Zaki Mushoddaq (zaki) - Universitas Pembangunan Nasional Veteran Jawa Timur - <mohammadzakimushoddaq.github.io/muhza02/>

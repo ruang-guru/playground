@@ -6,4 +6,4 @@ draft: false
 ---
 
 - Pahlevi Fikri Auliya (levi) - Computer Science NTU - <fikriauliya.github.io>
-Tester
+- Muhammad Ghiffari Caesa Ramadhan (ghiffari) - Electrical Engineering <GhiffariCaesa.github.io>

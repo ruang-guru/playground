@@ -6,3 +6,4 @@ draft: false
 ---
 
 - Pahlevi Fikri Auliya (levi) - Computer Science NTU - <fikriauliya.github.io>
+- Riki Mi'roj Achmad (riki) - Teknik Informatika ITS - <>

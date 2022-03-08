@@ -6,4 +6,4 @@ draft: false
 
 # Day 1
 
-Di hari pertama, kita belajar Git dan Github, dan juga Javascript.
+Di hari pertama, kita belajar Git dan Github, juga Javascript, dan juga belajar git dan github.

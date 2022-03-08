@@ -6,4 +6,9 @@ draft: false
 ---
 
 - Pahlevi Fikri Auliya (levi) - Computer Science NTU - <fikriauliya.github.io>
+
 - Khairiyan Hidayat Ramadhan (riyan) - Fakultas Ilmu Komputer UB 
+
+- Muhammad Farhan Syahputra Harahap (Farhan) - Metallurgical Engineering
+- Elroy Pedro Kameo - Universitas Kristen Satya Wacana - <elroypedrokameo.github.io>
+

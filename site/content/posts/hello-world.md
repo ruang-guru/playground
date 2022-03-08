@@ -7,3 +7,5 @@ draft: false
 Hi, welcome to RG KM repository
 
 We are here playing with CI/CD
+
+Perkenalkan nama aku Frisca Martha Veronica

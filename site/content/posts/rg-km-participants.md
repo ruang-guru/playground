@@ -12,3 +12,4 @@ draft: false
 - Akhner Frisca - President University - <Akhnerf24.github.io>
 - Sefen Giawa - ?
 - Richardo Ehbet Rejuli Lumban Raja (Richardo) - Universitas Methodist Indonesia
+- Muhammad Daffa - Universitas Diponegoro <https://daffaaaa23.github.io/WebDev/>

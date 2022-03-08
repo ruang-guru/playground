@@ -3,6 +3,9 @@ name: Lint Code Base
 on:
   pull_request:
     branches: [master, main]
+    paths:
+      - "backend/**"
+      - "frontend/**"
 
 jobs:
   build:

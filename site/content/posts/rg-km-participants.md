@@ -7,4 +7,4 @@ draft: false
 
 - Pahlevi Fikri Auliya (levi) - Computer Science NTU - <fikriauliya.github.io>
 
-- Adimas Fachri Ranunegoro - Telkom University - adimasfachri.github.io>
+- Adimas Fachri Ranunegoro - <adimasfachri.github.io>

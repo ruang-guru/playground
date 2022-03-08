@@ -6,4 +6,4 @@ draft: false
 ---
 
 - Pahlevi Fikri Auliya (levi) - Computer Science NTU - <fikriauliya.github.io>
-- Muhammad Abid Fajar (abid) - BE2219863
+- Muhammad Abid Fajar (abid) - Universitas Prof Dr. Hamka

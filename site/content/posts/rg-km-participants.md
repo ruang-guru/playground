@@ -6,3 +6,4 @@ draft: false
 ---
 
 - Pahlevi Fikri Auliya (levi) - Computer Science NTU - <fikriauliya.github.io>
+- Anatasha Eka Syavina (vina) - Computer Science UB - <anatashaeka.github.io>

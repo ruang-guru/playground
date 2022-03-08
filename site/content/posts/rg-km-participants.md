@@ -8,6 +8,7 @@ draft: false
 - Pahlevi Fikri Auliya (levi) - Computer Science NTU - <fikriauliya.github.io>
 - Irfan Kurniawan (Irfan) - Fakultas Ilmu Komputer Universitas Dharmas Indonesia
 - Muhammad Farhan Syahputra Harahap (Farhan) - Metallurgical Engineering
+- Muhammad Agung Saputra (Agung) - Sekolah Tinggi Teknologi Terpadu Nurul Fikri
 - Elroy Pedro Kameo - Universitas Kristen Satya Wacana - <elroypedrokameo.github.io>
 - Akhner Frisca - President University - <Akhnerf24.github.io>
 - Sefen Giawa - ?

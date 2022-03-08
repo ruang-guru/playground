@@ -7,3 +7,7 @@ draft: false
 # Day 1
 
 Di hari pertama, kita belajar Git dan Github, dan juga Javascript.
+
+#Day 2
+
+Di hari kedua, saya belajar VS Code

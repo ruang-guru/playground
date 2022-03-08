@@ -6,3 +6,4 @@ draft: false
 ---
 
 - Pahlevi Fikri Auliya (levi) - Computer Science NTU - <fikriauliya.github.io>
+- Rika An Rokhim (rika) - GitHub - <rikaanrokhim.github.io>

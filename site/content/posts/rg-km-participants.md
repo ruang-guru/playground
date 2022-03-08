@@ -9,3 +9,4 @@ draft: false
 - Irfan Kurniawan (Irfan) - Fakultas Ilmu Komputer Universitas Dharmas Indonesia
 - Muhammad Farhan Syahputra Harahap (Farhan) - Metallurgical Engineering
 - Elroy Pedro Kameo - Universitas Kristen Satya Wacana - <elroypedrokameo.github.io>
+- Aditya Rizqi Ardhana - Fakultas Ilmu Komputer Universitas Pembangunan Nasional "Veteran" Jatim - <https://mathtics.netlify.app/>

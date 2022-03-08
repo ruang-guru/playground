@@ -6,6 +6,7 @@ draft: false
 ---
 
 - Pahlevi Fikri Auliya (levi) - Computer Science NTU - <fikriauliya.github.io>
+- Febi Nurfajar (Febi) - Telecommunication Engineering
 - Irfan Kurniawan (Irfan) - Fakultas Ilmu Komputer Universitas Dharmas Indonesia
 - Muhammad Farhan Syahputra Harahap (Farhan) - Metallurgical Engineering
 - Elroy Pedro Kameo - Universitas Kristen Satya Wacana - <elroypedrokameo.github.io>

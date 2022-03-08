@@ -9,5 +9,5 @@ draft: false
 - Irfan Kurniawan (Irfan) - Fakultas Ilmu Komputer Universitas Dharmas Indonesia
 - Muhammad Farhan Syahputra Harahap (Farhan) - Metallurgical Engineering
 - Elroy Pedro Kameo - Universitas Kristen Satya Wacana - <elroypedrokameo.github.io>
-- Anril Pratama Drawira Rahmin(anril) - Universitas Gunadarma
+- Anril Pratama Drawira Rahmin(anril) - Universitas Gunadarma - <anrilp.github.io>
 

@@ -12,4 +12,4 @@ draft: false
 - Elroy Pedro Kameo - Universitas Kristen Satya Wacana - <elroypedrokameo.github.io>
 - Akhner Frisca - President University - <Akhnerf24.github.io>
 - Richardo Ehbet Rejuli Lumban Raja (Richardo) - Universitas Methodist Indonesia
-
+- Dhani Fajar Nugroho - Politeknik Elektronika Negeri Surabaya - <dhanifajar15.github.io>

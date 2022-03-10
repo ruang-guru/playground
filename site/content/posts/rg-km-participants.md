@@ -9,4 +9,8 @@ draft: false
 - Irfan Kurniawan (Irfan) - Fakultas Ilmu Komputer Universitas Dharmas Indonesia
 - Muhammad Farhan Syahputra Harahap (Farhan) - Metallurgical Engineering
 - Elroy Pedro Kameo - Universitas Kristen Satya Wacana - <elroypedrokameo.github.io>
-- Aditya Rizqi Ardhana - Fakultas Ilmu Komputer Universitas Pembangunan Nasional "Veteran" Jatim - <mathtics.netlify.app>
+- Akhner Frisca - President University - <Akhnerf24.github.io>
+- Sefen Giawa - ?
+- Richardo Ehbet Rejuli Lumban Raja (Richardo) - Universitas Methodist Indonesia
+- Dhani Fajar Nugroho - Politeknik Elektronika Negeri Surabaya - <dhanifajar15.github.io>
+- ADITYA RIZQI ARDHANA (adit) - Universitas Pembangunan Nasional "Veteran" Jawa Timur - <adityarizqi7.github.io>

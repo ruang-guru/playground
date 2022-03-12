@@ -13,6 +13,7 @@ draft: false
 - Sefen Giawa - ?
 - Richardo Ehbet Rejuli Lumban Raja (Richardo) - Universitas Methodist Indonesia
 - Dhani Fajar Nugroho - Politeknik Elektronika Negeri Surabaya - <dhanifajar15.github.io>
+- Andini Tyas Asih (Andini) - Politeknik Negeri Semarang - <pagdrgn.github.io>
 - Fahrul Ardian Nugroho - Universitas Halu Oleo - <fahrulan.github.io/>
 - Bayu Adhi Prastyo - Universitas Esa Unggul - Fasilkom - <bayuadhiprastyo.github.io/hugo-jalan/>
 - Aszhuraini - Universitas Jember - <Aszhuraini.github.io>

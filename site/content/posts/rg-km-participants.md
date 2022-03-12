@@ -20,3 +20,4 @@ draft: false
 - Mahesa Riski Pratama - Universitas Jember - <https://tadashi23.github.io/belajar-hugo-santuy/>
 - Dimas Ahmad N K S (Dimas) - Universitas Negeri Surabaya- <DimasAhmadNKS.github.io>
 - Renanita Apriliya - Universitas Mulawarman - <renapr.github.io/rena-hugo.io/>
+- Muhamad Aski Baihaki - Politeknik Harapan Bersama - Teknik Komputer - <https://baihaki123.github.io>

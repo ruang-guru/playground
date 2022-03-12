@@ -14,3 +14,4 @@ draft: false
 - Richardo Ehbet Rejuli Lumban Raja (Richardo) - Universitas Methodist Indonesia
 - Dhani Fajar Nugroho - Politeknik Elektronika Negeri Surabaya - <dhanifajar15.github.io>
 - Dimas Ahmad N K S (Dimas) - Universitas Negeri Surabaya- <DimasAhmadNKS.github.io>
+- Renanita Apriliya - Universitas Mulawarman - <renapr.github.io/rena-hugo.io/>

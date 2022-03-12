@@ -13,6 +13,7 @@ draft: false
 - Sefen Giawa - ?
 - Richardo Ehbet Rejuli Lumban Raja (Richardo) - Universitas Methodist Indonesia
 - Dhani Fajar Nugroho - Politeknik Elektronika Negeri Surabaya - <dhanifajar15.github.io>
+- Bayu Adhi Prastyo - Universitas Esa Unggul - Fasilkom - <bayuadhiprastyo.github.io/hugo-jalan/>
 - Aszhuraini - Universitas Jember - <Aszhuraini.github.io>
 - Mahesa Riski Pratama - Universitas Jember - <https://tadashi23.github.io/belajar-hugo-santuy/>
 - Dimas Ahmad N K S (Dimas) - Universitas Negeri Surabaya- <DimasAhmadNKS.github.io>

@@ -8,4 +8,11 @@ import "fmt"
 // Lalu outputkan array nya.
 func main() {
 	// TODO: answer here
+	var nama [5]string
+	nama[0] = "r"
+	nama[1] = "e"
+	nama[2] = "z"
+	nama[3] = "a"
+
+	fmt.Println(nama)
 }

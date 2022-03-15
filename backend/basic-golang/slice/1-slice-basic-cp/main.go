@@ -11,4 +11,12 @@ import "fmt"
 // Outputkan jawabannya ya pastikan cap dan len nya adalah 2
 func main() {
 	// TODO: answer here
+	// nama := []string{"reza", "wijaya"}
+	// fmt.Println(nama)
+	nama := []string{}
+	nama = append(nama, "reza")
+	nama = append(nama, "wijaya")
+	fmt.Println(nama)
+	fmt.Println(cap(nama), len(nama))
+
 }

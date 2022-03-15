@@ -7,4 +7,6 @@ import "fmt"
 // gunakan inisialisasi menggunakan `:=` pada array1.
 func main() {
 	// TODO: answer here
+	arr := [4]string{"r", "e", "z", "a"}
+	fmt.Println(arr)
 }

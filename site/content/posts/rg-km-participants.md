@@ -12,4 +12,8 @@ draft: false
 - Akhner Frisca - President University - <Akhnerf24.github.io>
 - Sefen Giawa - ?
 - Richardo Ehbet Rejuli Lumban Raja (Richardo) - Universitas Methodist Indonesia
+<<<<<<< HEAD
 - Shandini Apriliany (April) - Computer Science Education UPI
+=======
+- Dhani Fajar Nugroho - Politeknik Elektronika Negeri Surabaya - <dhanifajar15.github.io>
+>>>>>>> df98592089efa82ad9a422b823b2994be6386ae9

@@ -7,4 +7,7 @@ import "fmt"
 func main() {
 	slice := []string{"Hello", "World"}
 	// TODO: answer here
+
+	slice = append(slice, "Olleh")
+	fmt.Print(slice[len(slice)-1])
 }

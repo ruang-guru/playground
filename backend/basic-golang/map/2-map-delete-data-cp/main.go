@@ -18,6 +18,9 @@ func main() {
 	// TODO: answer here
 	for _, val := range namaUmur {
 		fmt.Println(val["name"], " ", val["gender"])
+		if val["name"] == "Leonhard Euler" {
+			val["gender"] = "male"
+		}
 	}
 
 	// Nah coba saatnya kalian menghapuskan key "gender" pada setiap data
@@ -36,6 +39,9 @@ func main() {
 	*/
 
 	// TODO: answer here
+	for _, val := range namaUmur {
+		delete(val, "gender")
+	}
 
 	// Output setelah dihapus
 	/*

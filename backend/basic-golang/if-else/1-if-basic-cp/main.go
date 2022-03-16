@@ -37,4 +37,17 @@ func main() {
 		Indra Kenz   Tidak Lulus
 	*/
 	// TODO: answer here
+	for _, item := range mahasiswa {
+
+		nilai := item["nilai"]
+		nama := item["name"]
+
+		if nilai == "A" {
+			fmt.Println(nama, "Cumlaude")
+		} else if nilai == "B" {
+			fmt.Println(nama, "Lulus")
+		} else {
+			fmt.Println(nama, "Tidak Lulus")
+		}
+	}
 }

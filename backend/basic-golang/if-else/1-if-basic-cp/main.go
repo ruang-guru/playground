@@ -28,6 +28,8 @@ func main() {
 			"name":  name3,
 			"nilai": "X",
 		},
+
+	
 	}
 
 	// Output:
@@ -36,5 +38,18 @@ func main() {
 		Fabiansyah Raam   Lulus
 		Indra Kenz   Tidak Lulus
 	*/
-	// TODO: answer here
+	var nilai string
+
+	for _, val := range mahasiswa{
+		if val['nilai'] == "A"{
+			fmt.Println(val["name"], "", "Cumlaude")
+		}
+		if val['nilai'] == "B"{
+			fmt.Println(val["name"], "", "Lulus")
+			
+		}
+		if val['nilai'] == "X"{
+			fmt.Println(val["name"], "", "Tidak Lulus")
+		}
+	}
 }

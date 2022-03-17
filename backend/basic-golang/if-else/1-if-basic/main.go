@@ -22,5 +22,4 @@ package main
 // }
 
 //Planet Thanos Golang
-penduduk := []int{}
-
+// penduduk := []int{}

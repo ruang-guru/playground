@@ -19,39 +19,32 @@ import "fmt"
 //         *
 
 func main() {
-	var size,n int
+	var size int
 	fmt.Print("Size: ")
 	fmt.Scanf("%d", &size)
 
-
 	// TODO: answer here
+	space := size - 1
 
-	for i := 1; i <= size; i++ {
-		n = 0
-		for space := 1; space <= size-i; space++ {
-			fmt.Print("  ")
+	for j := 1; j <= size; j++ {
+		for i := 1; i <= space; i++ {
+			fmt.Print(" ")
 		}
-		for {
-			fmt.Print("* ")
-			n++
-			if n == 2*i-1 {
-				break
-			}
+		space--
+		for i := 1; i <= 2*j-1; i++ {
+			fmt.Print("*")
 		}
 		fmt.Println("")
 	}
-	var i, j int
-	for i = size; i >= 1; i-- {
-		for space := 1; space <= size-i; space++ {
-			fmt.Print("  ")
+	space = 1
+	for j := 1; j <= size-1; j++ {
+		for i := 1; i <= space; i++ {
+			fmt.Print(" ")
 		}
-		for j = i; j <= 2*i-1; j++ {
-			fmt.Printf("* ")
-		}
-		for j = 0; j < i-1; j++ {
-			fmt.Printf("* ")
+		space++
+		for i := 1; i <= 2*(size-j)-1; i++ {
+			fmt.Print("*")
 		}
 		fmt.Println("")
 	}
-
 }

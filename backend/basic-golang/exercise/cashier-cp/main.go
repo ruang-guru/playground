@@ -48,7 +48,7 @@ func main() {
 
 	// TODO: answer here
 	var order string
-	var orderMore int
+	var orderMore bool
 	var totalPrice =0
 	fmt.Println("masukkan pesanan baru :")
 	fmt.Scan(&order)
@@ -62,13 +62,14 @@ func main() {
 		}
 		fmt.Println("Apakah mau menambah pesanan ?|1 untuk ya|0 untuk Tidak")
 		fmt.Scan(&orderMore)
-		if orderMore== 0 {
+		if !orderMore {
+			fmt.Println("Pesanan Anda :")
 			for k, v := range orderMenu {
-				fmt.Println("Menu: ",k,", Price: ",v)
+				fmt.Println("Menu: ",k,", Harga: ",v)
 				totalPrice=totalPrice+int(orderMenu[k])
 				
 			}
-			fmt.Println("Total Price: ",totalPrice)
+			fmt.Println("Total Harga: ",totalPrice)
 			break
 		}
 

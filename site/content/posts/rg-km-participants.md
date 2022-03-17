@@ -12,7 +12,6 @@ draft: false
 - Akhner Frisca - President University - <Akhnerf24.github.io>
 - Sefen Giawa - ?
 - Richardo Ehbet Rejuli Lumban Raja (Richardo) - Universitas Methodist Indonesia
-- Muhammad Kevin Rozal - <kvnrzl.github.io>
 - Dhani Fajar Nugroho - Politeknik Elektronika Negeri Surabaya - <dhanifajar15.github.io>
 - Andini Tyas Asih (Andini) - Politeknik Negeri Semarang - <pagdrgn.github.io>
 - Fahrul Ardian Nugroho - Universitas Halu Oleo - <fahrulan.github.io/>
@@ -21,3 +20,4 @@ draft: false
 - Mahesa Riski Pratama - Universitas Jember - <https://tadashi23.github.io/belajar-hugo-santuy/>
 - Dimas Ahmad N K S (Dimas) - Universitas Negeri Surabaya- <DimasAhmadNKS.github.io>
 - Renanita Apriliya - Universitas Mulawarman - <renapr.github.io/rena-hugo.io/>
+- Muhammad Kevin Rozal - <kvnrzl.github.io>

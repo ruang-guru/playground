@@ -35,7 +35,9 @@ func main() {
 		map[gender:male name:Blaise Pascal]
 	*/
 
-	// TODO: answer here
+	for _, v := range namaUmur {
+		delete(v, "gender")
+	}
 
 	// Output setelah dihapus
 	/*

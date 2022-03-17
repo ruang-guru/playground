@@ -2,7 +2,10 @@ package main
 
 import (
 	"fmt"
+	"math"
+	
 )
+
 
 // Check Point:
 // Menghitung volume tabung
@@ -18,4 +21,12 @@ import (
 
 func main() {
 	// TODO: answer here
+	var in float64
+	var inH float64
+	fmt.Scan(&in)
+	fmt.Scan(&inH)
+	var result = math.Pi*in*in*inH
+	fmt.Println(result)
+
+
 }

@@ -47,4 +47,11 @@ func main() {
 	orderMenu := make(map[string]int64)
 
 	// TODO: answer here
+	var order string
+	fmt.Scan(&order)
+	for {
+		
+	}
+
+
 }

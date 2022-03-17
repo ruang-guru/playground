@@ -27,4 +27,15 @@ func main() {
 	fmt.Scanf("%d", &size)
 
 	// TODO: answer here
+	for i := 0; i < size; i++ {
+		for j := 0; j <size-i; j++ {
+			fmt.Printf(" ")
+		}
+		for k := 0; k <= i; k++ {
+			fmt.Printf("*")
+		}
+		fmt.Println()
+		
+	}
+
 }

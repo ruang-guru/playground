@@ -39,4 +39,14 @@ func main() {
 	fmt.Scan(&sizeQueue)
 
 	// TODO: answer here
+	for i := 0; i <= sizeQueue; i++ {
+		if i < 6 {
+			fmt.Printf("Antrian %d membeli 1kg beras dengan kualitas [SUPER]\n", i)
+		} else if i < 5 && i < 11 {
+			fmt.Printf("Antrian %d membeli 1kg beras dengan kualitas [MEDIUM]\n", i)
+		} else {
+			fmt.Printf("Antrian %d membeli 1kg beras dengan kualitas [LOW]\n", i)
+		}
+	}
+
 }

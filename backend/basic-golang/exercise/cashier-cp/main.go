@@ -50,7 +50,7 @@ func main() {
 	var order string
 	var orderMore int
 	var totalPrice =0
-	
+	fmt.Println("masukkan pesanan baru :")
 	fmt.Scan(&order)
 	for {
 

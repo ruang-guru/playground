@@ -7,5 +7,9 @@ import "fmt"
 // inisialisasi array nya menggunakan "var" ya.
 // Lalu outputkan array nya.
 func main() {
-	// TODO: answer here
+	var arr [10]int
+	arr[0] = -1
+	arr[9] = 10
+
+	fmt.Println(arr)
 }

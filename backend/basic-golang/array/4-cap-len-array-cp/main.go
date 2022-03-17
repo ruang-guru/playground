@@ -13,5 +13,6 @@ func main() {
 		71, 84, 85, 87, 19, 20, 61, 24, 56, 51,
 		7, 15, 85, 19, 20, 61, 24, 56, 51,
 	}
-	// TODO: answer here
+
+	fmt.Println(array[len(array)-1])
 }

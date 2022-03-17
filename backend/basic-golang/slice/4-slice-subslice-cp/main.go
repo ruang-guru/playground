@@ -13,5 +13,12 @@ func main() {
 	slice := []string{"Marcus", "is", "known", "to", "be", "one", "of", "five", "greatest", "emperors", "of", "rome",
 		"Aurelius", "is", "also", "known", "to", "be", "a", "philosopher"}
 
-	// TODO: answer here
+	s0 := slice[0:5]
+	s1 := slice[len(slice)-1]
+
+	var sResult []string
+	sResult = append(sResult, s0...)
+	sResult = append(sResult, s1)
+	fmt.Println(sResult)
+
 }

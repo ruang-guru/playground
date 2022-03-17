@@ -37,4 +37,29 @@ func main() {
 		Indra Kenz   Tidak Lulus
 	*/
 	// TODO: answer here
+	// for _, val := range mahasiswa {
+	// 	if val["nilai"] == "A" {
+	// 		fmt.Println(val["name"], " ", "Cumlaude")
+	// 	}
+	// 	if val["nilai"] == "B" {
+	// 		fmt.Println(val["name"], " ", "Lulus")
+	// 	}
+	// 	if val["nilai"] == "X" {
+	// 		fmt.Println(val["name"], " ", "Tidak Lulus")
+	// 	}
+	// }
+
+	//Cara Lain
+	for _, val := range mahasiswa {
+		switch val["nilai"] {
+		case "A":
+			fmt.Println(val["name"], " ", "Cumlaude")
+		case "B":
+			fmt.Println(val["name"], " ", "Lulus")
+		case "X":
+			fmt.Println(val["name"], " ", "Tidak Lulus")
+		}
+	}
 }
+
+// switch cuma satu nilai yang dicek, case boleh lebih dari satu

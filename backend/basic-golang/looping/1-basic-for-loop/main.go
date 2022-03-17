@@ -7,16 +7,16 @@ import "fmt"
 
 func main() {
 	// contoh looping for
-	for i := 0; i < 10; i++ {
-		fmt.Println(i)
-	}
+	// for i := 0; i < 10; i++ {
+	// 	fmt.Println(i)
+	// }
 
 	// contoh looping for dengan kondisi
-	for i := 0; i < 10; i++ {
-		if i%2 == 0 {
-			fmt.Println(i)
-		}
-	}
+	// for i := 0; i < 10; i++ {
+	// 	if i%2 == 0 {
+	// 		fmt.Println(i)
+	// 	}
+	// }
 
 	// contoh looping while
 	// Pada bahasa Go tidak ada keyword while, untuk melakuka looping while, kita harus menggunakan looping for
@@ -24,20 +24,20 @@ func main() {
 	// disini kita akan mengenal keyword `continue` dan `break`
 	// break digunakan untuk menghentikan looping jika suatu kondisi terpenuhi
 	// karena jika while(for) tidak mempunyai exit plan maka dia akan berjalan terus
-	i := 0
-	for {
-		if i >= 10 {
-			break
-		}
-		fmt.Println(i)
-		i++
-	}
+	// i := 0
+	// for {
+	// 	if i >= 10 {
+	// 		break //stop iterate
+	// 	}
+	// 	fmt.Println(i)
+	// 	i++
+	// }
 
 	// contoh for loop dengan continue
 	for i := 0; i < 10; i++ {
 		if i%2 == 0 {
-			continue
+			continue //lawannya break atau skip
 		}
-		fmt.Print(i)
+		fmt.Println(i)
 	}
 }

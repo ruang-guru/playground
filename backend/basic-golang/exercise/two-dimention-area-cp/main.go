@@ -36,7 +36,8 @@ import (
 
 func main() {
 	// TODO: answer here
-	var sisi, panjang, lebar, panjang_alas, tinggi, jari_jari float32
-
-	fmt.Println("1. Rectange Area")
+	fmt.Println("1: Rectange Area")
+	fmt.Println("2: Rectangular Area")
+	fmt.Println("3: Triangle Area")
+	fmt.Println("4: Circle Area")
 }

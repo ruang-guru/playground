@@ -48,8 +48,33 @@ func main() {
 
 	// TODO: answer here
 	var order string
+	var orderMore int
+	var totalPrice =0
+	
 	fmt.Scan(&order)
 	for {
+
+		for k, v := range foodMenu {
+			if order==k {
+				orderMenu[order]=v
+			}
+			
+		}
+		fmt.Println("Apakah mau menambah pesanan ?|1 untuk ya|0 untuk Tidak")
+		fmt.Scan(&orderMore)
+		if orderMore== 0 {
+			for k, v := range orderMenu {
+				fmt.Println("Menu: ",k,", Price: ",v)
+				totalPrice=totalPrice+int(orderMenu[k])
+				
+			}
+			fmt.Println("Total Price: ",totalPrice)
+			break
+		}
+
+	
+fmt.Println("masukkan pesanan baru :")
+fmt.Scan(&order)
 		
 	}
 

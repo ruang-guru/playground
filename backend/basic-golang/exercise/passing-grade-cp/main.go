@@ -22,9 +22,27 @@ import (
 
 func main() {
 	var point int
+	var msg string
 	fmt.Printf("Masukkan nilai mahasiswa : ")
 	fmt.Scan(&point)
 
 	// TODO: answer here
+	if point > 100 {
+		msg = "Nilai tidak boleh lebih dari 100"
+	} else if point < 0 {
+		msg = "Nilai tidak bolehh kurang dari 0"
+	} else {
+
+		if point == 100 {
+			msg = "Lulus dengan nilai sempurna"
+		} else if point > 70 {
+			msg = "Lulus"
+		} else if point == 65 {
+			msg = "Hampir lulus"
+		} else {
+			msg = ("Tidak lulus! nilai anda : %d")
+		}
+	}
+	fmt.Printf(msg, point)
 
 }

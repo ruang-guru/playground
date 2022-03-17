@@ -19,9 +19,11 @@ func main() {
 	for _, val := range namaUmur {
 		fmt.Println(val["name"], " ", val["gender"])
 	}
+	fmt.Println()
 
 	// Nah coba saatnya kalian menghapuskan key "gender" pada setiap data
 	// delete data if key is equal "gender"
+	namaUmur[3]["gender"] = "male"
 
 	for _, val := range namaUmur {
 		fmt.Println(val)
@@ -36,6 +38,11 @@ func main() {
 	*/
 
 	// TODO: answer here
+	for _, val := range namaUmur {
+		delete(val, "gender")
+	}
+
+	fmt.Println()
 
 	// Output setelah dihapus
 	/*

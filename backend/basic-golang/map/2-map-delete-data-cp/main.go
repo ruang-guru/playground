@@ -24,7 +24,7 @@ func main() {
 	// delete data if key is equal "gender"
 
 	for _, val := range namaUmur {
-		fmt.Println(val)
+		delete(val, "gender")
 	}
 	// Output sebelum dihapus
 	/*

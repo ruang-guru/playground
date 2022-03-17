@@ -10,5 +10,8 @@ import "fmt"
 // Contoh [Zein Fahrozi]
 // Outputkan jawabannya ya pastikan cap dan len nya adalah 2
 func main() {
-	// TODO: answer here
+	var array1 []string
+	array1 = append(array1, "Ariefuddin ", "Satria Dharma")
+
+	fmt.Println(len(array1), cap(array1))
 }

@@ -39,4 +39,15 @@ func main() {
 	fmt.Scan(&sizeQueue)
 
 	// TODO: answer here
+	for i := 1; i <= sizeQueue; i++ {
+		var quality string
+		if i <= 5 {
+			quality = "SUPER"
+		} else if i > 5 && i <= 10 {
+			quality = "MEDIUM"
+		} else {
+			quality = "LOW"
+		}
+		fmt.Printf("Antrian %d membeli 1kg beras dengan kualitas [%s]\n", i, quality)
+	}
 }

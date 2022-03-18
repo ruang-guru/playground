@@ -12,6 +12,7 @@ func matchBeginAnswer(line string) *commentvariation {
 		regexp.MustCompile(`^#\s*beginanswer\s*$`),
 		regexp.MustCompile(`^/\*\s*beginanswer\s*\*/\s*$`),
 		regexp.MustCompile(`^{\s*/\*\s*beginanswer\s*\*/\s*}\s*$`),
+		regexp.MustCompile(`<!--\s*beginanswer\s*-->$`),
 	}
 	for i, m := range variations {
 		if m.MatchString(line) {
@@ -28,11 +29,12 @@ func isOnlySpace(s string) bool {
 
 func matchEndAnswer(line string) *endanswer {
 	variations := []*regexp.Regexp{
-		regexp.MustCompile(`^//\s*endanswer(\s*(.+))?\s*$`),
-		regexp.MustCompile(`^--\s*endanswer(\s*(.+))?\s*$`),
-		regexp.MustCompile(`^#\s*endanswer(\s*(.+))?\s*$`),
-		regexp.MustCompile(`^/\*\s*endanswer(\s*(.+))?\s*\*/\s*$`),
-		regexp.MustCompile(`^{\s*/\*\s*endanswer(\s*(.+))?\*/\s*}\s*$`),
+		regexp.MustCompile(`^//\s*endanswer(\s*(.+?))?\s*$`),
+		regexp.MustCompile(`^--\s*endanswer(\s*(.+?))?\s*$`),
+		regexp.MustCompile(`^#\s*endanswer(\s*(.+?))?\s*$`),
+		regexp.MustCompile(`^/\*\s*endanswer(\s*(.+?))?\s*\*/\s*$`),
+		regexp.MustCompile(`^{\s*/\*\s*endanswer(\s*(.+?))?\*/\s*}\s*$`),
+		regexp.MustCompile(`<!--\s*endanswer(\s*(.+?))?\s*-->$`),
 	}
 	for i, m := range variations {
 		if m.MatchString(line) {

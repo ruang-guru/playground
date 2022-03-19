@@ -17,6 +17,7 @@ import (
  * The function accepts INTEGER_ARRAY arr as parameter.
  */
 
+//Problem statement: https://www.hackerrank.com/challenges/an-interesting-game-1/problem
 func gamingArray(arr []int) string {
 	// Write your code here
 	return "" // TODO: replace this

@@ -1,11 +1,17 @@
 name: publish-to-public-repo
 on:
   push:
-    # branches:
-    #   - main
+    branches:
+      - main
+    paths:
+      - "backend/**"
+      - "frontend/**"
+      - "general/**"
 jobs:
   publish-to-public-repo:
     runs-on: ubuntu-latest
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v2.4.0

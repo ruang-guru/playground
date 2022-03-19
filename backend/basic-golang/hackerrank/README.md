@@ -27,3 +27,4 @@
 - Problem 4: [Recursive Digit Sum](recursive-digit-sum/main.go)
 - Problem 5: [Counter Game](counter-game/main.go)
 - Problem 6: [Sherlock and Valid String](sherlock-and-valid-string/main.go)
+- Problem 7: [An Interesting Game 1](an-interesting-game-1/main.go)

@@ -71,7 +71,17 @@ func calculateHints(guess, answer string) (hints []hint) {
 		} else {
 			for j := 0; j < wordLength; j++ {
 				if i != j {
-					if guessChars[i] == answerChars[j] {
+					//when the answer is:
+					//STROK, and we guess:
+					//SOSOK
+					//the answer should be:
+					//GXXGG
+					//not:
+					//GYYGG
+					//Reason: the second 'O' has been marked as correct position ('Y')
+					//if we mark 'Y' for the first 'O', people would guess there should be yet another 'O'
+					//while in fact there is only one 'O' in 'STROK'
+					if guessChars[i] == answerChars[j] && guessChars[j] != answerChars[j] {
 						hints[i] = correctLetter
 						break
 					}
@@ -87,6 +97,7 @@ func main() {
 
 	rand.Seed(time.Now().UnixNano())
 	answer := dictionary[rand.Intn(len(dictionary))]
+	answer = "strok"
 	// fmt.Printf("Answer: %s\n", answer)
 
 	isWin := false

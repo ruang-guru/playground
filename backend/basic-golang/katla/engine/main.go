@@ -97,7 +97,6 @@ func main() {
 
 	rand.Seed(time.Now().UnixNano())
 	answer := dictionary[rand.Intn(len(dictionary))]
-	answer = "strok"
 	// fmt.Printf("Answer: %s\n", answer)
 
 	isWin := false

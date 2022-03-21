@@ -4,9 +4,13 @@ import (
 	"fmt"
 	"os"
 	"strconv"
+
+	"github.com/joho/godotenv"
 )
 
 func main() {
+	godotenv.Load()
+	
 	var operator string
 	var number1, number2 int
 

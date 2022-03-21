@@ -13,7 +13,19 @@ import "fmt"
 // Tips gunakan % (modulo) untuk mengetahui apakah angka tersebut habis dibagi 3 atau 5 atau tidak.
 
 func main() {
+	fizz := "fizz"
+	buzz := "buzz"
+	
 	for i := 1; i <= 100; i++ {
 		// TODO: answer here
+		if (i % 3) == 0 && (i %5) == 0 {
+			fmt.Println(fizz+buzz)
+		} else if ((i % 3) == 0) {
+			fmt.Println(fizz)
+		} else if ((i % 5) == 0) {
+			fmt.Println(buzz)
+		} else {
+			fmt.Println(i)
+		}
 	}
 }

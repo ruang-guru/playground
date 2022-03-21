@@ -1,0 +1,148 @@
+$main-bg: #ffffff;
+$bg-color: #e1e1e1;
+$btn-primary: rgb(212, 54, 132);
+$btn-hover: rgb(210, 70, 112);
+
+$heading2: 24px;
+$heading3: 18px;
+
+$padding-md: 8px 16px;
+$padding-lg: 16px 32px;
+
+@mixin button-primary {
+  color: $main-bg;
+  padding: $padding-lg;
+  background-color: $btn-primary;
+  border-radius: 8px;
+  border: none;
+  margin-right: 8px;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $btn-hover;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: $bg-color;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+
+  a {
+    text-decoration: none;
+    font-size: $heading2;
+    padding: $padding-md;
+    color: $btn-primary;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+
+    li {
+      flex-direction: row;
+      padding: 8px 16px;
+      list-style: none;
+      font-size: $heading3;
+    }
+  }
+}
+
+button {
+  @include button-primary;
+}
+
+.jumbotron-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 48px;
+
+  .jumbotron-detail {
+    p {
+      padding-top: 12px;
+    }
+    .button-container {
+      padding: 24px 0;
+    }
+  }
+  img {
+    width: 100%;
+    max-width: 1000px;
+    aspect-ratio: 1;
+  }
+}
+.products {
+  display: flex;
+  flex-direction: column;
+  .container-card {
+    display: flex;
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      width: 10%;
+      padding: 0 8px;
+    }
+  }
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px;
+    width: 100%;
+    max-width: 1000px;
+    .title {
+      font-size: $heading2;
+      padding-bottom: 24px;
+    }
+    .description {
+      font-size: $heading3;
+      padding-bottom: 24px;
+    }
+  }
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 24px;
+
+  a {
+    text-decoration: none;
+    font-size: $heading2;
+    padding: $padding-md;
+    color: $btn-primary;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+
+    li {
+      flex-direction: row;
+      padding: 8px 16px;
+      list-style: none;
+      font-size: $heading3;
+    }
+  }
+}

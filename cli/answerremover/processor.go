@@ -60,6 +60,8 @@ func generateTodoComment(commentvariation *commentvariation, todoComment string)
 		return fmt.Sprintf(`/* TODO: %s */`, todoComment)
 	case curlyslashasterisk:
 		return fmt.Sprintf(`{/* TODO: %s */}`, todoComment)
+	case htmlcomment:
+		return fmt.Sprintf(`<!-- TODO: %s -->`, todoComment)
 	}
 	panic("unreachable")
 }

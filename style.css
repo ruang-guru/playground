@@ -1,0 +1,60 @@
+body {
+  background-color: black;
+}
+
+nav ul {
+  margin: 0%;
+  padding: 0%;
+}
+
+nav ul li a {
+  color: red;
+  list-style: none;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  text-align: center;
+  list-style: none;
+  background-color: aqua;
+}
+
+p {
+  color: antiquewhite;
+}
+
+h2 {
+  color: aliceblue;
+}
+
+h3 {
+  color: aliceblue;
+}
+
+nav a {
+  font-size: 60px;
+  text-decoration: none;
+  color: aliceblue;
+}
+
+nav:hover {
+  color: red;
+}
+
+button {
+  color: white;
+  background-color: purple;
+}
+
+button:hover {
+  background-color: red;
+}
+
+footer ul li a {
+  text-decoration: none;
+}
+
+footer ul li a:hover {
+  background-color: beige;
+}
+/*# sourceMappingURL=style.css.map */

@@ -3,13 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+    <title>UNIKLOH</title>
+
+    <link rel="stylesheet" href="./style/index.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic" rel="stylesheet" />
   </head>
   <body>
     <!-- Navbar -->
     <nav>
-      <a href="">UNIKLOH</a>
+      <a id="brand" href="">UNIKLOH</a>
       <ul>
         <li><a href="">Home</a></li>
         <li><a href="">Products</a></li>
@@ -23,7 +26,7 @@
     </nav>
 
     <!-- Jumbotron -->
-    <div>
+    <div id="jumbotron">
       <div>
         <h2>MEN AIRism Jaket UV Protection Hoodie Retsleting</h2>
         <p>
@@ -35,85 +38,88 @@
           <button>How To Buy</button>
         </div>
       </div>
+
       <img src="./assets/jumbotron.jpg" alt="MEN AIRism" />
     </div>
 
     <!-- Products -->
-    <div>
+    <div id="product">
       <h2>Our Products</h2>
 
       <!-- Card -->
-      <div class="card">
-        <img src="./assets/men1.jpg" alt="men-1" />
-        <h3>MEN Jaket Parka Lined Jersey Lembut</h3>
-        <p>
-          Jaket Pria dengan desain simple yang mudah dipadankan dengan berbagai
-          style. Nyaman dipakai dengan lapisan lembut pada lengan.
-        </p>
-        <div>
-          <a>Buy Now</a>
-          <p>Rp 599.000</p>
+      <section id="card_wrapper">
+        <div class="card">
+          <img src="./assets/men1.jpg" alt="men-1" />
+          <h3>MEN Jaket Parka Lined Jersey Lembut</h3>
+          <p class="clear-both">
+            Jaket Pria dengan desain simple yang mudah dipadankan dengan berbagai
+            style. Nyaman dipakai dengan lapisan lembut pada lengan.
+          </p>
+          <div>
+            <a>Buy Now</a>
+            <p>Rp 599.000</p>
+          </div>
         </div>
-      </div>
-      <div class="card">
-        <img src="./assets/men2.jpg" alt="men-1" />
-        <h3>UT Mickey Stands Lengan Pendek</h3>
-        <p>
-          T-shirt yang menampilkan pose Mickey Mouse yang ikonik, seperti yang
-          digambarkan oleh para pencipta Disney terkemuka.
-        </p>
-        <div>
-          <a>Buy Now</a>
-          <p>Rp 199.000</p>
+        <div class="card">
+          <img src="./assets/men2.jpg" alt="men-1" />
+          <h3>UT Mickey Stands Lengan Pendek</h3>
+          <p  class="clear-both">
+            T-shirt yang menampilkan pose Mickey Mouse yang ikonik, seperti yang
+            digambarkan oleh para pencipta Disney terkemuka.
+          </p>
+          <div>
+            <a>Buy Now</a>
+            <p>Rp 199.000</p>
+          </div>
         </div>
-      </div>
-      <div class="card">
-        <img src="./assets/men3.jpg" alt="men-1" />
-        <h3>MEN Kemeja Extra Fine Cotton Broadcloth Kotak</h3>
-        <p>
-          Kemeja Pria dengan 100% katun. Tersedia dalam berbagai variasi warna
-          yang menarik. Potongan yang roomy untuk gaya kasual.
-        </p>
-        <div>
-          <a>Buy Now</a>
-          <p>Rp 399.000</p>
+        <div class="card">
+          <img src="./assets/men3.jpg" alt="men-1" />
+          <h3>MEN Kemeja Extra Fine Cotton Broadcloth Kotak</h3>
+          <p class="clear-both">
+            Kemeja Pria dengan 100% katun. Tersedia dalam berbagai variasi warna
+            yang menarik. Potongan yang roomy untuk gaya kasual.
+          </p>
+          <div>
+            <a>Buy Now</a>
+            <p>Rp 399.000</p>
+          </div>
         </div>
-      </div>
-
-      <div class="card">
-        <img src="./assets/women1.jpg" alt="women-1" />
-        <h3>WOMEN Cardigan Relax UV Protection Crew Neck</h3>
-        <p>With UV Protection technology.</p>
-        <div>
-          <a>Buy Now</a>
-          <p>Rp 299.000</p>
+  
+        <div class="card">
+          <img src="./assets/women1.jpg" alt="women-1" />
+          <h3>WOMEN Cardigan Relax UV Protection Crew Neck</h3>
+          <p class="clear-both">With UV Protection technology.</p>
+          <div>
+            <a>Buy Now</a>
+            <p>Rp 299.000</p>
+          </div>
         </div>
-      </div>
-      <div class="card">
-        <img src="./assets/women2.jpg" alt="women-1" />
-        <h3>WOMEN T-Shirt Crop Jersey Slub Crew Neck</h3>
-        <p>T-shirt relax untuk Wanita dari bahan katun alami.</p>
-        <div>
-          <a>Buy Now</a>
-          <p>Rp 149.000</p>
+        <div class="card">
+          <img src="./assets/women2.jpg" alt="women-1" />
+          <h3>WOMEN T-Shirt Crop Jersey Slub Crew Neck</h3>
+          <p class="clear-both">T-shirt relax untuk Wanita dari bahan katun alami.</p>
+          <div>
+            <a>Buy Now</a>
+            <p>Rp 149.000</p>
+          </div>
         </div>
-      </div>
-      <div class="card">
-        <img src="./assets/women3.jpg" alt="women-1" />
-        <h3>WOMEN Blus Rayon Lengan Pendek</h3>
-        <p>
-          Blus yang terasa halus dan lembut. Terlihat elegan dikenakan apa
-          adanya.
-        </p>
-        <div>
-          <a>Buy Now</a>
-          <p>Rp 299.000</p>
+        <div class="card">
+          <img src="./assets/women3.jpg" alt="women-1" />
+          <h3>WOMEN Blus Rayon Lengan Pendek</h3>
+          <p class="clear-both">
+            Blus yang terasa halus dan lembut. Terlihat elegan dikenakan apa
+            adanya.
+          </p>
+          <div>
+            <a>Buy Now</a>
+            <p>Rp 299.000</p>
+          </div>
         </div>
-      </div>
+      </section>
     </div>
 
     <!-- About -->
-    <div>
+    <div id="about">
       <img src="./assets/about.jpeg" alt="about" />
       <div>
         <h2>About Us</h2>
@@ -135,7 +141,7 @@
     </div>
 
     <!-- Contact -->
-    <div>
+    <div id="contact">
       <div>
         <h3>Subscribe Newsletter</h3>
         <form>

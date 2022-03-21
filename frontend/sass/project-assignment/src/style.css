@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  text-align: center;
+  background-color: #b4a3c9;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #4949b1;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 50px;
+}
+
+.container a {
+  cursor: pointer;
+  color: antiquewhite;
+}
+
+.container .ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  width: 30%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container .ul li a {
+  padding: 0px 0px;
+  text-decoration: none;
+}
+
+.container .ul li a:hover {
+  color: #f074f0;
+}
+
+.container .sg {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 8%;
+}
+
+img {
+  width: 400px;
+  height: 400px;
+}
+
+footer {
+  height: 60px;
+  list-style: none;
+  text-align: center;
+}
+
+footer div {
+  background-color: #4949b1;
+  color: aliceblue;
+  text-align: center;
+}
+
+footer div ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  list-style: none;
+}
+
+footer div ul a {
+  color: antiquewhite;
+  text-decoration: none;
+}
+
+footer div ul a:hover {
+  color: #f074f0;
+}
+/*# sourceMappingURL=style.css.map */

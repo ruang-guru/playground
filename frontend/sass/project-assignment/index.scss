@@ -1,0 +1,141 @@
+// Reset
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+
+  background: transparent;
+
+  /* inherit font & color from ancestor */
+  color: inherit;
+  font: inherit;
+
+  /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+  line-height: normal;
+
+  /* Corrects font smoothing for webkit */
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+
+  /* Corrects inability to style clickable `input` types in iOS */
+  -webkit-appearance: none;
+}
+
+$button-color: #4d77ff;
+
+@mixin button($py: 10px, $px: 16px) {
+  padding: $py $px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem;
+
+  ul {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 40px;
+  }
+
+  .nav-btn {
+    button {
+      @include button($py: 0px);
+    }
+  }
+}
+
+.jumbotron {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 20px;
+  padding: 1rem 2rem;
+
+  img {
+    height: 600px;
+  }
+
+  p {
+    width: 60%;
+  }
+
+  .jumbo-btn {
+    margin-top: 20px;
+
+    button {
+      @include button;
+      background-color: $button-color;
+      color: white;
+    }
+  }
+}
+
+.products {
+  margin: 0 20px;
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.card {
+  flex: 1 0 500px;
+  box-sizing: border-box;
+  margin: 1rem 0.25em;
+  max-width: calc(25% - 1em);
+
+  img {
+    width: 100%;
+  }
+}
+
+.about-us {
+  display: flex;
+  gap: 1rem;
+  padding: 0 1rem;
+}
+
+.subscribe {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+
+footer {
+  padding: 2px 3rem;
+  div {
+    display: flex;
+    justify-items: center;
+    justify-content: space-between;
+
+    p {
+      width: 200px;
+    }
+  }
+
+  & > p {
+    padding: 2rem 0;
+    text-align: center;
+  }
+}

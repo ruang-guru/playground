@@ -1,0 +1,120 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+  /* inherit font & color from ancestor */
+  color: inherit;
+  font: inherit;
+  /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+  line-height: normal;
+  /* Corrects font smoothing for webkit */
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  /* Corrects inability to style clickable `input` types in iOS */
+  -webkit-appearance: none;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem;
+}
+nav ul {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 40px;
+}
+nav .nav-btn button {
+  padding: 0px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.jumbotron {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 20px;
+  padding: 1rem 2rem;
+}
+.jumbotron img {
+  height: 600px;
+}
+.jumbotron p {
+  width: 60%;
+}
+.jumbotron .jumbo-btn {
+  margin-top: 20px;
+}
+.jumbotron .jumbo-btn button {
+  padding: 10px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #4d77ff;
+  color: white;
+}
+
+.products {
+  margin: 0 20px;
+}
+.products .card-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1 0 500px;
+  box-sizing: border-box;
+  margin: 1rem 0.25em;
+  max-width: calc(25% - 1em);
+}
+.card img {
+  width: 100%;
+}
+
+.about-us {
+  display: flex;
+  gap: 1rem;
+  padding: 0 1rem;
+}
+
+.subscribe {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+
+footer {
+  padding: 2px 3rem;
+}
+footer div {
+  display: flex;
+  justify-items: center;
+  justify-content: space-between;
+}
+footer div p {
+  width: 200px;
+}
+footer > p {
+  padding: 2rem 0;
+  text-align: center;
+}
+
+/*# sourceMappingURL=style.css.map */

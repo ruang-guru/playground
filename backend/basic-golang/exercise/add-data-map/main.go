@@ -28,7 +28,7 @@ import (
 // - Name: dita ,  Email : dita@gmail.com
 
 func main() {
-	users := map[string]string{
+	users := map[string]string{ //key string, value string
 		"aditira": "aditira@gmail.com",
 		"dito":    "dito@gmail.com",
 	}
@@ -47,7 +47,7 @@ func main() {
 		fmt.Printf("Masukan email: ")
 		fmt.Scan(&email)
 
-		users[username] = email
+		users[username] = email //kuncinya
 
 		fmt.Println()
 		fmt.Printf("Data updated! dengan username: %v dan email: %v\n\n", username, email)

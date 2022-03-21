@@ -16,3 +16,9 @@ func main() {
 
 //gunakan * untuk melakukan perkalian
 // TODO: answer here
+func square(n,n1 int)(int,int){
+	var result1 = n*n
+	var result2 = n1*n1
+	return result1, result2
+}
+

@@ -11,3 +11,7 @@ func main() {
 }
 
 // TODO: answer here
+func goodAfternoon (name1 string, name2 string){
+	fmt.Println("selamat sore ",name1,"dan ",name2)
+}
+

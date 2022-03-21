@@ -11,3 +11,8 @@ func main() {
 }
 
 // TODO: answer here
+
+func multiply(n , n2 int)int{
+
+	return n*n2
+}

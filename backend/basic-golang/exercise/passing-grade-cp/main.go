@@ -26,5 +26,18 @@ func main() {
 	fmt.Scan(&point)
 
 	// TODO: answer here
+	if point > 100 {
+		fmt.Println("Nilai tidak boleh lebih dari 100")
+	} else if point < 0 {
+		fmt.Println("Nilai tidak boleh kurang dari 0")
+	} else if point == 100 {
+		fmt.Println("Lulus dengan nilai sempurna")
+	} else if point > 70 {
+		fmt.Println("Lulus")
+	} else if point == 65 {
+		fmt.Println("Hampir Lulus")
+	} else {
+		fmt.Printf("Tidak lulus!. nilai anda: %d", point)
+	}
 
 }

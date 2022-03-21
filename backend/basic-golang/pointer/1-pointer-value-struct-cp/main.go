@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	//"golang.org/x/tools/go/pointer"
+)
 
 //buat struct Rectangle dengan dua atribut yaitu Width dan Length
 // tambah dua method :
@@ -9,6 +12,19 @@ import "fmt"
 // SetWidthValue(width int) untuk mengubah width dengan value
 
 // TODO: answer here
+type Rectangle struct {
+	Width  int
+	Length int
+}
+
+func (r *Rectangle) SetWidthPointer(newPointer int) {
+	r.Width = newPointer
+}
+
+func (r Rectangle) SetWidthValue(newValue int) {
+	r.Width = newValue
+}
+
 func main() {
 	var r Rectangle
 	r.Width = 10

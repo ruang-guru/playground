@@ -10,9 +10,19 @@ import "fmt"
 
 type Rectangle struct {
 	// TODO: answer here
+	Width  int
+	Length int
 }
 
 // TODO: answer here
+func (r Rectangle) GetArea() {
+	fmt.Println("Luas : ", r.Width*r.Length)
+}
+
+func (r Rectangle) GetPerimeter() {
+	fmt.Println("keliling : ", 2*r.Width+r.Length)
+}
+
 func main() {
 	var r Rectangle
 	r.Width = 10

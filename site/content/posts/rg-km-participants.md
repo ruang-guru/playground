@@ -14,3 +14,4 @@ draft: false
 - Richardo Ehbet Rejuli Lumban Raja (Richardo) - Universitas Methodist Indonesia
 - Dhani Fajar Nugroho - Politeknik Elektronika Negeri Surabaya - <dhanifajar15.github.io>
 - ADITYA RIZQI ARDHANA (adit) - Universitas Pembangunan Nasional "Veteran" Jawa Timur - <adityarizqi7.github.io>
+- Dhani Fajar Nugroho - Politeknik Elektronika Negeri Surabaya - <dhanifajar15.github.io>

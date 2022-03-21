@@ -23,7 +23,7 @@ jobs:
         name: Checkout Public Repo
         with:
           branch: main
-          repository: ruang-guru/playground
+          repository: nabilaba/playground
           token: ${{ secrets.TOKEN_GITHUB }}
           path: ./playground
       - uses: actions/setup-go@v2

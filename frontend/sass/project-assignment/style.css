@@ -1,0 +1,76 @@
+* {
+  background-color: #6cc8f3;
+}
+
+nav {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #4966b8;
+}
+nav li {
+  float: left;
+}
+nav li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+nav li a :hover {
+  background-color: #4966b8;
+}
+
+.jumbotron {
+  display: flexbox;
+  flex-direction: row;
+  font-size: 20px;
+  padding: 60px;
+  background-color: skyblue;
+  text-align: center;
+  color: snow;
+  border-radius: 10px;
+  box-shadow: black;
+}
+.jumbotron img {
+  max-width: 800px;
+}
+
+.product {
+  display: flexbox;
+}
+.product h2 {
+  text-align: center;
+}
+.product .card {
+  display: flex;
+  flex-direction: row;
+  background-color: #7ff0ff;
+  flex-grow: 2;
+  box-shadow: 2px 4px 8px 0 rgba(68, 65, 65, 0.2);
+  padding: 10px 16px;
+  border-radius: 5px;
+}
+.product .card h3 {
+  display: absolute;
+}
+.product .card img {
+  max-width: 300px;
+  max-height: 300px;
+}
+
+footer {
+  font-size: x-large;
+  background-color: tomato;
+  color: azure;
+  text-align: center;
+}
+
+/*# sourceMappingURL=style.css.map */

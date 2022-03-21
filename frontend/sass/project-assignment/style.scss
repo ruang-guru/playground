@@ -1,0 +1,80 @@
+* {
+    background-color: rgb(108, 200, 243);
+}
+
+// navbar
+nav {
+    display: inline;
+    margin: 0;
+    padding: 0;
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: rgb(73, 102, 184);
+    }
+    li {
+        float: left;
+        a {
+            display: block;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        & :hover {
+                background-color: rgb(73, 102, 184);
+            }
+        }
+    }
+}
+
+// jumptron
+.jumbotron {
+    display: flexbox;
+    flex-direction: row;
+    font-size: 20px;
+    padding: 60px;
+    background-color: skyblue;
+    text-align: center;
+    color: snow;
+    border-radius: 10px;
+    box-shadow: rgb(0, 0, 0);
+    img {
+        max-width: 800px;
+    }
+}
+
+.product {
+    display: flexbox;
+    h2 {
+        text-align: center;
+    }
+    .card {
+        display: flex;
+        flex-direction: row;
+        background-color: rgb(127, 240, 255);
+        flex-grow: 2;
+        box-shadow: 2px 4px 8px 0 rgba(68, 65, 65, 0.2);
+        padding: 10px 16px;
+        border-radius: 5px;
+        img {
+            max-width: 300px;
+            max-height: 300px;
+        }
+    }
+}
+
+// img
+
+
+
+
+
+// footer
+footer {
+    font-size: x-large;
+    background-color: tomato;
+    color: azure;
+    text-align: center;
+} 

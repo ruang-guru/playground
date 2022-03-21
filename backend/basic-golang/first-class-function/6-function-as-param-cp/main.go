@@ -7,6 +7,15 @@ func main() {
 	//fungsi yang akan dimasukkan adalah fungsi yang memberi selamat malam
 	// TODO: answer here
 
+	printString := func(f func() string) {
+		result := f()
+		fmt.Println(result)
+	}
+
+	goodNight := func() string {
+		return "Selamat Malam"
+	}
+	
 	printString(goodNight)
 
 }

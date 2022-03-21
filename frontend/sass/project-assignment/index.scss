@@ -1,0 +1,91 @@
+$primary-font:"Heltevica", sans-serif;
+@mixin inline-list{
+    margin:0;
+    padiing:0;
+    list-style-type:none;
+    li{
+        display: inline-block;
+    }
+}
+
+body{
+    font-family: $primary-font;
+    background-color: darkred;
+    margin: 0%;
+}
+
+.navbar{
+    background-color: rgb(190, 134, 142);
+    position: fixed;
+    z-index: 1;
+    overflow: hidden;
+    width: 100%;
+    top: 0%;
+    
+    a{
+        @include inline-list();
+        text-align: center;
+        padding: 15px;
+        text-decoration: none;
+    }
+    ul{
+    @include inline-list();
+    text-align: center;
+    padding: 10px;
+    li{
+        padding: 1em;
+        display: inline;
+        a{
+            color: white;
+            text-decoration: none;
+            padding: 14px;
+            &:hover{
+                background-color: darkred;
+            }
+        }
+    }
+    }
+    .login{
+        button{
+            border-radius: 5px;
+            float: right;
+            background-color: rgb(124, 19, 19);
+            color: white;
+            margin-inline: 5px;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+    }
+}
+
+.jumbotron{
+    background-color: darkred;
+    color: whitesmoke;
+    text-align: center;
+    margin-top: 150px;
+    .info{
+        margin-top: 10px;
+    }
+    img{
+        margin-top: 10px;
+        size: 100%;
+    }
+    button{
+        background-color: pink;
+        padding: 10px;
+        margin-inline: 10px;
+
+    }
+
+}
+.card {
+    display: grid;
+    grid-template-columns: 66% auto;
+    padding: 4em 1em;
+    background-color: pink;
+    img{
+        width: 300px;
+        height: 200px;
+    }
+}

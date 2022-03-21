@@ -16,3 +16,8 @@ func main() {
 
 //gunakan * untuk melakukan perkalian
 // TODO: answer here
+func square(num1, num2 int) (int, int) {
+	res1 := num1 * num1
+	res2 := num2 * num2
+	return res1, res2
+}

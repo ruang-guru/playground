@@ -18,3 +18,9 @@ func main() {
 }
 
 // TODO: answer here
+func printWord(key ...string){
+
+	for _, item := range key {
+		fmt.Println(item)
+	}
+}

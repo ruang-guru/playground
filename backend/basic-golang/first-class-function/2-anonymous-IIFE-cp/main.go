@@ -4,5 +4,9 @@ import "fmt"
 
 func main() {
 	// print selamat pagi menggunakan anonymous function
-	// TODO: answer here
+	// beginanswer
+	func() {
+		fmt.Println("selamat pagi")
+	}()
+	//endanswer
 }

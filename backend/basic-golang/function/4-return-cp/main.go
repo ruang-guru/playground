@@ -10,10 +10,4 @@ func main() {
 	fmt.Println(multiply(5, 5))
 }
 
-//beginanswer
-func multiply(number1, number2 int) int {
-	result := number1 * number2
-	return result
-}
-
-//endanswer
+// TODO: answer here

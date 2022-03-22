@@ -9,21 +9,7 @@ func main() {
 	var menu []map[string]interface{}
 
 	// Buatlah beberapa menu yang memiliki atribut nama, jenis (nasi, cepat saji, minuman, dll), dan harga. Tambahkan setiap menu pada list `menu`
-	//beginanswer
-	ayamGoreng := make(map[string]interface{})
-	ayamGoreng["Nama"] = "Ayam Goreng"
-	ayamGoreng["Jenis"] = "Cepat saji"
-	ayamGoreng["Harga"] = 20000
-
-	menu = append(menu, ayamGoreng)
-
-	cola := make(map[string]interface{})
-	cola["Nama"] = "Cola"
-	cola["Jenis"] = "Minuman"
-	cola["Harga"] = 7000
-
-	menu = append(menu, cola)
-	//endanswer
+	// TODO: answer here
 
 	for _, m := range menu {
 		for k, v := range m {

@@ -1,9 +1,8 @@
 package main
 
 import (
-	"encoding/json"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"math/rand"
 	"net/http"
 	"regexp"
@@ -17,25 +16,26 @@ const maxGuess = 6
 //NOTE: err handling is not yet taught, we don't handle errors in this example
 //don't worry about the content of this method for now. We haven't learn some concepts
 func getDictionaryWords() []string {
-	resp, err := http.Get("https://kbbi.vercel.app")
+	kbbiURL := "https://gist.githubusercontent.com/fikriauliya/c7024f9629ba7d515f01a625c66a4f2f/raw/141f629d452145ce7e02215a98cde04d9f1bbb20/kbbi.txt"
+
+	data, err := http.Get(kbbiURL)
 	if err != nil {
 		panic(err)
 	}
-	defer resp.Body.Close()
-	body, _ := ioutil.ReadAll(resp.Body)
+	defer data.Body.Close()
 
-	var jsonResp struct {
-		Entries []string `json:"entries"` //again, don't worry about this for now
+	body, err := io.ReadAll(data.Body)
+	if err != nil {
+		panic(err)
 	}
-	json.Unmarshal(body, &jsonResp)
+
+	lines := string(body)
 	words := make([]string, 0)
 
-	for _, entry := range jsonResp.Entries {
-		tokens := strings.Split(entry, "/")
-		word := tokens[len(tokens)-1]
-		matched, _ := regexp.MatchString(fmt.Sprintf("^[a-zA-Z]{%d}$", wordLength), word) //don't worry about this
+	for _, line := range strings.Split(lines, "\n") {
+		matched, _ := regexp.MatchString(fmt.Sprintf("^[a-zA-Z]{%d}$", wordLength), line) //don't worry about this
 		if matched {
-			words = append(words, strings.ToLower(word))
+			words = append(words, strings.ToLower(line))
 		}
 	}
 	return words

@@ -4,11 +4,11 @@ import (
 	"bufio"
 	"fmt"
 	"io"
+	"math"
 	"os"
 	"strconv"
 	"strings"
 )
-
 
 /*
  * Complete the 'counterGame' function below.
@@ -20,7 +20,46 @@ import (
 //Problem statement: https://www.hackerrank.com/challenges/counter-game
 func counterGame(n int64) string {
 	// Write your code here
-	return "" // TODO: replace this
+	isLouise := false
+	winner := ""
+	if n == 1 {
+		winner = "Richard"
+	} else {
+		pow := 10
+		for n > 1 {
+			powResBefore := int64(math.Pow(2, float64(pow)))
+			for {
+				checkNumber := int64(math.Pow(2, float64(pow)))
+				if checkNumber > n {
+					if powResBefore < n {
+						n -= powResBefore
+						isLouise = !isLouise
+						pow = pow / 2
+						break
+					} else {
+						powResBefore = checkNumber
+						pow--
+					}
+				} else {
+					if checkNumber == n {
+						n /= 2
+						isLouise = !isLouise
+						pow = pow / 2
+						break
+					} else {
+						powResBefore = checkNumber
+						pow++
+					}
+				}
+			}
+		}
+		if isLouise {
+			winner = "Louise"
+		} else {
+			winner = "Richard"
+		}
+	}
+	return winner // TODO: replace this
 }
 
 func main() {

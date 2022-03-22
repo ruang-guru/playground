@@ -4,8 +4,8 @@ import (
 	"bufio"
 	"fmt"
 	"io"
+	"math"
 	"os"
-	"sort"
 	"strconv"
 	"strings"
 )
@@ -20,7 +20,34 @@ import (
 //Problem statement: https://www.hackerrank.com/challenges/an-interesting-game-1/problem
 func gamingArray(arr []int) string {
 	// Write your code here
-	return "" // TODO: replace this
+	is_bob := false
+	prev_index_max := -1
+	index_max := -1
+	for len(arr) > 0 {
+		max := math.MinInt
+		if prev_index_max < index_max && prev_index_max != -1 {
+			index_max = prev_index_max
+			prev_index_max = -1
+		} else {
+			for index, val := range arr {
+				if val > max {
+					max = val
+					prev_index_max = index_max
+					index_max = index
+				}
+			}
+		}
+
+		new_arr := arr[0:index_max]
+		arr = new_arr
+		is_bob = !is_bob
+	}
+
+	if is_bob {
+		return "BOB"
+	} else {
+		return "ANDY"
+	}
 }
 
 func main() {

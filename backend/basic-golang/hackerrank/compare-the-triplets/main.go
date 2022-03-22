@@ -13,6 +13,16 @@ import (
 func compareTriplets(a []int32, b []int32) []int32 {
 
 	// TODO: answer here
+	score := []int32{0, 0}
+
+	for index, val := range a {
+		if val > b[index] {
+			score[0]++
+		} else if val < b[index] {
+			score[1]++
+		}
+	}
+	return score
 }
 
 func main() {

@@ -14,7 +14,7 @@ if (score >= 91 && score <= 100) {
 }
 // TODO: answer here
 switch (score) {
-  case score <= 91 && score <= 100:
+  case score >= 91 && score <= 100:
     console.log("Nilai A");
     break;
   case score >= 71 && score <= 90:

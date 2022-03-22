@@ -6,6 +6,8 @@ const num3 = parseInt(prompt("Masukan bilangan ketiga: "));
 let largest;
 
 // TODO: answer here
-
+if(number=0;number+=2)
+console.log("bilangan bulat");
+}
 // Menampilkan hasil
 console.log("Bilangan terbesar adalah " + largest);

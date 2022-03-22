@@ -18,3 +18,10 @@ func main() {
 }
 
 // TODO: answer here
+func printWord(kata ...string) {
+	result := ""
+	for _, kata := range kata {
+		result += " " + kata
+	}
+	fmt.Println("hasil:", result)
+}

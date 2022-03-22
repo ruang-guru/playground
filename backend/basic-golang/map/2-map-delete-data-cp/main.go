@@ -15,7 +15,9 @@ func main() {
 	}
 
 	// terdapat kesalahan pada data gender tersebut dapatkan kalian memperbaiki nya ?
-	// TODO: answer here
+	//beginanswer
+	namaUmur[3]["gender"] = "male"
+	//endanswer
 	for _, val := range namaUmur {
 		fmt.Println(val["name"], " ", val["gender"])
 	}
@@ -35,7 +37,11 @@ func main() {
 		map[gender:male name:Blaise Pascal]
 	*/
 
-	// TODO: answer here
+	//beginanswer
+	for _, val := range namaUmur {
+		delete(val, "gender")
+	}
+	//endanswer
 
 	// Output setelah dihapus
 	/*

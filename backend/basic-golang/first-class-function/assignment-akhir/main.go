@@ -8,6 +8,10 @@ import "fmt"
 // fungsi ini merupakan closure
 func points(base int) func(x int) int {
 		// TODO: answer here
+		return func() int {
+			base += x
+			return base
+		}
 	}
 }
 

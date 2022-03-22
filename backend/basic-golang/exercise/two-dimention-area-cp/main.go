@@ -36,4 +36,45 @@ import (
 
 func main() {
 	// TODO: answer here
+	var choice int = 0
+	var result float32
+	fmt.Println("===========Two Dimention Area=========")
+	fmt.Println("1: Rectange Area")
+	fmt.Println("2: Rectangular Area")
+	fmt.Println("3: Triangle Area")
+	fmt.Println("4: Circle Area")
+	fmt.Print("Enter choice 1, 2, 3, or 4:")
+	fmt.Scan(&choice)
+
+	switch choice {
+	case 1:
+		var side float32
+		fmt.Print("Masukkan sisi: ")
+		fmt.Scan(&side)
+		result = side * side
+		fmt.Printf("Luas persegi adalah: %f\n", result)
+	case 2:
+		var length, width float32
+		fmt.Print("Masukkan panjang: ")
+		fmt.Scan(&length)
+		fmt.Print("Masukkan lebar: ")
+		fmt.Scan(&width)
+		result = length * width
+		fmt.Printf("Luas persegi panjang adalah: %f\n", result)
+	case 3:
+		var a, t float32
+		fmt.Print("Masukkan alas segitiga: ")
+		fmt.Scan(&a)
+		fmt.Print("Masukkan tinggi segitiga: ")
+		fmt.Scan(&t)
+		result = 0.5 * a * t
+		fmt.Printf("Luas segitiga adalah: %f\n", result)
+	case 4:
+		var r, res float64
+		const pi float64 = 3.14
+		fmt.Print("Masukkan jari jari: ")
+		fmt.Scan(&r)
+		res = pi * (math.Pow(r, 2))
+		fmt.Printf("Luas segitiga adalah: %f\n", res)
+	}
 }

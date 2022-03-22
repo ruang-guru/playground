@@ -36,6 +36,9 @@ func main() {
 	*/
 
 	// TODO: answer here
+	for _, v := range namaUmur {
+		delete(v, "gender")
+	}
 
 	// Output setelah dihapus
 	/*

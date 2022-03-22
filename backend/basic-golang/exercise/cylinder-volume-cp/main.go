@@ -18,4 +18,16 @@ import (
 
 func main() {
 	// TODO: answer here
+	var (
+		r      float32
+		height float32
+		volume float32
+	)
+	const pi = 3.14
+	fmt.Printf("Masukkan jari-jari alas tabung: ")
+	fmt.Scan(&r)
+	fmt.Printf("Masukkan jari-jari alas tabung: ")
+	fmt.Scan(&r)
+	volume = pi * r * r * height
+	fmt.Printf("Jadi volumenya adalah: %f\n", volume)
 }

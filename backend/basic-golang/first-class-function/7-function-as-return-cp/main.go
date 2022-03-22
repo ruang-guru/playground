@@ -8,6 +8,11 @@ func main() {
 	// 	return x * y
 	// }
 	// TODO: answer here
+	getAreaFunc := func() func(int, int) int {
+		return func(x, y int) int {
+			return x * y
+		}
+	}
 	areaF := getAreaFunc()
 	res := areaF(3, 4) // 12
 	fmt.Println(res)

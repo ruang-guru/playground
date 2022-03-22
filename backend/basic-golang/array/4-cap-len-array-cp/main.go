@@ -14,4 +14,6 @@ func main() {
 		7, 15, 85, 19, 20, 61, 24, 56, 51,
 	}
 	// TODO: answer here
+	index := len(array) - 1
+	fmt.Println(array[index])
 }

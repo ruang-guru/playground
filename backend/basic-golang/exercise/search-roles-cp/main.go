@@ -61,4 +61,23 @@ func main() {
 	}
 
 	// TODO: answer here
+	var searchResult []User
+	var role string
+	fmt.Printf("Masukkan Role: ")
+	fmt.Scan(&role)
+
+	for _, user := range users {
+		if user.role == role {
+			searchResult = append(searchResult, user)
+		}
+	}
+
+	if len(searchResult) != 0 {
+		fmt.Printf("%v Found: ", role)
+		for _, U := range searchResult {
+			fmt.Println("Name: ", U.name, " Age: ", U.age, " Role: ", U.role)
+		}
+	} else {
+		fmt.Printf("Role: %v no found!", role)
+	}
 }

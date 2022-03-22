@@ -15,9 +15,17 @@ func main() {
 	//endanswer
 
 	// Dibawah ini adalah jawaban nomor 3 silahkan kalian isi
+<<<<<<< HEAD
+	// TODO: answer here
+	slice = append(slice, "Olleh")
+	slice[1] = "Marcus"
+	slice[2] = "Aurelius"
+	fmt.Println(slice)
+=======
 	//beginanswer
 	slice[1] = "Marcus"
 	slice[2] = "Aurelius"
 	fmt.Println(slice)
 	//endanswer
+>>>>>>> 0dbcdd8ebce63009fcee596516afbb40b893ca25
 }

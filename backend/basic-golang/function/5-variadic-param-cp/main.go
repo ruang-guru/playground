@@ -17,6 +17,15 @@ func main() {
 	printWord("mencoba", "variadic", "param", "pada", "go")
 }
 
+<<<<<<< HEAD
+// TODO: answer here
+func printWord(key ...string){
+
+	for _, item := range key {
+		fmt.Println(item)
+	}
+}
+=======
 //beginanswer
 func printWord(words ...string) {
 	for _, word := range words {
@@ -25,3 +34,4 @@ func printWord(words ...string) {
 }
 
 //endanswer
+>>>>>>> 0dbcdd8ebce63009fcee596516afbb40b893ca25

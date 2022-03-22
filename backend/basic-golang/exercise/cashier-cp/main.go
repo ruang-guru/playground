@@ -46,6 +46,52 @@ func main() {
 
 	orderMenu := make(map[string]int64)
 
+<<<<<<< HEAD
+	// TODO: answer here
+	fmt.Println("\n\nMenu Makanan")
+	i := 1
+	var pesan, reOrder string
+	for menu, harga := range foodMenu {
+		fmt.Printf("%d . Menu : %s , price %d\n", i, menu, harga)
+		i++
+	}
+
+	for {
+		fmt.Print("\nMasukan nama menu yang akan dipesan : ")
+		fmt.Scan(&pesan)
+
+		// cek apakah user memasukan menu dengan benar
+		_, isAvailable := foodMenu[pesan]
+		// jika benar maka
+		if isAvailable {
+			orderMenu[pesan] = foodMenu[pesan]
+			fmt.Println("\nMenu telah ditambahkan ke Ordered Menu")
+			iter := 1
+
+			for menu, price := range orderMenu {
+				fmt.Printf("%d . Menu : %s, Price : %d \n", iter, menu, price)
+				iter++
+			}
+
+			fmt.Print("\nIngin memesan menu lain ? (yes/no)")
+			fmt.Scan(&reOrder)
+
+			if reOrder == "NO" || reOrder == "no" || reOrder == "No" || reOrder == "nO" {
+				fmt.Println("\n\nData Order Updated")
+				iterasi := 1
+				total := 0
+				for menu, harga := range orderMenu {
+					fmt.Printf("%d . Menu : %s, Price : %d\n", iterasi, menu, harga)
+					iterasi++
+					total += int(harga)
+				}
+				fmt.Printf("Total harga yang harus anda bayar : %d\n", total)
+				break
+			}
+
+		} else {
+			fmt.Printf("\nMaaf menu %s tidak ada dalam daftar!!!\n", pesan)
+=======
 	//beginanswer
 	for {
 		fmt.Println("Menu makanan:")
@@ -87,10 +133,13 @@ func main() {
 			}
 
 			break
+>>>>>>> 0dbcdd8ebce63009fcee596516afbb40b893ca25
 		}
 
 	}
 
+<<<<<<< HEAD
+=======
 	var total int64 = 0
 	for _, val := range orderMenu {
 		total += val
@@ -98,4 +147,5 @@ func main() {
 
 	fmt.Println("Total harga makanan yang harus anda bayar: ", total)
 	//endanswer
+>>>>>>> 0dbcdd8ebce63009fcee596516afbb40b893ca25
 }

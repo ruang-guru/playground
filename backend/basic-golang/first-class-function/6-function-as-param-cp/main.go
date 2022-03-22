@@ -16,6 +16,15 @@ func main() {
 	}
 	//endanswer
 
+	printString := func(f func() string) {
+		result := f()
+		fmt.Println(result)
+	}
+
+	goodNight := func() string {
+		return "Selamat Malam"
+	}
+	
 	printString(goodNight)
 
 }

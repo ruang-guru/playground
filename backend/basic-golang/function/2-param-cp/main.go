@@ -10,9 +10,16 @@ func main() {
 
 }
 
+<<<<<<< HEAD
+// TODO: answer here
+func goodMorning(name string) {
+	fmt.Println("Selamat pagi ", name)
+}
+=======
 //beginanswer
 func goodMorning(name string) {
 	fmt.Println("Selamat pagi", name)
 }
 
 //endanswer
+>>>>>>> 0dbcdd8ebce63009fcee596516afbb40b893ca25

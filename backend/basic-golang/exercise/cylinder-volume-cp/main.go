@@ -17,6 +17,18 @@ import (
 // - Jadi volumenya adalah : 251.200012
 
 func main() {
+<<<<<<< HEAD
+	// TODO: answer here
+	var r, t, v float64
+	const phi = 3.14
+	fmt.Print("Masukkan jari-jari alas tabung : ")
+	fmt.Scan(&r)
+	fmt.Print("Masukkan tinggi tabung : ")
+	fmt.Scan(&t)
+	v = phi * r * r * t
+	fmt.Printf("Jadi volumenya adalah : %f\n	", v)
+
+=======
 	//beginanswer
 	var (
 		r      float32
@@ -31,4 +43,5 @@ func main() {
 	volume = pi * r * r * height
 	fmt.Printf("Jadi volumenya adalah : %f\n", volume)
 	//endanswer
+>>>>>>> 0dbcdd8ebce63009fcee596516afbb40b893ca25
 }

@@ -92,6 +92,7 @@ func calculateHints(guess, answer string) (hints []hint) {
 
 func main() {
 	dictionary := getDictionaryWords()
+	// fmt.Printf("Tipe dictionary %T", dictionary)
 
 	//beginanswer
 	for len(dictionary) > 1 {
@@ -143,4 +144,5 @@ func main() {
 		fmt.Println()
 	}
 	//endanswer
+
 }

@@ -16,11 +16,19 @@ func main() {
 }
 
 func calculate(Number1, Number2 int) (sumResult, subtractResult, multiplyResult, divideResult int) {
+<<<<<<< HEAD
+	// TODO: answer here
+	fmt.Printf("\nAngka yang dimasukan = %d dan %d\n\n", Number1, Number2)
+=======
 	//beginanswer
+>>>>>>> 0dbcdd8ebce63009fcee596516afbb40b893ca25
 	sumResult = Number1 + Number2
 	subtractResult = Number1 - Number2
 	multiplyResult = Number1 * Number2
 	divideResult = Number1 / Number2
+<<<<<<< HEAD
+=======
 	//endanswer
+>>>>>>> 0dbcdd8ebce63009fcee596516afbb40b893ca25
 	return
 }

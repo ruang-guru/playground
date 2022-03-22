@@ -14,6 +14,18 @@ import "fmt"
 
 func main() {
 	for i := 1; i <= 100; i++ {
+<<<<<<< HEAD
+		// TODO: answer here
+		if i%5 == 0 && i%3 == 0 {
+			fmt.Println("fizzbuzz")
+		} else if i%3 == 0 {
+			fmt.Println("fizz")
+		} else if i%5 == 0 {
+			fmt.Println("buzz")
+		} else {
+			fmt.Println(i)
+		}
+=======
 		//beginanswer
 		fizz := "fizz"
 		buzz := "buzz"
@@ -28,5 +40,6 @@ func main() {
 			fmt.Println(i)
 		}
 		//endanswer
+>>>>>>> 0dbcdd8ebce63009fcee596516afbb40b893ca25
 	}
 }

@@ -15,17 +15,27 @@ func main() {
 	}
 
 	// terdapat kesalahan pada data gender tersebut dapatkan kalian memperbaiki nya ?
+<<<<<<< HEAD
+	// TODO: answer here
+
+	fmt.Println("=========== CHANGE GENDER ===========")
+	namaUmur[3]["gender"] = "male"
+=======
 	//beginanswer
 	namaUmur[3]["gender"] = "male"
 	//endanswer
+>>>>>>> 0dbcdd8ebce63009fcee596516afbb40b893ca25
 	for _, val := range namaUmur {
 		fmt.Println(val["name"], " ", val["gender"])
 	}
 
 	// Nah coba saatnya kalian menghapuskan key "gender" pada setiap data
 	// delete data if key is equal "gender"
-
+	fmt.Println("=========== DELETE GENDER ===========")
 	for _, val := range namaUmur {
+		if val["gender"] == "male" {
+			delete(val, "gender")
+		}
 		fmt.Println(val)
 	}
 	// Output sebelum dihapus
@@ -51,7 +61,4 @@ func main() {
 		map[name:Leonhard Euler]
 		map[name:Blaise Pascal]
 	*/
-	for _, val := range namaUmur {
-		fmt.Println(val)
-	}
 }

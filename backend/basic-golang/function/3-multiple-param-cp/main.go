@@ -10,9 +10,16 @@ func main() {
 
 }
 
+<<<<<<< HEAD
+// TODO: answer here
+func goodAfternoon(name1, name2 string) {
+	fmt.Printf("Selamat sore %s dan %s\n", name1, name2)
+}
+=======
 //beginanswer
 func goodAfternoon(name1, name2 string) {
 	fmt.Printf("Selamat sore %s dan %s\n", name1, name2)
 }
 
 //endanswer
+>>>>>>> 0dbcdd8ebce63009fcee596516afbb40b893ca25

@@ -93,54 +93,5 @@ func calculateHints(guess, answer string) (hints []hint) {
 func main() {
 	dictionary := getDictionaryWords()
 
-	//beginanswer
-	for len(dictionary) > 1 {
-		var guess, coloredHints string
-		fmt.Printf("Guess: ")
-
-		fmt.Scanln(&guess)
-
-		fmt.Printf("Hint: ")
-		fmt.Scanln(&coloredHints)
-
-		receivedHints := make([]hint, wordLength)
-		for i := 0; i < wordLength; i++ {
-			switch coloredHints[i] {
-			case 'X':
-				receivedHints[i] = notFound
-			case 'Y':
-				receivedHints[i] = correctLetter
-			case 'G':
-				receivedHints[i] = correctPosition
-			}
-		}
-
-		filteredDictionary := make([]string, 0)
-
-		for _, dict := range dictionary {
-			hints := calculateHints(guess, dict)
-			match := true
-
-			for i := 0; i < wordLength; i++ {
-				if hints[i] != receivedHints[i] {
-					match = false
-					break
-				}
-			}
-
-			if match {
-				filteredDictionary = append(filteredDictionary, dict)
-			}
-		}
-		dictionary = filteredDictionary
-
-		fmt.Print("Possible words: ")
-		for _, dict := range dictionary {
-			fmt.Printf("%s ", dict)
-		}
-
-		fmt.Println()
-		fmt.Println()
-	}
-	//endanswer
+	// TODO: answer here
 }

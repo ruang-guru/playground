@@ -21,20 +21,7 @@ import (
 // Problem statement: https://www.hackerrank.com/challenges/pairs/
 func pairs(k int32, arr []int32) int32 {
 	// Write your code here
-	//beginanswer
-	found := make(map[int32]bool)
-	for _, v := range arr {
-		found[v] = true
-	}
-
-	var res int32
-	for _, v := range arr {
-		if found[v+k] {
-			res += 1
-		}
-	}
-	return res
-	//endanswer return 0
+	return 0 // TODO: replace this
 }
 
 func main() {

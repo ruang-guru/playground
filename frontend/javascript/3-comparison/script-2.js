@@ -3,4 +3,18 @@
 // Masukan suatu angka
 const number = parseInt(prompt("Masukan bilangan: "));
 
-// TODO: answer here
+// beginanswer
+switch (number) {
+    case (number < 0):
+        console.log("bilangan negatif");
+        break;
+    case (number == 0):
+        console.log("bilangan = 0");
+        break;
+    case (number > 0):
+        console.log("bilangan positif");
+        break;
+    default:
+        break;
+}
+// endanswer

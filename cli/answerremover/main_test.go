@@ -173,6 +173,11 @@ Hello, World!
 Hello, World!
 {/* endanswer */}`
 			Expect(answerremover.RemoveAnswerBlock(s)).To(Equal(`{/* TODO: answer here */}`))
+
+			s = `<!-- beginanswer -->
+Hello, World!
+<!-- endanswer -->`
+			Expect(answerremover.RemoveAnswerBlock(s)).To(Equal(`<!-- TODO: answer here -->`))
 		})
 
 		It("tolerate spaces", func() {
@@ -200,6 +205,12 @@ Hello, World!
 Hello, World!
 {    /*    endanswer     */   }`
 			Expect(answerremover.RemoveAnswerBlock(s)).To(Equal(`{/* TODO: answer here */}`))
+
+			s = `<!--    beginanswer  -->
+Hello, World!
+<!--    endanswer     -->`
+
+			Expect(answerremover.RemoveAnswerBlock(s)).To(Equal(`<!-- TODO: answer here -->`))
 		})
 	})
 })

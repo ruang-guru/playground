@@ -1,0 +1,49 @@
+name: publish-to-public-repo
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "backend/**"
+      - "frontend/**"
+      - "general/**"
+jobs:
+  publish-to-public-repo:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v2.4.0
+        name: Checkout
+        with:
+          fetch-depth: 0
+          path: ./playground-internal
+      - uses: actions/checkout@v2.4.0
+        name: Checkout Public Repo
+        with:
+          branch: main
+          repository: ruang-guru/playground
+          token: ${{ secrets.TOKEN_GITHUB }}
+          path: ./playground
+      - uses: actions/setup-go@v2
+        with:
+          go-version: '1.16.1' 
+      - name: Remove answers
+        working-directory: ./playground-internal
+        run: |
+          go run cli/main.go answer remove -r backend
+          go run cli/main.go answer remove -r frontend
+          go run cli/main.go answer remove -r general
+      - name: Sync folder
+        working-directory: ./playground-internal
+        run: rsync -vhra . ../playground --include='**.gitignore' --exclude='/.git' --filter=':- .gitignore' --delete-after
+      - name: Commit and Push
+        working-directory: ./playground
+        continue-on-error: true
+        run: |
+          git add .
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git commit -am "chore: sync"
+          git push

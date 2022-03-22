@@ -11,6 +11,10 @@ func main() {
 		return
 	}(3)
 
-	// TODO: answer here
+	//beginanswer
+	square := func(angka int) int {
+		return angka * angka
+	}(5)
+	//endanswer
 	fmt.Println(square)
 }

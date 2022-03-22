@@ -10,11 +10,18 @@ func main() {
 
 	// hint: gunakan len(data)
 	result := 0
+<<<<<<< HEAD
 
 	for i := 0; i <= len(data)-1; i++ {
 		// TODO: answer here
 		result += data[i]
 
+=======
+	for i := 0; i <= len(data); i++ {
+		// beginanswer
+		result += data[i]
+		// endanswer
+>>>>>>> 0dbcdd8ebce63009fcee596516afbb40b893ca25
 	}
 
 	fmt.Println(result)

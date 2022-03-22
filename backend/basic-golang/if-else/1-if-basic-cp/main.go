@@ -36,6 +36,7 @@ func main() {
 		Fabiansyah Raam   Lulus
 		Indra Kenz   Tidak Lulus
 	*/
+<<<<<<< HEAD
 	// TODO: answer here
 	for _, item := range mahasiswa {
 
@@ -50,4 +51,19 @@ func main() {
 			fmt.Println(nama, "Tidak Lulus")
 		}
 	}
+=======
+	//beginanswer
+	for _, val := range mahasiswa {
+		if val["nilai"] == "A" {
+			fmt.Println(val["name"], " ", "Cumlaude")
+		}
+		if val["nilai"] == "B" {
+			fmt.Println(val["name"], " ", "Lulus")
+		}
+		if val["nilai"] == "X" {
+			fmt.Println(val["name"], " ", "Tidak Lulus")
+		}
+	}
+	//endanswer
+>>>>>>> 0dbcdd8ebce63009fcee596516afbb40b893ca25
 }

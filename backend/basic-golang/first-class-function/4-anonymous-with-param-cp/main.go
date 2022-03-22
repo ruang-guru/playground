@@ -7,6 +7,12 @@ func main() {
 	//contoh input parameter yang diterima (3)
 	//maka fungsi akan mengembalikan 9
 
+	
 	// TODO: answer here
+
+	square := func(n int) int {
+		return n * n
+	}(3)
+
 	fmt.Println(square)
 }

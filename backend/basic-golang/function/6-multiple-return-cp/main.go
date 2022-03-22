@@ -19,6 +19,6 @@ func main() {
 func square(n,n1 int)(int,int){
 	var result1 = n*n
 	var result2 = n1*n1
-	return result1, result2
+	return result1,result2
 }
 

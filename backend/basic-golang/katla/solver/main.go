@@ -1,6 +1,7 @@
 package main
 
 import (
+	"math/rand"
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
@@ -9,8 +10,8 @@ import (
 	"strings"
 )
 
-const wordLength = 5
-const maxGuess = 6
+const wordLength = 6
+const maxGuess = 8
 
 //NOTE: err handling is not yet taught, we don't handle errors in this example
 //don't worry about the content of this method for now. We haven't learn some concepts
@@ -69,16 +70,6 @@ func calculateHints(guess, answer string) (hints []hint) {
 		} else {
 			for j := 0; j < wordLength; j++ {
 				if i != j {
-					//when the answer is:
-					//STROK, and we guess:
-					//SOSOK
-					//the answer should be:
-					//GXXGG
-					//not:
-					//GYYGG
-					//Reason: the second 'O' has been marked as correct position ('Y')
-					//if we mark 'Y' for the first 'O', people would guess there should be yet another 'O'
-					//while in fact there is only one 'O' in 'STROK'
 					if guessChars[i] == answerChars[j] && guessChars[j] != answerChars[j] {
 						hints[i] = correctLetter
 						break
@@ -91,7 +82,63 @@ func calculateHints(guess, answer string) (hints []hint) {
 }
 
 func main() {
+	isWin := false
 	dictionary := getDictionaryWords()
 
 	// TODO: answer here
+	word:=dictionary[rand.Intn(len(dictionary))]
+	// fmt.Println(word)
+
+	for gameCount := 1; gameCount <= maxGuess; gameCount++ {
+		var guess string
+		
+		fmt.Println("Attempt number ",gameCount," :")
+		for{		
+			fmt.Scanln(&guess)
+			if len(guess)<wordLength || len(guess)>wordLength{
+				fmt.Println("word length is invalid")
+				fmt.Println("Attempt number ",gameCount," :")
+				continue
+			}
+			guess = strings.ToLower(guess)
+
+			if !isInDictionary(guess,dictionary) {
+				fmt.Println("the answer is not in dictionary")
+				fmt.Println("Attempt number ",gameCount," :")
+				continue
+			}
+			break
+
+		}
+		hints:= calculateHints(guess,word)
+
+		for i := 0; i < wordLength; i++ {
+			if hints[i]==correctLetter {
+				fmt.Print("Y")
+				
+			}else if hints[i]==correctPosition {
+				fmt.Print("G")
+				
+			}else if hints[i]==notFound {
+				fmt.Print("X")
+				
+			}
+		}
+		for i := 0; i < 3; i++ {
+			fmt.Println()
+		}
+
+		if guess==word {
+			fmt.Println("you win")
+			isWin =true
+			break;
+		}
+
+	}
+
+	if !isWin{
+		fmt.Println("You Lost, the answer is : ", word)
+	}
+
+
 }

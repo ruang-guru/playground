@@ -2,6 +2,7 @@ package main
 
 import (
 	"bufio"
+	"crypto/rand"
 	"fmt"
 	"io"
 	"math"
@@ -20,6 +21,29 @@ import (
 
 func encryption(s string) string {
 	// Write your code here
+	temp:= strings.TrimSpace(s)
+
+	runes := []rune(temp)
+	row:=int(math.Sqrt(float64(len(temp))))
+	collumn:= row +1
+
+	for i := 0; i < row; i++ {
+		for{
+			count:=0
+			
+
+
+			if count == collumn{
+				break;
+			}
+			count ++
+		}
+		
+	}
+	
+
+
+
 	return "" // TODO: replace this
 }
 

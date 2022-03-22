@@ -8,7 +8,7 @@ import (
 	"net/http"
 	"regexp"
 	"strings"
-	"time"
+	// "time"
 )
 
 const wordLength = 5
@@ -71,16 +71,6 @@ func calculateHints(guess, answer string) (hints []hint) {
 		} else {
 			for j := 0; j < wordLength; j++ {
 				if i != j {
-					//when the answer is:
-					//STROK, and we guess:
-					//SOSOK
-					//the answer should be:
-					//GXXGG
-					//not:
-					//GYYGG
-					//Reason: the second 'O' has been marked as correct position ('Y')
-					//if we mark 'Y' for the first 'O', people would guess there should be yet another 'O'
-					//while in fact there is only one 'O' in 'STROK'
 					if guessChars[i] == answerChars[j] && guessChars[j] != answerChars[j] {
 						hints[i] = correctLetter
 						break
@@ -95,9 +85,9 @@ func calculateHints(guess, answer string) (hints []hint) {
 func main() {
 	dictionary := getDictionaryWords()
 
-	rand.Seed(time.Now().UnixNano())
+	// rand.Seed(time.Now().UnixNano())
 	answer := dictionary[rand.Intn(len(dictionary))]
-	// fmt.Printf("Answer: %s\n", answer)
+	fmt.Printf("Answer: %s\n", answer)
 
 	isWin := false
 	for trial := 0; trial < maxGuess; trial++ {

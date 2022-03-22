@@ -91,7 +91,13 @@ func calculateHints(guess, answer string) (hints []hint) {
 }
 
 func main() {
-	dictionary := getDictionaryWords()
+	// dictionary := getDictionaryWords()
+	// fmt.Printf("Tipe dictionary %T", dictionary)
 
 	// TODO: answer here
+	// fmt.Println(dictionary)
+	kata := "kata"
+	for i := 0; i < len(kata); i++ {
+		fmt.Println(kata[i])
+	}
 }

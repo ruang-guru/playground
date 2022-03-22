@@ -8,6 +8,7 @@ const (
 	hash
 	slashasterisk
 	curlyslashasterisk
+	htmlcomment
 )
 
 type endanswer struct {

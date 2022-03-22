@@ -5,7 +5,9 @@ import "fmt"
 func main() {
 	// mengembalikan string selamat sore dengan anonymous function
 	goodAfternoon := func() string {
-		return "selamat sore dengan anonymous function"
+		//beginanswer
+		return "Selamat sore"
+		//endanswer
 	}()
 
 	fmt.Println(goodAfternoon)

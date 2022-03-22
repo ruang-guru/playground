@@ -17,12 +17,11 @@ func main() {
 	printWord("mencoba", "variadic", "param", "pada", "go")
 }
 
-// TODO: answer here
-func printWord(word ...string){
-	for _, word := range word {
+//beginanswer
+func printWord(words ...string) {
+	for _, word := range words {
 		fmt.Println(word)
-		
 	}
-	fmt.Println("")
-
 }
+
+//endanswer

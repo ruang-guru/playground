@@ -6,5 +6,8 @@ import "fmt"
 // Lalu kalian akan menambahkan kata "Olleh" pada slice tersebut.
 func main() {
 	slice := []string{"Hello", "World"}
-	// TODO: answer here
+	//beginanswer
+	slice = append(slice, "Olleh")
+	fmt.Println(slice)
+	//endanswer
 }

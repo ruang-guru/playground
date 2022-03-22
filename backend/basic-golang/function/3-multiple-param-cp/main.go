@@ -10,8 +10,9 @@ func main() {
 
 }
 
-// TODO: answer here
-func goodAfternoon (name1 string, name2 string){
-	fmt.Println("selamat sore ",name1,"dan ",name2)
+//beginanswer
+func goodAfternoon(name1, name2 string) {
+	fmt.Printf("Selamat sore %s dan %s\n", name1, name2)
 }
 
+//endanswer

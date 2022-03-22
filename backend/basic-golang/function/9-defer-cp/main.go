@@ -10,8 +10,9 @@ func main() {
 
 func order(drink string) {
 	// mengucapkan terima kasih di akhir dengan menggunakan defer
-	// TODO: answer here
-	
+	//beginanswer
+	defer fmt.Println("terima kasih, silahkan datang kembali")
+	//endanswer
 	fmt.Println("kami sedang ada diskon untuk pembelian kopi")
 	fmt.Println("pesanan anda:", drink)
 	if drink == "kopi" {

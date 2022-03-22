@@ -19,19 +19,21 @@ import (
  */
 
 func pairs(k int32, arr []int32) int32 {
-    // Write your code here
-    result := 0
-    for i := 0; i < len(arr); i++ {
-    number1 := arr[i]
-        for j := 0; j < len(arr); j++ {
-            number2:=arr[j]
-            temp := number1-number2
-            if temp == k {
-                result ++
-            }
-        }
-    }
-    return int32(result) // TODO: replace this
+	// Write your code here
+	//beginanswer
+	found := make(map[int32]bool)
+	for _, v := range arr {
+		found[v] = true
+	}
+
+	var res int32
+	for _, v := range arr {
+		if found[v+k] {
+			res += 1
+		}
+	}
+	return res
+	//endanswer return 0
 }
 
 

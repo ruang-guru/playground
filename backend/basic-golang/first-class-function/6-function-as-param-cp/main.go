@@ -5,18 +5,16 @@ import "fmt"
 func main() {
 	//fungsi untuk menampilkan string dan memiliki parameter fungsi
 	//fungsi yang akan dimasukkan adalah fungsi yang memberi selamat malam
-	// TODO: answer here
-	printString :=func (f func ()string)  {
-		r := f()
-		fmt.Println(r)
-
+	//beginanswer
+	printString := func(f func() string) {
+		result := f()
+		fmt.Println(result)
 	}
 
-	goodNight:=func () string {
-		return "Selamat malam"
+	goodNight := func() string {
+		return "good night friends"
 	}
-
-
+	//endanswer
 
 	printString(goodNight)
 

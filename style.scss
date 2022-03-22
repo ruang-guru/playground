@@ -1,0 +1,67 @@
+$color:pink;
+body {
+    background-color: $color;
+}
+
+nav {
+    ul {
+        margin: 0%;
+        padding: 0%;
+        li {
+            a {
+                color: red;
+                list-style: none;
+                text-decoration: none;
+                &:hover {
+                    text-align: center;
+                    list-style: none;
+                    background-color: aqua;
+                }
+            }
+        }
+    }
+}
+
+p {
+    color: antiquewhite;
+}
+
+h2 {
+    color: aliceblue;
+}
+
+h3 {
+    color: aliceblue
+}
+
+nav {
+    a {
+        font-size: 60px;
+        text-decoration: none;
+        color: aliceblue;
+    }
+    &:hover {
+        color: red;
+    }
+}
+
+button {
+    color: white;
+    background-color: purple;
+    &:hover {
+        background-color: red;
+    }
+}
+
+footer {
+    ul {
+        li {
+            a {
+                text-decoration: none;
+                &:hover {
+                    background-color: beige;
+                }
+            }
+        }
+    }
+}

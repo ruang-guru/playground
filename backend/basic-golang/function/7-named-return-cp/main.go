@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 //fungsi square sama seperti sebelumnya
 //yang membedakan adalah fungsi ini
@@ -12,3 +14,8 @@ func main() {
 }
 
 // TODO: answer here
+func square(number1, number2 int) (res1, res2 int) {
+	res1 = number1 * number1
+	res2 = number2 * number2
+	return res1, res2
+}

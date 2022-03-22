@@ -1,0 +1,128 @@
+nav {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: Helvetica, sans-serif;
+  background-color: #979797;
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+nav a {
+  float: left;
+  padding: 15px;
+}
+
+nav ul {
+  list-style-type: none;
+  text-align: center;
+  margin: 0;
+  padding: 15px;
+}
+
+nav li {
+  float: left;
+  font-family: Helvetica, sans-serif;
+  font-size: 15px;
+  padding: 14px 16px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+nav a:hover {
+  background-color: coral;
+}
+
+nav div.img {
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  width: 300px;
+  height: auto;
+}
+
+div {
+  padding: 8px;
+}
+
+div h2 {
+  text-align: center;
+  text-transform: uppercase;
+  color: #4CAF50;
+}
+
+div p {
+  text-align: center;
+}
+
+div img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+div button.product {
+  margin: auto;
+  -webkit-box-shadow: 0px 10px 14px -7px #3e7327;
+          box-shadow: 0px 10px 14px -7px #3e7327;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #77b55a), to(#72b352));
+  background: linear-gradient(to bottom, #77b55a 5%, #72b352 100%);
+  background-color: #77b55a;
+  background-position: center;
+  border-radius: 26px;
+  display: inline-block;
+  color: #ffffff;
+  font-family: Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 10px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #5b8a3c;
+}
+
+div button.product:hover {
+  background-color: #7c7c7c;
+}
+
+div button.product:active {
+  position: fixed;
+  top: 1px;
+}
+
+div.responsive {
+  padding: 0 6px;
+  float: left;
+  width: 24.99999%;
+}
+
+div.card {
+  border: 1px solid #ccc;
+}
+
+div.card:hover {
+  border: 1px solid #777;
+}
+
+div.card img {
+  width: 300px;
+  height: auto;
+}
+
+div.card h3 {
+  text-align: center;
+}
+
+div.card p {
+  padding: 1px;
+  text-align: center;
+}
+
+div.card * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+/*# sourceMappingURL=index.css.map */

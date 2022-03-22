@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 //fungsi printWord akan melakukan print satu persatu nilai parameter yang diterimanya
 //contoh nilai parameter yang diterima
 //("selamat","pagi","siang",sore)
@@ -16,3 +18,9 @@ func main() {
 }
 
 // TODO: answer here
+func printWord(words ...string) {
+	for _, word := range words {
+		fmt.Println(word)
+	}
+
+}

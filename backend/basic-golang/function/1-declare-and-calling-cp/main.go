@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-//memanggil funsgi goodMorning()
+//memanggil fungsi goodMorning()
 func main() {
 	// TODO: answer here
 	goodMorning()

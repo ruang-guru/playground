@@ -9,6 +9,9 @@ func main() {
 
 	counter := func(x int) func() int {
 		// TODO: answer here
+		return func() int {
+			return x
+		}
 	}
 	decrement := counter(5)
 	fmt.Println(decrement())

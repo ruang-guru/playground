@@ -6,8 +6,7 @@ func main() {
 	//fungsi goodMorning melakukan print "selamat pagi"
 	// TODO: answer here
 	goodMorning := func() {
-		fmt.Println("selamat pagi")
+		fmt.Println("Selamat pagi")
 	}
 	goodMorning()
-	fmt.Printf("jenis variabelnya %T", goodMorning)
 }

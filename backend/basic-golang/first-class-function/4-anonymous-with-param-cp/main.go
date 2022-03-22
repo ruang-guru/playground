@@ -7,6 +7,10 @@ func main() {
 	//contoh input parameter yang diterima (3)
 	//maka fungsi akan mengembalikan 9
 
-	// TODO: answer here
+	//beginanswer
+	square := func(angka int) int {
+		return angka * angka
+	}(5)
+	//endanswer
 	fmt.Println(square)
 }

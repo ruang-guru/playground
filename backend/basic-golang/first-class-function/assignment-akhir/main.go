@@ -7,7 +7,11 @@ import "fmt"
 // fungsi ini digunakan untuk menambahkan point
 // fungsi ini merupakan closure
 func points(base int) func(x int) int {
-		// TODO: answer here
+	//beginanswer
+	return func(points int) int {
+		base += points
+		return base
+		//endanswer
 	}
 }
 

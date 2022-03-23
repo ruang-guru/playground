@@ -8,6 +8,7 @@
 
 ## To generate repo without answer
 
+- `go run cli/main.go answer remove -r backend` or `go run cli/main.go answer remove -r frontend`
 - `rsync -vhra . ../playground --include='**.gitignore' --exclude='/.git' --filter=':- .gitignore' --delete-after`
 - `cd ../playground`
 - `git add .`

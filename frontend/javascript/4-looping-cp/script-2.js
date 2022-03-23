@@ -12,4 +12,12 @@
 // Masukan jumlah baris
 const n = parseInt(prompt("Masukan jumlah baris: "));
 
-// TODO: answer here
+let stars = "";
+for (let i = 1; i <= n; i++) {
+  for (let j = 0; j < i; j--) {
+    stars += "*";
+  }
+  stars += "\n";
+}
+console.log(stars);
+

@@ -1,8 +1,8 @@
 package main
 
 import (
-	"math/rand"
-	"encoding/json"
+	// "math/rand"
+	// "encoding/json"
 	"fmt"
 	"io"
 	"net/http"
@@ -10,8 +10,8 @@ import (
 	"strings"
 )
 
-const wordLength = 6
-const maxGuess = 8
+const wordLength = 5
+const maxGuess = 6
 
 //NOTE: err handling is not yet taught, we don't handle errors in this example
 //don't worry about the content of this method for now. We haven't learn some concepts
@@ -83,116 +83,8 @@ func calculateHints(guess, answer string) (hints []hint) {
 }
 
 func main() {
-	isWin := false
+	// isWin := false
 	dictionary := getDictionaryWords()
 
-<<<<<<< HEAD
 	// TODO: answer here
-	word:=dictionary[rand.Intn(len(dictionary))]
-	// fmt.Println(word)
-
-	for gameCount := 1; gameCount <= maxGuess; gameCount++ {
-		var guess string
-		
-		fmt.Println("Attempt number ",gameCount," :")
-		for{		
-			fmt.Scanln(&guess)
-			if len(guess)<wordLength || len(guess)>wordLength{
-				fmt.Println("word length is invalid")
-				fmt.Println("Attempt number ",gameCount," :")
-				continue
-			}
-			guess = strings.ToLower(guess)
-
-			if !isInDictionary(guess,dictionary) {
-				fmt.Println("the answer is not in dictionary")
-				fmt.Println("Attempt number ",gameCount," :")
-				continue
-			}
-			break
-
-		}
-		hints:= calculateHints(guess,word)
-
-		for i := 0; i < wordLength; i++ {
-			if hints[i]==correctLetter {
-				fmt.Print("Y")
-				
-			}else if hints[i]==correctPosition {
-				fmt.Print("G")
-				
-			}else if hints[i]==notFound {
-				fmt.Print("X")
-				
-			}
-		}
-		for i := 0; i < 3; i++ {
-			fmt.Println()
-		}
-
-		if guess==word {
-			fmt.Println("you win")
-			isWin =true
-			break;
-		}
-
-	}
-
-	if !isWin{
-		fmt.Println("You Lost, the answer is : ", word)
-	}
-
-
-=======
-	//beginanswer
-	for len(dictionary) > 1 {
-		var guess, coloredHints string
-		fmt.Printf("Guess: ")
-
-		fmt.Scanln(&guess)
-
-		fmt.Printf("Hint: ")
-		fmt.Scanln(&coloredHints)
-
-		receivedHints := make([]hint, wordLength)
-		for i := 0; i < wordLength; i++ {
-			switch coloredHints[i] {
-			case 'X':
-				receivedHints[i] = notFound
-			case 'Y':
-				receivedHints[i] = correctLetter
-			case 'G':
-				receivedHints[i] = correctPosition
-			}
-		}
-
-		filteredDictionary := make([]string, 0)
-
-		for _, dict := range dictionary {
-			hints := calculateHints(guess, dict)
-			match := true
-
-			for i := 0; i < wordLength; i++ {
-				if hints[i] != receivedHints[i] {
-					match = false
-					break
-				}
-			}
-
-			if match {
-				filteredDictionary = append(filteredDictionary, dict)
-			}
-		}
-		dictionary = filteredDictionary
-
-		fmt.Print("Possible words: ")
-		for _, dict := range dictionary {
-			fmt.Printf("%s ", dict)
-		}
-
-		fmt.Println()
-		fmt.Println()
-	}
-	//endanswer
->>>>>>> 61b24143472cbe92924703fbc80d83dff954219b
 }

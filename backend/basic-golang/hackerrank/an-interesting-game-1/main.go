@@ -20,38 +20,7 @@ import (
 //Problem statement: https://www.hackerrank.com/challenges/an-interesting-game-1/problem
 func gamingArray(arr []int) string {
 	// Write your code here
-	// beginanswer
-	positions := make(map[int]int)
-	for i := 0; i < len(arr); i++ {
-		positions[arr[i]] = i
-	}
-	sorted := make([]int, len(arr))
-	copy(sorted, arr)
-	sort.Slice(sorted, func(i, j int) bool {
-		return sorted[i] > sorted[j]
-	})
-
-	turn := 0
-	for len(arr) > 0 {
-		turn += 1
-
-		max := -1
-		for {
-			max = sorted[0]
-			sorted = sorted[1:]
-			if positions[max] < len(arr) {
-				break
-			}
-		}
-
-		deleteFrom := positions[max]
-		arr = arr[:deleteFrom]
-	}
-	if turn%2 == 0 {
-		return "ANDY"
-	}
-	return "BOB"
-	//endanswer return ""
+	return "" // TODO: replace this
 }
 
 func main() {

@@ -4,13 +4,9 @@ import "fmt"
 
 //memanggil funsgi goodMorning()
 func main() {
-	//beginanswer
-	goodMorning()
-	//endanswer
+	// TODO: answer here
 }
 
 func goodMorning() {
-	//beginanswer
-	fmt.Println("selamat pagi dari dalam fungsi")
-	//endanswer
+	// TODO: answer here
 }

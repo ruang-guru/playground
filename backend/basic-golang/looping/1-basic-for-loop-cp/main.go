@@ -9,8 +9,6 @@ func main() {
 	// hint: gunakan len(data)
 	result := 0
 	for i := 0; i <= len(data); i++ {
-		// beginanswer
-		result += data[i]
-		// endanswer
+		// TODO: answer here
 	}
 }

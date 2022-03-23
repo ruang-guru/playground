@@ -11,14 +11,7 @@ import (
 // Full Problem: https://www.hackerrank.com/challenges/a-very-big-sum/problem
 
 func aVeryBigSum(ar []int64) int64 {
-	//beginanswer
-	var result int64
-	for i := 0; i < len(ar); i++ {
-		result += ar[i]
-	}
-
-	return result
-	//endanswer
+	// TODO: answer here
 }
 
 func main() {

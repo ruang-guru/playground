@@ -25,9 +25,7 @@ func main() {
 }
 
 func printBook(i int) {
-	//beginanswer
-	defer deferring()
-	//endanswer
+	// TODO: answer here
 
 	books := []string{
 		"The Eye of the World",
@@ -39,9 +37,5 @@ func printBook(i int) {
 }
 
 func deferring() {
-	//beginanswer
-	if err := recover(); err != nil {
-		fmt.Println("Panic error terdeteksi:", err)
-	}
-	//endanswer
+	// TODO: answer here
 }

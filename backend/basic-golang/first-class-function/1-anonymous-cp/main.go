@@ -4,11 +4,7 @@ import "fmt"
 
 func main() {
 	//fungsi goodMorning melakukan print "selamat pagi"
-	//beginanswer
-	goodMorning := func() {
-		fmt.Println("selamat pagi")
-	}
-	//endanswer
+	// TODO: answer here
 	goodMorning()
 	fmt.Printf("jenis variabelnya %T", goodMorning)
 }

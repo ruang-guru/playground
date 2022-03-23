@@ -11,16 +11,7 @@ type Employee struct {
 //method GetFullSalary() untuk menampilkan salary + bonus
 //method AddBonus(bonus int) untuk mengubah nilai atribut bonus employee
 
-//beginanswer
-func (e Employee) GetFullSalary() int {
-	return e.BaseSalary + e.Bonus
-}
-
-func (e *Employee) AddBonus(bonus int) {
-	e.Bonus += bonus
-}
-
-//endanswer
+// TODO: answer here
 
 func main() {
 	employee1 := Employee{Name: "bob", BaseSalary: 4000000, Bonus: 300000}

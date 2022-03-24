@@ -18,6 +18,7 @@ func (todos *Todos) Add(item Item) {
 
 func (todos *Todos) GetItems() []Item {
 	// TODO: answer here
+	return []Item{}
 }
 
 func NewItem(id int, action string, deadline time.Time) Item {
@@ -26,4 +27,5 @@ func NewItem(id int, action string, deadline time.Time) Item {
 
 func NewTodos() Todos {
 	// TODO: answer here
+	return Todos{}
 }

@@ -11,3 +11,7 @@ func main() {
 }
 
 // TODO: answer here
+func multiply(number1, number2 int) int {
+	result := number1 * number2
+	return result
+}

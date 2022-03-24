@@ -10,6 +10,15 @@ import "fmt"
 
 type Rectangle struct {
 	// TODO: answer here
+	Width  int
+	Length int
+}
+
+func (r Rectangle) GetArea(luas int) {
+	fmt.Println(luas)
+}
+func (r Rectangle) GetPerimeter(keliling int) {
+	fmt.Println(keliling)
 }
 
 // TODO: answer here
@@ -19,6 +28,6 @@ func main() {
 	r.Length = 20
 	fmt.Println(r)
 
-	r.GetArea()
-	r.GetPerimeter()
+	r.GetArea(r.Length * r.Width)
+	r.GetPerimeter(2*r.Length + 2*r.Width)
 }

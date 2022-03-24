@@ -13,7 +13,7 @@
 ## Basic:
 - Problem 1: [Compare the Triplet Problem](compare-the-triplets/main.go)
 - Problem 2: [A Very Big Sum](very-big-sum/main.go)
-- Problem 3: [Diagonal Difference](diagonal-differencer/main.go)
+- Problem 3: [Diagonal Difference](diagonal-difference/main.go)
 - Problem 4: [Staircase](staircase/main.go)
 - Problem 5: [Mini-Max Sum](mini-max-sum/main.go)
 - Problem 6: [Birthday Cake Candles](birthday-cake-candles/main.go)

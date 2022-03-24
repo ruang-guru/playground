@@ -9,22 +9,10 @@ import "fmt"
 // GetPerimeter() digunakan untuk menampilkan (print) keliling persegi panjang
 
 type Rectangle struct {
-	//beginanswer
-	Width  int
-	Length int
-	//endanswer
+	// TODO: answer here
 }
 
-//beginanswer
-func (r Rectangle) GetArea() {
-	fmt.Println("luas persegi panjang : ", r.Width*r.Length)
-}
-
-func (r Rectangle) GetPerimeter() {
-	fmt.Println("keliling persegi panjang : ", 2*(r.Width+r.Length))
-}
-
-//endanswer
+// TODO: answer here
 func main() {
 	var r Rectangle
 	r.Width = 10

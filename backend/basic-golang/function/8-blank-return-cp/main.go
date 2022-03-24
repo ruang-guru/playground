@@ -11,11 +11,4 @@ func main() {
 	fmt.Println(square(9, 8))
 }
 
-//beginanswer
-func square(angka1, angka2 int) (result1 int, result2 int) {
-	result1 = angka1 * angka1
-	result2 = angka2 * angka2
-	return
-}
-
-//endanswer
+// TODO: answer here

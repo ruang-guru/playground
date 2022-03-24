@@ -12,17 +12,7 @@ import (
 
 func compareTriplets(a []int32, b []int32) []int32 {
 
-	//beginanswer
-	arr := []int32{0, 0}
-	for i := range a {
-		if a[i] > b[i] {
-			arr[0] = arr[0] + 1
-		} else if a[i] < b[i] {
-			arr[1] = arr[1] + 1
-		}
-	}
-	return arr
-	//endanswer
+	// TODO: answer here
 }
 
 func main() {

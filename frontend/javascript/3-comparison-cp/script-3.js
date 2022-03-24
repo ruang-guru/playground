@@ -6,6 +6,17 @@
 // E = <= 50
 
 // Masukan suatu angka
-const score = parseInt(prompt("Masukan nilai: "));
+const score = parseInt(prompt('Masukan nilai: '));
 
 // TODO: answer here
+if (100 >= score > 90) {
+  console.log('A');
+} else if (91 > score > 70) {
+  console.log('B');
+} else if (71 > score > 50) {
+  console.log('C');
+} else if (51 > score > 30) {
+  console.log('D');
+} else if (50 >= score) {
+  console.log('E');
+}

@@ -1,5 +1,5 @@
 ---
-title: "RG KM Participants"
+title: 'RG KM Participants'
 
 date: 2022-03-04T21:42:03+07:00
 draft: false
@@ -13,3 +13,4 @@ draft: false
 - Sefen Giawa - ?
 - Richardo Ehbet Rejuli Lumban Raja (Richardo) - Universitas Methodist Indonesia
 - Dhani Fajar Nugroho - Politeknik Elektronika Negeri Surabaya - <dhanifajar15.github.io>
+- Robertho - Universitas Gunadarma - <https://rymzx.github.io/hugocoba2/>

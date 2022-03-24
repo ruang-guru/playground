@@ -1,0 +1,85 @@
+body {
+  //   margin-top: 80px;
+  overflow-x: hidden;
+}
+nav {
+  //   overflow: hidden;
+  background-color: wheat;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+  a {
+    text-align: center;
+    list-style-type: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 15px;
+  }
+  ul {
+    text-align: center;
+    list-style-type: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+    li {
+      display: inline;
+      font-family: 'Fira Sans', sans-serif;
+      font-size: 17px;
+      a {
+        color: gray;
+        text-decoration: none;
+        padding: 14px;
+        &:hover {
+          background-color: gainsboro;
+        }
+      }
+    }
+  }
+  div {
+    button {
+      background-color: red;
+    }
+  }
+}
+
+// jumbotron
+div {
+  align-items: center;
+  justify-content: center;
+  //   background-color: red;
+  div {
+    h2 {
+      text-align: center;
+      margin-top: 150px;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+    p {
+      text-align: center;
+      font-family: 'Inspiration', cursive;
+    }
+    div {
+      position: relative;
+      display: flex;
+      padding: 10px 10px 10px 10px;
+      justify-content: center;
+      button {
+        display: block;
+        // background-color: #111;
+        justify-content: center;
+        text-align: center;
+        justify-items: center;
+      }
+    }
+  }
+  //   background-color: red;
+  img {
+    position: relative;
+    display: flex;
+    height: 250px;
+    width: 250px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+}

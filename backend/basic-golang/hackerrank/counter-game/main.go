@@ -20,7 +20,33 @@ import (
 //Problem statement: https://www.hackerrank.com/challenges/counter-game
 func counterGame(n int64) string {
 	// Write your code here
-	return "" // TODO: replace this
+	count:=int64(1)
+	var temp int64
+	if n ==1 {
+		return "Louise"
+	}
+	
+	if n & (n-1)==0 {
+		temp = n
+	}else {
+		temp = n-(n & (n-1))
+	}
+
+	for{
+		temp = temp/2
+		count ++
+
+		if temp ==1 {
+			if count%2==0 {
+				return "Richard"
+			}else {
+				return "Louise"
+			}
+		}
+	}
+
+
+// TODO: replace this
 }
 
 func main() {

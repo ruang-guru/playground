@@ -17,11 +17,11 @@ const counter = 15;
 // TODO: answer here
 for (let i = 1; i <= counter; i++) {
   if (i % 3 === 0 && i % 5 === 0) {
-    console.log(i + " merupakan kelipatan 3 dan 5");
+    console.log(`${i} merupakan kelipatan 3 dan 5`);
   } else if (i % 3 === 0) {
-    console.log(i + " merupakan kelipatan 3");
+    console.log(`${i} merupakan kelipatan 3`);
   } else if (i % 5 === 0) {
-    console.log(i + " merupakan kelipatan 5");
+    console.log(`${i} merupakan kelipatan 5`);
   } else {
     console.log(i);
   }

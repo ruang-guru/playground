@@ -15,7 +15,9 @@ func main() {
 	}
 
 	// terdapat kesalahan pada data gender tersebut dapatkan kalian memperbaiki nya ?
-	// TODO: answer here
+	//beginanswer
+	namaUmur[3]["gender"] = "male"
+	//endanswer
 	for _, val := range namaUmur {
 		fmt.Println(val["name"], " ", val["gender"])
 		if val["name"] == "Leonhard Euler" {

@@ -20,32 +20,7 @@ import (
 
 func encryption(s string) string {
 	// Write your code here
-	s = strings.Replace(s, " ", "", -1)
-	result := ""
-	length := len(s)
-	root := math.Sqrt(float64(length))
-	var row, col int
-	if root == math.Floor(root) {
-		row = int(root)
-		col = int(root)
-	} else {
-		row = int(math.Floor(root))
-		col = row + 1
-
-		if row*col < length {
-			row += 1
-		}
-	}
-	for i := 0; i <= col; i++ {
-		for j := 0; j <= row; j++ {
-			ind := i + j*col
-			if ind < length {
-				result += s[ind : ind+1]
-			}
-		}
-		result += " "
-	}
-	return result // TODO: replace this
+	return "" // TODO: replace this
 }
 
 func main() {

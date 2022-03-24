@@ -9,7 +9,8 @@ import (
 )
 
 const wordLength = 5
-const maxGuess = 6
+
+// const maxGuess = 6
 
 //NOTE: err handling is not yet taught, we don't handle errors in this example
 //don't worry about the content of this method for now. We haven't learn some concepts
@@ -93,5 +94,51 @@ func calculateHints(guess, answer string) (hints []hint) {
 func main() {
 	dictionary := getDictionaryWords()
 
-	// TODO: answer here
+	//beginanswer
+	for len(dictionary) > 1 {
+		guess, hint := "", ""
+
+		fmt.Print("Guess : ")
+		fmt.Scanln(&guess)
+
+		guess = strings.ToLower(guess)
+		if !isInDictionary(guess, dictionary) {
+			fmt.Println("Kata tidak ada di kamus")
+			continue
+		}
+
+		fmt.Print("Hint : ")
+		fmt.Scanln(&hint)
+		if len(hint) != len(guess) {
+			fmt.Printf("Panjang hint dan guess tidak sama\n\n")
+			continue
+		}
+
+		hint = strings.ToLower(hint)
+		runeHint := []rune(hint)
+
+		possibleAnswer := make([]string, 0)
+
+		for _, val := range dictionary {
+			findHint := calculateHints(guess, val)
+
+			isCorrect := true
+			for index, val := range findHint {
+				if (val == notFound && runeHint[index] != 'x') ||
+					(val == correctLetter && runeHint[index] != 'y') ||
+					(val == correctPosition && runeHint[index] != 'g') {
+					isCorrect = false
+					break
+				}
+			}
+			if isCorrect {
+				possibleAnswer = append(possibleAnswer, val)
+			}
+		}
+
+		dictionary = possibleAnswer
+
+		fmt.Printf("Possible answer : %v\n\n", dictionary)
+	}
+	//endanswer
 }

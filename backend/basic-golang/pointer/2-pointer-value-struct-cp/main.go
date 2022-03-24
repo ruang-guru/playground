@@ -1,26 +1,12 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 //buat struct Rectangle dengan dua atribut yaitu Width dan Length
 // tambah dua method :
 // SetWidthPointer(width int) dan SetWidthValue(width int)
 // SetWidthPointer(width int) untuk mengubah width dengan pointer receiver
 // SetWidthValue(width int) untuk mengubah width dengan value
-type Rectangle struct {
-	Width  int
-	Length int
-}
-
-func (r *Rectangle) SetWidthPointer(width int) {
-	r.Width = width
-}
-
-func (r Rectangle) SetWidthValue(width int) {
-	r.Width = width
-}
 
 // TODO: answer here
 func main() {

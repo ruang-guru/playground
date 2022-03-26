@@ -11,8 +11,7 @@
 * 
 * notes:
 * - Dilarang MENGGANTI nama variable yang sudah diberikan
-* - Terdapat variable name, money, age, juice, latte
-* - Diperbolehkan melakukan reassign value pada variable yang sudah diberikan untuk mengecek code yang sudah dibuat
+* - Terdapat variable juice dan latte
 */
 
 

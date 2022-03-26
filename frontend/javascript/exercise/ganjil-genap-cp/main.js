@@ -3,8 +3,8 @@ Buatlah sebuah program untuk melakukan cek pada plat nomer yang ada
 Setiap plat nomer di pisahkan oleh karakter ";"
 - jika paramater kosong maka akan menampilkan "invalid data"
 - jika paramater merupakan string kosong maka akan menampilkan "plat tidak ditemukan"
-- jika paramater terdapat plat ganjil dan plat tidak ada genap maka akan menampilkan "plat ganjil sebanyak <jumlah plat> dan plat genap tidak ditemukan"
-- jika paramater terdapat plat genap dan plat tidak ada janjil maka akan menampilkan "plat genap sebanyak <jumlah plat> dan plat ganjil tidak ditemukan"
+- jika paramater terdapat plat ganjil dan tidak ada plat genap maka akan menampilkan "plat ganjil sebanyak <jumlah plat> dan plat genap tidak ditemukan"
+- jika paramater terdapat plat genap dan tidak ada plat ganjil maka akan menampilkan "plat genap sebanyak <jumlah plat> dan plat ganjil tidak ditemukan"
 - jika paramater terdapat plat ganjil maupun genap maka akan menampilkan "plat genap sebanyak <jumlah plat> dan plat ganjil sebanyak <jumlah plat>"
 */
 

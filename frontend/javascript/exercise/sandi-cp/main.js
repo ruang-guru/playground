@@ -15,7 +15,7 @@ INPUT:
 kataSandi = "&P%&+^S&^U&K+%N#1]#M&^+J^%%U#K #+^R&& +#2]#J+M#3#S^%%O&^R #"
 OUTPUT:
 terjemahKataSandi = "PASUKAN 1, MAJU KE AREA 2, JAM 3 SORE"
-Buatlah function dengan input kata sandi dan output terjemahannya
+Lengkapilah function dengan input kata sandi dan output terjemahannya
 */
 
 

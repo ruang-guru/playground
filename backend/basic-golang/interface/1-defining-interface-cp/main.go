@@ -9,7 +9,7 @@ import "fmt"
 // Untuk menghitung bonus terdapat tiga aturan sebagai berikut:
 // Bonus untuk Manager adalah 3 * BaseSalary
 // Bonus untuk SeniorEngineer adalah 2 * BaseSalary
-// Bonus untuk JuniorEngineer adalah 3 * BaseSalary
+// Bonus untuk JuniorEngineer adalah 1 * BaseSalary
 
 // TODO: answer here
 

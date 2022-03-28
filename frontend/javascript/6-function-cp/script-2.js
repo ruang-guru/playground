@@ -14,7 +14,7 @@ function checkPalindrome(string) {
 }
 
 // masukan teks
-const string = prompt('Enter a string: ');
+const string = prompt('Masukan string: ');
 
 // memanggil fungsi palindrom
 const value = checkPalindrome(string);

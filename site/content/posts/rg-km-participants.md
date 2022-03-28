@@ -13,3 +13,4 @@ draft: false
 - Sefen Giawa - ?
 - Richardo Ehbet Rejuli Lumban Raja (Richardo) - Universitas Methodist Indonesia
 - Dhani Fajar Nugroho - Politeknik Elektronika Negeri Surabaya - <dhanifajar15.github.io>
+- Anas Ardiansyah - Universitas Muhammadiyah Surakarta - <https://anmistrz.github.io/anasardiansyah.github.io/>

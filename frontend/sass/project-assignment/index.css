@@ -1,0 +1,101 @@
+body {
+  font-family: "Heltevica", sans-serif;
+  background-color: darkred;
+  margin: 0%;
+}
+
+.navbar {
+  background-color: #be868e;
+  position: fixed;
+  z-index: 1;
+  overflow: hidden;
+  width: 100%;
+  top: 0%;
+}
+
+.navbar a {
+  margin: 0;
+  padiing: 0;
+  list-style-type: none;
+  text-align: center;
+  padding: 15px;
+  text-decoration: none;
+}
+
+.navbar a li {
+  display: inline-block;
+}
+
+.navbar ul {
+  margin: 0;
+  padiing: 0;
+  list-style-type: none;
+  text-align: center;
+  padding: 10px;
+}
+
+.navbar ul li {
+  display: inline-block;
+}
+
+.navbar ul li {
+  padding: 1em;
+  display: inline;
+}
+
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 14px;
+}
+
+.navbar ul li a:hover {
+  background-color: darkred;
+}
+
+.navbar .login button {
+  border-radius: 5px;
+  float: right;
+  background-color: #7c1313;
+  color: white;
+  margin-inline: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.jumbotron {
+  background-color: darkred;
+  color: whitesmoke;
+  text-align: center;
+  margin-top: 150px;
+}
+
+.jumbotron .info {
+  margin-top: 10px;
+}
+
+.jumbotron img {
+  margin-top: 10px;
+  size: 100%;
+}
+
+.jumbotron button {
+  background-color: pink;
+  padding: 10px;
+  margin-inline: 10px;
+}
+
+.card {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 66% auto;
+      grid-template-columns: 66% auto;
+  padding: 4em 1em;
+  background-color: pink;
+}
+
+.card img {
+  width: 300px;
+  height: 200px;
+}
+/*# sourceMappingURL=index.css.map */

@@ -1,4 +1,4 @@
-const gatcha = require("../main.js")
+const gatcha = require("./main.js")
 
 describe("Gatcha", () => {
   it("should return to try again", () => {

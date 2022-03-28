@@ -4,8 +4,8 @@ const fs = require('fs')
 const reconstructedFilename = 'reconstructed.js'
 
 const string = (word) => {
-  // console.log(fs.readdirSync(`${__dirname}/..`))
-  let solution = fs.readFileSync(`${__dirname}/../main.js`, "utf-8")
+  
+  let solution = fs.readFileSync(`${__dirname}/main.js`, "utf-8")
 
   solution = solution.replace(
     /(let|var) word .*/, `$1 word = ${typeof word === 'string' ? `"${word}"` : word}`

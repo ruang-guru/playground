@@ -5,6 +5,10 @@ import "fmt"
 //buat struct Rectangle dengan dua atribut yaitu Width dan Length
 
 // TODO: answer here
+type Rectangle struct {
+	Width  int
+	Length int
+}
 
 func main() {
 	var r Rectangle

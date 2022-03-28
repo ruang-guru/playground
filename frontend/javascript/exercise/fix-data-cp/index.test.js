@@ -1,4 +1,4 @@
-const fixData = require('../main.js')
+const fixData = require('./main.js')
 
 describe('Fix Data', () => {
   it('Should eliminate all virus within the word with all the vowels grather than consonant', () => {

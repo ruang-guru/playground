@@ -1,4 +1,4 @@
-const ganjilGenap = require("../main.js")
+const ganjilGenap = require("./main.js")
 
 describe("ganjilGenap", () => {
   it("should return both odd and even number", () => {

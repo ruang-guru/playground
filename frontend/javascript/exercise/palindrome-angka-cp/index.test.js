@@ -1,4 +1,4 @@
-const angkaPalindrome = require('../main.js')
+const angkaPalindrome = require('./main.js')
 
 describe("angkaPlindrome", () => {
   it('should return to the nearest larger integer', () => {

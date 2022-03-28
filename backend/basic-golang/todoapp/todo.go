@@ -3,9 +3,8 @@ package main
 import "time"
 
 type Item struct {
-	id       int
-	action   string
-	deadline time.Time
+	Title    string
+	Deadline time.Time
 }
 
 type Todos struct {
@@ -16,14 +15,18 @@ func (todos *Todos) Add(item Item) {
 	// TODO: answer here
 }
 
-func (todos *Todos) GetItems() []Item {
-	// TODO: answer here
+func (todos *Todos) GetAll() []Item {
+	return []Item{} // TODO: replace this
 }
 
-func NewItem(id int, action string, deadline time.Time) Item {
-	return Item{id, action, deadline}
+func (todos *Todos) GetUpcoming() []Item {
+	return []Item{} // TODO: replace this
+}
+
+func NewItem(title string, deadline time.Time) Item {
+	return Item{title, deadline}
 }
 
 func NewTodos() Todos {
-	// TODO: answer here
+	return Todos{}
 }

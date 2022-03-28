@@ -15,13 +15,11 @@ type Rectangle struct {
 }
 
 func (r Rectangle) GetArea() {
-	luas := r.Width * r.Length
-	fmt.Println("Luas :", luas)
+	fmt.Println(r.Width * r.Length)
 }
 
 func (r Rectangle) GetPerimeter() {
-	keliling := r.Width*2 + r.Length*2
-	fmt.Println("Keliling :", keliling)
+	fmt.Println(2 * (r.Width + r.Length))
 }
 
 // TODO: answer here

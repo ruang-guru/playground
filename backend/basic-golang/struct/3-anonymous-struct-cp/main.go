@@ -10,8 +10,8 @@ func main() {
 		Width  int
 		Length int
 	}{
-		Width:  2,
-		Length: 3,
+		Width:  10,
+		Length: 20,
 	}
 	fmt.Printf("rectangle dengan lebar %d dan panjang %d", newRectangle.Width, newRectangle.Length)
 }

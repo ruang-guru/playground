@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 //fungsi printWord akan melakukan print satu persatu nilai parameter yang diterimanya
 //contoh nilai parameter yang diterima
@@ -18,3 +20,8 @@ func main() {
 }
 
 // TODO: answer here
+func printWord(greet ...string) {
+	for _, word := range greet {
+		fmt.Println(word)
+	}
+}

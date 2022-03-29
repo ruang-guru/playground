@@ -12,4 +12,5 @@ draft: false
 - Akhner Frisca - President University - <Akhnerf24.github.io>
 - Sefen Giawa - ?
 - Richardo Ehbet Rejuli Lumban Raja (Richardo) - Universitas Methodist Indonesia
+- Aldi Himawan (Aldi) - Fakultas Ilmu Komputer Universitas Brawijaya - <aldi-h.github.io/aldi.github.io>
 - Dhani Fajar Nugroho - Politeknik Elektronika Negeri Surabaya - <dhanifajar15.github.io>

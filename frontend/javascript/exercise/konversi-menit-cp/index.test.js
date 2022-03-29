@@ -1,4 +1,4 @@
-const konversiMenit = require("../main.js")
+const konversiMenit = require("./main.js")
 
 describe("konversiMenit", () => {
   it("should convert minute into hour with format hh:mm", () => {

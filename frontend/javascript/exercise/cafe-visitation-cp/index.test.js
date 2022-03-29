@@ -1,4 +1,4 @@
-const ruangCafe = require('../main.js')
+const ruangCafe = require('./main.js')
 
 describe("ruangCafe", () => {
   it("should return prohibited to enter", () => {

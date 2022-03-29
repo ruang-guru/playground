@@ -1,4 +1,12 @@
 function sum(a, b) {
-    return a + b;
+    return 0; // TODO: replace this
 }
-module.exports = sum;
+
+function multiply(a, b) {
+    return 0; // TODO: replace this
+}
+
+module.exports = {
+    sum,
+    multiply
+}

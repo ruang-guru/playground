@@ -1,4 +1,4 @@
-const terjemahKataSandi = require("../main.js")
+const terjemahKataSandi = require("./main.js")
 
 describe("terjemahKataSandi", () => {
   it("should return messages that have been decrypted", () => {

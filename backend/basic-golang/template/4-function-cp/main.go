@@ -3,6 +3,7 @@ package main
 import (
 	"bytes"
 	"html/template"
+	"log"
 )
 
 // Dari contoh yang telah diberikan, kamu dapat mencoba untuk menggunakan function pada template.
@@ -25,9 +26,36 @@ type Leaderboard struct {
 
 func CalculateScore(leaderboard Leaderboard) int {
 	// TODO: answer here
+	total := 0
+	for _, val := range leaderboard.Users {
+		total += val.Score
+	}
+	return total
 }
 
 func ExecuteToByteBuffer(leaderboard Leaderboard) ([]byte, error) {
 	var textTemplate string
 	// TODO: answer here
+
+	funcMap := template.FuncMap{
+		"sum": CalculateScore,
+	}
+
+	data := map[string]interface{}{
+		"leaderboard": leaderboard,
+	}
+
+	textTemplate = "{{range .leaderboard.Users}}{{.Name}}: {{.Score}}{{end}}Total Score: {{sum .leaderboard}}"
+
+	tmp, err := template.New("template_1").Funcs(funcMap).Parse(textTemplate)
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	b := new(bytes.Buffer)
+
+	tmp.Execute(b, data)
+
+	return b.Bytes(), nil
 }

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{.title}}</title>
+    </head>
+    <body>
+        <table>
+            <tr>
+              <th>Table ID</th>
+              <th>Jenis Meja</th>
+              <th>Warna</th>
+              <th>Jumlah Meja</th>
+            </tr>
+            {{range .tables}}
+            <tr>
+                <td>{{.ID}}</td>
+                <td>{{.Type}}</td>
+                <td>{{.Color}}</td>
+                <td>{{.Total}}</td>
+            </tr>
+            {{end}}
+        </table>
+    </body>
+</html>

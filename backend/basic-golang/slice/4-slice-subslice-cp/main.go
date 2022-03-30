@@ -13,5 +13,9 @@ func main() {
 	slice := []string{"Marcus", "is", "known", "to", "be", "one", "of", "five", "greatest", "emperors", "of", "rome",
 		"Aurelius", "is", "also", "known", "to", "be", "a", "philosopher"}
 
-	// TODO: answer here
+	sliceCopy1 := slice[0:4]
+	sliceCopy2 := slice[18:20]
+	sliceCopy1 = append(sliceCopy1, sliceCopy2...)
+
+	fmt.Println(sliceCopy1)
 }

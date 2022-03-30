@@ -3,8 +3,10 @@ package main
 import "fmt"
 
 //buat struct Rectangle dengan dua atribut yaitu Width dan Length
-
-// TODO: answer here
+type Rectangle struct {
+	Width  int
+	Length int
+}
 
 func main() {
 	var r Rectangle
@@ -17,5 +19,4 @@ func main() {
 
 	fmt.Println("lebar rectangle2:", r2.Width)    //5
 	fmt.Println("panjang rectangle2:", r2.Length) //15
-
 }

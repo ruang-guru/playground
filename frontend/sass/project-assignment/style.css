@@ -1,0 +1,72 @@
+/* FONT IMPORTED */
+/* Fira Sans */
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans");
+#container {
+  width: 100%;
+  display: inline-block;
+}
+
+/** HEADER */
+/** NAVIGATION BAR */
+nav {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  text-align: center;
+}
+nav ul {
+  text-align: center;
+  list-style-type: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 15px;
+}
+nav ul li {
+  display: inline;
+  font-family: "Fira Sans", sans-serif;
+  font-size: 17px;
+}
+nav ul li a {
+  color: #f2f2f2;
+  text-decoration: none;
+  padding: 14px;
+}
+nav ul li a:hover {
+  background-color: #111;
+}
+
+.content {
+  text-align: center;
+}
+
+/**body*/
+body {
+  background-color: aqua;
+  text-align: center;
+  margin-top: 150px;
+}
+
+/**judul*/
+#Judul {
+  font-style: bold;
+  color: white;
+  font-size: 30px;
+  margin: center;
+}
+
+/**button*/
+button {
+  background-color: #00FF00;
+  color: black;
+  border-radius: 15px;
+}
+
+/**image*/
+img {
+  width: 25%;
+  height: 25%;
+}
+
+/*# sourceMappingURL=style.css.map */

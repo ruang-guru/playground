@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <style>
+            button {
+                width: 30px;
+            }
+        </style>
+        <script src="index.js"></script>
+    </head>
+    <body>
+        <input id="input" readonly="readonly" />
+        <table>
+            <tbody>
+                <tr>
+                    <td><button onclick="operator('AC')">AC</button></td>
+                    <td><button onclick="operator('Del')">Del</button></td>
+                    <td></td>
+                    <td><button onclick="operator('/')">/</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="number(7)">7</button></td>
+                    <td><button onclick="number(8)">8</button></td>
+                    <td><button onclick="number(9)">9</button></td>
+                    <td><button onclick="operator('*')">x</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="number(4)">4</button></td>
+                    <td><button onclick="number(5)">5</button></td>
+                    <td><button onclick="number(6)">6</button></td>
+                    <td><button onclick="operator('-')">-</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="number(1)">1</button></td>
+                    <td><button onclick="number(2)">2</button></td>
+                    <td><button onclick="number(3)">3</button></td>
+                    <td><button onclick="operator('+')">+</button></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><button onclick="number(0)">0</button></td>
+                    <td><button onclick="operator('.')">.</button></td>
+                    <td><button onclick="calculate()">=</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

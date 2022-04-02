@@ -7,6 +7,8 @@ import (
 	"path/filepath"
 )
 
+//jalankan dari dalam folder write
+
 //membuka file jika sudah ada atau membuat baru jika belum ada
 func openFile(csvName string) (*os.File, error) {
 	path, err := filepath.Abs("../data/" + csvName + ".csv")
@@ -48,10 +50,11 @@ func main() {
 	if err != nil {
 		fmt.Println("error : ", err)
 	}
-	// reset() //uncoment this to remove siswaA.csv
+
+	// reset() //uncomment this to remove siswaA.csv
 }
 
-//check dalam /data/siswaA
+//data akan masuk ke path berikut : ../data/siswaA.csv
 
 func reset() {
 	os.Remove("../data/siswaA.csv")

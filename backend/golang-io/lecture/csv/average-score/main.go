@@ -8,11 +8,12 @@ import (
 	"strconv"
 )
 
-//jalankan dari dalam folder csv
+//jalankan dari dalam folder average-score
 
 //membuka file
 func openFile(csvName string) (*os.File, error) {
-	path, err := filepath.Abs("./data/" + csvName + ".csv")
+	path, err := filepath.Abs("../data/" + csvName + ".csv")
+
 	studentsFile, err := os.OpenFile(path, os.O_RDWR|os.O_CREATE, os.ModePerm)
 	if err != nil {
 		return nil, err

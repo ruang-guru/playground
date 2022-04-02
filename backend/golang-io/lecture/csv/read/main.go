@@ -7,11 +7,12 @@ import (
 	"path/filepath"
 )
 
-//jalankan dari dalam folder csv
+//jalankan dari dalam folder read
 
 //membuka file
 func openFile(csvName string) (*os.File, error) {
-	path, err := filepath.Abs("./data/" + csvName + ".csv")
+	path, err := filepath.Abs("../data/" + csvName + ".csv")
+
 	if err != nil {
 		return nil, err
 	}

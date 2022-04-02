@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 )
 
-//jalankan dari dalam folder csv
+//jalankan dari dalam folder update
 
 //membuka file
 func openFile(csvName string) (*os.File, error) {

@@ -1,0 +1,1 @@
+Cashier App with: https://nicedoc.io/rivo/tview

@@ -135,3 +135,5 @@ dist
 .pnp.*
 
 *.ans
+
+cypress/videos

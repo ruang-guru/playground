@@ -12,14 +12,20 @@ Uncomment variable dibawah ini untuk mulai mengerjakan. dilarang mengganti nama 
 
 // TODO: answer here
 
+
 function displayMessage(msg) {
   // TODO: answer here
 }
 
 function resetGame() {
   // TODO: answer here
+  //dilarang menghapus code dibawah ini!
+  document.getElementById('hidden-number').innerHTML = randomNumber
 }
 
 function checkNumber() {
   // TODO: answer here
 }
+
+//dilarang menghapus code dibawah ini!
+document.getElementById('hidden-number').innerHTML = randomNumber

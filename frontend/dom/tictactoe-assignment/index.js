@@ -39,7 +39,6 @@ function checkWinner() {
         winner = getValue(0, 2);
     }
 
-
     //diagonal
     if (getValue(0, 0) != "" && getValue(0, 0) === getValue(1, 1) && getValue(0, 0) === getValue(2, 2)) {
         winner = getValue(0, 0);
@@ -53,6 +52,10 @@ function checkWinner() {
         renderScore();
         generate();
     }
+}
+
+function checkNoWinner() {
+    // TODO: answer here
 }
 
 //handle click event, don't forget to disable the button so that it can't be clicked again

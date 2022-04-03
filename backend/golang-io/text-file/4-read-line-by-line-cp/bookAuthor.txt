@@ -1,0 +1,8 @@
+Epictetus,Enchiridion
+Henry Marampiring,Filosofi Teras
+Marcus Aurelius,Meditation
+Plato,Republic
+Seneca,Letter From A Stoic
+Isaac Newton,Principia
+Gauss,Disquisitiones Arithmeticae
+Leonhard Euler,Elements of Algebra

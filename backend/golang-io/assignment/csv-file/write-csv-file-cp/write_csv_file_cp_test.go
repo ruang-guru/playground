@@ -7,7 +7,7 @@ import (
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 
-	main "github.com/ruang-guru/playground/backend/golang-io/csv-file/write-csv-file-cp"
+	main "github.com/ruang-guru/playground/backend/golang-io/assignment/csv-file/write-csv-file-cp"
 )
 
 var _ = Describe("WriteToCSV", func() {

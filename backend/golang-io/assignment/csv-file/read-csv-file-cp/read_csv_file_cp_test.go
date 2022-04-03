@@ -4,7 +4,7 @@ import (
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 
-	main "github.com/ruang-guru/playground/backend/golang-io/csv-file/read-csv-file-cp"
+	main "github.com/ruang-guru/playground/backend/golang-io/assignment/csv-file/read-csv-file-cp"
 )
 
 var _ = Describe("ReadUsers", func() {

@@ -3,7 +3,7 @@ package main_test
 import (
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
-	client "github.com/ruang-guru/playground/backend/golang-io/http-cp/client"
+	client "github.com/ruang-guru/playground/backend/golang-io/assignment/http-cp/client"
 )
 
 var _ = Describe("Client", func() {

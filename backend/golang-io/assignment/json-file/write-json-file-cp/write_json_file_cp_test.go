@@ -7,7 +7,7 @@ import (
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
-	main "github.com/ruang-guru/playground/backend/golang-io/json-file/write-json-file-cp"
+	main "github.com/ruang-guru/playground/backend/golang-io/assignment/json-file/write-json-file-cp"
 )
 
 var _ = Describe("WriteToJson", func() {

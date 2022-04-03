@@ -5,7 +5,7 @@ import (
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
-	server "github.com/ruang-guru/playground/backend/golang-io/http-cp/server"
+	server "github.com/ruang-guru/playground/backend/golang-io/assignment/http-cp/server"
 )
 
 var _ = Describe("Server", func() {

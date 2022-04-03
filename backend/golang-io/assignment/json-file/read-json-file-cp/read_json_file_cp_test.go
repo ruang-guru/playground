@@ -3,7 +3,7 @@ package main_test
 import (
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
-	main "github.com/ruang-guru/playground/backend/golang-io/json-file/read-json-file-cp"
+	main "github.com/ruang-guru/playground/backend/golang-io/assignment/json-file/read-json-file-cp"
 )
 
 var _ = Describe("ReadUsers", func() {

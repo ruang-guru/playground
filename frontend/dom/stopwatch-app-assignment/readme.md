@@ -21,3 +21,7 @@ Terdapat beberpa variable dan function dengan masing-masing fungsi yang berbeda.
 - `stop` = function yang bertugas untuk memberhentikan stopwatch
 - `reset` = function yang bertugas untuk mereset waktu stopwatch
 - `runTime` = function yang bertugas untuk menambahkan waktu ketika function `start` dijalankan.
+
+## Submission
+
+`grader-cli submit cypress/integration/dom/stopwatch-app-assignment`

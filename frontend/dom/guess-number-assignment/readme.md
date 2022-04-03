@@ -30,3 +30,7 @@ Terdapat beberpa variable dan function dengan masing-masing fungsi yang berbeda.
 - `displayMessage` = function yang bertugas untuk menampilkan _message_
 - `resetGame` = function yang bertugas untuk merestart permainan. pada function ini message yang ditampilkan akan dikembalikan menjadi "Lets start guessing..." dan akan melakukan generate random number.
 - `checkNumber` = function yang bertugas untuk melakukan pengecekan pada angka yang dimasukan
+
+## Submission
+
+`grader-cli submit cypress/integration/dom/guess-number-assignment`

@@ -6,9 +6,11 @@
   "author": "",
   "license": "MIT",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "integration": "cypress run"
   },
   "devDependencies": {
+    "cypress": "^9.5.3",
     "jest": "^27.5.1"
   }
 }

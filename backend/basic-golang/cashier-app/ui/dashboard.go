@@ -19,13 +19,13 @@ func (ui *UI) DashboardPage(cash int) *tview.Grid {
 	}
 
 	cartItems := func() tview.Primitive {
-		groupedList, err := ui.cartItemRepo.SelectAll()
+		cartItems, err := ui.cartItemRepo.SelectAll()
 		if err != nil {
 			panic(err)
 		}
 		list := tview.NewList()
 		list.AddItem("Shopping cart", "List Product, Price & Quantity:", '*', nil)
-		for _, product := range groupedList {
+		for _, product := range cartItems {
 			list.AddItem(product.ProductName+": Rp."+strconv.Itoa(product.Price)+" Qty:"+strconv.Itoa(product.Quantity), product.Category, '-', nil)
 		}
 

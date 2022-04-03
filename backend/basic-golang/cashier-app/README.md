@@ -7,18 +7,30 @@
 - Learn how to make and call APIs
 - Learn code reuse: common `repository` code is reused by different frontend (terminal & API)
 
+
+
 ## 3 modes
 
 ### Terminal Mode
-<!-- video here -->
 
+Video (click the image):
+
+[![Terminal](https://img.youtube.com/vi/iZOPT3axoi4/maxresdefault.jpg)](https://youtu.be/iZOPT3axoi4)
 
 ### TView Mode
-<!-- video here -->
+
+Video (click the image):
+
+[![TView](https://img.youtube.com/vi/e1yX1O8pKYs/maxresdefault.jpg)](https://youtu.be/e1yX1O8pKYs)
 
 
 ### API Mode
-<!-- video here -->
+
+Video (click the image):
+
+[![API](https://img.youtube.com/vi/lI-RO36El08/maxresdefault.jpg)](https://youtu.be/lI-RO36El08)
+
+Available APIs:
 - `/api/user/login?username=<username>&password=<password>`
 - `/api/user/logout?username=<username>`
 - `/api/dashboard?cash=<cash>`

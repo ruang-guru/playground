@@ -23,3 +23,7 @@ Terdapat beberpa variable dan function dengan masing-masing fungsi yang berbeda.
 
 - `getQuote` = function yang bertugas untuk mendapatkan 1 random quote dari daftar quote yang tersedia.
 - `displayQuote` = function yang bertugas untuk menampilkan quote yang didapat pada function `getQuote`.
+
+## Submission
+
+`grader-cli submit cypress/integration/dom/random-quote-generator`

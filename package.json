@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "test": "jest",
-    "integration": "cypress run"
+    "test:cypress": "cypress run"
   },
   "devDependencies": {
     "cypress": "^9.5.3",

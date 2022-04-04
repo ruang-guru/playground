@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <script src="index.js"></script>
+        <style>
+            .scoreboard tr {
+                border: 1px solid black;
+            }
+            .scoreboard th {
+                border: 1px solid black;
+            }
+            .scoreboard td {
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body onload="generate()">
+        <div id="board"></div>
+        <div>
+            <table class="scoreboard">
+                <thead>
+                    <tr>
+                        <th>Player</th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>X</td>
+                        <td><label id="x-wins"></label></td>
+                    </tr>
+                    <tr>
+                        <td>O</td>
+                        <td><label id="o-wins"></label></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

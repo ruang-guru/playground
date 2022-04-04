@@ -79,7 +79,7 @@ var _ = Describe("Server", func() {
 			server.Routes().ServeHTTP(wr, req)
 
 			Expect(wr.Code).To(Equal(200))
-			Expect(wr.Body.String()).To(Equal(`{"message": "Hello, world!"}`))
+			Expect(wr.Body.String()).To(Equal(`{"message":"Hello, world!"}`))
 		})
 	})
 })

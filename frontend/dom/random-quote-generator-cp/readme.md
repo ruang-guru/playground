@@ -26,4 +26,4 @@ Terdapat beberpa variable dan function dengan masing-masing fungsi yang berbeda.
 
 ## Submission
 
-`grader-cli submit cypress/integration/dom/random-quote-generator-cp`
+`grader-cli submit cypress/integration/dom/random-quote-generator`

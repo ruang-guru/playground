@@ -1,0 +1,6 @@
+baris 1
+baris 2
+baris 3
+baris 4
+baris 5
+baris 6

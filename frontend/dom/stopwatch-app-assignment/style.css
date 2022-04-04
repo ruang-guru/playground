@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f1f5f8;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#stopwatch {
+  font-size: 100px;
+}
+
+.btn {
+  width: 180px;
+  height: 60px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px;
+}

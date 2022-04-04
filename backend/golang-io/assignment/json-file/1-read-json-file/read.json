@@ -1,0 +1,21 @@
+[{
+    "name": "Jonatan López",
+    "age": 22,
+    "email": "jonatan@gmail.com",
+    "role": "programmer",
+    "status": "active"
+},
+{
+    "name": "Juan Pablo",
+    "age": 21,
+    "email": "juan23@gmail.com",
+    "role": "programmer",
+    "status": "not active"
+},
+{
+    "name": "Fuji Ani",
+    "age": 19,
+    "email": "fuji@gmail.com",
+    "role": "admin",
+    "status": "active"
+}]

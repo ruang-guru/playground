@@ -6,6 +6,7 @@
   "author": "",
   "license": "MIT",
   "scripts": {
+    "postinstall": "playwright install",
     "test": "jest",
     "test:cypress": "cypress run",
     "test:playwright": "playwright test"

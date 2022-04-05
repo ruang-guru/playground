@@ -9,13 +9,16 @@ test("basic test", async ({ page }) => {
     )}`
   );
 
-  page.locator("");
-
   const title = await page.locator(".input").type("1");
 
   await page.locator(".check").click();
 
-  if (page.locator(".input") < page.locator("#hidden-number")) {
-    page.locator(".message").should("have.text", "Too small, buddy!");
+  if (
+    (await page.locator(".input").inputValue()) <
+    (await page.locator("#hidden-number").textContent())
+  ) {
+    expect(await page.locator(".message").textContent()).toBe(
+      "Too small, buddy!"
+    );
   }
 });

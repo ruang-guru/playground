@@ -53,8 +53,21 @@ func (api *API) addToCart(w http.ResponseWriter, req *http.Request) {
 
 func (api *API) clearCart(w http.ResponseWriter, req *http.Request) {
 	// TODO: answer here
+	err := api.cartItemRepo.ResetCartItems()
+	if err != nil {
+		json.NewEncoder(w).Encode(CartErrorResponse{Error: err.Error()})
+		return
+	}
 }
 
 func (api *API) cartList(w http.ResponseWriter, req *http.Request) {
-	encoder.Encode(CartListSuccessResponse{CartItems: []repository.CartItem{}}) // TODO: replace this
+	cartList, err := api.cartItemRepo.SelectAll()
+	encoder := json.NewEncoder(w)
+
+	if err != nil {
+		encoder.Encode(CartErrorResponse{err.Error()})
+		return
+	}
+
+	encoder.Encode(CartListSuccessResponse{CartItems: cartList}) // TODO: replace this
 }

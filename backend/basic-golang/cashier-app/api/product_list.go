@@ -20,5 +20,20 @@ type ProductListSuccessResponse struct {
 }
 
 func (api *API) productList(w http.ResponseWriter, req *http.Request) {
-	encoder.Encode(ProductListSuccessResponse{Products: []Product{}}) // TODO: replace this
+	productList, err := api.productsRepo.SelectAll()
+	encoder := json.NewEncoder(w)
+
+	if err != nil {
+		encoder.Encode(CartErrorResponse{err.Error()})
+		return
+	}
+	productResp := make([]Product, 0)
+	for _, val := range productList {
+		productResp = append(productResp, Product{
+			Name:     val.ProductName,
+			Category: val.Category,
+			Price:    val.Price,
+		})
+	}
+	encoder.Encode(ProductListSuccessResponse{Products: productResp}) // TODO: replace this
 }

@@ -17,4 +17,6 @@ jobs:
           node-version: '16'
           cache: 'yarn'
       - run: yarn install
-      - run: yarn test:cypress
+      - run: yarn test:cypress -- --spec "cypress/**/*.cypress.js"
+      - run: yarn playwright install
+      - run: yarn test:playwright .playwright.js

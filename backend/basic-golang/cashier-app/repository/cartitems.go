@@ -15,6 +15,7 @@ func NewCartItemRepository(db db.DB) CartItemRepository {
 }
 
 func (u *CartItemRepository) LoadOrCreate() ([]CartItem, error) {
+
 	records, err := u.db.Load("cart_items")
 	if err != nil {
 		records = [][]string{
@@ -45,7 +46,7 @@ func (u *CartItemRepository) LoadOrCreate() ([]CartItem, error) {
 		}
 		result = append(result, cartItem)
 	}
-
+	// fmt.Println(result)
 	return result, nil
 }
 
@@ -65,7 +66,23 @@ func (u *CartItemRepository) Save(cartItems []CartItem) error {
 }
 
 func (u *CartItemRepository) SelectAll() ([]CartItem, error) {
-	return []CartItem{}, nil // TODO: replace this
+	// datas, err := u.db.Load("cart_items")
+	// if err != nil {
+	// 	return nil, err
+	// }
+	// items := make([]CartItem, 1)
+	// for _, val := range datas {
+	// 	price, _ := strconv.Atoi(val[2])
+	// 	qty, _ := strconv.Atoi(val[3])
+	// 	items = append(items, CartItem{
+	// 		Category:    val[0],
+	// 		ProductName: val[1],
+	// 		Price:       price,
+	// 		Quantity:    qty,
+	// 	})
+	// }
+	// return items, nil // TODO: replace this
+	return u.LoadOrCreate()
 }
 
 func (u *CartItemRepository) Add(product Product) error {
@@ -74,13 +91,43 @@ func (u *CartItemRepository) Add(product Product) error {
 		return err
 	}
 
-	return nil // TODO: replace this
+	isFound := false
+	for i, val := range cartItems {
+
+		if val.Category == product.Category && val.ProductName == product.ProductName && val.Price == product.Price {
+			cartItems[i].Quantity = val.Quantity + 1
+			isFound = true
+			break
+		}
+	}
+
+	if !isFound {
+		cartItems = append(cartItems, CartItem{
+			Category:    product.Category,
+			ProductName: product.ProductName,
+			Price:       product.Price,
+			Quantity:    1,
+		})
+	}
+	err = u.Save(cartItems)
+	return err // TODO: replace this
 }
 
 func (u *CartItemRepository) ResetCartItems() error {
-	return nil // TODO: replace this
+
+	return u.Save([]CartItem{}) // TODO: replace this
 }
 
 func (u *CartItemRepository) TotalPrice() (int, error) {
-	return 0, nil // TODO: replace this
+	cartItems, err := u.LoadOrCreate()
+	if err != nil {
+		return 0, err
+	}
+
+	total := 0
+
+	for _, val := range cartItems {
+		total += val.Price * val.Quantity
+	}
+	return total, nil // TODO: replace this
 }

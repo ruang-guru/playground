@@ -115,7 +115,7 @@ func (u *UserRepository) Save(users []User) error {
 			val.Username, val.Password, strconv.FormatBool(val.Loggedin),
 		})
 	}
-
+	u.db.Delete("users")
 	return u.db.Save("users", records) // TODO: replace this
 }
 

@@ -6,11 +6,14 @@
   "author": "",
   "license": "MIT",
   "scripts": {
+    "postinstall": "playwright install firefox",
     "test": "jest",
-    "test:cypress": "cypress run"
+    "test:cypress": "cypress run",
+    "test:playwright": "playwright test"
   },
   "devDependencies": {
-    "cypress": "^9.5.3",
+    "@playwright/test": "^1.20.2",
+    "cypress": "^6.9.1",
     "jest": "^27.5.1"
   }
 }

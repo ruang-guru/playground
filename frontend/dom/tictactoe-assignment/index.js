@@ -55,12 +55,33 @@ function checkWinner() {
 }
 
 function checkNoWinner() {
-    // TODO: answer here
+    let getValue = (y, x) => document.getElementById(y + "-" + x).textContent;
+    for (let i = 0; i < SIZE; i++) {
+        for (let j = 0; j < SIZE; j++) {
+            if (getValue(i, j) == "") {
+                // TODO: answer here
+            }
+        }
+    }
+    return true
 }
 
 //handle click event, don't forget to disable the button so that it can't be clicked again
 function click(event) {
-    // TODO: answer here
+    this.disabled = true;
+    this.textContent = turn;
+
+    if (turn == "X") {
+        // TODO: answer here
+    } else {
+        // TODO: answer here
+    }
+
+    checkWinner()
+    if (checkNoWinner()) {
+        //the board is full but no winner, it's a tie
+        generate();
+    }
 }
 
 //generate the tictactoe board. It is just a 3x3 table with <button/> inside <td/>
@@ -75,7 +96,18 @@ function generate() {
     for (let i=0; i<SIZE; i++) {
         let tr = document.createElement("tr");
         table.appendChild(tr);
-        // TODO: answer here
+        for (let j=0; j<SIZE; j++) {
+            let td = document.createElement("td");
+            tr.appendChild(td);
+
+            let button = document.createElement("button");
+            button.style.width = BUTTON_SIZE;
+            button.style.height = BUTTON_SIZE;
+            // TODO: answer here
+            button.id = i + "-" + j;
+
+            td.appendChild(button);
+        }
     }
 
     renderScore();

@@ -6,7 +6,7 @@
   "author": "",
   "license": "MIT",
   "scripts": {
-    "postinstall": "playwright install",
+    "postinstall": "playwright install firefox",
     "test": "jest",
     "test:cypress": "cypress run",
     "test:playwright": "playwright test"

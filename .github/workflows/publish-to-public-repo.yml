@@ -3,10 +3,6 @@ on:
   push:
     branches:
       - main
-    paths:
-      - "backend/**"
-      - "frontend/**"
-      - "general/**"
 jobs:
   publish-to-public-repo:
     runs-on: ubuntu-latest

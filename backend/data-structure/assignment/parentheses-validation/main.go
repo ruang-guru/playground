@@ -1,6 +1,6 @@
 package main
 
-import "github.com/ruang-guru/playground/backend/data-structure/stack/assignment/parentheses-validation/stack"
+import "github.com/ruang-guru/playground/backend/data-structure/assignment/parentheses-validation/stack"
 
 // Salah satu problem populer yang dapat diselesaikan dengan menggunakan Stack adalah mengecek validitas tanda kurung.
 // Diberikan sebuah string yang hanya terdapat karakter '(', ')', '{', '}', '[', dan ']'.

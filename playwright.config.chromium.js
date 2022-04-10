@@ -7,14 +7,8 @@ const config = {
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   use: {
-    trace: 'on-first-retry',
+    trace: "on-first-retry",
   },
-  projects: [
-    {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
-  ],
   globalTimeout: 3 * 60 * 1000, // 3 minutes
 };
 

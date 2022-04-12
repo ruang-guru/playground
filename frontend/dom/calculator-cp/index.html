@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <style>
+            button {
+                width: 30px;
+            }
+        </style>
+        <script src="index.js"></script>
+    </head>
+    <body>
+        <input id="input" readonly="readonly" />
+        <table>
+            <tbody>
+                <tr>
+                    <td><button id="ac" onclick="operator('AC')">AC</button></td>
+                    <td><button id="del" onclick="operator('Del')">Del</button></td>
+                    <td></td>
+                    <td><button id="div" onclick="operator('/')">/</button></td>
+                </tr>
+                <tr>
+                    <td><button id="num7" onclick="number(7)">7</button></td>
+                    <td><button id="num8" onclick="number(8)">8</button></td>
+                    <td><button id="num9" onclick="number(9)">9</button></td>
+                    <td><button id="mult" onclick="operator('*')">x</button></td>
+                </tr>
+                <tr>
+                    <td><button id="num4" onclick="number(4)">4</button></td>
+                    <td><button id="num5" onclick="number(5)">5</button></td>
+                    <td><button id="num6" onclick="number(6)">6</button></td>
+                    <td><button id="min" onclick="operator('-')">-</button></td>
+                </tr>
+                <tr>
+                    <td><button id="num1" onclick="number(1)">1</button></td>
+                    <td><button id="num2" onclick="number(2)">2</button></td>
+                    <td><button id="num3" onclick="number(3)">3</button></td>
+                    <td><button id="plus" onclick="operator('+')">+</button></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><button id="num0" onclick="number(0)">0</button></td>
+                    <td><button id="dot" onclick="operator('.')">.</button></td>
+                    <td><button id="calc" onclick="calculate()">=</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

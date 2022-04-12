@@ -133,3 +133,14 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+*.ans
+
+english-words.csv
+english-definition.csv
+cypress/videos
+cypress/screenshots
+
+# grader
+grader-config.json
+grader-cli

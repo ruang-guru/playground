@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/ruang-guru/playground/data-structure-and-algorithm/stack/assignment/text-editor/stack"
+	"github.com/ruang-guru/playground/backend/data-structure/assignment/text-editor/stack"
 )
 
 // Implementasikan teks editor sederhana

@@ -1,0 +1,20 @@
+.verikal_center{
+    /*mengatur border bagian kiri tag div */
+    border-left: 6px solid white;
+    /* mengatur tinggi tag div*/
+    height: 150px;
+    /*mengatur lebar tag div*/
+    width : 1px;
+}
+
+body {
+    margin: 0;
+    color: #fff;
+    margin: 0 15%;
+}
+
+.gambarapel {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}

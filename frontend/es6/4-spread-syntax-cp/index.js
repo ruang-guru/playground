@@ -8,15 +8,7 @@
  * Dilarang menggunakan Math.max
  */
 const max = (...args) => {
-  //beginanswer
-  return args.reduce((previous, current) => {
-    if (current > previous) {
-      return current;
-    } else {
-      return previous;
-    }
-  }, 0);
-  //endanswer
+  // TODO: answer here
 };
 
 module.exports = max

@@ -7,28 +7,7 @@
 
 let calculator = {
   // Tulis kode di sini
-  //beginanswer
-  sum() {
-    return this.a + this.b;
-  },
-
-  substract() {
-    return this.a - this.b;
-  },
-
-  multiply() {
-    return this.a * this.b;
-  },
-
-  division() {
-    return this.a / this.b;
-  },
-
-  read() {
-    this.a = +prompt('a =', 0);
-    this.b = +prompt('b =', 0);
-  }
-  //endanswer
+  // TODO: answer here
 };
   
 calculator.read();

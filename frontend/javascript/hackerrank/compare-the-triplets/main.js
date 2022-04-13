@@ -16,14 +16,7 @@
 
 function compareTriplets(a, b) {
   // Write your code here
-  //beginanswer
-  let arr = [0, 0]
-  for (let i = 0; i < a.length; i++) {
-    if (a[i] > b[i]) arr[0] = arr[0] + 1
-    else if (a[i] < b[i]) arr[1] = arr[1] + 1
-  }
-  return arr
-  //endanswer
+  // TODO: answer here
 }
 function main() {
 

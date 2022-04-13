@@ -1,22 +1,6 @@
 # Hackerrank Exercise - Cases Study
 
-<!-- beginanswer -->
 
-- Please watch the following Guide Video:
-
-  [![Guide Hackerrank Video](https://s3.amazonaws.com/sr-marketplace-prod/wp-content/uploads/2015/08/hackerrank.jpg)](https://www.youtube.com/watch?v=ng1wp92-ED0)
-<!-- endanswer nop -->
-
-<!-- beginanswer -->
-## Note:
-Code yang di demokan dan dijelaskan ke student hanya code yang ada di dalam **function solution** dan diantara comment `//beginanswer` dan `//endanswer`. main function diabaikan dan mengikuti main function yang ada di Hackerrank. 
-
-Untuk democode(practice) Lecturer langsung di Hackerrank mengingat case-study nya ada di Hackerrank, Begitupun siswa yang akan mencoba code langsung di Hackerrank dan presentasi langsung di Hackerrank. siswa wajib melakukan push via grader setiap kali selesai mengerjakan 1 soal agar dapat di pantau perkembangannya oleh instruktur.
-
-Untuk tugas ini **wajib dikerjakan dan dikumpulkan via grader**, **pastikan semua student dapat mengikuti practice dengan baik**, bila ada student yang bingung dan belum catch up usahakan Instructure dapat merangkulnya di sesi lecture.
-
-
-<!-- endanswer nop -->
 
 
 ## Point of Lecturer

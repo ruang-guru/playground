@@ -16,55 +16,13 @@
 
 
 // PSEUDOCODE :
-//beginanswer
-// STORE "juice" with 50000
-// STORE "latte" with 300000
-//
-// IF "name" LENGTH === 0
-//   RETURN "Anda tidak boleh masuk!"
-// IF "age" < 17
-//   IF "money" > "juice"
-//    CALCULATE "money" minus "juice"
-//    SET sisa uang value with calculation result
-//    RETURN "Anda bisa pesan juice. Sisa uang anda: "
-//   ELSE 
-//    RETURN "Uang tidak cukup. Anda harus pulang."
-// IF "age" > 17
-//   IF "money" > "latte"
-//    CALCULATE "uang" minus "latte"
-//    SET sisa uang value with calculation result
-//    RETURN "Anda bisa pesan latte. Sisa uang anda: "
-//   ELSE 
-//    RETURN "Uang tidak cukup. Anda harus pulang."
-//endanswer
+// TODO: answer here
 
 function ruangCafe(name, age, money) {
   const juice = 50000;
   const latte = 300000;
 
-  //beginanswer
-  if (name.length === 0) {
-    return "Anda tidak boleh masuk!"
-  }
-  else {
-    if (age < 17) {
-      if (money >= juice) {
-        return `Anda bisa pesan juice. Sisa uang anda: ${money - juice}`
-      }
-      else {
-        return "Uang tidak cukup. Anda harus pulang."
-      }
-    }
-    else {
-      if (money >= latte) {
-        return `Anda bisa pesan latte. Sisa uang anda: ${money - latte}`
-      }
-      else {
-        return "Uang tidak cukup. Anda harus pulang."
-      }
-    }
-  }
-  //endanswer
+  // TODO: answer here
 }
 
 console.log(ruangCafe('', 21, 2000000))

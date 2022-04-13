@@ -15,32 +15,7 @@ class Calculator {
   constructor (operand) {
     this.operand = operand;
   }
-  //beginanswer
-  add (angka) {
-    this.operand += angka;
-    return this
-  }
-  subtract (angka) {
-    this.operand -= angka;
-    return this
-  }
-  multiply (angka) {
-    this.operand *= angka;
-    return this
-  }
-  divide (angka) {
-    this.operand /= angka;
-    return this
-  }
-  square (angka) {
-    this.operand = Math.pow(this.operand, angka)
-    return this;
-  }
-  squareRoot () {
-    this.operand = Math.sqrt(this.operand)
-    return this
-  }
-  //endanswer
+  // TODO: answer here
 }
 
 module.exports = Calculator

@@ -13,21 +13,7 @@
 
 function gradingStudents(grades) {
   // Write your code here
-  //beginanswer
-  var newGrades = [];
-  for (var i = 0; i < grades.length; i++) {
-    if (grades[i] >= 38) {
-      if (grades[i] % 5 >= 3) {
-        newGrades.push(grades[i] - (grades[i] % 5) + 5);
-      } else {
-        newGrades.push(grades[i]);
-      }
-    } else {
-      newGrades.push(grades[i]);
-    }
-  }
-  return newGrades
-  //endanswer
+  // TODO: answer here
 }
 
 function main() {

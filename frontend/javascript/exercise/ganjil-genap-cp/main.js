@@ -9,41 +9,7 @@ Setiap plat nomer di pisahkan oleh karakter ";"
 */
 
 function ganjilGenap(plat) {
-  //beginanswer
-  if (plat === undefined) {
-    return `invalid data`
-  }
-  let ganjil = 0;
-  let genap = 0;
-  for(let i = 0; i <= plat.length ; i++) {
-    if(i === plat.length) {
-      if(plat[i-1] % 2 === 0) {
-        genap++
-      } else {
-        ganjil++
-      }
-    } else if(plat[i] === ";") {
-      if(plat[i-1] % 2 === 0) {
-        genap++
-      } else {
-        ganjil++
-      }
-    }
-  }
-
-  if (plat.length === 0) {
-    return `plat tidak ditemukan`
-  }
-  else if ((genap > ganjil && ganjil !== 0) || (ganjil > genap && genap !== 0)) {
-    return `plat genap sebanyak ${genap} dan plat ganjil sebanyak ${ganjil}`
-  }
-  else if (genap === 0) {
-    return `plat ganjil sebanyak ${ganjil} dan plat genap tidak ditemukan`
-  }
-  else if (ganjil === 0) {
-    return `plat genap sebanyak ${genap} dan plat ganjil tidak ditemukan`
-  }
-  //endanswer
+  // TODO: answer here
 }
 
 console.log(ganjilGenap('2341;3429;864;1309;1276')) //plat genap sebanyak 2 dan plat ganjil sebanyak 3

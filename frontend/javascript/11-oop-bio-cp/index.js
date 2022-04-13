@@ -12,31 +12,7 @@ class Person {
     this.job = job;
   }
   
-  //beginanswer
-  get getName() {
-    return this.name;
-  }
-
-  get getAge() {
-    return this.age;
-  }
-
-  get getJob() {
-    return this.job;
-  }
-
-  set setName(name) {
-    this.name = name;
-  }
-
-  set setAge(age) {
-    this.age = age;
-  }
-
-  set setJob(job) {
-    this.job = job;
-  }
-  //endanswer
+  // TODO: answer here
 }
 
 module.exports = Person

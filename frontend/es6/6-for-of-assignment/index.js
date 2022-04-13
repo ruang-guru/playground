@@ -12,18 +12,7 @@
  */
 
 const checkOmnipresent = (array, valueToFind) => {
-  // beginanswer
-  let numberOfPresent = 0;
-
-  for (subarray of array) {
-    for (value of subarray) {
-      if (valueToFind === value) {
-        numberOfPresent++;
-      }
-    }
-  }
-  return array.length === numberOfPresent;
-  // endanswer
+  // TODO: answer here
 };
 
 module.exports = checkOmnipresent

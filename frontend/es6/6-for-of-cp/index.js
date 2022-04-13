@@ -9,13 +9,7 @@
  */
 
 const convertElementToType = (array) => {
-  // beginanswer
-  const newArray = [];
-  for (element of array) {
-    newArray.push(typeof element);
-  }
-  return newArray;
-  // endanswer
+  // TODO: answer here
 };
 
 module.exports = convertElementToType

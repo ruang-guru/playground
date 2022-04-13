@@ -3,7 +3,7 @@
 // Masukan suatu angka
 const number = parseInt(prompt("Masukan bilangan: "));
 
-// beginanswer
+//beginanswer
 if (number >= 0) {
     if (number == 0) {
         console.log("bilangan = 0");
@@ -13,4 +13,4 @@ if (number >= 0) {
 } else {
     console.log("bilangan negatif");
 }
-// endanswer
+//endanswer

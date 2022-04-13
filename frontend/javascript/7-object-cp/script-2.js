@@ -7,7 +7,7 @@
 
 let calculator = {
   // Tulis kode di sini
-  // beginanswer
+  //beginanswer
   sum() {
     return this.a + this.b;
   },
@@ -28,7 +28,7 @@ let calculator = {
     this.a = +prompt('a =', 0);
     this.b = +prompt('b =', 0);
   }
-  // endanswer
+  //endanswer
 };
   
 calculator.read();

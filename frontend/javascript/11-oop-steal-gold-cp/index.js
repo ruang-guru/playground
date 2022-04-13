@@ -8,25 +8,25 @@ class Player {
 
 
   getGold() {
-  // beginanswer
+  //beginanswer
     return this.gold;
   //endanswer
   }
 
   setGold(gold) {
-  // beginanswer
+  //beginanswer
     this.gold = gold;
   //endanswer
   }
 
   getStealChance() {
-  // beginanswer
+  //beginanswer
     return this.stealChance;
   //endanswer
   }
 
   setStealChance(chance) {
-  // beginanswer
+  //beginanswer
     this.stealChance = chance;
   //endanswer
   }
@@ -44,7 +44,7 @@ class Player {
   }
   
   steal(player) {
-    // beginanswer
+    //beginanswer
     if (player.gold < 5) {
       return "Lawan terlalu miskin";
     }

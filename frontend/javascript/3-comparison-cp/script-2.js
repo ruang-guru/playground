@@ -5,7 +5,7 @@ const num3 = parseInt(prompt("Masukan bilangan ketiga: "));
 
 let largest;
 
-// beginanswer
+//beginanswer
 // Pengecekan kondisi
 if(num1 >= num2 && num1 >= num3) {
     largest = num1;
@@ -14,7 +14,7 @@ if(num1 >= num2 && num1 >= num3) {
 } else {
     largest = num3;
 }
-// endanswer
+//endanswer
 
 // Menampilkan hasil
 console.log("Bilangan terbesar adalah " + largest);

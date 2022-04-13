@@ -1,6 +1,6 @@
 // Buatlah pseudocode untuk menjumlahkan bilangan genap yang ada di antara 1 sampai 10
 
-// beginanswer
+//beginanswer
 ```
 BEGIN
  
@@ -15,4 +15,4 @@ OUTPUT sum
  
 END
 ```
-// endanswer
+//endanswer

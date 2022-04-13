@@ -8,7 +8,7 @@
 // Masukan suatu angka
 const score = parseInt(prompt("Masukan nilai: "));
 
-// beginanswer
+//beginanswer
 switch (score) {
     case (score >= 91 && score <= 100):
         console.log("A");
@@ -28,4 +28,4 @@ switch (score) {
     default:
         break;
 }
-// endanswer
+//endanswer

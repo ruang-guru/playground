@@ -3,13 +3,13 @@
 let a = prompt('Masukan variabel pertama: ');
 let b = prompt('Masukan variabel kedua: ');
 
-// beginanswer
+//beginanswer
 // Dengan menggunakan operator '+' dan '-'
 a = a + b;
 b = a - b;
 a = a - b;
 
-// endanswer
+//endanswer
 
 console.log(`Nilai a setelah ditukar: ${a}`);
 console.log(`Nilai b setelah ditukar: ${b}`);

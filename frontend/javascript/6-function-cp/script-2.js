@@ -10,7 +10,7 @@
 // teks3 dibalik sama menjadi kasur ini rusak, maka balikan akan true
 
 function checkPalindrome(string) {
-    // beginanswer
+    //beginanswer
     const len = string.length;
 
     for (let i = 0; i < len / 2; i++) {
@@ -19,7 +19,7 @@ function checkPalindrome(string) {
         }
     }
     return 'Palindrom';
-    // endanswer
+    //endanswer
 }
 
 // masukan teks

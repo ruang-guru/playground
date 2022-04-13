@@ -18,7 +18,7 @@ let programming = {
 // 6. Menggunakan loop, console.log semua key dalam objek pemrograman.
 // 7. Menggunakan loop, console.log semua value dalam objek pemrograman.
 
-// beginanswer
+//beginanswer
 // 1
 programming.languages.push("Go");
 
@@ -50,4 +50,4 @@ for (let key in programming){
 for (let key in programming){
   console.log(programming[key]);
 }
-// endanswer
+//endanswer

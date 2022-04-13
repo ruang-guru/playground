@@ -15,7 +15,7 @@ let arr = numInput.split(" ").map(Number);
 // jika tidak ada elemen dalam array, jika semua bilangan negatif, dapat mengembalikan nilai 0
 let maxSum = 0; 
 
-// beginanswer
+//beginanswer
 // solusi 1
 for (let i = 0; i < arr.length; i++) {
     let sumFixedStart = 0;
@@ -36,6 +36,6 @@ for (let item of arr) { // for each item of arr
         partialSum = 0; // zero if negative
 }
 
-// endanswer
+//endanswer
 
 console.log(maxSum);

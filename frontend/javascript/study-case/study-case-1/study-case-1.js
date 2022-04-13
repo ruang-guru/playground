@@ -23,9 +23,46 @@
 
 
 function rotation(matrix) {
-    // TODO: answer here
+    // beginanswer
+    if (matrix === undefined || matrix.length == 0) {
+        return "invalid data"
+    }
+
+    if (matrix[0].constructor === Array) {
+        swapTopRightToBottomLeft(matrix)
+        swapRightToLeft(matrix)
+
+        return matrix
+    } else {
+        return "input should be a 2d array"
+    }
+    // endanswer
 };
 
-// TODO: answer here
+// beginanswer
+function swapTopRightToBottomLeft(matrix) {
+    
+    const n = matrix.length - 1
+    for (let i = 0; i <= n; i++) {
+        for (let j = i; j <= n; j++) {
+            const temp = matrix[i][j]
+            matrix[i][j] = matrix[j][i]
+            matrix[j][i] = temp
+        }
+    }
+}
+
+function swapRightToLeft(matrix) {
+    
+    const n = matrix.length - 1
+    for (let i = 0; i <= n; i++) {
+        for (let j = 0; j <= n / 2; j++) {
+            const temp = matrix[i][j]
+            matrix[i][j] = matrix[i][n - j]
+            matrix[i][n - j] = temp
+        }
+    }
+}
+// endanswer
 
 module.exports = rotation

@@ -1,9 +1,13 @@
 function sum(a, b) {
-    return 0; // TODO: replace this
+    //beginanswer
+    return a + b;
+    //endanswer return 0;
 }
 
 function multiply(a, b) {
-    return 0; // TODO: replace this
+    //beginanswer
+    return a * b;
+    //endanswer return 0;
 }
 
 module.exports = {

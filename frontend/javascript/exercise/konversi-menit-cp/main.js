@@ -12,7 +12,16 @@
 
 
 function konversiMenit(menit) {
-  // TODO: answer here
+  //beginanswer
+  var jam = Math.floor(menit / 60)
+  var sisa = menit - (jam * 60)
+  if (sisa < 10) {
+    return `${jam}:0${sisa}`
+  }
+  else {
+    return `${jam}:${sisa}`
+  }
+  //endanswer
 }
 
 console.log(konversiMenit(61));

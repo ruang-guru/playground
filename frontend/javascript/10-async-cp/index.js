@@ -8,7 +8,19 @@
 
 const callApi = async () => {
   // kerjakan disini
-  // TODO: answer here
+  //beginanswer
+  try {
+    const res = await (
+      await fetch("https://jsonplaceholder.typicode.com/todos/1")
+    ).json();
+
+    console.log(res);
+  } catch (error) {
+    console.log(error);
+  } finally {
+    console.log("API selesai dipanggil");
+  }
+  //endanswer
 };
 
 callApi();

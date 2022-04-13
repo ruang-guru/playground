@@ -7,11 +7,37 @@ class Thief extends Player {
   }
   
   robbedBlind() {
-    // TODO: answer here
+    //beginanswer
+    if (this.getGold() < 10) {
+      return "Aku terlalu miskin";
+    }
+
+    this.setGold(this.getGold() - 10);
+    this.setStealChance(0.75);
+    //endanswer
   }
 
   steal(player) {
-    // TODO: answer here
+    //beginanswer
+    if (player.gold < 5) {
+      return "Lawan terlalu miskin";
+    }
+
+    const rng = this.stealChance;
+
+    if (rng <= this.stealChance) {
+      this.setGold(this.getGold() + 5);
+      player.setGold(player.getGold() - 5);
+
+      if (player.job && player.job === "Trickster") {
+        return player.distractionPurse(this);
+      }
+
+      return "Berhasil mencuri 5 gold";
+    }
+
+    return "Gagal mencuri, coba lain kali";
+    //endanswer
   }
 }
 
@@ -23,20 +49,59 @@ class Trickster extends Player {
   }
 
   setDistractionPurseChance(chance) {
-    // TODO: answer here
+    //beginanswer
+    this.distractionPurseChance = chance;
+    //endanswer
   }
 
   getDistractionPurseChance() {
-    // TODO: answer here
+    //beginanswer
+    return this.distractionPurseChance;
+    //endanswer
   }
 
   distractionPurse(player) {
     const rng = this.randomizer();
-    // TODO: answer here
+    //beginanswer
+    if (rng <= this.distractionPurseChance) {
+      if (player.getGold() < 10) {
+        player.setGold(0);
+        this.setGold(this.getGold() + player.getGold());
+
+        return "Berhasil mencuri balik semua uang lawan";
+      }
+
+      player.setGold(player.getGold() - 10);
+      this.setGold(this.getGold() + 10);
+
+      return "Berhasil mencuri balik 10 gold";
+    }
+
+    return "Gagal mencuri balik";
+    //endanswer
   }
 
   steal(player) {
-    // TODO: answer here
+    //beginanswer
+    if (player.gold < 5) {
+      return "Lawan terlalu miskin";
+    }
+
+    const rng = this.stealChance;
+
+    if (rng <= this.stealChance) {
+      this.setGold(this.getGold() + 5);
+      player.setGold(player.getGold() - 5);
+
+      if (player.job && player.job === "Trickster") {
+        return player.distractionPurse(this);
+      }
+
+      return "Berhasil mencuri 5 gold";
+    }
+
+    return "Gagal mencuri, coba lain kali";
+    //endanswer
   }
 }
 

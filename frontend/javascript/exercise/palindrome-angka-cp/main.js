@@ -7,7 +7,20 @@
  */
 
 function angkaPalindrome(num) {
-  // TODO: answer here
+  //beginanswer
+  var cek = true;
+  while (cek) {
+    num++;
+    var numStr = num.toString();
+    var hasil = '';
+    for (var j = numStr.length - 1; j >= 0; j--) {
+      hasil += numStr[j];
+    }
+    if (hasil === numStr) {
+      return num;
+    }
+  }
+  //endanswer
 }
 
 console.log(angkaPalindrome(10)); //11

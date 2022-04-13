@@ -36,7 +36,62 @@
 */
 
 function fixData(line) {
-  // TODO: answer here
+  // beginanswer
+  let vokal = 'aiueo';
+  var vok = 0;
+  var virus = 0;
+  var hasil = "";
+
+  for (var i = 0; i < line.length; i++) {
+    if (line[i] === "#") {
+      virus++;
+    }
+    for (var j = 0; j < vokal.length; j++) {
+      if (line[i] === vokal[j]) {
+        vok++;
+      }
+    }
+  }
+
+  var kons = line.length - (vok + virus);
+
+  if (virus === 0) {
+    console.log(line)
+  }
+  else {
+    if (kons > vok) {
+      for (var k = 0; k < line.length; k++) {
+        if (line[k] === "#") {
+          hasil += 'a'
+        }
+        else {
+          hasil += line[k]
+        }
+      }
+    }
+    else if (vok > kons) {
+      for (var k = 0; k < line.length; k++) {
+        if (line[k] === "#") {
+          hasil += 'b'
+        }
+        else {
+          hasil += line[k]
+        }
+      }
+    }
+    else if (vok === kons) {
+      for (var k = 0; k < line.length; k++) {
+        if (line[k] === "#") {
+          hasil += 'c'
+        }
+        else {
+          hasil += line[k]
+        }
+      }
+    }
+    return hasil
+  }
+  //endanswer
 }
 
 console.log(fixData('aoi#fdg#ue'))

@@ -8,4 +8,24 @@
 // Masukan suatu angka
 const score = parseInt(prompt("Masukan nilai: "));
 
-// TODO: answer here
+// beginanswer
+switch (score) {
+    case (score >= 91 && score <= 100):
+        console.log("A");
+        break;
+    case (score >= 71 && score <= 90):
+        console.log("B");
+        break;
+    case (score >= 61 && score <= 70):
+        console.log("C");
+        break;
+    case (score >= 51 && score <= 60):
+        console.log("D");
+        break;
+    case (score <= 50):
+        console.log("E");
+        break;
+    default:
+        break;
+}
+// endanswer

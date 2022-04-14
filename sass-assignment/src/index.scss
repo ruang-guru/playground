@@ -1,0 +1,107 @@
+$font:    Helvetica, sans-serif;
+$fontSize: 15px;
+
+nav{
+    box-sizing: border-box;
+    font-family: $font;
+    background-color:rgb(151, 151, 151);
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    a {
+        float:left;
+        padding: 15px;
+    }
+    ul {
+        list-style-type: none;
+        text-align: center;
+        margin: 0;
+        padding: 15px;
+    }
+    li {
+        float: left;
+        font-family: $font;
+        font-size: $fontSize;
+        padding: 14px 16px;
+    }
+        a{
+            color: white;
+            text-decoration: none;
+            &:hover{
+                background-color: coral;
+            }
+        }
+    div.img{
+       height: min-content;
+       width: 300px;
+       height: auto;
+    }
+}
+
+div {
+    padding: 8px;
+    h2{
+        text-align: center;
+        text-transform: uppercase;
+        color: #4CAF50;
+    }
+    p{
+        text-align: center;
+    }
+    img{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+    button.product {
+        margin: auto;
+        box-shadow: 0px 10px 14px -7px #3e7327;
+        background:linear-gradient(to bottom, #77b55a 5%, #72b352 100%);
+        background-color:#77b55a;
+        background-position: center;
+        border-radius:26px;
+        display:inline-block;
+        color:#ffffff;
+        font-family: $font;
+        font-size:$fontSize;
+        font-weight:bold;
+        padding:10px 24px;
+        text-decoration:none;
+        text-shadow:0px 1px 0px #5b8a3c;
+            &:hover {
+                background-color:#7c7c7c;
+            }
+            &:active {
+                position:fixed;
+                top:1px;
+            }
+    }
+}
+
+div.responsive{
+        padding: 0 6px;
+        float:left;
+        width: 24.99999%;
+}
+
+div.card{
+    border: 1px solid #ccc;
+    &:hover {
+        border: 1px solid #777;
+      }
+    img{
+        width: 300px;
+        height: auto;
+    }
+    h3{
+        text-align: center;
+    }
+    p{
+        padding: 1px;
+        text-align: center;
+    }
+    *{
+        box-sizing: border-box;
+    }
+}

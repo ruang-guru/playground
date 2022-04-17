@@ -17,6 +17,7 @@ package cmd
 
 import (
 	"fmt"
+	"os"
 
 	"github.com/ruang-guru/playground/cli/answerremover"
 	"github.com/spf13/cobra"
@@ -39,6 +40,7 @@ var removeCmd = &cobra.Command{
 			extensions,
 			excludeFolders); err != nil {
 			fmt.Println(err)
+			os.Exit(1)
 		}
 	},
 }

@@ -12,17 +12,16 @@ func counter(output chan<- int) {
 	for i := 0; i < 1000; i++ {
 		wg.Add(1)
 		go func() {
-			defer wg.Done()
 			//kirim 1 ke channel
-
+	
 			// TODO: answer here
+			wg.Done()
 
 		}()
 	}
 	//mengubah nilai count menggunakan data dari channel
 
 	// TODO: answer here
-
 	wg.Wait() // menunggu seluruh goroutine selesai berjalan
 	output <- count
 }

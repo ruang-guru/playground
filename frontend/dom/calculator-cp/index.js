@@ -5,7 +5,14 @@ function number(number) {
 
 //handle when the Del button, AC button and other operators (+, /, -, x) are pressed. It renders the operator into #input element
 function operator(operator) {
-    // TODO: answer here
+    let input = document.getElementById('input');
+    if (operator == 'Del') {
+        // TODO: answer here
+    } else if (operator == "AC") {
+        // TODO: answer here
+    } else {
+        // TODO: answer here
+    }
 }
 
 //handle when = button is pressed. It renders the result into #input element

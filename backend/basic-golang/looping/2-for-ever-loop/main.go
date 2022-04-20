@@ -7,14 +7,14 @@ func main() {
 	// disini kita akan mengenal keyword `continue` dan `break`
 	// break digunakan untuk menghentikan looping jika suatu kondisi terpenuhi
 	// karena jika while(for) tidak mempunyai exit plan maka dia akan berjalan terus
-	i := 0
-	for {
-		if i >= 10 {
-			break
-		}
-		fmt.Println(i)
-		i++
-	}
+	// i := 0
+	// for {
+	// 	if i >= 10 {
+	// 		break
+	// 	}
+	// 	fmt.Println(i)
+	// 	i++
+	// }
 
 	// contoh for loop dengan continue
 	// program dibawah ini akan melakukan skip jika kondisi terpenuhi
@@ -25,6 +25,8 @@ func main() {
 		if k%2 == 0 {
 			continue
 		}
-		fmt.Print(k)
+		fmt.Println(k)
 	}
 }
+
+// perhatikan print nya ehe

@@ -15,6 +15,9 @@ func main() {
 	var array1 [10]int
 	fmt.Println(array1) // output: [0 0 0 0 0 0 0 0 0 0]
 
-	array2 := [10]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+	array2 := [4]int{1, 2, 3, 4}
 	fmt.Println(array2)
+
+	// array3 := [5]int{1, 2, 3, 4, 5}
+	// fmt.Println(array3)
 }

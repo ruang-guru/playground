@@ -27,4 +27,5 @@ func main() {
 	fmt.Scanf("%d", &size)
 
 	// TODO: answer here
+
 }

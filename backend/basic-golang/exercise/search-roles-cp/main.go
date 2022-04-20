@@ -61,4 +61,6 @@ func main() {
 	}
 
 	// TODO: answer here
+	fmt.Printf("Masukkan role: ")
+	fmt.Scan(role)
 }

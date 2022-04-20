@@ -9,4 +9,5 @@ func main() {
 	// Perlu diperhatikan perhitungan index array dimulai dari nol ya.
 	fmt.Println(array[0]) // output: 1
 	fmt.Println(array[9]) // output: 10
+	// fmt.Println(len(array) - 1)
 }

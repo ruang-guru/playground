@@ -1,8 +1,6 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 // Check Point:
 // Cashier
@@ -47,4 +45,29 @@ func main() {
 	orderMenu := make(map[string]int64)
 
 	// TODO: answer here
+	for {
+		fmt.Println("======Menu=====")
+		for food, price := range foodMenu {
+			fmt.Println("1. Menu: ", food, ", price: ", price)
+		}
+		fmt.Println(" ")
+		var food, addAgain string
+		var price int
+
+		fmt.Println("Form Pemesanan: ")
+		fmt.Printf("Menu yang dipesan: ")
+		fmt.Scan(&food)
+		fmt.Printf("Pesan lagi?(yes/no)")
+		fmt.Scan(&addAgain)
+
+		if addAgain == "no" {
+			break
+		}
+	}
+	fmt.Println("Menu yang kamu pesan: ")
+	for food, price := orderMenu{
+		fmt.Println("-", food, "harga", price)
+		fmt.Println("Total: Rp")
+	}
+
 }

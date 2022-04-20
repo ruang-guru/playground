@@ -8,15 +8,18 @@ package main
 	switch-case multi-way conditional execution block.
 */
 
-func main() {
-	var a int = 10
-	var b int = 20
+// func main() {
+// 	var a int = 10
+// 	var b int = 20
 
-	var max int
-	if a > b {
-		max = a
-	} else {
-		max = b
-	}
-	print(max)
-}
+// 	var max int
+// 	if a > b {
+// 		max = a
+// 	} else {
+// 		max = b
+// 	}
+// 	print(max)
+// }
+
+//Planet Thanos Golang
+// penduduk := []int{}

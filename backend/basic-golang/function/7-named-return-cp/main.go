@@ -12,3 +12,8 @@ func main() {
 }
 
 // TODO: answer here
+func square(num1, num2 int) (result1, result2 int) {
+	result1 = num1 * num1
+	result2 = num2 * num2
+	return result1, result2
+}

@@ -5,7 +5,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/ruang-guru/playground/backend/concurrency/exercise/async-requests-cp/server/handler"
+	"github.com/ruang-guru/playground/backend/concurrency/assignment/async-requests-cp/server/handler"
 )
 
 func main() {

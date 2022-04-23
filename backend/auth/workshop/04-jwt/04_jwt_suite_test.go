@@ -1,4 +1,4 @@
-package main_test
+package main
 
 import (
 	"testing"
@@ -7,7 +7,7 @@ import (
 	. "github.com/onsi/gomega"
 )
 
-func Test1SumAll(t *testing.T) {
+func TestServer(t *testing.T) {
 	RegisterFailHandler(Fail)
-	RunSpecs(t, "1SumAll Suite")
+	RunSpecs(t, "JWT Suite")
 }

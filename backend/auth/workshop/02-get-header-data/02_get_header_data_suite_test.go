@@ -1,4 +1,4 @@
-package main_test
+package main
 
 import (
 	"testing"
@@ -7,7 +7,7 @@ import (
 	. "github.com/onsi/gomega"
 )
 
-func Test3LoopCp(t *testing.T) {
+func TestServer(t *testing.T) {
 	RegisterFailHandler(Fail)
-	RunSpecs(t, "3LoopCp Suite")
+	RunSpecs(t, "GetHeader Suite")
 }

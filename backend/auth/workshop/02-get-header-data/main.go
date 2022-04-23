@@ -18,7 +18,12 @@ func Routes() *http.ServeMux {
 	// Membaca cookie token kemudian return cookie kedalam body response
 	mux.HandleFunc("/welcome", func(w http.ResponseWriter, r *http.Request) {
 		cookieFieldName := "token"
-		// TODO: answer here
+
+		// Task:  1. Ambil token dari cookie yang dikirim ketika request
+		// 		  2. return unauthorized ketika token kosong
+		// 		  3. return bad request ketika field token tidak ada
+
+		return w.Write([]byte(fmt.Sprintf(""))) // TODO: replace this
 	})
 
 	return mux

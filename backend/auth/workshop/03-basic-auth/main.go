@@ -22,6 +22,27 @@ func Routes() *http.ServeMux {
 	// encrypt token dari username menggunakan bcrypt kemudian kirim ke user kedalam cookie
 	mux.HandleFunc("/signin", func(w http.ResponseWriter, r *http.Request) {
 		cookieName := "token"
+		var creds Credentials
+
+		// Task:  Buat JSON body diconvert menjadi credential struct & return bad request ketika terjadi kesalahan decoding json
+
+		// TODO: answer here
+
+		// Task: Ambil password dari username yang dipakai untuk login
+
+		// TODO: answer here
+
+		// Task: return unauthorized jika password salah
+
+		// TODO: answer here
+
+		// Task: 1. Buat token string menggunakan bcrypt dari credential username
+		// 		 2. return internal server error ketika terjadi kesalahan encrypting token
+
+		// TODO: answer here
+
+		// Task: Set token string kedalam cookie response
+
 		// TODO: answer here
 	})
 

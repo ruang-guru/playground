@@ -1013,6 +1013,114 @@
             "course": "frontend",
             "path": "frontend/javascript/10-async-assignment",
             "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/concurrency/workshop/waitgroup/waitgroup-basic-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/concurrency/workshop/racecondition/racecondition-basic-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/concurrency/workshop/intermediate-channel/1-buffered-channel-1-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/concurrency/workshop/intermediate-channel/2-buffered-channel-2-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/concurrency/workshop/mutex/mutex-basic-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/concurrency/workshop/semaphore/semaphore-basic-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/concurrency/workshop/intermediate-channel/4-close-1-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/concurrency/workshop/intermediate-channel/5-close-2-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/concurrency/workshop/intermediate-channel/6-select-1-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/concurrency/workshop/intermediate-channel/7-select-2-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/concurrency/assignment/async-requests-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/concurrency/assignment/sum-of-square-number-sm-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/concurrency/assignment/load-balancer-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/auth/workshop/01-encript-brypct",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/auth/workshop/02-get-header-data",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/auth/workshop/03-basic-auth",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/auth/workshop/04-http-basic-auth/1-basic-auth-cp/server-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/auth/workshop/06-jwt-authorization",
+            "weight": 100
         }
     ]
 }

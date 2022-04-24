@@ -20,20 +20,21 @@ type ProductListSuccessResponse struct {
 }
 
 func (api *API) productList(w http.ResponseWriter, req *http.Request) {
-	productList, err := api.productsRepo.SelectAll()
+	api.AllowOrigin(w, req)
 	encoder := json.NewEncoder(w)
+	// _, err := api.AuthMiddleWare(w, req)
+	// if err != nil {
+	// 	w.WriteHeader(http.StatusUnauthorized)
+	// 	encoder.Encode(ProductListErrorResponse{Error: err.Error()})
+	// 	return
+	// }
 
 	if err != nil {
 		encoder.Encode(CartErrorResponse{err.Error()})
 		return
 	}
-	productResp := make([]Product, 0)
-	for _, val := range productList {
-		productResp = append(productResp, Product{
-			Name:     val.ProductName,
-			Category: val.Category,
-			Price:    val.Price,
-		})
-	}
-	encoder.Encode(ProductListSuccessResponse{Products: productResp}) // TODO: replace this
+
+	// fmt.Println(products)
+
+	encoder.Encode(ProductListSuccessResponse{Products: []Product{}}) // TODO: replace this
 }

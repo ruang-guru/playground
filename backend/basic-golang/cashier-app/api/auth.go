@@ -3,6 +3,8 @@ package api
 import (
 	"encoding/json"
 	"net/http"
+
+	"github.com/golang-jwt/jwt/v4"
 )
 
 type LoginSuccessResponse struct {
@@ -13,9 +15,24 @@ type AuthErrorResponse struct {
 	Error string `json:"error"`
 }
 
+// Jwt key yang akan dipakai untuk membuat signature
+var jwtKey = []byte("key")
+
+// Struct claim digunakan sebagai object yang akan di encode oleh jwt
+// jwt.StandardClaims ditambahkan sebagai embedded type untuk provide standart claim yang biasanya ada pada JWT
+type Claims struct {
+	Username string
+	jwt.StandardClaims
+}
+
 func (api *API) login(w http.ResponseWriter, req *http.Request) {
-	paramQuery := req.URL.Query()
-	username, err := api.usersRepo.Login(paramQuery.Get("username"), paramQuery.Get("password"))
+	api.AllowOrigin(w, req)
+	username := req.URL.Query().Get("username")
+	password := req.URL.Query().Get("password")
+	res, err := api.usersRepo.Login(username, password)
+
+	w.Header().Set("Content-Type", "application/json")
+	encoder := json.NewEncoder(w)
 	if err != nil {
 		errorResp := AuthErrorResponse{
 			Error: err.Error(),
@@ -24,11 +41,35 @@ func (api *API) login(w http.ResponseWriter, req *http.Request) {
 		http.Error(w, string(errorJson), http.StatusUnauthorized)
 		return
 	}
-	json.NewEncoder(w).Encode(LoginSuccessResponse{Username: *username}) // TODO: replace this
+
+	// Task: 1. Deklarasi expiry time untuk token jwt
+	//       2. Buat claim menggunakan variable yang sudah didefinisikan diatas
+	//       3. expiry time menggunakan time millisecond
+
+	// TODO: answer here
+
+	// Task: Buat token menggunakan encoded claim dengan salah satu algoritma yang dipakai
+
+	// TODO: answer here
+
+	// Task: 1. Buat jwt string dari token yang sudah dibuat menggunakan JWT key yang telah dideklarasikan
+	//       2. return internal error ketika ada kesalahan ketika pembuatan JWT string
+
+	// TODO: answer here
+
+	// Task: Set token string kedalam cookie response
+
+	// TODO: answer here
+
+	// Task: Return response berupa username yang sudah login
+
+	json.NewEncoder(w).Encode(LoginSuccessResponse{Username: ""}) // TODO: replace this
 }
 
 func (api *API) logout(w http.ResponseWriter, req *http.Request) {
-	_, err := api.usersRepo.FindLoggedinUser()
+	api.AllowOrigin(w, req)
+	username := req.URL.Query().Get("username")
+	err := api.usersRepo.Logout(username)
 	if err != nil {
 		errorResp := AuthErrorResponse{
 			Error: err.Error(),

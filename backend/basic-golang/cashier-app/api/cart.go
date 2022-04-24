@@ -22,6 +22,7 @@ type CartListSuccessResponse struct {
 }
 
 func (api *API) addToCart(w http.ResponseWriter, req *http.Request) {
+	api.AllowOrigin(w, req)
 	productName := req.URL.Query().Get("product_name")
 	encoder := json.NewEncoder(w)
 
@@ -52,7 +53,7 @@ func (api *API) addToCart(w http.ResponseWriter, req *http.Request) {
 }
 
 func (api *API) clearCart(w http.ResponseWriter, req *http.Request) {
-	// TODO: answer here
+	api.AllowOrigin(w, req)
 	err := api.cartItemRepo.ResetCartItems()
 	if err != nil {
 		json.NewEncoder(w).Encode(CartErrorResponse{Error: err.Error()})
@@ -61,7 +62,8 @@ func (api *API) clearCart(w http.ResponseWriter, req *http.Request) {
 }
 
 func (api *API) cartList(w http.ResponseWriter, req *http.Request) {
-	cartList, err := api.cartItemRepo.SelectAll()
+	api.AllowOrigin(w, req)
+	cartItems, err := api.cartItemRepo.SelectAll()
 	encoder := json.NewEncoder(w)
 
 	if err != nil {

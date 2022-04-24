@@ -33,9 +33,7 @@ require (
 )
 
 require (
-	github.com/douglasmakey/oauth2-example v0.0.0-20190217053201-b19e764d1950
 	github.com/fsnotify/fsnotify v1.5.1 // indirect
-	github.com/gocarina/gocsv v0.0.0-20220310154401-d4df709ca055
 	github.com/golang-jwt/jwt/v4 v4.4.1
 	github.com/gorilla/pat v1.0.1
 	github.com/gorilla/sessions v1.2.1

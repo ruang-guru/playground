@@ -20,11 +20,21 @@ func NewAPI(usersRepo repository.UserRepository, productsRepo repository.Product
 	api := API{
 		usersRepo, productsRepo, cartItemRepo, transactionRepo, mux,
 	}
+
 	mux.HandleFunc("/api/user/login", api.login)
 	mux.HandleFunc("/api/user/logout", api.logout)
-	mux.HandleFunc("/api/dashboard", api.dashboard)
-	mux.HandleFunc("/api/products", api.productList)
-	mux.HandleFunc("/api/cart/add", api.addToCart)
+
+	mux.Handle("/api/dashboard", api.AuthMiddleWare(http.HandlerFunc(api.dashboard)))
+	mux.Handle("/api/products", api.AuthMiddleWare(http.HandlerFunc(api.productList)))
+	mux.Handle("/api/cart/add", api.AuthMiddleWare(http.HandlerFunc(api.addToCart)))
+
+	// TODO: answer here
+
+	// mux.HandleFunc("/api/dashboard", api.dashboard)
+	// mux.HandleFunc("/api/products", api.productList)
+	// mux.HandleFunc("/api/cart/add", api.addToCart)
+	// mux.HandleFunc("/api/cart/clear", api.clearCart)
+
 	// TODO: answer here
 
 	return api

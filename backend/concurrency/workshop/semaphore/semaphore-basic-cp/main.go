@@ -16,6 +16,7 @@ type worker struct {
 func (w *worker) doWork(input string) {
 	for i := 0; i < 100; i++ {
 		// TODO: answer here
+		w.sem.Acquire()
 		go func() {
 			// TODO: answer here
 			w.mu.Lock()
@@ -31,8 +32,9 @@ func (w *worker) doWork(input string) {
 			w.mu.Lock()
 			w.currentWork--
 			w.mu.Unlock()
-		}()
 
+			w.sem.Release()
+		}()
 	}
 }
 

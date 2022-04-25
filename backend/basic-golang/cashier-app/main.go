@@ -8,6 +8,7 @@ import (
 	"github.com/ruang-guru/playground/backend/basic-golang/cashier-app/repository"
 	"github.com/ruang-guru/playground/backend/basic-golang/cashier-app/terminal"
 	"github.com/ruang-guru/playground/backend/basic-golang/cashier-app/ui"
+	"github.com/ruang-guru/playground/backend/basic-golang/cashier-app/web"
 )
 
 func main() {
@@ -21,6 +22,7 @@ func main() {
 	fmt.Println("1. Terminal")
 	fmt.Println("2. Tview")
 	fmt.Println("3. API")
+	fmt.Println("4. Web")
 	fmt.Printf("Please choose mode: ")
 	var choice int
 	fmt.Scan(&choice)
@@ -36,6 +38,12 @@ func main() {
 	case 3:
 		mainAPI := api.NewAPI(usersRepo, productsRepo, cartItemRepo, transactionRepo)
 		mainAPI.Start()
+	case 4:
+		mainAPI := api.NewAPI(usersRepo, productsRepo, cartItemRepo, transactionRepo)
+		go mainAPI.Start()
+
+		mainWEB := web.NewWEB(usersRepo, productsRepo, cartItemRepo, transactionRepo)
+		mainWEB.Start()
 	default:
 		fmt.Println("Invalid choice")
 	}

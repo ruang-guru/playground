@@ -19,6 +19,7 @@ func (w *worker) doWork(input string) {
 		w.sem.Acquire()
 		go func() {
 			// TODO: answer here
+			defer w.sem.Release()
 			w.mu.Lock()
 			w.currentWork++
 			if w.maxWork < w.currentWork {
@@ -32,8 +33,6 @@ func (w *worker) doWork(input string) {
 			w.mu.Lock()
 			w.currentWork--
 			w.mu.Unlock()
-
-			w.sem.Release()
 		}()
 	}
 }

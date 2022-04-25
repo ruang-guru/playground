@@ -1121,6 +1121,18 @@
             "course": "backend",
             "path": "backend/auth/workshop/06-jwt-authorization",
             "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/data-structure/linkedlist/1-linkedlist-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/data-structure/recursion/1-recursion-cp",
+            "weight": 100
         }
     ]
 }

@@ -50,8 +50,7 @@
 					<h5 id="moneyChanges">Money Changes: Rp. 0</h5>
 					<div class="d-flex justify-content-end social_icon">
 						<span>
-							<button class="btn btn-danger" type="submit"
-								onclick="logoutAction()">Logout</button>
+							<button class="btn btn-danger" type="submit" onclick="logoutAction()">Logout</button>
 						</span>
 					</div>
 				</div>
@@ -93,7 +92,8 @@
 					<input type="number" class="form-control" id="payment">
 				</div>
 				<div class="modal-footer">
-					<button type="button" data-bs-dismiss="modal" class="btn btn-primary" onclick="payAction()">Pay</button>
+					<button type="button" data-bs-dismiss="modal" class="btn btn-primary"
+						onclick="payAction()">Pay</button>
 				</div>
 			</div>
 		</div>
@@ -101,6 +101,14 @@
 
 
 	<script>
+		// Chech Cookie:
+		if (document.cookie == "token=") {
+			alert("Please Login First!");
+			// Navigate to Login Page
+			window.location.replace("http://localhost:9000/login");
+		}
+
+		// |===>>> GET Dashboard:
 		const loadDashboard = async (cash) => {
 			document.getElementById('cash').innerHTML = "Cash: Rp. " + cash;
 			const dataDashboard = await fetch('http://localhost:8080/api/dashboard?cash=' + cash, {
@@ -126,16 +134,18 @@
 				outputHtml += '<li class="list-group-item d-flex justify-content-between align-items-center">\
 									'+ cartList[i].product_name + ': Rp. ' + cartList[i].price + '\
 									<span class="badge badge-primary badge-pill">'+ cartList[i].quantity + '</span>\
-							</li>';
+								</li>';
 			};
 			document.getElementById('cartList').innerHTML = outputHtml;
 		}
 
+		// |===>>> GET Load List Product:
 		const loadListProduct = async (category) => {
 			const dataProduct = await fetch('http://localhost:8080/api/products', {
 				method: 'GET',
 				// credential with cookie
 				credentials: "include",
+				// credentials: "same-origin",
 			});
 			const dataProductJson = await dataProduct.json();
 
@@ -158,45 +168,48 @@
 			loadListProduct(category);
 		}
 
+		// |===>>> GET Order Action:
 		const orderAction = async (productName) => {
-			const orderAct = await fetch('http://localhost:8080/api/cart/add?product_name=' + productName, {
+			await fetch('http://localhost:8080/api/cart/add?product_name=' + productName, {
 				method: 'GET',
 				// credential with cookie
 				credentials: "include",
 			});
-			const orderActJson = await orderAct.json();
-
-			console.log(orderActJson);
 			loadDashboard(0);
 		}
 
+		// |===>>> GET Logout Action:
 		const logoutAction = async () => {
 			const username = document.getElementById('username').innerHTML.value;
-			const dataDashboard = await fetch('http://localhost:8080/api/user/logout?username=' + username, {
+			await fetch('http://localhost:8080/api/user/logout?username=' + username, {
 				method: 'GET',
-				// credential with cookie
-				credentials: "include",
 			});
-			const dataDashboardJson = await dataDashboard.json();
-
-			console.log(dataDashboardJson);
+			// Delete Cookie
+			document.cookie = "token=;"
+			// Navigate to Login Page
 			window.location.replace("http://localhost:9000/login");
 		}
 
+		// |===>>> GET Clear Cart:
 		const clearChart = async () => {
 			await fetch('http://localhost:8080/api/cart/clear', {
 				method: 'GET',
 				// credential with cookie
 				credentials: "include",
 			});
+			document.getElementById('cartList').innerHTML = 
+			'<li class="list-group-item d-flex justify-content-between align-items-center">\
+				Empty Cart\
+				<span class="badge badge-primary badge-pill">0</span>\
+			</li>'
+
 			loadDashboard(0);
 		}
 
 		function payAction() {
-			 const pay = document.getElementById('payment').value
+			const pay = document.getElementById('payment').value
 			loadDashboard(pay)
 		}
-
 
 		loadDashboard(0)
 		loadListProduct("Fruits")

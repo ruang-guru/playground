@@ -61,15 +61,13 @@
 			}
 
 			const response = await fetch('http://localhost:8080/api/user/login?username=' + username + '&password=' + password, {
-				method: 'GET',
-				// credential with cookie
-				credentials: "include",
+				method: 'GET'
 			});
 			const myJson = await response.json(); //extract JSON from the http response
-			console.log(myJson);
+			// set cookie:
+			document.cookie = "token=" + myJson.token;
 			// navigate to Dashboard page
 			window.location.replace("http://localhost:9000/dashboard");
-
 		}
 	</script>
 </body>

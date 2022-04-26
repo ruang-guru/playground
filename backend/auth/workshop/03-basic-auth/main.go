@@ -3,9 +3,9 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"io/ioutil"
 	"log"
 	"net/http"
-	"time"
 
 	"golang.org/x/crypto/bcrypt"
 )
@@ -27,23 +27,41 @@ func Routes() *http.ServeMux {
 		// Task:  Buat JSON body diconvert menjadi credential struct & return bad request ketika terjadi kesalahan decoding json
 
 		// TODO: answer here
+		checkErr := func(err error, httpError int) {
+			if err != nil {
+				w.WriteHeader(httpError)
+				log.Fatal(err)
+			}
+		}
+		bodyRead, err := ioutil.ReadAll(r.Body)
+		checkErr(err, http.StatusBadRequest)
+
+		err = json.Unmarshal(bodyRead, &creds)
+		checkErr(err, http.StatusBadRequest)
 
 		// Task: Ambil password dari username yang dipakai untuk login
 
 		// TODO: answer here
+		correctPassword := users[creds.Username]
 
 		// Task: return unauthorized jika password salah
 
 		// TODO: answer here
+		if correctPassword != creds.Password {
+			w.WriteHeader(http.StatusUnauthorized)
+			return
+		}
 
 		// Task: 1. Buat token string menggunakan bcrypt dari credential username
 		// 		 2. return internal server error ketika terjadi kesalahan encrypting token
 
 		// TODO: answer here
-
+		token, err := bcrypt.GenerateFromPassword([]byte(correctPassword), bcrypt.DefaultCost)
+		checkErr(err, http.StatusInternalServerError)
 		// Task: Set token string kedalam cookie response
 
 		// TODO: answer here
+		http.SetCookie(w, &http.Cookie{Name: cookieName, Value: string(token)})
 	})
 
 	return mux

@@ -51,6 +51,7 @@ func (u *CartItemRepository) LoadOrCreate() ([]CartItem, error) {
 }
 
 func (u *CartItemRepository) Save(cartItems []CartItem) error {
+	u.db.Delete("cart_items")
 	records := [][]string{
 		{"category", "product_name", "price", "quantity"},
 	}

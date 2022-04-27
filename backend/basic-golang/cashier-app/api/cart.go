@@ -71,5 +71,5 @@ func (api *API) cartList(w http.ResponseWriter, req *http.Request) {
 		return
 	}
 
-	encoder.Encode(CartListSuccessResponse{CartItems: cartList}) // TODO: replace this
+	encoder.Encode(CartListSuccessResponse{CartItems: cartItems}) // TODO: replace this
 }

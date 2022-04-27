@@ -24,14 +24,15 @@ func Routes() *http.ServeMux {
 		// 		  3. return bad request ketika field token tidak ada
 
 		cookies, err := r.Cookie(cookieFieldName)
-		if err == http.ErrNoCookie {
+		if err != nil {
+			if err == http.ErrNoCookie {
+				w.WriteHeader(http.StatusUnauthorized)
+				return
+			}
 			w.WriteHeader(http.StatusBadRequest)
 			return
 		}
-		if cookies.Value == "" {
-			w.WriteHeader(http.StatusUnauthorized)
-			return
-		}
+
 		w.Write([]byte(fmt.Sprintf("Tokenmu adalah %s!", cookies.Value))) // TODO: replace this
 	})
 

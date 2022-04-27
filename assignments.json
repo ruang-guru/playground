@@ -1023,7 +1023,7 @@
         {
             "subject": "Back End Programming",
             "course": "backend",
-            "path": "backend/concurrency/workshop/racecondition/racecondition-basic-cp",
+            "path": "backend/concurrency/workshop/race-condition/race-condition-basic-cp",
             "weight": 100
         },  
         {

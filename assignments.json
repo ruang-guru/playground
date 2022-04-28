@@ -1119,6 +1119,12 @@
         {
             "subject": "Back End Programming",
             "course": "backend",
+            "path": "backend/auth/workshop/05-jwt",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
             "path": "backend/auth/workshop/06-jwt-authorization",
             "weight": 100
         },

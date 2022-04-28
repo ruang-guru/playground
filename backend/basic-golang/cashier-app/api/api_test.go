@@ -104,14 +104,25 @@ var _ = Describe("Api", func() {
 	Describe("cart/add", func() {
 		When("the product is found", func() {
 			It("returns the added product detail", func() {
+
 				//login
 				wr := httptest.NewRecorder()
 				req := httptest.NewRequest(http.MethodGet, "/api/user/login?username=aditira&password=1234", nil)
 				server.Handler().ServeHTTP(wr, req)
 
+				Expect(wr.Code).To(Equal(200))
+
+				var cookie *http.Cookie
+				for _, c := range wr.Result().Cookies() {
+					if c.Name == "token" {
+						cookie = c
+					}
+				}
+
 				//add to cart
 				wr = httptest.NewRecorder()
 				req = httptest.NewRequest(http.MethodGet, "/api/cart/add?product_name=Tomato", nil)
+				req.AddCookie(cookie)
 				server.Handler().ServeHTTP(wr, req)
 
 				Expect(wr.Result().StatusCode).To(Equal(http.StatusOK))
@@ -130,15 +141,30 @@ var _ = Describe("Api", func() {
 				req := httptest.NewRequest(http.MethodGet, "/api/user/login?username=aditira&password=1234", nil)
 				server.Handler().ServeHTTP(wr, req)
 
+				Expect(wr.Code).To(Equal(200))
+
+				var cookie *http.Cookie
+				for _, c := range wr.Result().Cookies() {
+					if c.Name == "token" {
+						cookie = c
+					}
+				}
+
 				//add to cart
 				wr = httptest.NewRecorder()
 				req = httptest.NewRequest(http.MethodGet, "/api/cart/add?product_name=Tomato", nil)
+				req.AddCookie(cookie)
 				server.Handler().ServeHTTP(wr, req)
+
+				Expect(wr.Code).To(Equal(200))
 
 				//get cart items
 				wr = httptest.NewRecorder()
 				req = httptest.NewRequest(http.MethodGet, "/api/carts", nil)
+				req.AddCookie(cookie)
 				server.Handler().ServeHTTP(wr, req)
+
+				Expect(wr.Code).To(Equal(200))
 
 				cartListSuccessResponse := api.CartListSuccessResponse{}
 				json.NewDecoder(wr.Body).Decode(&cartListSuccessResponse)
@@ -155,21 +181,35 @@ var _ = Describe("Api", func() {
 					wr := httptest.NewRecorder()
 					req := httptest.NewRequest(http.MethodGet, "/api/user/login?username=aditira&password=1234", nil)
 					server.Handler().ServeHTTP(wr, req)
+					Expect(wr.Code).To(Equal(200))
+
+					var cookie *http.Cookie
+					for _, c := range wr.Result().Cookies() {
+						if c.Name == "token" {
+							cookie = c
+						}
+					}
 
 					//add to cart
 					wr = httptest.NewRecorder()
 					req = httptest.NewRequest(http.MethodGet, "/api/cart/add?product_name=Tomato", nil)
+					req.AddCookie(cookie)
 					server.Handler().ServeHTTP(wr, req)
+					Expect(wr.Code).To(Equal(200))
 
 					//add to cart again
 					wr = httptest.NewRecorder()
 					req = httptest.NewRequest(http.MethodGet, "/api/cart/add?product_name=Tomato", nil)
+					req.AddCookie(cookie)
 					server.Handler().ServeHTTP(wr, req)
+					Expect(wr.Code).To(Equal(200))
 
 					//get cart items
 					wr = httptest.NewRecorder()
 					req = httptest.NewRequest(http.MethodGet, "/api/carts", nil)
+					req.AddCookie(cookie)
 					server.Handler().ServeHTTP(wr, req)
+					Expect(wr.Code).To(Equal(200))
 
 					cartListSuccessResponse := api.CartListSuccessResponse{}
 					json.NewDecoder(wr.Body).Decode(&cartListSuccessResponse)
@@ -187,21 +227,35 @@ var _ = Describe("Api", func() {
 					wr := httptest.NewRecorder()
 					req := httptest.NewRequest(http.MethodGet, "/api/user/login?username=aditira&password=1234", nil)
 					server.Handler().ServeHTTP(wr, req)
+					Expect(wr.Code).To(Equal(200))
+
+					var cookie *http.Cookie
+					for _, c := range wr.Result().Cookies() {
+						if c.Name == "token" {
+							cookie = c
+						}
+					}
 
 					//add to cart
 					wr = httptest.NewRecorder()
 					req = httptest.NewRequest(http.MethodGet, "/api/cart/add?product_name=Tomato", nil)
+					req.AddCookie(cookie)
 					server.Handler().ServeHTTP(wr, req)
+					Expect(wr.Code).To(Equal(200))
 
 					//add to cart again
 					wr = httptest.NewRecorder()
 					req = httptest.NewRequest(http.MethodGet, "/api/cart/add?product_name=Tea", nil)
+					req.AddCookie(cookie)
 					server.Handler().ServeHTTP(wr, req)
+					Expect(wr.Code).To(Equal(200))
 
 					//get cart items
 					wr = httptest.NewRecorder()
 					req = httptest.NewRequest(http.MethodGet, "/api/carts", nil)
+					req.AddCookie(cookie)
 					server.Handler().ServeHTTP(wr, req)
+					Expect(wr.Code).To(Equal(200))
 
 					cartListSuccessResponse := api.CartListSuccessResponse{}
 					json.NewDecoder(wr.Body).Decode(&cartListSuccessResponse)
@@ -224,10 +278,19 @@ var _ = Describe("Api", func() {
 				wr := httptest.NewRecorder()
 				req := httptest.NewRequest(http.MethodGet, "/api/user/login?username=aditira&password=1234", nil)
 				server.Handler().ServeHTTP(wr, req)
+				Expect(wr.Code).To(Equal(200))
+
+				var cookie *http.Cookie
+				for _, c := range wr.Result().Cookies() {
+					if c.Name == "token" {
+						cookie = c
+					}
+				}
 
 				//add to cart
 				wr = httptest.NewRecorder()
 				req = httptest.NewRequest(http.MethodGet, "/api/cart/add?product_name=Chocolate", nil)
+				req.AddCookie(cookie)
 				server.Handler().ServeHTTP(wr, req)
 
 				Expect(wr.Code).To(Equal(http.StatusNotFound))
@@ -241,21 +304,35 @@ var _ = Describe("Api", func() {
 			wr := httptest.NewRecorder()
 			req := httptest.NewRequest(http.MethodGet, "/api/user/login?username=aditira&password=1234", nil)
 			server.Handler().ServeHTTP(wr, req)
+			Expect(wr.Code).To(Equal(200))
+
+			var cookie *http.Cookie
+			for _, c := range wr.Result().Cookies() {
+				if c.Name == "token" {
+					cookie = c
+				}
+			}
 
 			//add to cart
 			wr = httptest.NewRecorder()
 			req = httptest.NewRequest(http.MethodGet, "/api/cart/add?product_name=Tomato", nil)
+			req.AddCookie(cookie)
 			server.Handler().ServeHTTP(wr, req)
+			Expect(wr.Code).To(Equal(200))
 
 			//clear cart
 			wr = httptest.NewRecorder()
 			req = httptest.NewRequest(http.MethodGet, "/api/cart/clear", nil)
+			req.AddCookie(cookie)
 			server.Handler().ServeHTTP(wr, req)
+			Expect(wr.Code).To(Equal(200))
 
 			//get cart items
 			wr = httptest.NewRecorder()
 			req = httptest.NewRequest(http.MethodGet, "/api/carts", nil)
+			req.AddCookie(cookie)
 			server.Handler().ServeHTTP(wr, req)
+			Expect(wr.Code).To(Equal(200))
 
 			cartListSuccessResponse := api.CartListSuccessResponse{}
 			json.NewDecoder(wr.Body).Decode(&cartListSuccessResponse)
@@ -265,9 +342,25 @@ var _ = Describe("Api", func() {
 
 	Describe("products", func() {
 		It("returns all products", func() {
+			//login
 			wr := httptest.NewRecorder()
-			req := httptest.NewRequest(http.MethodGet, "/api/products", nil)
+			req := httptest.NewRequest(http.MethodGet, "/api/user/login?username=aditira&password=1234", nil)
 			server.Handler().ServeHTTP(wr, req)
+			Expect(wr.Code).To(Equal(200))
+
+			var cookie *http.Cookie
+			for _, c := range wr.Result().Cookies() {
+				if c.Name == "token" {
+					cookie = c
+				}
+			}
+
+			//get products
+			wr = httptest.NewRecorder()
+			req = httptest.NewRequest(http.MethodGet, "/api/products", nil)
+			req.AddCookie(cookie)
+			server.Handler().ServeHTTP(wr, req)
+			Expect(wr.Code).To(Equal(200))
 
 			productListSuccessResponse := api.ProductListSuccessResponse{}
 			json.NewDecoder(wr.Body).Decode(&productListSuccessResponse)
@@ -295,11 +388,21 @@ var _ = Describe("Api", func() {
 				wr := httptest.NewRecorder()
 				req := httptest.NewRequest(http.MethodGet, "/api/user/login?username=aditira&password=1234", nil)
 				server.Handler().ServeHTTP(wr, req)
+				Expect(wr.Code).To(Equal(200))
+
+				var cookie *http.Cookie
+				for _, c := range wr.Result().Cookies() {
+					if c.Name == "token" {
+						cookie = c
+					}
+				}
 
 				//dashboard
 				wr = httptest.NewRecorder()
 				req = httptest.NewRequest(http.MethodGet, "/api/dashboard", nil)
+				req.AddCookie(cookie)
 				server.Handler().ServeHTTP(wr, req)
+				Expect(wr.Code).To(Equal(200))
 
 				dashboardSuccessResponse := api.DashboardSuccessResponse{}
 				json.NewDecoder(wr.Body).Decode(&dashboardSuccessResponse)
@@ -312,16 +415,28 @@ var _ = Describe("Api", func() {
 				wr := httptest.NewRecorder()
 				req := httptest.NewRequest(http.MethodGet, "/api/user/login?username=aditira&password=1234", nil)
 				server.Handler().ServeHTTP(wr, req)
+				Expect(wr.Code).To(Equal(200))
+
+				var cookie *http.Cookie
+				for _, c := range wr.Result().Cookies() {
+					if c.Name == "token" {
+						cookie = c
+					}
+				}
 
 				//add to cart
 				wr = httptest.NewRecorder()
 				req = httptest.NewRequest(http.MethodGet, "/api/cart/add?product_name=Tomato", nil)
+				req.AddCookie(cookie)
 				server.Handler().ServeHTTP(wr, req)
+				Expect(wr.Code).To(Equal(200))
 
 				//dashboard
 				wr = httptest.NewRecorder()
 				req = httptest.NewRequest(http.MethodGet, "/api/dashboard", nil)
+				req.AddCookie(cookie)
 				server.Handler().ServeHTTP(wr, req)
+				Expect(wr.Code).To(Equal(200))
 
 				dashboardSuccessResponse := api.DashboardSuccessResponse{}
 				json.NewDecoder(wr.Body).Decode(&dashboardSuccessResponse)
@@ -337,21 +452,35 @@ var _ = Describe("Api", func() {
 				wr := httptest.NewRecorder()
 				req := httptest.NewRequest(http.MethodGet, "/api/user/login?username=aditira&password=1234", nil)
 				server.Handler().ServeHTTP(wr, req)
+				Expect(wr.Code).To(Equal(200))
+
+				var cookie *http.Cookie
+				for _, c := range wr.Result().Cookies() {
+					if c.Name == "token" {
+						cookie = c
+					}
+				}
 
 				//add to cart
 				wr = httptest.NewRecorder()
 				req = httptest.NewRequest(http.MethodGet, "/api/cart/add?product_name=Tomato", nil)
+				req.AddCookie(cookie)
 				server.Handler().ServeHTTP(wr, req)
+				Expect(wr.Code).To(Equal(200))
 
 				//add to cart again
 				wr = httptest.NewRecorder()
 				req = httptest.NewRequest(http.MethodGet, "/api/cart/add?product_name=Tea", nil)
+				req.AddCookie(cookie)
 				server.Handler().ServeHTTP(wr, req)
+				Expect(wr.Code).To(Equal(200))
 
 				//dashboard
 				wr = httptest.NewRecorder()
 				req = httptest.NewRequest(http.MethodGet, "/api/dashboard", nil)
+				req.AddCookie(cookie)
 				server.Handler().ServeHTTP(wr, req)
+				Expect(wr.Code).To(Equal(200))
 
 				dashboardSuccessResponse := api.DashboardSuccessResponse{}
 				json.NewDecoder(wr.Body).Decode(&dashboardSuccessResponse)
@@ -364,16 +493,28 @@ var _ = Describe("Api", func() {
 				wr := httptest.NewRecorder()
 				req := httptest.NewRequest(http.MethodGet, "/api/user/login?username=aditira&password=1234", nil)
 				server.Handler().ServeHTTP(wr, req)
+				Expect(wr.Code).To(Equal(200))
+
+				var cookie *http.Cookie
+				for _, c := range wr.Result().Cookies() {
+					if c.Name == "token" {
+						cookie = c
+					}
+				}
 
 				//add to cart
 				wr = httptest.NewRecorder()
 				req = httptest.NewRequest(http.MethodGet, "/api/cart/add?product_name=Tomato", nil)
+				req.AddCookie(cookie)
 				server.Handler().ServeHTTP(wr, req)
+				Expect(wr.Code).To(Equal(200))
 
 				//dashboard
 				wr = httptest.NewRecorder()
 				req = httptest.NewRequest(http.MethodGet, "/api/dashboard?cash=4900", nil)
+				req.AddCookie(cookie)
 				server.Handler().ServeHTTP(wr, req)
+				Expect(wr.Code).To(Equal(200))
 
 				dashboardSuccessResponse := api.DashboardSuccessResponse{}
 				json.NewDecoder(wr.Body).Decode(&dashboardSuccessResponse)

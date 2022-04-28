@@ -1,0 +1,221 @@
+{{define "dashboard"}}
+<!DOCTYPE html>
+<html>
+
+<head>
+	{{template "_header"}}
+
+</head>
+
+<body>
+	<div class="container">
+		<div class="d-flex justify-content-center h-100">
+			<div class="card">
+				<div class="card-header">
+					<h3>List Product</h3>
+					<h5 id="category">Fruits</h5>
+					<div class="d-flex justify-content-start profile-icon">
+						<span>
+							<button class="btn btn-primary" type="submit" id="username">Unknow</button>
+						</span>
+					</div>
+
+					<div class="dropdown">
+						<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+							data-bs-toggle="dropdown" aria-expanded="false">
+							Select Category
+						</button>
+						<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+							<li><a class="dropdown-item pointer" onclick="selectCategory('Fruits')">Fruits</a></li>
+							<li><a class="dropdown-item pointer" onclick="selectCategory('Vegetables')">Vegetables</a>
+							</li>
+							<li><a class="dropdown-item pointer" onclick="selectCategory('Drink')">Drink</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="card-body" style="overflow: hidden; overflow-y: scroll;">
+					<ol id="listProduct" class="list-group list-group-numbered">
+						<li class="list-group-item d-flex justify-content-between align-items-start">
+							Product Empty
+						</li>
+					</ol>
+
+				</div>
+			</div>
+
+			<div class="card">
+				<div class="card-header">
+					<h3>Cart</h3>
+					<h5 id="cash">Cash: Rp. 0</h5>
+					<h5 id="moneyChanges">Money Changes: Rp. 0</h5>
+					<div class="d-flex justify-content-end social_icon">
+						<span>
+							<button class="btn btn-danger" type="submit" onclick="logoutAction()">Logout</button>
+						</span>
+					</div>
+				</div>
+				<div class="card-body" style="overflow: hidden; overflow-y: scroll;">
+					<ul class="list-group" id="cartList">
+						<li class="list-group-item d-flex justify-content-between align-items-center">
+							Empty Cart
+							<span class="badge badge-primary badge-pill">0</span>
+						</li>
+					</ul>
+
+				</div>
+				<div class="card-footer" style="text-align: center;">
+					<div class="row">
+						<div class="col-md-3">
+							<button class="btn btn-warning" onclick="clearChart()">Clear</button>
+						</div>
+						<div class="col-md-2">
+							<button class="btn btn-primary" type="submit" data-bs-toggle="modal"
+								data-bs-target="#paymentModal">Pay</button>
+						</div>
+						<div class="col-md-7">
+							<h5 id="totalPrice">Total: Rp. 0</h5>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="paymentModal" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" style="color: black;">Payment Dialog</h5>
+				</div>
+				<div class="modal-body">
+					<label class="col-form-label">Enter Payment:</label>
+					<input type="number" class="form-control" id="payment">
+				</div>
+				<div class="modal-footer">
+					<button type="button" data-bs-dismiss="modal" class="btn btn-primary"
+						onclick="payAction()">Pay</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<script>
+		// Chech Cookie:
+		if (document.cookie == "token=") {
+			alert("Please Login First!");
+			// Navigate to Login Page
+			window.location.replace("http://localhost:9000/login");
+		}
+
+		// |===>>> GET Dashboard:
+		const loadDashboard = async (cash) => {
+			document.getElementById('cash').innerHTML = "Cash: Rp. " + cash;
+			const dataDashboard = await fetch('http://localhost:8080/api/dashboard?cash=' + cash, {
+				method: 'GET',
+				// credential with cookie
+				credentials: "include",
+			});
+			const dataDashboardJson = await dataDashboard.json();
+
+			console.log(dataDashboardJson);
+
+			const username = dataDashboardJson.username;
+			const totalPrice = dataDashboardJson.total_price;
+			const moneyChanges = dataDashboardJson.money_changes;
+			const cartList = dataDashboardJson.cart_items;
+
+			document.getElementById('username').innerHTML = username;
+			document.getElementById('totalPrice').innerHTML = "Total: Rp. " + totalPrice;
+			document.getElementById('moneyChanges').innerHTML = "Money Changes: Rp. " + moneyChanges;
+
+			var outputHtml = '';
+			for (var i = 0; i < cartList.length; i++) {
+				outputHtml += '<li class="list-group-item d-flex justify-content-between align-items-center">\
+									'+ cartList[i].product_name + ': Rp. ' + cartList[i].price + '\
+									<span class="badge badge-primary badge-pill">'+ cartList[i].quantity + '</span>\
+								</li>';
+			};
+			document.getElementById('cartList').innerHTML = outputHtml;
+		}
+
+		// |===>>> GET Load List Product:
+		const loadListProduct = async (category) => {
+			const dataProduct = await fetch('http://localhost:8080/api/products', {
+				method: 'GET',
+				// credential with cookie
+				credentials: "include",
+				// credentials: "same-origin",
+			});
+			const dataProductJson = await dataProduct.json();
+
+			var output = dataProductJson.products.filter(product => product.category == category);
+			var outputHtml = '';
+			for (var i = 0; i < output.length; i++) {
+				outputHtml += '<li class="list-group-item d-flex justify-content-between align-items-start">\
+								<div class="ms-2 me-auto"> \
+								<div class="fw-bold">Product Name: ' + output[i].name + '</div>\
+									Price: Rp. ' + output[i].price + '\
+								</div>\
+								<span class="badge bg-primary rounded-pill"><a onclick="orderAction(\''+ output[i].name + '\')" style="color: white; cursor: pointer;">Order</a></span>\
+							</li>';
+			};
+			document.getElementById('listProduct').innerHTML = outputHtml;
+		}
+
+		function selectCategory(category) {
+			document.getElementById("category").innerHTML = category;
+			loadListProduct(category);
+		}
+
+		// |===>>> GET Order Action:
+		const orderAction = async (productName) => {
+			await fetch('http://localhost:8080/api/cart/add?product_name=' + productName, {
+				method: 'GET',
+				// credential with cookie
+				credentials: "include",
+			});
+			loadDashboard(0);
+		}
+
+		// |===>>> GET Logout Action:
+		const logoutAction = async () => {
+			const username = document.getElementById('username').innerHTML.value;
+			await fetch('http://localhost:8080/api/user/logout?username=' + username, {
+				method: 'GET',
+			});
+			// Delete Cookie
+			document.cookie = "token=;"
+			// Navigate to Login Page
+			window.location.replace("http://localhost:9000/login");
+		}
+
+		// |===>>> GET Clear Cart:
+		const clearChart = async () => {
+			await fetch('http://localhost:8080/api/cart/clear', {
+				method: 'GET',
+				// credential with cookie
+				credentials: "include",
+			});
+			document.getElementById('cartList').innerHTML = 
+			'<li class="list-group-item d-flex justify-content-between align-items-center">\
+				Empty Cart\
+				<span class="badge badge-primary badge-pill">0</span>\
+			</li>'
+
+			loadDashboard(0);
+		}
+
+		function payAction() {
+			const pay = document.getElementById('payment').value
+			loadDashboard(pay)
+		}
+
+		loadDashboard(0)
+		loadListProduct("Fruits")
+
+	</script>
+</body>
+
+</html>
+{{end}}

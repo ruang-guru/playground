@@ -1,0 +1,22 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+}
+
+.emoji {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+}
+
+.button {
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
+}

@@ -144,3 +144,9 @@ cypress/screenshots
 # grader
 grader-config.json
 grader-cli
+
+
+# output of profiling file
+*.pprof
+*.test
+*.out

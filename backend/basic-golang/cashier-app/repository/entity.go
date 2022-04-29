@@ -4,6 +4,7 @@ type User struct {
 	Username string
 	Password string
 	Loggedin bool
+	Token    string
 }
 
 type Product struct {

@@ -2,6 +2,7 @@ package main
 
 import (
 	"os/exec"
+	"runtime"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
@@ -9,7 +10,13 @@ import (
 
 var _ = AfterSuite(func() {
 	// clean fast.out and std.out
-	err := exec.Command("rm", "fast.out", "std.out").Run()
+	os := runtime.GOOS
+	var err error
+	if os == "windows" {
+		err = exec.Command("cmd", "/C", "del", "fast.out", "std.out").Run()
+	} else {
+		err = exec.Command("rm", "fast.out", "std.out").Run()
+	}
 	Expect(err).To(BeNil())
 })
 

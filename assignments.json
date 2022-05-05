@@ -1239,6 +1239,12 @@
         {
             "subject": "Back End Programming",
             "course": "backend",
+            "path": "backend/golang-http-server/assignment/url-shortener",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
             "path": "backend/performance-testing/workshop/1-vegeta-lib-basic-cp",
             "weight": 100
         },  

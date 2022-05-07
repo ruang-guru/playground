@@ -1,0 +1,20 @@
+benchmark                old ns/op     new ns/op     delta
+BenchmarkUnmarshal-4     1970          1138          -42.23%
+BenchmarkUnmarshal-4     1796          1073          -40.26%
+BenchmarkUnmarshal-4     2044          1190          -41.78%
+BenchmarkUnmarshal-4     2091          1337          -36.06%
+BenchmarkUnmarshal-4     1957          1389          -29.02%
+
+benchmark                old allocs     new allocs     delta
+BenchmarkUnmarshal-4     8              6              -25.00%
+BenchmarkUnmarshal-4     8              6              -25.00%
+BenchmarkUnmarshal-4     8              6              -25.00%
+BenchmarkUnmarshal-4     8              6              -25.00%
+BenchmarkUnmarshal-4     8              6              -25.00%
+
+benchmark                old bytes     new bytes     delta
+BenchmarkUnmarshal-4     295           671           +127.46%
+BenchmarkUnmarshal-4     295           671           +127.46%
+BenchmarkUnmarshal-4     295           671           +127.46%
+BenchmarkUnmarshal-4     295           671           +127.46%
+BenchmarkUnmarshal-4     295           671           +127.46%

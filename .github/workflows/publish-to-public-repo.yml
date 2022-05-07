@@ -31,7 +31,6 @@ jobs:
           go run cli/main.go answer remove -r backend
           go run cli/main.go answer remove -r frontend
           go run cli/main.go answer remove -r general
-          go run cli/main.go answer remove -r react
       - name: Sync folder
         working-directory: ./playground-internal
         run: rsync -vhra . ../playground --include='**.gitignore' --exclude='/.git' --filter=':- .gitignore' --delete-after

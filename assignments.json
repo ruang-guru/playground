@@ -1271,6 +1271,24 @@
             "course": "backend",
             "path": "backend/benchmarking-and-compiler",
             "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/design-patterns/creational/1-factory-pattern-cp/test",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/design-patterns/creational/3-builder-cp/house_test",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/design-patterns/structural/1-adapter-cp/adapter",
+            "weight": 100
         }
     ]
 }

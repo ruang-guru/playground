@@ -13,7 +13,50 @@ var RequestMethodHandler = func(c *gin.Context) {
 }
 
 func GetGinRoute() *gin.Engine {
-	return &gin.Engine{} // TODO: replace this
+	route := gin.Default()
+	route.GET("/get", func(ctx *gin.Context) {
+		ctx.JSON(http.StatusOK, gin.H{
+			"message": "GET",
+		})
+	})
+
+	route.POST("/post", func(ctx *gin.Context) {
+		ctx.JSON(http.StatusOK, gin.H{
+			"message": "POST",
+		})
+	})
+
+	route.PUT("/put", func(ctx *gin.Context) {
+		ctx.JSON(http.StatusOK, gin.H{
+			"message": "PUT",
+		})
+	})
+
+	route.DELETE("/delete", func(ctx *gin.Context) {
+		ctx.JSON(http.StatusOK, gin.H{
+			"message": "DELETE",
+		})
+	})
+
+	route.PATCH("/patch", func(ctx *gin.Context) {
+		ctx.JSON(http.StatusOK, gin.H{
+			"message": "PATCH",
+		})
+	})
+
+	route.HEAD("/head", func(ctx *gin.Context) {
+		ctx.JSON(http.StatusOK, gin.H{
+			"message": "HEAD",
+		})
+	})
+
+	route.OPTIONS("/options", func(ctx *gin.Context) {
+		ctx.JSON(http.StatusOK, gin.H{
+			"message": "OPTIONS",
+		})
+	})
+
+	return route // TODO: replace this
 }
 
 func main() {

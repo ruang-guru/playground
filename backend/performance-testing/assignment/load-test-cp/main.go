@@ -22,8 +22,19 @@ type Movie struct {
 //gunakan struct Movie diatas, cukup gunakan field episode dan name
 //ID sudah auto increment
 func addMovieTest(target string) *vegeta.Metrics {
-	metrics := &vegeta.Metrics{}
 	// TODO: answer here
+	newMovie := Movie{
+		Episode: 1,
+		Name:    "New Movie",
+	}
+	marshalJson, _ := json.Marshal(newMovie)
+
+	targeter := vegeta.NewStaticTargeter(vegeta.Target{
+		Method: "POST",
+		URL:    target,
+		Body:   marshalJson,
+	})
+	metrics := vegetaAttack(targeter, 10, time.Second)
 	return metrics
 }
 
@@ -31,15 +42,23 @@ func addMovieTest(target string) *vegeta.Metrics {
 //vegeta.NewStaticTargeter() adalah variadic function
 //kita bisa menggunakannya untuk menentukan multiple target vegeta attack
 func getMovieTest(target string) *vegeta.Metrics {
-	metrics := &vegeta.Metrics{}
 	// TODO: answer here
+	targeter := vegeta.NewStaticTargeter(vegeta.Target{
+		Method: "GET",
+		URL:    target,
+	})
+	metrics := vegetaAttack(targeter, 25, time.Second)
 	return metrics
 }
 
 //mendapatkan semua informasi movie
 func getMoviesTest(target string) *vegeta.Metrics {
-	metrics := &vegeta.Metrics{}
 	// TODO: answer here
+	targeter := vegeta.NewStaticTargeter(vegeta.Target{
+		Method: "GET",
+		URL:    target,
+	})
+	metrics := vegetaAttack(targeter, 20, time.Second)
 	return metrics
 }
 

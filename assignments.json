@@ -1289,6 +1289,30 @@
             "course": "backend",
             "path": "backend/design-patterns/structural/1-adapter-cp/adapter",
             "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/react/react-project",
+            "weight": 1000
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/react/builtin-custom-hook/1-react-hooks-state-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/react/builtin-custom-hook/2-react-hooks-lifecycle-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/react/state-props-in-component/state-props-component-cp",
+            "weight": 100
         }
     ]
 }

@@ -1119,6 +1119,12 @@
         {
             "subject": "Back End Programming",
             "course": "backend",
+            "path": "backend/auth/workshop/05-jwt",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
             "path": "backend/auth/workshop/06-jwt-authorization",
             "weight": 100
         },
@@ -1132,6 +1138,156 @@
             "subject": "Front End Programming",
             "course": "frontend",
             "path": "frontend/data-structure/recursion/1-recursion-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/golang-http-server/error-handling/error-handling-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/golang-http-server/gin/1-gin-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/golang-http-server/gin/2-request-method-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/golang-http-server/gin/3-path-parameter-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/golang-http-server/gin/4-query-string-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/golang-http-server/gin/5-route-grouping-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/golang-http-server/handler/1-handler-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/golang-http-server/handler/2-custom-handler-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/golang-http-server/handler/3-middleware-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/golang-http-server/handler/4-chaining-middleware-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/golang-http-server/multiplexing/1-servemux-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/golang-http-server/response-code/response-code-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/golang-http-server/routing/1-handleFunc-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/golang-http-server/routing/2-serveMux-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/golang-http-server/assignment/cashier-app/api",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/golang-http-server/assignment/cashier-app/repository",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/golang-http-server/assignment/url-shortener",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/performance-testing/workshop/1-vegeta-lib-basic-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/performance-testing/assignment/increase-attack-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/performance-testing/assignment/load-test-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/performance-testing/assignment/spike-test-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/benchmarking-and-compiler",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/design-patterns/creational/1-factory-pattern-cp/test",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/design-patterns/creational/3-builder-cp/house_test",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/design-patterns/structural/1-adapter-cp/adapter",
             "weight": 100
         }
     ]

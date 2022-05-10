@@ -1,0 +1,4 @@
+username,password,loggedin,role
+aditira,1234,false,admin
+dina,4321,false,employee
+dito,2552,false,employee

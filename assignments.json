@@ -1337,6 +1337,12 @@
             "course": "frontend",
             "path": "frontend/react/additional-hooks/2-additional-hooks-react-part-2-cp",
             "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/react/react-router-dom/2-nested-routes-cp",
+            "weight": 100
         }
     ]
 }

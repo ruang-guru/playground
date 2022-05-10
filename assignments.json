@@ -1313,6 +1313,12 @@
             "course": "frontend",
             "path": "frontend/react/state-props-in-component/state-props-component-cp",
             "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/react/react-handle-events/react-handle-events-cp",
+            "weight": 100
         }
     ]
 }

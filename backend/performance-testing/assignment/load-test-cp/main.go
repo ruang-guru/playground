@@ -2,6 +2,8 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
+
 	// TODO: answer here
 	"time"
 
@@ -43,10 +45,15 @@ func addMovieTest(target string) *vegeta.Metrics {
 //kita bisa menggunakannya untuk menentukan multiple target vegeta attack
 func getMovieTest(target string) *vegeta.Metrics {
 	// TODO: answer here
-	targeter := vegeta.NewStaticTargeter(vegeta.Target{
-		Method: "GET",
-		URL:    target,
-	})
+	targets := []vegeta.Target{}
+	for i := 1; i <= 25; i++ {
+		targets = append(targets, vegeta.Target{
+			Method: "GET",
+			URL:    fmt.Sprintf("%s/movie/%d", target, i),
+		})
+	}
+
+	targeter := vegeta.NewStaticTargeter(targets...)
 	metrics := vegetaAttack(targeter, 25, time.Second)
 	return metrics
 }

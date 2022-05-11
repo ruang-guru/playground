@@ -1289,6 +1289,60 @@
             "course": "backend",
             "path": "backend/design-patterns/structural/1-adapter-cp/adapter",
             "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/react/react-project",
+            "weight": 1000
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/react/builtin-custom-hook/1-react-hooks-state-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/react/builtin-custom-hook/2-react-hooks-lifecycle-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/react/state-props-in-component/state-props-component-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/react/react-handle-events/react-handle-events-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/react/additional-hooks/1-additional-hooks-in-react-part-1-cp/change-language",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/react/additional-hooks/1-additional-hooks-in-react-part-1-cp/usercontext",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/react/additional-hooks/2-additional-hooks-react-part-2-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/react/react-router-dom/2-nested-routes-cp",
+            "weight": 100
         }
     ]
 }

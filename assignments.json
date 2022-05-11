@@ -1,0 +1,1348 @@
+{
+    "assignments": [
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/unittest",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/unittest",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/basic-golang/cashier",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/basic-golang/todoapp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/javascript/1-algorithm-and-pseudocode-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/javascript/2-variable-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/javascript/3-comparison-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/javascript/4-looping-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/javascript/5-array-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/javascript/6-function-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/javascript/7-object-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/javascript/exercise/breaking-sentence-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/javascript/exercise/cafe-visitation-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/javascript/exercise/fix-data-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/javascript/exercise/ganjil-genap-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/javascript/exercise/gatcha-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/javascript/exercise/konversi-menit-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/javascript/exercise/palindrome-angka-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/javascript/exercise/sandi-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/basic-golang/error-handling/1-custom-error-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/basic-golang/error-handling/2-sentinel-error-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/basic-golang/error-handling/3-wrapping-error-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/basic-golang/error-handling/4-error-is-error-as-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/basic-golang/error-handling/5-panic-recovery-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/basic-golang/package/1-create-package-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/basic-golang/package/2-import-std-lib-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/basic-golang/interface/1-defining-interface-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/basic-golang/interface/2-empty-interface-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/javascript/hackerrank/birthday-cake-candles",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/javascript/hackerrank/breaking-the-records",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/javascript/hackerrank/compare-the-triplets",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/javascript/hackerrank/diagonal-difference",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/javascript/hackerrank/gradings-students",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/javascript/hackerrank/mini-max-sum",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/javascript/hackerrank/staircase",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/javascript/hackerrank/time-conversion",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/javascript/hackerrank/very-big-sum",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/basic-golang/json/1-encode-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/basic-golang/json/1-encode-json-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/basic-golang/json/2-decode-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/basic-golang/json/2-encode-json-arrays-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/basic-golang/json/3-encode-json-nested-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/basic-golang/json/final-assignment",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/basic-golang/template/1-data-evaluation-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/basic-golang/template/1-get-struct-value-cp-advance",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/basic-golang/template/2-condition-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/basic-golang/template/3-loop-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/basic-golang/template/4-function-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/basic-golang/net-http/1-server-api-get-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/basic-golang/net-http/2-server-api-post-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/basic-golang/net-http/3-server-web-api-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/golang-io/assignment/text-file/1-read-text-file-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/golang-io/assignment/text-file/2-write-text-file-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/golang-io/assignment/text-file/3-write-append-text-file-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/golang-io/assignment/text-file/4-read-line-by-line-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/golang-io/assignment/csv-file/1-read-csv-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/golang-io/assignment/csv-file/2-write-csv-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/golang-io/assignment/json-file/1-read-json-file-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/golang-io/assignment/json-file/2-write-json-file-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/golang-io/assignment/json-file/3-update-json-file-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/golang-io/assignment/http-cp/client",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/golang-io/assignment/http-cp/server",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/basic-golang/cashier-app/repository",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/basic-golang/cashier-app/api",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "cypress/integration/dom/counter-app",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "cypress/integration/dom/calculator-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "cypress/integration/dom/guess-number-assignment",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "cypress/integration/dom/random-quote-generator",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "cypress/integration/dom/stopwatch-app-assignment",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "cypress/integration/dom/tictactoe-assignment",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/data-structure/recursion/3-rotate-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/data-structure/recursion/5-fibonacci-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/data-structure/recursion/7-reverse-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/data-structure/recursion/8-tower-of-hanoi-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/data-structure/recursion/9-calculate-lcm-by-gcd-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/data-structure/recursion/11-binary-search-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/data-structure/recursion/13-count-digits-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/data-structure/complexity-analysis/selection-sort-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/data-structure/complexity-analysis/find-2-number-adds-up-to-target-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming", 
+            "course": "backend", 
+            "path": "backend/basic-golang/debugging/2-three-consecutive-character-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming", 
+            "course": "backend", 
+            "path": "backend/basic-golang/debugging/4-second-conversion-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/basic-golang/debugging/assignment/1-sum-all",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/basic-golang/debugging/assignment/2-reverse-word",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/basic-golang/debugging/assignment/3-score-rank",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/basic-golang/debugging/assignment/4-calculate-change",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/basic-golang/debugging/assignment/5-substring-match",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/concurrency/workshop/goroutine/1-sequential-to-concurrent-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/concurrency/workshop/goroutine/2-basic-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/concurrency/workshop/goroutine/3-anonymous-function-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/concurrency/workshop/goroutine/4-stop-loop-concurrently-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/concurrency/workshop/goroutine/5-capture-loop-counter-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/concurrency/workshop/channel/1-receive-blocking-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/concurrency/workshop/channel/2-send-blocking-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/concurrency/workshop/channel/3-communicate-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/concurrency/workshop/channel/4-channel-as-parameter-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/concurrency/workshop/channel/5-channel-direction-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/concurrency/assignment/sum-of-square-number-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/concurrency/workshop/intermediate-channel/1-buffered-channel-1-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/concurrency/workshop/intermediate-channel/2-buffered-channel-2-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/concurrency/workshop/intermediate-channel/3-range-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/concurrency/workshop/intermediate-channel/4-close-1-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/concurrency/workshop/intermediate-channel/5-close-2-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/concurrency/workshop/intermediate-channel/6-select-1-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/concurrency/workshop/intermediate-channel/7-select-2-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/concurrency/assignment/throughput-control-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/concurrency/assignment/chess-tournament-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/es6/1-variables-const-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/es6/2-arrow-function-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/es6/3-functional-programming-filter-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/es6/3-functional-programming-filter-digit-assignment",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/es6/3-functional-programming-filter-string-assignment",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/es6/3-functional-programming-map-assignment",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/es6/3-functional-programming-map-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/es6/3-functional-programming-order-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/es6/3-functional-programming-reduce-count-assignment",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/es6/3-functional-programming-reduce-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/es6/3-functional-programming-reduce-max-assignment",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/es6/4-spread-syntax-assignment",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/es6/4-spread-syntax-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/es6/5-destructuring-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/es6/5-destructuring-firstname-assignment",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/es6/5-destructuring-format-assignment",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/es6/6-for-of-assignment",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/es6/6-for-of-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/data-structure/array/1-sort-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/data-structure/array/2-search-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/data-structure/array/3-array-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/data-structure/hashmap/1-hashmap-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/data-structure/hashmap/2-hashmap-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/data-structure/assignment/scoreboard",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/data-structure/set/1-set-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/data-structure/queue/1-queue-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/data-structure/assignment/music-playlist",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/data-structure/stack/1-init-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/data-structure/stack/2-push-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/data-structure/stack/3-pop-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/data-structure/stack/4-peek-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/data-structure/assignment/parentheses-validation",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/data-structure/assignment/text-editor",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/data-structure/array/1-sort-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/data-structure/array/2-search-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/data-structure/array/3-array-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/data-structure/hashmap/1-hashmap-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/data-structure/hashmap/2-hashmap-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/data-structure/assignment/scoreboard",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/data-structure/set/1-set-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/data-structure/set/2-set-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/data-structure/assignment/ruangkata/spellchecker",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/data-structure/assignment/music-playlist",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/data-structure/queue/1-queue-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/data-structure/queue/2-queue-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/data-structure/stack/1-init-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/data-structure/stack/2-push-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/data-structure/stack/3-pop-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/data-structure/stack/4-peek-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/data-structure/assignment/parentheses-validation",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/data-structure/assignment/text-editor",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/data-structure/linked-list/1-linked-list-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/data-structure/linked-list/2-linked-list-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/javascript/11-oop-bio-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/javascript/11-oop-advance-calculator-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/javascript/11-oop-steal-gold-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/javascript/11-oop-thief-and-trickster-assignment",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/javascript/09-callback-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/javascript/09-callback-assignment",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/javascript/10-promise-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/javascript/10-promise-assignment",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/javascript/10-async-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/javascript/10-async-assignment",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/concurrency/workshop/waitgroup/waitgroup-basic-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/concurrency/workshop/race-condition/race-condition-basic-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/concurrency/workshop/intermediate-channel/1-buffered-channel-1-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/concurrency/workshop/intermediate-channel/2-buffered-channel-2-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/concurrency/workshop/mutex/mutex-basic-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/concurrency/workshop/semaphore/semaphore-basic-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/concurrency/workshop/intermediate-channel/4-close-1-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/concurrency/workshop/intermediate-channel/5-close-2-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/concurrency/workshop/intermediate-channel/6-select-1-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/concurrency/workshop/intermediate-channel/7-select-2-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/concurrency/assignment/async-requests-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/concurrency/assignment/sum-of-square-number-sm-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/concurrency/assignment/load-balancer-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/auth/workshop/01-encript-brypct",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/auth/workshop/02-get-header-data",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/auth/workshop/03-basic-auth",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/auth/workshop/04-http-basic-auth/1-basic-auth-cp/server-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/auth/workshop/05-jwt",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/auth/workshop/06-jwt-authorization",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/data-structure/linkedlist/1-linkedlist-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/data-structure/recursion/1-recursion-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/golang-http-server/error-handling/error-handling-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/golang-http-server/gin/1-gin-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/golang-http-server/gin/2-request-method-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/golang-http-server/gin/3-path-parameter-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/golang-http-server/gin/4-query-string-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/golang-http-server/gin/5-route-grouping-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/golang-http-server/handler/1-handler-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/golang-http-server/handler/2-custom-handler-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/golang-http-server/handler/3-middleware-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/golang-http-server/handler/4-chaining-middleware-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/golang-http-server/multiplexing/1-servemux-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/golang-http-server/response-code/response-code-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/golang-http-server/routing/1-handleFunc-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/golang-http-server/routing/2-serveMux-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/golang-http-server/assignment/cashier-app/api",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/golang-http-server/assignment/cashier-app/repository",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/golang-http-server/assignment/url-shortener",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/performance-testing/workshop/1-vegeta-lib-basic-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/performance-testing/assignment/increase-attack-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/performance-testing/assignment/load-test-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/performance-testing/assignment/spike-test-cp",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/benchmarking-and-compiler",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/design-patterns/creational/1-factory-pattern-cp/test",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/design-patterns/creational/3-builder-cp/house_test",
+            "weight": 100
+        },  
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/design-patterns/structural/1-adapter-cp/adapter",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/react/react-project",
+            "weight": 1000
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/react/builtin-custom-hook/1-react-hooks-state-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/react/builtin-custom-hook/2-react-hooks-lifecycle-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/react/state-props-in-component/state-props-component-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/react/react-handle-events/react-handle-events-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/react/additional-hooks/1-additional-hooks-in-react-part-1-cp/change-language",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/react/additional-hooks/1-additional-hooks-in-react-part-1-cp/usercontext",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/react/additional-hooks/2-additional-hooks-react-part-2-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/react/react-router-dom/2-nested-routes-cp",
+            "weight": 100
+        }
+    ]
+}

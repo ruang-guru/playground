@@ -1,0 +1,26 @@
+name: assignment-manager
+on:
+  push:
+    paths:
+      - assignments.json
+    branches:
+      - main
+jobs:
+  assignment-manager:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v2.4.0
+        name: Checkout
+        with:
+          fetch-depth: 0
+          path: ./playground-internal
+      - uses: actions/setup-go@v2
+        with:
+          go-version: '1.16.1' 
+      - name: Manage assignments
+        working-directory: ./playground-internal
+        run: |
+          go run cli/main.go assignmentmanager -f assignments.json --email ${{ secrets.GRADER_AUTH_EMAIL }} --password ${{ secrets.GRADER_AUTH_PASSWORD }}

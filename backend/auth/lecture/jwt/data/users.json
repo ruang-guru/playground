@@ -1,0 +1,11 @@
+[{
+    "username": "aditira",
+    "password": "aditira123",
+    "email": "aditirajamhuri@gmail.com",
+    "group": "admin"
+}, {
+    "username": "dito",
+    "password": "123dito",
+    "email": "dito@gmail.com",
+    "group": "user"
+}]

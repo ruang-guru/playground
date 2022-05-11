@@ -12,6 +12,7 @@ require (
 	github.com/dgryski/dgoogauth v0.0.0-20190221195224-5a805980a5f3
 	github.com/gorilla/context v1.1.1
 	github.com/gorilla/mux v1.8.0
+	github.com/mattn/go-sqlite3 v1.14.12
 	github.com/onsi/ginkgo v1.16.4
 	github.com/pkg/profile v1.6.0
 	github.com/prometheus/client_golang v1.12.1

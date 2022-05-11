@@ -66,6 +66,7 @@ require (
 	github.com/leodido/go-urn v1.2.0 // indirect
 	github.com/magiconair/properties v1.8.5 // indirect
 	github.com/markbates/goth v1.71.1
+	github.com/mattn/go-sqlite3 v1.14.12
 	github.com/mitchellh/mapstructure v1.4.3 // indirect
 	github.com/novalagung/gubrak/v2 v2.0.1
 	github.com/nxadm/tail v1.4.8 // indirect

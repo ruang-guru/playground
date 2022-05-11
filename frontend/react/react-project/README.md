@@ -3,6 +3,9 @@
 ## Setup
 Jalankan `npm install` untuk meng-install dependency yang dibutuhkan
 
+## BackEnd API
+Dokumentasi API dapat dilihat di [https://hackmd.io/@RieGan/rg-km_insta-clone_api](https://hackmd.io/@RieGan/rg-km_insta-clone_api)
+
 ## Test
 Test file berada pada directory `src/__test__/...`, untuk menjalankan test tersebut dapat dilakukan dengan command
 

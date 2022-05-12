@@ -1,0 +1,17 @@
+.thumbnail-container{
+    width: 90%;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    img{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+@media only screen and (min-width: 600px) {
+    .thumbnail-container{
+        width: 50%;
+    }
+}

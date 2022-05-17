@@ -1,0 +1,14 @@
+.register-container {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.register-input-container {
+    display: flex;
+    flex-direction: row;
+}
+.register-input {
+    display: flex;
+    flex: 1;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}

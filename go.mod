@@ -10,6 +10,7 @@ require (
 require (
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/gorilla/mux v1.8.0
+	github.com/mattn/go-sqlite3 v1.14.12
 	github.com/onsi/ginkgo v1.16.4
 	github.com/spf13/cobra v1.4.0
 	github.com/spf13/viper v1.10.1

@@ -1285,12 +1285,6 @@
             "weight": 100
         },  
         {
-            "subject": "Back End Programming",
-            "course": "backend",
-            "path": "backend/design-patterns/structural/1-adapter-cp/adapter",
-            "weight": 100
-        },
-        {
             "subject": "Front End Programming",
             "course": "frontend",
             "path": "frontend/react/react-project",
@@ -1342,6 +1336,126 @@
             "subject": "Front End Programming",
             "course": "frontend",
             "path": "frontend/react/react-router-dom/2-nested-routes-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/design-patterns/behavioral/1-state-cp/laptop",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/design-patterns/behavioral/2-strategy-cp/sortKM",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/design-patterns/structural/1-adapter-cp/adapter",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/design-patterns/structural/2-composite-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/design-patterns/structural/3-decorator-cp/test",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/database/connect/1-sqlite-setup-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/database/basic-principle/array/1-array-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/database/basic-principle/array/2-array-foreign-key-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/database/basic-principle/array/3-array-one-to-many-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/database/basic-principle/array/4-array-many-to-many-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/database/basic-principle/hashmap/1-hashmap-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/database/basic-principle/hashmap/2-hashmap-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/database/basic-principle/hashmap/3-hashmap-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/database/intro-to-sql/1-create-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/database/intro-to-sql/2-read-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/database/intro-to-sql/3-update-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/database/intro-to-sql/4-delete-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/database/intro-to-sql/5-inner-join-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/database/intro-to-sql/6-left-join-cp",
+            "weight": 100
+        },
+        {
+            "subject": "Back End Programming",
+            "course": "backend",
+            "path": "backend/database/intro-to-sql/assigment/music-app/repository",
             "weight": 100
         }
     ]

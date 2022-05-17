@@ -1,0 +1,27 @@
+.state-props-2{
+    margin-right : auto;
+    margin-left: auto;
+    width: 60%;
+    h3{
+        text-align: center;
+    }
+    .box-container{
+        display: flex;
+        .each-box{
+            padding: 5px;
+            flex-direction: column;
+            display: flex;
+            align-items: center;
+            border: 2px black;
+            width: 32%;
+            border-style: solid;
+            border-width: 2px 2px;
+            button:hover{
+                cursor: pointer;
+            }
+            input{
+                text-align: center;
+            }
+        }
+    }
+}

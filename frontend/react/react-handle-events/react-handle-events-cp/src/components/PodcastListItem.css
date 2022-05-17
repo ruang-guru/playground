@@ -1,0 +1,22 @@
+.list-item-container {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  border-style: solid;
+  border-width: 1px 1px;
+  border-color: #7e7c7c50;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.podcast-content-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5%;
+  margin-right: 5%;
+  text-align: left;
+}
+.podcast-subtitle-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

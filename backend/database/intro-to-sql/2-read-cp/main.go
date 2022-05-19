@@ -15,8 +15,6 @@ func NewEmployeeRepository(db *sql.DB) *EmployeeRepository {
 }
 
 func (r *EmployeeRepository) FetchEmployeeByNIK(nik string) (*model.Employee, error) {
-	var sqlStmt string
-
 	// Task:
 	// buat query untuk mengambil data employee berdasarkan nik
 	// simpan query ke variable sqlStmt
@@ -24,7 +22,7 @@ func (r *EmployeeRepository) FetchEmployeeByNIK(nik string) (*model.Employee, er
 	// data diambil dengan nik tertentu dari parameter nik
 
 	// TODO: answer here
-
+	sqlStmt := "SELECT id, nik, first_name, last_name, email FROM employees WHERE nik=?"
 	row := r.db.QueryRow(sqlStmt, nik)
 	employee := &model.Employee{}
 	err := row.Scan(
@@ -42,7 +40,6 @@ func (r *EmployeeRepository) FetchEmployeeByNIK(nik string) (*model.Employee, er
 }
 
 func (r *EmployeeRepository) FetchEmployees() ([]model.Employee, error) {
-	var sqlStmt string
 
 	// Task:
 	// buat query untuk mengambil data employees
@@ -50,7 +47,7 @@ func (r *EmployeeRepository) FetchEmployees() ([]model.Employee, error) {
 	// lihat model.Employee untuk field yang diambil dari database
 
 	// TODO: answer here
-
+	sqlStmt := "SELECT id, nik, first_name, last_name, email FROM employees"
 	rows, err := r.db.Query(sqlStmt)
 	if err != nil {
 		return nil, err

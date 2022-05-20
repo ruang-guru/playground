@@ -1,0 +1,45 @@
+nav {
+  background-color: #9b9999;
+  position: relative;
+  width: 100%;
+}
+
+nav a {
+  text-align: center;
+  margin: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+  color: beige;
+  text-decoration: none;
+}
+
+nav ul {
+  text-align: center;
+  margin: 0;
+  padding: 10px;
+}
+
+nav ul li {
+  display: inline;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 17px;
+}
+
+nav ul li a {
+  color: white;
+  padding: 5px;
+}
+
+nav ul li a:hover {
+  background-color: #427779;
+}
+
+nav div button {
+  color: #2b5e5e;
+}
+
+div img {
+  width: 500px;
+  min-width: 200px;
+}
+/*# sourceMappingURL=index.css.map */

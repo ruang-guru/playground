@@ -1,0 +1,46 @@
+$latar: rgb(155, 153, 153);
+
+
+nav {
+  //   overflow: hidden;
+  background-color: $latar;
+  position: relative;
+  width: 100%;
+  a {
+    text-align: center;
+    margin: 0;
+    padding-top: 10px;
+    padding-left: 10px;
+    color: beige;
+    text-decoration: none;
+  }
+  ul {
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+    li {
+      display: inline;
+      font-family: 'Fira Sans', sans-serif;
+      font-size: 17px;
+      a {
+        color: rgb(255, 255, 255);
+        padding: 5px;
+        &:hover {
+          background-color: rgb(66, 119, 121);
+        }
+      }
+    }
+  }
+  div {
+    button {
+      color: rgb(43, 94, 94);
+    }
+  }
+}
+
+div{
+  img{
+    width: 500px;
+    min-width: 200px;
+  }
+}

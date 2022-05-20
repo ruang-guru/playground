@@ -9,14 +9,24 @@
 // teks2 dibalik sama menjadi madam, maka balikan akan true
 // teks3 dibalik sama menjadi kasur ini rusak, maka balikan akan true
 
+const prompt = require("prompt-sync")({sigint:true});
+
 function checkPalindrome(string) {
-    // TODO: answer here
+    const len = string.length;
+
+    for (let i = 0; i < len / 2; i++) {
+
+        if (string[i] !== string[len - 1 - i]) {
+            return 'False';
+        }
+    }
+    return 'True';
 }
 
-// masukan teks
-const string = prompt('Masukan string: ');
 
-// memanggil fungsi palindrom
+const string = prompt('Enter a string: ');
+
+// memanggil function
 const value = checkPalindrome(string);
 
 console.log(value);

@@ -1,0 +1,39 @@
+nav {
+  background-color: pink;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+}
+nav a {
+  text-align: center;
+  list-style-type: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 15px;
+}
+nav ul {
+  text-align: center;
+  list-style-type: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+}
+nav ul li {
+  display: inline;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 12;
+}
+nav ul li a {
+  color: black;
+  text-decoration: none;
+  padding: 14px;
+}
+nav ul li a:hover {
+  background-color: darkgrey;
+}
+nav div button {
+  background-color: aqua;
+}
+
+/*# sourceMappingURL=style.css.map */

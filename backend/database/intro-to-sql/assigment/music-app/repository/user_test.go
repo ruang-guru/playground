@@ -17,6 +17,7 @@ var _ = Describe("User", func() {
 		if err != nil {
 			panic(err)
 		}
+		defer db.Close()
 
 		_, err = db.Exec(`CREATE TABLE IF NOT EXISTS users (
 			id INTEGER PRIMARY KEY,
@@ -27,7 +28,7 @@ var _ = Describe("User", func() {
 			panic(err)
 		}
 
-		_, err = db.Exec(`INSERT INTO users (id, name, created_at) VALUES
+		_, err = db.Exec(`INSERT or REPLACE INTO users (id, name, created_at) VALUES
 			(1, 'John', '2020-01-01 00:00:00'),
 			(2, 'Jane', '2020-01-01 00:00:00'),
 			(3, 'Jack', '2020-01-01 00:00:00');`)
@@ -63,6 +64,7 @@ var _ = Describe("User", func() {
 		It("should return user", func() {
 			db, err := sql.Open("sqlite3", "./music-app.db")
 			Expect(err).To(BeNil())
+			defer db.Close()
 
 			userRepo := NewUserRepository(db)
 			user, err := userRepo.FetchUserByID(1)
@@ -75,6 +77,7 @@ var _ = Describe("User", func() {
 		It("should return user", func() {
 			db, err := sql.Open("sqlite3", "./music-app.db")
 			Expect(err).To(BeNil())
+			defer db.Close()
 
 			userRepo := NewUserRepository(db)
 			err = userRepo.DeleteUserByID(1)

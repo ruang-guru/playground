@@ -1,0 +1,34 @@
+@use './variables.scss' as *;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap');
+
+html,
+body {
+  color: white;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+  background-color: $veryDarkBlue;
+}
+
+button {
+  min-height: 44px;
+  min-width: 44px;
+  cursor: pointer;
+}
+
+input {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+a {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+p {
+  margin: 0;
+}

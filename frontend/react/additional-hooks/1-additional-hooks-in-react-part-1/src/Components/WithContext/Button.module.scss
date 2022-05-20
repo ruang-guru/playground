@@ -1,0 +1,27 @@
+.winter{
+    background-color: #2377a4;
+
+
+}
+
+.summer{
+    background-color: #FF4E50;
+}
+
+.summer:hover{
+    background-color: #FC913A;
+}
+
+.winter:hover{
+    background-color: #50A3C6;
+}
+
+.button{
+    transition: ease-in 0.2s;
+    color: #f8f8f8;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    min-height: 44px;
+    min-width: 44px;
+}

@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"math/rand"
 	"net/http"
 )
@@ -19,7 +18,12 @@ var quotes = []string{
 }
 
 // TODO: answer here
+type QuotesHandler struct {
+}
 
 func (qh QuotesHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	// TODO: answer here
+	quote := quotes[rand.Int31n(int32(len(quotes)))]
+	w.Write([]byte(quote))
+
 }

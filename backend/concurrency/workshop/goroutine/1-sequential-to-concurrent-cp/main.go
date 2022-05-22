@@ -28,9 +28,9 @@ func greetBob(called *bool) {
 //Bagaimana cara agar greetAndy dan greetBob dapat berjalan secara concurrent ?
 func call(calledAndy, calledBob *bool) {
 	// TODO: answer here
-	greetAndy(calledAndy)
+	go greetAndy(calledAndy)
 	// TODO: answer here
-	greetBob(calledBob)
+	go greetBob(calledBob)
 	time.Sleep(200 * time.Millisecond)
 	fmt.Println("from call function at time", time.Since(start))
 	fmt.Println("called", *calledAndy && *calledBob)

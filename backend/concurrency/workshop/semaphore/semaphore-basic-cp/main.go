@@ -16,8 +16,10 @@ type worker struct {
 func (w *worker) doWork(input string) {
 	for i := 0; i < 100; i++ {
 		// TODO: answer here
+		w.sem.Acquire()
 		go func() {
 			// TODO: answer here
+			defer w.sem.Release()
 			w.mu.Lock()
 			w.currentWork++
 			if w.maxWork < w.currentWork {
@@ -32,7 +34,6 @@ func (w *worker) doWork(input string) {
 			w.currentWork--
 			w.mu.Unlock()
 		}()
-
 	}
 }
 

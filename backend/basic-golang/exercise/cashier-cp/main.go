@@ -46,5 +46,40 @@ func main() {
 
 	orderMenu := make(map[string]int64)
 
+	i := 1
+
+	for menu, price := range foodMenu {
+		fmt.Printf("%d. Menu: %s , Price : %d\n", i, menu, price)
+		i++
+	}
+
 	// TODO: answer here
+	for {
+		var order string
+		fmt.Print("Masukan nama menu yang mau dipesan: ")
+		fmt.Scan(&order)
+
+		if val, ok := foodMenu[order]; ok {
+			fmt.Println("Menu telah ditambahkan ke Ordered Menu:")
+			fmt.Printf("Menu: %s , Price : %d \n", order, val)
+			orderMenu[order] = val
+		} else {
+			fmt.Println("Menu tidak ditemukan")
+		}
+
+		var addAgain string
+		fmt.Print("Ingin memesan menu lain?(yes/no): ")
+		fmt.Scan(&addAgain)
+		if addAgain == "no" {
+			break
+		}
+	}
+
+	fmt.Println("Data Order Updated:")
+	var total int64 = 0
+	for menu, price := range orderMenu {
+		fmt.Printf("- Menu: %s , Price : %d \n", menu, price)
+		total += price
+	}
+	fmt.Print("- Total harga makanan yang harus anda bayar:  ", total)
 }

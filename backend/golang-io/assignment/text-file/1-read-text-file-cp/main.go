@@ -17,5 +17,13 @@ type FileData struct {
 }
 
 func ReadFile(name string) (FileData, error) {
-	return FileData{}, nil // TODO: replace this
+	data, err := ioutil.ReadFile(name)
+	if err != nil {
+		fmt.Println(err)
+	}
+	return FileData{
+		Name: name,
+		Size: len(data),
+		Data: data,
+	}, err // TODO: replace this
 }

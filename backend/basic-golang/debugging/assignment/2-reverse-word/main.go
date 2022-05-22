@@ -30,5 +30,17 @@ func ReverseWord(word string) string {
 }
 
 func ReverseWordCorrect(word string) string {
-	return 0 // TODO: replace this
+	n := len(word)
+	if n == 0 {
+		return ""
+	}
+	temp := []byte(word)
+
+	for i := 0; i < n/2; i++ {
+		left := i
+		right := n - i - 1
+		temp[left], temp[right] = temp[right], temp[left]
+	}
+
+	return string(temp) // TODO: replace this
 }

@@ -11,7 +11,8 @@ var count int = 0
 func CountDigits(num int) int {
 
 	if num > 0 {
-		CountDigits(0) // TODO: replace this
+		CountDigits(num / 10) // TODO: replace this
+		count++
 	}
 	return count
 

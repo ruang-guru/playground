@@ -1,8 +1,6 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 // Check Point:
 // Menghitung volume tabung
@@ -18,4 +16,18 @@ import (
 
 func main() {
 	// TODO: answer here
+	const PI = 3.14
+	var (
+		r      float32
+		t      float32
+		volume float32
+	)
+	fmt.Printf("Masukkan jari-jari alas tabung : ")
+	fmt.Scan(&r)
+
+	fmt.Printf("Masukkan tinggi tabung : ")
+	fmt.Scan(&t)
+
+	volume = PI * r * r * t
+	fmt.Printf("Jadi volumenya adalah : %.6f", volume)
 }

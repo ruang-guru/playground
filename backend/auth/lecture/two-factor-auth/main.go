@@ -10,6 +10,7 @@ import (
 	"github.com/dgryski/dgoogauth"
 	"github.com/gorilla/context"
 	"github.com/gorilla/mux"
+	"github.com/ruang-guru/playground/backend/auth/lecture/two-factor-auth/service"
 )
 
 var jwtSecret string
@@ -50,7 +51,7 @@ func ValidateMiddleware(next http.HandlerFunc) http.HandlerFunc {
 			json.NewEncoder(w).Encode(err)
 			return
 		}
-		decodedToken, err := VerifyJwt(bearerToken, jwtSecret)
+		decodedToken, err := service.VerifyJwt(bearerToken, jwtSecret)
 		if err != nil {
 			json.NewEncoder(w).Encode(err)
 			return
@@ -70,7 +71,7 @@ func SignIn(w http.ResponseWriter, req *http.Request) {
 	userMock["username"] = "user1"
 	userMock["password"] = "password1"
 	userMock["authorized"] = false
-	tokenString, err := SignJwt(userMock, jwtSecret)
+	tokenString, err := service.SignJwt(userMock, jwtSecret)
 	if err != nil {
 		json.NewEncoder(w).Encode(err)
 		return
@@ -93,7 +94,7 @@ func VerifyOTP(w http.ResponseWriter, req *http.Request) {
 		json.NewEncoder(w).Encode("token error")
 		return
 	}
-	decodedToken, err := VerifyJwt(token, jwtSecret)
+	decodedToken, err := service.VerifyJwt(token, jwtSecret)
 	if err != nil {
 		json.NewEncoder(w).Encode(err.Error())
 		return
@@ -118,6 +119,6 @@ func VerifyOTP(w http.ResponseWriter, req *http.Request) {
 	}
 
 	// return authorized true pada claim ketika OTP sudah benar
-	jwToken, _ := SignJwt(decodedToken, jwtSecret)
+	jwToken, _ := service.SignJwt(decodedToken, jwtSecret)
 	json.NewEncoder(w).Encode(jwToken)
 }

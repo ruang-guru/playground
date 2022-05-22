@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 //fungsi square akan mengembalikan nilai pangkat 2
 //dari dua parameter yang diterima
@@ -16,3 +18,6 @@ func main() {
 
 //gunakan * untuk melakukan perkalian
 // TODO: answer here
+func square(number1, number2 int) (int, int) {
+	return number1 * number1, number2 * number2
+}

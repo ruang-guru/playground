@@ -7,6 +7,7 @@ import "fmt"
 
 //fungsi ini digunakan untuk menerima angka lalu mengembalikan hasil pangkat 2 angka tersebut
 func squareWorker(workerInput <-chan int, workerOutput chan<- int) {
+
 	for {
 		num := <-workerInput      // menerima angka
 		workerOutput <- num * num // mengirim hasil
@@ -14,10 +15,14 @@ func squareWorker(workerInput <-chan int, workerOutput chan<- int) {
 }
 
 func createRequest(workerInput, resultChan chan<- int, workerOutput <-chan int) {
+
 	resultSum := 0 // jumlah dari pemangkatan angka 1-15
 	for i := 1; i < 16; i++ {
 		var res int
 		// TODO: answer here
+		workerInput <- i
+		res = <-workerOutput
+
 		resultSum += res
 		fmt.Printf("hasil pangkat 2 angka %d adalah: %d\n", i, res) // 0 1 4 9 16
 	}

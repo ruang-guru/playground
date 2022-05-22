@@ -16,7 +16,6 @@ func NewEmployeeRepository(db *sql.DB) *EmployeeRepository {
 }
 
 func (r *EmployeeRepository) CreateEmployee(employee *model.Employee) (int64, error) {
-	var sqlStmt string
 
 	// Task :
 	// Membuat query untuk menambahkan data employee ke dalam database
@@ -24,7 +23,7 @@ func (r *EmployeeRepository) CreateEmployee(employee *model.Employee) (int64, er
 	// Lihat model.Employee untuk data yang dibutuhkan
 
 	// TODO: answer here
-
+	sqlStmt := "INSERT INTO employees (nik, first_name, last_name, email) VALUES (?,?,?,?)"
 	result, err := r.db.Exec(sqlStmt, employee.NIK, employee.FirstName, employee.LastName, employee.Email)
 	if err != nil {
 		return 0, err

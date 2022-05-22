@@ -18,7 +18,10 @@
 
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func main() {
 	var str1 = "fried"
@@ -27,5 +30,21 @@ func main() {
 }
 
 func AnagramsChecker(str1 string, str2 string) string {
-	return "" // TODO: replace this
+	if len(str1) != len(str2) {
+		return "Bukan Anagram"
+	}
+
+	mapChecker := make(map[rune]int)
+
+	for _, val := range str1 {
+		mapChecker[val]++
+	}
+
+	for key, val := range mapChecker {
+		if strings.Count(str2, string(key)) != val {
+			return "Bukan Anagram"
+		}
+	}
+
+	return "Anagram" // TODO: replace this
 }

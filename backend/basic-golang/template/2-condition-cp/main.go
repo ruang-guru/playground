@@ -3,6 +3,7 @@ package main
 import (
 	"bytes"
 	"html/template"
+	"log"
 )
 
 // Dari contoh yang telah diberikan, kamu dapat mencoba untuk menggunakan condition pada template.
@@ -19,4 +20,19 @@ type Account struct {
 func ExecuteToByteBuffer(account Account) ([]byte, error) {
 	var textTemplate string
 	// TODO: answer here
+	textTemplate = "Akun {{.Name}} dengan Nomor {{.Number}} {{if gt .Balance 0}}memiliki saldo sebesar ${{.Balance}}{{else}}tidak memiliki saldo{{end}}."
+
+	b := new(bytes.Buffer)
+
+	template, err := template.New("template_1").Parse(textTemplate)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	err = template.Execute(b, account)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	return b.Bytes(), nil
 }

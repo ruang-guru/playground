@@ -11,3 +11,6 @@ func main() {
 }
 
 // TODO: answer here
+func goodMorning(greet string) {
+	fmt.Println("selamat pagi", greet)
+}

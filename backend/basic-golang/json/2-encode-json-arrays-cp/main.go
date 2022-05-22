@@ -10,6 +10,10 @@ import (
 
 type Meja struct {
 	// TODO: answer here
+	Jenis     string `json:"jenis"`
+	Warna     string `json:"warna"`
+	Jumlah    int    `json:"jumlah"`
+	Deskripsi string `json:"deskripsi"`
 }
 
 type Items struct {
@@ -18,6 +22,11 @@ type Items struct {
 
 func (m Items) EncodeJSON() string {
 	// TODO: answer here
+	jsonData, err := json.Marshal(m.MejaMeja)
+	if err != nil {
+		log.Fatal(err)
+	}
+	return string(jsonData)
 }
 
 func NewMeja(m Items) Items {

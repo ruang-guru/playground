@@ -27,16 +27,37 @@ var movies = map[int]Movie{
 }
 
 var MovieListHandler = func(c *gin.Context) {
-	c.JSON(http.StatusOK, gin.H{}) // TODO: replace this
+	c.JSON(http.StatusOK, gin.H{
+		"data": movies,
+	}) // TODO: replace this
 }
 
 var MovieGetHandler = func(c *gin.Context) {
-	c.JSON(http.StatusOK, gin.H{}) // TODO: replace this
+	idMovie := c.Param("id")
+	idInt, err := strconv.Atoi(idMovie)
+	if err != nil {
+		c.String(http.StatusBadRequest, err.Error())
+		return
+	}
+
+	val, ok := movies[idInt]
+	if !ok {
+		c.String(http.StatusNotFound, "Not Found")
+		return
+	}
+	c.JSON(http.StatusOK, gin.H{
+		"data": val,
+	}) // TODO: replace this
 }
 
 func GetRouter() *gin.Engine {
 	router := gin.Default()
 	// TODO: answer here
+	movies := router.Group("movie")
+	{
+		movies.GET("get/:id", MovieGetHandler)
+		movies.GET("list", MovieListHandler)
+	}
 	return router
 }
 

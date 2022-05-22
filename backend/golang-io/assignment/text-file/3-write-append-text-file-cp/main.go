@@ -10,5 +10,14 @@ func main() {
 }
 
 func AddString(fileName string, stringToAdd string) error {
-	return nil // TODO: replace this
+	file, err := os.OpenFile(fileName, os.O_APPEND|os.O_WRONLY, 0644)
+	if err != nil {
+		fmt.Println(err)
+	}
+	defer file.Close()
+	_, err = file.WriteString(stringToAdd)
+	if err != nil {
+		fmt.Println(err)
+	}
+	return err // TODO: replace this
 }

@@ -22,9 +22,30 @@ func main() {
 }
 
 func Intersection(str1, str2 []string) (inter []string) {
-	return []string{} // TODO: replace this
+	mapStr1 := make(map[string]bool)
+
+	for _, val := range str1 {
+		mapStr1[val] = true
+	}
+
+	for _, val := range str2 {
+		if _, ok := mapStr1[val]; ok {
+			inter = append(inter, val)
+		}
+	}
+
+	return // TODO: replace this
 }
 
 func RemoveDuplicates(elements []string) (nodups []string) {
-	return []string{} // TODO: replace this
+	mapStr := make(map[string]bool)
+
+	for _, val := range elements {
+		if _, ok := mapStr[val]; ok {
+			continue
+		}
+		nodups = append(nodups, val)
+		mapStr[val] = true
+	}
+	return // TODO: replace this
 }

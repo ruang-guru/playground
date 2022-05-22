@@ -39,5 +39,23 @@ func IsExistInSource(source, search string) bool {
 }
 
 func IsExistInSourceCorrect(source, search string) bool {
+	if len(source) < len(search) {
+		return false
+	}
+	for startSource := 0; startSource < len(source); startSource++ {
+		found := true
+		idxSource := startSource
+
+		for idxSearch := 0; idxSearch < len(search); idxSearch++ {
+			if source[idxSource] != search[idxSearch] {
+				found = false
+				break
+			}
+			idxSearch++
+		}
+		if found {
+			return true
+		}
+	}
 	return false // TODO: replace this
 }

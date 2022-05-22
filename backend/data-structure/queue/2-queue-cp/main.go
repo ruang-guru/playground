@@ -19,6 +19,7 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 )
 
@@ -104,10 +105,26 @@ func main() {
 }
 
 func (q Queue) InsertRear(rearValue string) (Queue, error) {
+	if r >= n {
+		return q, errors.New("Overflow")
+	}
+
+	r++
+	q[r] = rearValue
+	if f == -1 {
+		f = 0
+	}
 	return q, nil // TODO: replace this
 }
 
 func (q Queue) InsertFront(frontValue string) (Queue, error) {
+	if r != -1 {
+		return q, errors.New("element cannot be inserted")
+	}
+
+	r++
+	q[r] = frontValue
+	f = 0
 	return q, nil // TODO: replace this
 }
 

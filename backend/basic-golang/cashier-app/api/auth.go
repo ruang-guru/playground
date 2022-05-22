@@ -31,13 +31,16 @@ func (api *API) login(w http.ResponseWriter, req *http.Request) {
 	api.AllowOrigin(w, req)
 	username := req.URL.Query().Get("username")
 	password := req.URL.Query().Get("password")
-	res, err := api.usersRepo.Login(username, password)
+	_, err := api.usersRepo.Login(username, password)
 
 	w.Header().Set("Content-Type", "application/json")
 	encoder := json.NewEncoder(w)
 	if err != nil {
-		w.WriteHeader(http.StatusUnauthorized)
-		encoder.Encode(AuthErrorResponse{Error: err.Error()})
+		errorResp := AuthErrorResponse{
+			Error: err.Error(),
+		}
+		errorJson, _ := json.Marshal(errorResp)
+		http.Error(w, string(errorJson), http.StatusUnauthorized)
 		return
 	}
 
@@ -46,23 +49,36 @@ func (api *API) login(w http.ResponseWriter, req *http.Request) {
 	//       3. expiry time menggunakan time millisecond
 
 	// TODO: answer here
+	expTime := time.Now().Add(time.Hour)
+	claim := &Claims{
+		Username: username,
+		StandardClaims: jwt.StandardClaims{
+			ExpiresAt: expTime.UnixMilli(),
+		},
+	}
 
 	// Task: Buat token menggunakan encoded claim dengan salah satu algoritma yang dipakai
 
 	// TODO: answer here
+	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claim)
 
 	// Task: 1. Buat jwt string dari token yang sudah dibuat menggunakan JWT key yang telah dideklarasikan
 	//       2. return internal error ketika ada kesalahan ketika pembuatan JWT string
 
 	// TODO: answer here
+	tokenString, err := token.SignedString(jwtKey)
+	if err != nil {
+		w.WriteHeader(http.StatusInternalServerError)
+		return
+	}
 
 	// Task: Set token string kedalam cookie response
 
 	// TODO: answer here
-
+	http.SetCookie(w, &http.Cookie{Name: "token", Value: tokenString})
 	// Task: Return response berupa username dan token JWT yang sudah login
 
-	json.NewEncoder(w).Encode(LoginSuccessResponse{Username: "", Token: ""}) // TODO: replace this
+	encoder.Encode(LoginSuccessResponse{Username: username, Token: tokenString}) // TODO: replace this
 }
 
 func (api *API) logout(w http.ResponseWriter, req *http.Request) {
@@ -70,11 +86,19 @@ func (api *API) logout(w http.ResponseWriter, req *http.Request) {
 	username := req.URL.Query().Get("username")
 	err := api.usersRepo.Logout(username)
 	if err != nil {
-		w.WriteHeader(http.StatusUnauthorized)
-		encoder := json.NewEncoder(w)
-		encoder.Encode(AuthErrorResponse{Error: err.Error()})
+		errorResp := AuthErrorResponse{
+			Error: err.Error(),
+		}
+		errorJson, _ := json.Marshal(errorResp)
+		http.Error(w, string(errorJson), http.StatusUnauthorized)
 		return
 	}
+	paramQuery := req.URL.Query()
+	err = api.usersRepo.Logout(paramQuery.Get("username"))
 
-	encoder.Encode(AuthErrorResponse{Error: ""}) // TODO: replace this
+	if err != nil {
+		encoder := json.NewEncoder(w)
+		encoder.Encode(AuthErrorResponse{Error: err.Error()}) // TODO: replace this
+	}
+
 }

@@ -1457,6 +1457,12 @@
             "course": "backend",
             "path": "backend/database/intro-to-sql/assigment/music-app/repository",
             "weight": 100
+        },
+        {
+            "subject": "Front End Programming",
+            "course": "frontend",
+            "path": "frontend/react/state-management-zustand/1-zustand-cp",
+            "weight": 100
         }
     ]
 }

@@ -52,6 +52,7 @@ __file:__ `src/store/todoStore.js`
 ### 3. Use state and function from store
 
 #### Add Todo Component
+<<<<<<< HEAD
 Add new todo \
 __file:__ `src/components/AddTodo.js` \
 __used items:__ `addTodo`
@@ -70,4 +71,25 @@ __used items:__ `todos`
 Item component for showing the todo text, deleting todo, toggling todo(done/not) \
 
 __file:__ `src/components/TodoItem.js` \
+=======
+Add new todo
+__file:__ `src/components/AddTodo.js`
+__used items:__ `addTodo`
+
+#### List Todos Component
+List all todos
+__file:__ `src/components/ListTodos.js`
+__used items:__ `todos`
+
+#### Summary Todos Component
+Summary of todos
+
+__file:__ `src/components/SummaryTodos.js`
+__used items:__ `todos`
+
+#### Todo Item Component
+Item component for showing the todo text, deleting todo, toggling todo(done/not)
+
+__file:__ `src/components/TodoItem.js`
+>>>>>>> 4eb2273 (add new zustand demo and checkpoint (part-1))
 __used items:__ `removeTodo`, `toggleTodo`

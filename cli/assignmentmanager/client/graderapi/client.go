@@ -14,7 +14,7 @@ type GraderApiClient struct {
 	RefreshToken string
 }
 
-var GraderApiUrl string = "https://gw.ruangguru.com/api/v3/rg-grader"
+var GraderApiUrl string = "https://gw-staging.ruangguru.com/api/v3/rg-grader"
 
 func NewGraderApiClientFromEmailAndToken(ctx context.Context, email string, tokenData *entity.TokenData) *GraderApiClient {
 	return &GraderApiClient{

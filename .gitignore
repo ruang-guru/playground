@@ -145,6 +145,8 @@ cypress/screenshots
 # grader
 grader-config.json
 grader-cli
+
+# db
 *.db
 
 # output of profiling file

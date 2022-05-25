@@ -2,7 +2,6 @@ package main
 
 import (
 	"database/sql"
-	"os"
 
 	_ "github.com/mattn/go-sqlite3"
 	. "github.com/onsi/ginkgo/v2"
@@ -51,8 +50,6 @@ var _ = Describe("SQL Read", func() {
 		if err != nil {
 			panic(err)
 		}
-
-		os.Remove("./employee.db")
 	})
 
 	employeesData := []model.Employee{

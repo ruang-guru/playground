@@ -11,11 +11,12 @@ type Assignments struct {
 }
 
 type Assignment struct {
-	Serial  string  `json:"serial"`
-	Path    string  `json:"path"`
-	Subject string  `json:"subject"`
-	Course  string  `json:"course"`
-	Weight  float32 `json:"weight"`
+	Serial        string  `json:"serial"`
+	Path          string  `json:"path"`
+	Subject       string  `json:"subject"`
+	Course        string  `json:"course"`
+	Weight        float32 `json:"weight"`
+	TotalTestCase string  `json:"totalTestCase"`
 }
 
 var (
@@ -51,6 +52,10 @@ func (a *Assignment) IsEquivalent(otherAssignment *Assignment) bool {
 	}
 
 	if a.Weight != otherAssignment.Weight {
+		return false
+	}
+
+	if a.TotalTestCase != "" && a.TotalTestCase != otherAssignment.TotalTestCase {
 		return false
 	}
 

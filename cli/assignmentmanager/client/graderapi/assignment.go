@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
+	"strconv"
 
 	"github.com/ruang-guru/playground/cli/assignmentmanager/entity"
 )
@@ -28,11 +29,17 @@ type GetAssignmentsResponse struct {
 }
 
 func (g *GraderApiClient) CreateAssignment(assignment *entity.Assignment) (*entity.Assignment, error) {
+	totalTestCase, err := strconv.Atoi(assignment.TotalTestCase)
+	if err != nil {
+		return nil, err
+	}
+
 	requestData := map[string]interface{}{
-		"path":    assignment.Path,
-		"subject": assignment.Subject,
-		"course":  assignment.Course,
-		"weight":  assignment.Weight,
+		"path":          assignment.Path,
+		"subject":       assignment.Subject,
+		"course":        assignment.Course,
+		"weight":        assignment.Weight,
+		"totalTestCase": totalTestCase,
 	}
 
 	postBody, _ := json.Marshal(requestData)
@@ -60,10 +67,21 @@ func (g *GraderApiClient) CreateAssignment(assignment *entity.Assignment) (*enti
 
 // TODO: implement
 func (g *GraderApiClient) UpdateAssignment(serial string, assignment *entity.Assignment) error {
+	totalTestCase := 0
+	var err error
+
+	if assignment.TotalTestCase != "" {
+		totalTestCase, err = strconv.Atoi(assignment.TotalTestCase)
+		if err != nil {
+			return err
+		}
+	}
+
 	requestData := map[string]interface{}{
-		"subject": assignment.Subject,
-		"course":  assignment.Course,
-		"weight":  assignment.Weight,
+		"subject":       assignment.Subject,
+		"course":        assignment.Course,
+		"weight":        assignment.Weight,
+		"totalTestCase": totalTestCase,
 	}
 
 	putBody, _ := json.Marshal(requestData)

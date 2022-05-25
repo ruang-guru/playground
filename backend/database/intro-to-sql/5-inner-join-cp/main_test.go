@@ -2,7 +2,6 @@ package main
 
 import (
 	"database/sql"
-	"os"
 
 	_ "github.com/mattn/go-sqlite3"
 	. "github.com/onsi/ginkgo/v2"
@@ -104,7 +103,6 @@ var _ = Describe("SQL Inner Join", func() {
 			panic(err)
 		}
 
-		os.Remove("./movie.db")
 	})
 
 	moviesData := []model.Movie{

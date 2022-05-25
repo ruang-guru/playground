@@ -2,7 +2,6 @@ package main
 
 import (
 	"database/sql"
-	"os"
 
 	_ "github.com/mattn/go-sqlite3"
 	. "github.com/onsi/ginkgo/v2"
@@ -82,7 +81,6 @@ var _ = Describe("SQL Left Join", func() {
 			panic(err)
 		}
 
-		os.Remove("./movie.db")
 	})
 
 	strFrank := "Frank Darabont"

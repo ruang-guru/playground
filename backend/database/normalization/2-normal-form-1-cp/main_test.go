@@ -2,7 +2,6 @@ package main
 
 import (
 	"database/sql"
-	"os"
 
 	_ "github.com/mattn/go-sqlite3"
 	. "github.com/onsi/ginkgo/v2"
@@ -28,20 +27,18 @@ var _ = Describe("SQL Create", func() {
 			panic(err)
 		}
 
-		_, err = db.Exec(`DROP TABLE rekap_1nf;`)
+		_, err = db.Exec(`DROP TABLE rekap;`)
 		if err != nil {
 			panic(err)
 		}
 
-		//comment this line below if you want to see the table, before running test case
-		os.Remove("./normalize-cp.db")
 	})
 
 	Describe("Check Migration", func() {
-		It("should return number of column from rekap_1nf table", func() {
+		It("should return number of column from rekap table", func() {
 			db, err := sql.Open("sqlite3", "./normalize-cp.db")
 			Expect(err).To(BeNil())
-			CheckMigration, err := db.Query(`SELECT COUNT(*) FROM pragma_table_info('rekap_1nf');`)
+			CheckMigration, err := db.Query(`SELECT COUNT(*) FROM pragma_table_info('rekap');`)
 			for CheckMigration.Next() {
 				var success int
 				err = CheckMigration.Scan(&success)
@@ -53,10 +50,13 @@ var _ = Describe("SQL Create", func() {
 
 	Describe("Check Insert Latest data", func() {
 		It("should return latest id", func() {
-			lastInsertData, err := checkLatestId("00002")
+			countData, err := countByNoBon("00001")
 			Expect(err).To(BeNil())
-			Expect(lastInsertData).To(Equal(1))
+			Expect(countData).To(Equal(4))
 
+			countData, err = countByNoBon("00002")
+			Expect(err).To(BeNil())
+			Expect(countData).To(Equal(3))
 		})
 	})
 

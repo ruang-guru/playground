@@ -1,0 +1,35 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "cross-env NODE_ENV=test jest --testTimeout=10000",
+    "start": "nodemon index.js"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "transform": {
+      "^.+\\.[t|j]sx?$": "babel-jest"
+    },
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "uuid": "^8.2.0"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.18.2",
+    "babel-jest": "^28.1.0",
+    "cross-env": "^7.0.3",
+    "jest": "^28.1.0",
+    "nodemon": "^2.0.4",
+    "supertest": "^6.2.3"
+  }
+}

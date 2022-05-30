@@ -134,7 +134,7 @@ func GetAssignmentsToBeCreatedAndUpdated(localAsgmts, remoteAsgmts []entity.Assi
 
 func CreateNewAssignments(graderApiClient assignmentSubmitter, assignments []*entity.Assignment) error {
 	for _, assignment := range assignments {
-		fmt.Printf("creating new assignment: [path: %s; subject: %s; course: %s; weight: %f]\n", assignment.Path, assignment.Subject, assignment.Course, assignment.Weight)
+		fmt.Printf("creating new assignment: [path: %s; subject: %s; course: %s; weight: %f; totalTestCase: %s]\n", assignment.Path, assignment.Subject, assignment.Course, assignment.Weight, assignment.TotalTestCase)
 		if _, err := graderApiClient.CreateAssignment(assignment); err != nil {
 			return fmt.Errorf("failed to create assignment at path %s [%s]", assignment.Path, err.Error())
 		}
@@ -145,7 +145,7 @@ func CreateNewAssignments(graderApiClient assignmentSubmitter, assignments []*en
 func UpdateAssignments(graderApiClient assignmentSubmitter, assignmentMap map[string]*entity.Assignment) error {
 	// TODO: improve by using go concurrency & errgroup ?
 	for serial, assignment := range assignmentMap {
-		fmt.Printf("updating assignment with serial %s: [path: %s; subject: %s; course: %s; weight: %f]\n", serial, assignment.Path, assignment.Subject, assignment.Course, assignment.Weight)
+		fmt.Printf("updating assignment with serial %s: [path: %s; subject: %s; course: %s; weight: %f; totalTestCase: %s]\n", serial, assignment.Path, assignment.Subject, assignment.Course, assignment.Weight, assignment.TotalTestCase)
 		if err := graderApiClient.UpdateAssignment(serial, assignment); err != nil {
 			return fmt.Errorf("failed to update assignment %s [%s]", serial, err.Error())
 		}

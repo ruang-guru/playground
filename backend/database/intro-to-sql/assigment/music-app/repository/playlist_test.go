@@ -2,7 +2,6 @@ package repository
 
 import (
 	"database/sql"
-	"os"
 
 	_ "github.com/mattn/go-sqlite3"
 	. "github.com/onsi/ginkgo/v2"
@@ -92,7 +91,26 @@ var _ = Describe("Playlist", func() {
 	})
 
 	AfterEach(func() {
-		os.Remove("./music-app.db")
+		db, err := sql.Open("sqlite3", "./music-app.db")
+		if err != nil {
+			panic(err)
+		}
+		_, err = db.Exec("DROP TABLE IF EXISTS users")
+		if err != nil {
+			panic(err)
+		}
+		_, err = db.Exec("DROP TABLE IF EXISTS playlists")
+		if err != nil {
+			panic(err)
+		}
+		_, err = db.Exec("DROP TABLE IF EXISTS tracks")
+		if err != nil {
+			panic(err)
+		}
+		_, err = db.Exec("DROP TABLE IF EXISTS playlist_tracks")
+		if err != nil {
+			panic(err)
+		}
 	})
 
 	usersPlaylist := []model.UserPlaylist{

@@ -2,7 +2,6 @@ package main
 
 import (
 	"database/sql"
-	"os"
 
 	_ "github.com/mattn/go-sqlite3"
 	. "github.com/onsi/ginkgo/v2"
@@ -52,7 +51,6 @@ var _ = Describe("SQL Delete", func() {
 			panic(err)
 		}
 
-		os.Remove("./employee.db")
 	})
 
 	Describe("Delete employee data by NIK", func() {

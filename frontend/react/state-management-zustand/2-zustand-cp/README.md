@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+# Oversimplified E-commerce app with zustand
+## Expected Outcome
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+https://user-images.githubusercontent.com/33412865/169922520-ee9a3305-5f3d-487c-be72-374144d982d5.mp4
 
-## Available Scripts
+## Challenge
+- Gunakan middleware `immer` dan `devtools` untuk memudahkan pengerjaan
+### Create item store
 
-In the project directory, you can run:
+__file :__ `src/store/itemStore.js`
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+buat lah store untuk menyimpan item-item apa saja yang ada di halaman
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+key|type|description
+---|----|-----------
+items | array | untuk menyimpan item
+addItem(item) | function | untuk menambahkan item baru
+removeItem(itemId) | function | untuk menghapus item
 
-### `npm test`
+__item object structure:__
+```TS
+item: {
+    id: string,
+    name: string,
+    image: string,
+    price: number,
+    stock: number
+}
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Create cart store
+__file :__ `src/store/cartStore.js`
 
-### `npm run build`
+buat lah store untuk menyimpan item-item apa saja yang ada di cart
+key|type|description
+---|----|-----------
+items | array | untuk menyimpan item
+addItem(item) | function | untuk menambahkan item ke cart
+removeItem(itemId) | function | untuk menghapus item dari cart
+changeQuantity(itemId, quantity) | function | untuk mengubah jumlah item pada cart
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+__item object structure:__
+```TS
+item: {
+    id: string,
+    name: string,
+    image: string,
+    price: number,
+    stock: number,
+    quantity: number
+}
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Custom Middleware
+__file :__ `src/store/cartStore.js`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Buatlah custom middleware untuk melimit jumlah item pada cart agar tidak kurang dari 1 dan tidak melebihi dari stock yang ada
 
-### `npm run eject`
+### Persistent Data
+__file :__ `src/store/cartStore.js`, `src/store/itemStore.js`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Agar data tidak hilang saat melakukan `reload`, simpan state pada `localstorage`.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+__localstorage keys:__
+- `cart` : untuk menyimpan state `cart`
+- `items` : untuk menyimpan state `items`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+__Hint:__ gunakana middleware `persist`

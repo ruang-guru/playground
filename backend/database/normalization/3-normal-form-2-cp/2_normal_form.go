@@ -41,13 +41,15 @@ type Kasir struct {
 }
 
 // Migrate digunakan untuk melakukan migrasi database dengan data yang dibutuhkan
-// Tugas: Replace tanda ... dengan Query yang tepat pada fungsi Migrate:
+// Tugas: Replace tanda ... dengan Query yang tepat pada fungsi Migrate
+// Buatlah tabel dengan nama rekap, barang, dan kasir
+// Lalu insert data ke masing-masing tabel seperti pada contoh di bagian bawah file ini
 func Migrate() (*sql.DB, error) {
 	db, err := sql.Open("sqlite3", "./normalize-cp.db")
 	if err != nil {
 		panic(err)
 	}
-	sqlStmt := `CREATE TABLE ... ;` // TODO: replace this
+	sqlStmt := `CREATE TABLE rekap ... ;` // TODO: replace this
 
 	_, err = db.Exec(sqlStmt)
 	if err != nil {
@@ -59,7 +61,7 @@ func Migrate() (*sql.DB, error) {
 		panic(err)
 	}
 
-	sqlStmt = `CREATE TABLE ... ;` // TODO: replace this
+	sqlStmt = `CREATE TABLE barang ... ;` // TODO: replace this
 
 	_, err = db.Exec(sqlStmt)
 	if err != nil {
@@ -72,7 +74,7 @@ func Migrate() (*sql.DB, error) {
 		panic(err)
 	}
 
-	sqlStmt = `CREATE TABLE ... ;` // TODO: replace this
+	sqlStmt = `CREATE TABLE kasir ... ;` // TODO: replace this
 
 	_, err = db.Exec(sqlStmt)
 	if err != nil {
@@ -88,8 +90,9 @@ func Migrate() (*sql.DB, error) {
 	return db, nil
 }
 
-// Tugas: Replace tanda ... dengan Query yang tepat pada fungsi checkLatestNoBon:
-func checkLatestNoBon(no_bon string) (int, error) {
+// Tugas: Replace tanda ... dengan Query yang tepat pada fungsi countByNoBon:
+// countByNoBon digunakan untuk menghitung jumlah data yang ada berdasarkan no_bon
+func countByNoBon(noBon string) (int, error) {
 	db, err := sql.Open("sqlite3", "./normalize-cp.db")
 	if err != nil {
 		panic(err)
@@ -97,18 +100,17 @@ func checkLatestNoBon(no_bon string) (int, error) {
 
 	sqlStmt := `SELECT ... FROM ... WHERE ... = ?;` // TODO: replace this
 
-	row := db.QueryRow(sqlStmt, no_bon)
-	var latestId int
-	err = row.Scan(&latestId)
+	row := db.QueryRow(sqlStmt, noBon)
+	var countBon int
+	err = row.Scan(&countBon)
 	if err != nil {
 		return 0, err
-	} else {
-		return 1, nil
 	}
+	return countBon, nil
 }
 
-// Tugas: Replace tanda ... dengan Query yang tepat pada fungsi checkLatestNoBarang:
-func checkLatestNoBarang(kode_barang string) (int, error) {
+// Tugas: Replace tanda ... dengan Query yang tepat pada fungsi checkBarangExists:
+func checkBarangExists(kodeBarang string) (bool, error) {
 	db, err := sql.Open("sqlite3", "./normalize-cp.db")
 	if err != nil {
 		panic(err)
@@ -116,18 +118,17 @@ func checkLatestNoBarang(kode_barang string) (int, error) {
 
 	sqlStmt := `...` // TODO: replace this
 
-	row := db.QueryRow(sqlStmt, kode_barang)
+	row := db.QueryRow(sqlStmt, kodeBarang)
 	var latestId int
 	err = row.Scan(&latestId)
 	if err != nil {
-		return 0, err
-	} else {
-		return 1, nil
+		return false, err
 	}
+	return true, nil
 }
 
-// Tugas: Replace tanda ... dengan Query yang tepat pada fungsi checkLatestNoKasir:
-func checkLatestNoKasir(kode_kasir string) (int, error) {
+// Tugas: Replace tanda ... dengan Query yang tepat pada fungsi checkKasirExists:
+func checkKasirExists(kodeKasir string) (bool, error) {
 	db, err := sql.Open("sqlite3", "./normalize-cp.db")
 	if err != nil {
 		panic(err)
@@ -135,17 +136,16 @@ func checkLatestNoKasir(kode_kasir string) (int, error) {
 
 	sqlStmt := `...` // TODO: replace this
 
-	row := db.QueryRow(sqlStmt, kode_kasir)
+	row := db.QueryRow(sqlStmt, kodeKasir)
 	var latestId int
 	err = row.Scan(&latestId)
 	if err != nil {
-		return 0, err
-	} else {
-		return 1, nil
+		return false, err
 	}
+	return true, nil
 }
 
-//insert value table rekap_2nf
+//insert value table rekap
 // ("00001", "B001", 4500, 3, 13500, 13500, 0, 13500, 100000, 23000, "K01", "04-05-2022", "12:00:00"),
 // ("00001", "B002", 22500, 1, 22500, 36000, 0, 36000, 100000, 23000, "K01", "04-05-2022", "12:00:00"),
 // ("00001", "B003", 1500, 4, 6000, 42000, 0, 42000, 100000, 23000, "K01", "04-05-2022", "12:00:00"),
@@ -154,13 +154,13 @@ func checkLatestNoKasir(kode_kasir string) (int, error) {
 // ("00002", "B004", 17400, 1, 17500, 22000, 0, 22000, 117500, 0, "K02", "04-05-2022", "12:00:00"),
 // ("00002", "BOO5", 100000, 1, 100000, 117500, 0, 117500, 117500, 0, "K02", "04-05-2022", "12:00:00")
 
-//insert value table barang_2nf
+//insert value table barang
 // ("B001", "Disket", 4500),
 // ("B002", "Refil Tinta", 22500),
 // ("B003", "CD Blank", 1500),
 // ("B004", "Mouse", 17500),
 // ("B005", "Flash Disk", 100000)
 
-//insert value table kasir_2nf
+//insert value table kasir
 // ("K01", "Rosi"),
 // ("K02", "Dewi")

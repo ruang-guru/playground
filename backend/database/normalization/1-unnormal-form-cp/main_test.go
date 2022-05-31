@@ -2,7 +2,6 @@ package main
 
 import (
 	"database/sql"
-	"os"
 
 	_ "github.com/mattn/go-sqlite3"
 	. "github.com/onsi/ginkgo/v2"
@@ -34,8 +33,6 @@ var _ = Describe("SQL Create", func() {
 			panic(err)
 		}
 
-		//comment this line below if you want to see the table, before running test case
-		os.Remove("./normalize-cp.db")
 	})
 
 	Describe("Check Migration", func() {
@@ -43,20 +40,22 @@ var _ = Describe("SQL Create", func() {
 			db, err := sql.Open("sqlite3", "./normalize-cp.db")
 			Expect(err).To(BeNil())
 			CheckMigration, err := db.Query(`SELECT COUNT(*) FROM pragma_table_info('unormal');`)
+			Expect(err).To(BeNil())
+
 			for CheckMigration.Next() {
 				var success int
 				err = CheckMigration.Scan(&success)
 				Expect(err).To(BeNil())
-				Expect(success).To(Equal(13))
+				Expect(success).Should(BeNumerically(">=", 13))
 			}
 		})
 	})
 
 	Describe("Check Insert Latest data", func() {
 		It("should return latest id", func() {
-			lastInsertData, err := checkLatestId(2)
+			dataExists, err := checkDataExists("00002")
 			Expect(err).To(BeNil())
-			Expect(lastInsertData).To(Equal(1))
+			Expect(dataExists).To(Equal(true))
 		})
 	})
 

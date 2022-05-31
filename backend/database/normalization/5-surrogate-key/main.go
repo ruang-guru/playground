@@ -12,20 +12,20 @@ import (
 )
 
 type SchoolA struct {
-	RegistrationNo int     `db:"registration_no"`
+	RegistrationNo string  `db:"registration_no"`
 	Name           string  `db:"name"`
 	Percentage     float64 `db:"percentage"`
 }
 
 type SchoolB struct {
-	RegistrationNo int     `db:"registration_no"`
+	RegistrationNo string  `db:"registration_no"`
 	Name           string  `db:"name"`
 	Percentage     float64 `db:"percentage"`
 }
 
 type SurrogateTable struct {
 	Id             int     `db:"id"`
-	RegistrationNo int     `db:"registration_no"`
+	RegistrationNo string  `db:"registration_no"`
 	Name           string  `db:"name"`
 	Percentage     float64 `db:"percentage"`
 }
@@ -38,7 +38,7 @@ func Migrate() (*sql.DB, error) {
 	}
 
 	sqlStmt := `CREATE TABLE IF NOT EXISTS school_a (
-		registration_no INTEGER PRIMARY KEY,
+		registration_no Varchar(16) PRIMARY KEY,
 		name TEXT,
 		percentage REAL
 	);`
@@ -52,18 +52,18 @@ func Migrate() (*sql.DB, error) {
 			INSERT INTO 
 			school_a (registration_no, name, percentage)
 			VALUES 
-			    (1000, "SMA Negeri 1", 0.5),
-				(2000, "SMA Negeri 2", 0.5),
-				(3000, "SMA Negeri 3", 0.5),
-				(4000, "SMA Negeri 4", 0.5),
-				(5000, "SMA Negeri 5", 0.5);`)
+			    ("1000", "SMA Negeri 1", 0.5),
+				("2000", "SMA Negeri 2", 0.5),
+				("3000", "SMA Negeri 3", 0.5),
+				("4000", "SMA Negeri 4", 0.5),
+				("5000", "SMA Negeri 5", 0.5);`)
 
 	if err != nil {
 		panic(err)
 	}
 
 	sqlStmt = `CREATE TABLE IF NOT EXISTS school_b (
-		registration_no INTEGER PRIMARY KEY,
+		registration_no Varchar(16) PRIMARY KEY,
 		name TEXT,
 		percentage REAL
 	);`
@@ -77,11 +77,11 @@ func Migrate() (*sql.DB, error) {
 			INSERT INTO 
 			school_b (registration_no, name, percentage)
 			VALUES 
-			    (1000, "SMA Negeri 6", 0.5),
-				(2000, "SMA Negeri 7", 0.5),
-				(3000, "SMA Negeri 8", 0.5),
-				(4000, "SMA Negeri 9", 0.5),
-				(5000, "SMA Negeri 10", 0.5);`)
+			    ("1000", "SMA Negeri 6", 0.5),
+				("2000", "SMA Negeri 7", 0.5),
+				("3000", "SMA Negeri 8", 0.5),
+				("4000", "SMA Negeri 9", 0.5),
+				("5000", "SMA Negeri 10", 0.5);`)
 
 	if err != nil {
 		panic(err)
@@ -89,7 +89,7 @@ func Migrate() (*sql.DB, error) {
 
 	sqlStmt = `CREATE TABLE IF NOT EXISTS surrogate_table (
 		id INTEGER PRIMARY KEY,
-		registration_no INTEGER,
+		registration_no Varchar(16),
 		name TEXT,
 		percentage REAL
 	);`
@@ -103,16 +103,16 @@ func Migrate() (*sql.DB, error) {
 			INSERT INTO 
 			surrogate_table (registration_no, name, percentage)
 			VALUES 
-				(1000, "SMA Negeri 1", 0.5),
-				(2000, "SMA Negeri 2", 0.5),
-				(3000, "SMA Negeri 3", 0.5),
-				(4000, "SMA Negeri 4", 0.5),
-				(5000, "SMA Negeri 5", 0.5),
-			    (1000, "SMA Negeri 6", 0.5),
-				(2000, "SMA Negeri 7", 0.5),
-				(3000, "SMA Negeri 8", 0.5),
-				(4000, "SMA Negeri 9", 0.5),
-				(5000, "SMA Negeri 10", 0.5);`)
+				("1000", "SMA Negeri 1", 0.5),
+				("2000", "SMA Negeri 2", 0.5),
+				("3000", "SMA Negeri 3", 0.5),
+				("4000", "SMA Negeri 4", 0.5),
+				("5000", "SMA Negeri 5", 0.5),
+			    ("1000", "SMA Negeri 6", 0.5),
+				("2000", "SMA Negeri 7", 0.5),
+				("3000", "SMA Negeri 8", 0.5),
+				("4000", "SMA Negeri 9", 0.5),
+				("5000", "SMA Negeri 10", 0.5);`)
 	// Kenapa tidak perlu memasukkan id?
 	// karena PRIMARY KEY pada SQLite adalah alias untuk ROWID
 	// ROWID sendiri adalah 64-bit signed integer yang digunakan untuk

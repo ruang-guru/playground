@@ -2,7 +2,6 @@ package main
 
 import (
 	"database/sql"
-	"os"
 
 	_ "github.com/mattn/go-sqlite3"
 	. "github.com/onsi/ginkgo/v2"
@@ -38,8 +37,6 @@ var _ = Describe("SQL Create", func() {
 			panic(err)
 		}
 
-		//comment this line below if you want to see the table, before running test case
-		os.Remove("./surrogate.db")
 	})
 
 	Describe("Check Migration 1", func() {
@@ -80,6 +77,17 @@ var _ = Describe("SQL Create", func() {
 				err = CheckMigration.Scan(&success)
 				Expect(err).To(BeNil())
 				Expect(success).To(Equal(6))
+			}
+		})
+		It("surrogate_table_cp total number of rows should be same as the total rows of school_a and b combined", func() {
+			db, err := sql.Open("sqlite3", "./surrogate.db")
+			Expect(err).To(BeNil())
+			result, err := db.Query(`SELECT count(id) FROM 'surrogate_table_cp';`)
+			for result.Next() {
+				var totalRow int
+				err = result.Scan(&totalRow)
+				Expect(err).To(BeNil())
+				Expect(totalRow).To(Equal(10))
 			}
 		})
 	})

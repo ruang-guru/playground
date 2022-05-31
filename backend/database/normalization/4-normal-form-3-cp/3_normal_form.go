@@ -44,59 +44,61 @@ type Kasir struct {
 
 // Migrate digunakan untuk melakukan migrasi database dengan data yang dibutuhkan
 // Tugas: Replace tanda ... dengan Query yang tepat pada fungsi Migrate:
+// Buatlah tabel dengan nama rekap, rekap_detail, barang, dan kasir
+// Lalu insert data ke masing-masing tabel seperti pada contoh di bagian bawah file ini
 func Migrate() (*sql.DB, error) {
 	db, err := sql.Open("sqlite3", "./normalize-cp.db")
 	if err != nil {
 		panic(err)
 	}
 
-	sqlStmt := ` ... ` // TODO: replace this
+	sqlStmt := `CREATE TABLE rekap ... ` // TODO: replace this
 
 	_, err = db.Exec(sqlStmt)
 	if err != nil {
 		return nil, err
 	}
 
-	_, err = db.Exec(` ... `) // TODO: replace this
+	_, err = db.Exec(`INSERT INTO rekap ... `) // TODO: replace this
 
 	if err != nil {
 		panic(err)
 	}
 
-	sqlStmt = ` ... ` // TODO: replace this
+	sqlStmt = `CREATE TABLE rekap_detail ... ` // TODO: replace this
 
 	_, err = db.Exec(sqlStmt)
 	if err != nil {
 		return nil, err
 	}
 
-	_, err = db.Exec(` ... `) // TODO: replace this
+	_, err = db.Exec(`INSERT INTO rekap_detail ... `) // TODO: replace this
 
 	if err != nil {
 		panic(err)
 	}
 
-	sqlStmt = ` ... ` // TODO: replace this
+	sqlStmt = `CREATE TABLE barang ... ` // TODO: replace this
 
 	_, err = db.Exec(sqlStmt)
 	if err != nil {
 		return nil, err
 	}
 
-	_, err = db.Exec(` ... `) // TODO: replace this
+	_, err = db.Exec(`INSEERT INTO barang ... `) // TODO: replace this
 
 	if err != nil {
 		panic(err)
 	}
 
-	sqlStmt = ` ... ` // TODO: replace this
+	sqlStmt = `CREATE TABLE kasir ... ` // TODO: replace this
 
 	_, err = db.Exec(sqlStmt)
 	if err != nil {
 		return nil, err
 	}
 
-	_, err = db.Exec(` ... `) // TODO: replace this
+	_, err = db.Exec(`INSERT INTO kasir ... `) // TODO: replace this
 
 	if err != nil {
 		panic(err)
@@ -105,78 +107,76 @@ func Migrate() (*sql.DB, error) {
 	return db, nil
 }
 
-// Tugas: Replace tanda ... dengan Query yang tepat pada fungsi checkLatestNoBon:
-func checkLatestNoBon(no_bon string) (int, error) {
+// Tugas: Replace tanda ... dengan Query yang tepat pada fungsi checkNoBonExists:
+// checkNoBonExists digunakan untuk menghitung jumlah data yang ada berdasarkan no_bon
+func checkNoBonExists(noBon string) (bool, error) {
 	db, err := sql.Open("sqlite3", "./normalize-cp.db")
 	if err != nil {
 		panic(err)
 	}
 
-	sqlStmt := ` ...` // TODO: replace this
+	sqlStmt := `SELECT ... FROM ... WHERE ... = ?;` // TODO: replace this
 
-	row := db.QueryRow(sqlStmt, no_bon)
-	var latestId int
-	err = row.Scan(&latestId)
+	row := db.QueryRow(sqlStmt, noBon)
+	var countBon int
+	err = row.Scan(&countBon)
 	if err != nil {
-		return 0, err
-	} else {
-		return 1, nil
+		return false, err
 	}
+	return true, nil
 }
 
-// Tugas: Replace tanda ... dengan Query yang tepat pada fungsi checkLatestNoBonDetail:
-func checkLatestNoBonDetail(no_bon_detail string) (int, error) {
+// Tugas: Replace tanda ... dengan Query yang tepat pada fungsi countRekapDetailByNoBon:
+// countRekapDetailByNoBon digunakan untuk menghitung jumlah rekap detail yang ada berdasarkan no_bon
+func countRekapDetailByNoBon(noBon string) (int, error) {
 	db, err := sql.Open("sqlite3", "./normalize-cp.db")
 	if err != nil {
 		panic(err)
 	}
 
-	sqlStmt := ` ...` // TODO: replace this
+	sqlStmt := `SELECT ... FROM ... WHERE ... = ?;` // TODO: replace this
 
-	row := db.QueryRow(sqlStmt, no_bon_detail)
-	var latestId int
-	err = row.Scan(&latestId)
+	row := db.QueryRow(sqlStmt, noBon)
+	var countBon int
+	err = row.Scan(&countBon)
 	if err != nil {
 		return 0, err
-	} else {
-		return 1, nil
 	}
+	return countBon, nil
 }
 
-// Tugas: Replace tanda ... dengan Query yang tepat pada fungsi checkLatestNoBarang:
-func checkLatestNoBarang(kode_barang string) (int, error) {
+// Tugas: Replace tanda ... dengan Query yang tepat pada fungsi checkBarangExists:
+func checkBarangExists(kodeBarang string) (bool, error) {
 	db, err := sql.Open("sqlite3", "./normalize-cp.db")
 	if err != nil {
 		panic(err)
 	}
 
-	sqlStmt := ` ...` // TODO: replace this
+	sqlStmt := `...` // TODO: replace this
 
-	row := db.QueryRow(sqlStmt, kode_barang)
+	row := db.QueryRow(sqlStmt, kodeBarang)
 	var latestId int
 	err = row.Scan(&latestId)
 	if err != nil {
-		return 0, err
-	} else {
-		return 1, nil
+		return false, err
 	}
+	return true, nil
 }
 
-// Tugas: Replace tanda ... dengan Query yang tepat pada fungsi checkLatestNoKasir:
-func checkLatestNoKasir(kode_kasir string) (int, error) {
+// Tugas: Replace tanda ... dengan Query yang tepat pada fungsi checkKasirExists:
+func checkKasirExists(kodeKasir string) (bool, error) {
 	db, err := sql.Open("sqlite3", "./normalize-cp.db")
 	if err != nil {
 		panic(err)
 	}
 
-	sqlStmt := ` ...` // TODO: replace this
+	sqlStmt := `...` // TODO: replace this
 
-	row := db.QueryRow(sqlStmt, kode_kasir)
+	row := db.QueryRow(sqlStmt, kodeKasir)
 	var latestId int
 	err = row.Scan(&latestId)
 	if err != nil {
-		return 0, err
-	} else {
-		return 1, nil
+		return false, err
 	}
+	return true, nil
 }

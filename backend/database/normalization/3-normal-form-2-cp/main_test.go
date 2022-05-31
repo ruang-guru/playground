@@ -2,7 +2,6 @@ package main
 
 import (
 	"database/sql"
-	"os"
 
 	_ "github.com/mattn/go-sqlite3"
 	. "github.com/onsi/ginkgo/v2"
@@ -29,23 +28,22 @@ var _ = Describe("SQL Create", func() {
 		}
 
 		_, err = db.Exec(`
-		DROP TABLE rekap_2nf;
-		DROP TABLE barang_2nf;
-		DROP TABLE kasir_2nf;`)
+		DROP TABLE rekap;
+		DROP TABLE barang;
+		DROP TABLE kasir;`)
 
 		if err != nil {
 			panic(err)
 		}
 
-		//comment this line below if you want to see the table, before running test case
-		os.Remove("./normalize-cp.db")
 	})
 
 	Describe("Check Migration", func() {
-		It("should return number of column from rekap_2nf table", func() {
+		It("should return number of column from rekap table", func() {
 			db, err := sql.Open("sqlite3", "./normalize-cp.db")
 			Expect(err).To(BeNil())
-			CheckMigration, err := db.Query(`SELECT COUNT(*) FROM pragma_table_info('rekap_2nf');`)
+			CheckMigration, err := db.Query(`SELECT COUNT(*) FROM pragma_table_info('rekap');`)
+			Expect(err).To(BeNil())
 			for CheckMigration.Next() {
 				var success int
 				err = CheckMigration.Scan(&success)
@@ -56,10 +54,11 @@ var _ = Describe("SQL Create", func() {
 	})
 
 	Describe("Check Migration", func() {
-		It("should return number of column from barang_2nf table", func() {
+		It("should return number of column from barang table", func() {
 			db, err := sql.Open("sqlite3", "./normalize-cp.db")
 			Expect(err).To(BeNil())
-			CheckMigration, err := db.Query(`SELECT COUNT(*) FROM pragma_table_info('barang_2nf');`)
+			CheckMigration, err := db.Query(`SELECT COUNT(*) FROM pragma_table_info('barang');`)
+			Expect(err).To(BeNil())
 			for CheckMigration.Next() {
 				var success int
 				err = CheckMigration.Scan(&success)
@@ -70,10 +69,11 @@ var _ = Describe("SQL Create", func() {
 	})
 
 	Describe("Check Migration", func() {
-		It("should return number of column from kasir_2nf table", func() {
+		It("should return number of column from kasir table", func() {
 			db, err := sql.Open("sqlite3", "./normalize-cp.db")
 			Expect(err).To(BeNil())
-			CheckMigration, err := db.Query(`SELECT COUNT(*) FROM pragma_table_info('kasir_2nf');`)
+			CheckMigration, err := db.Query(`SELECT COUNT(*) FROM pragma_table_info('kasir');`)
+			Expect(err).To(BeNil())
 			for CheckMigration.Next() {
 				var success int
 				err = CheckMigration.Scan(&success)
@@ -85,27 +85,27 @@ var _ = Describe("SQL Create", func() {
 
 	Describe("Check Insert Latest data 1", func() {
 		It("should return latest no_bon", func() {
-			lastInsertData, err := checkLatestNoBon("00002")
+			lastInsertData, err := countByNoBon("00002")
 			Expect(err).To(BeNil())
-			Expect(lastInsertData).To(Equal(1))
+			Expect(lastInsertData).To(Equal(3))
 
 		})
 	})
 
 	Describe("Check Insert Latest data 2", func() {
 		It("should return latest no_barang", func() {
-			lastInsertData, err := checkLatestNoBarang("B005")
+			lastInsertData, err := checkBarangExists("B005")
 			Expect(err).To(BeNil())
-			Expect(lastInsertData).To(Equal(1))
+			Expect(lastInsertData).To(Equal(true))
 
 		})
 	})
 
 	Describe("Check Insert Latest data 3", func() {
 		It("should return latest no_kasir", func() {
-			lastInsertData, err := checkLatestNoKasir("K02")
+			lastInsertData, err := checkKasirExists("K02")
 			Expect(err).To(BeNil())
-			Expect(lastInsertData).To(Equal(1))
+			Expect(lastInsertData).To(Equal(true))
 
 		})
 	})

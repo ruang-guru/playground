@@ -2,6 +2,7 @@ package main
 
 // perhatikan gambar unormal-example.png
 // identifikasikan-lah semua attribut yang ada, lalu buatlah table seperti pada gambar  dengan nama table "unormal"
+// gambar digunakan untuk menampilkan bentuk tabel saja
 
 import (
 	"database/sql"
@@ -11,22 +12,19 @@ import (
 )
 
 type Unormal struct {
-	NoFaktur    int    `db:"no_faktur"`
-	Tanggal     string `db:"tanggal"`
-	NoPolisi    string `db:"no_polisi"`
-	Warna       string `db:"warna"`
-	Merek       string `db:"merek"`
-	Tahun       string `db:"tahun"`
-	MekanikId   string `db:"mekanik_id"`
-	NamaMekanik string `db:"nama_mekanik"`
-	KodeParts   string `db:"kode_parts"`
-	NamaParts   string `db:"nama_parts"`
-	Kuantitas   int    `db:"kuantitas"`
-	Harga       int    `db:"harga"`
-	Discount    int    `db:"discount"`
-	Jumlah      int    `db:"jumlah"`
-	Potongan    int    `db:"potongan"`
-	Total       int    `db:"total"`
+	IdMember         string `db:"id_member"`
+	NamaMember       string `db:"nama_member"`
+	TipeMember       string `db:"tipe_member"`
+	KeteranganMember string `db:"keterangan_member"`
+	IdTheater        string `db:"id_theater"`
+	NamaTheater      string `db:"nama_theater"`
+	Kota             string `db:"kota"`
+	IdMovie          string `db:"id_movie"`
+	NamaMovie        string `db:"nama_movie"`
+	IdFaktur         string `db:"id_faktur"`
+	WaktuTayang      string `db:"waktu_tayang"`
+	HargaTiket       string `db:"harga_tiket"`
+	QtyTicket        string `db:"qty_tiket"`
 }
 
 // Migrate digunakan untuk melakukan migrasi database dengan data yang dibutuhkan
@@ -37,22 +35,19 @@ func Migrate() (*sql.DB, error) {
 	}
 
 	sqlStmt := `CREATE TABLE IF NOT EXISTS unormal (
-		no_faktur INTEGER,
-		tanggal VARCHAR(12),
-		no_polisi VARCHAR(10),
-		warna VARCHAR(10),
-		merek VARCHAR(10),
-		tahun VARCHAR(10),
-		mekanik_id VARCHAR(10),
-		nama_mekanik VARCHAR(10),
-		kode_parts VARCHAR(10),
-		nama_parts VARCHAR(10),
-		kuantitas INTEGER,
-		harga INTEGER,
-		discount INTEGER,
-		jumlah INTEGER,
-		potongan INTEGER,
-		total INTEGER
+		id_member VARCHAR(12),
+		nama_member VARCHAR(12),
+		tipe_member VARCHAR(10),
+		keterangan_member VARCHAR(10),
+		id_theater VARCHAR(10),
+		nama_theater VARCHAR(10),
+		kota VARCHAR(10),
+		id_movie TEXT,
+		nama_movie TEXT,
+		id_faktur TEXT,
+		waktu_tayang TEXT,
+		harga_tiket TEXT,
+		qty_tiket TEXT
 	);`
 
 	_, err = db.Exec(sqlStmt)
@@ -61,12 +56,13 @@ func Migrate() (*sql.DB, error) {
 	}
 	_, err = db.Exec(`
 			INSERT INTO 
-			unormal (no_faktur, tanggal, no_polisi, warna, merek, tahun, mekanik_id, nama_mekanik, kode_parts, nama_parts, kuantitas, harga, discount, jumlah, potongan, total)
-			VALUES 
-			    (05103214, "2020-01-01", "B3117lB", "Biru", "Supra X", "2020", "DDE", "Djoko Dewanto", "20W501000CC", "Oli Top 1000cc", 2, 27000, 1000, 52000, 2000, 73000),
-				(05103214, "2020-01-01", "B3117lB", "Biru", "Supra X", "2020", "DDE", "Djoko Dewanto", "SERV001", "Engine Tune Up", 1, 25000, 2000, 23000, 2000, 73000);`)
+			unormal (id_member, nama_member, tipe_member, keterangan_member, id_theater, nama_theater, kota, id_movie, nama_movie, id_faktur, waktu_tayang, harga_tiket, qty_tiket)
+			VALUES
+			("111", "Muri", "EPC", "Epic", "T01", "Paris Van Java", "Bandung", "M01, M03", "Orang kaya baru, Twice Land", "F001, F002", "22/01/2022 15:00, 22/01/2022 18:00", "30.000, 30.000", "1, 3"),
+			("114", "Luga", "ELT", "Elite", "T02", "Grand Indonesia", "Jakarta", "M03, M04", "Twice Land, Escapee Room", "F003, F004", "22/02/2022 15:00, 22/02/2022 18:00", "30.000, 30.000", "2, 1")`)
 
 	if err != nil {
+		fmt.Println(err)
 		fmt.Println("here")
 	}
 
@@ -98,7 +94,7 @@ func main() {
 
 	for rows.Next() {
 		var unormal Unormal
-		err = rows.Scan(&unormal.NoFaktur, &unormal.Tanggal, &unormal.NoPolisi, &unormal.Warna, &unormal.Merek, &unormal.Tahun, &unormal.MekanikId, &unormal.NamaMekanik, &unormal.KodeParts, &unormal.NamaParts, &unormal.Kuantitas, &unormal.Harga, &unormal.Discount, &unormal.Jumlah, &unormal.Potongan, &unormal.Total)
+		err = rows.Scan(&unormal.IdMember, &unormal.NamaMember, &unormal.TipeMember, &unormal.KeteranganMember, &unormal.IdTheater, &unormal.NamaTheater, &unormal.Kota, &unormal.IdMovie, &unormal.NamaMovie, &unormal.IdFaktur, &unormal.WaktuTayang, &unormal.HargaTiket, &unormal.QtyTicket)
 		if err != nil {
 			panic(err)
 		}

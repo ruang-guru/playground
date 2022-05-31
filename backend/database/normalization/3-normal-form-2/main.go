@@ -5,6 +5,8 @@ package main
 // 1. Menghapus beberapa subset data yang ada pada tabel dan menempatkan mereka pada tabel terpisah.
 // 2. Menciptakan hubungan antara tabel baru dan tabel lama dengan menciptakan foreign key.
 // 3. Tidak ada atribut dalam tabel yang secara fungsional bergantung pada candidate key tabel tersebut.
+// beberapa nilai pada gambar 2nf masih kurang sesuai, ikuti yang ada pada program ini
+// gambar digunakan untuk menampilkan bentuk tabel saja
 
 import (
 	"database/sql"
@@ -13,38 +15,32 @@ import (
 	_ "github.com/mattn/go-sqlite3"
 )
 
-type Vehicle struct {
-	Id       int    `db:"id"`
-	NoPolisi string `db:"no_polisi"`
-	Warna    string `db:"warna"`
-	Merek    string `db:"merek"`
-	Tahun    string `db:"tahun"`
+type Member struct {
+	IdMember         string `db:"id_member"`
+	NamaMember       string `db:"nama_member"`
+	TipeMember       string `db:"tipe_member"`
+	KeteranganMember string `db:"keterangan_member"`
 }
 
-type Mekanik struct {
-	Id          int    `db:"id"`
-	MekanikID   string `db:"mekanik_id"`
-	NamaMekanik string `db:"nama_mekanik"`
+type Theater struct {
+	IdTheater   string `db:"id_theater"`
+	NamaTheater string `db:"nama_theater"`
+	Kota        string `db:"kota"`
 }
 
-type Parts struct {
-	Id        int    `db:"id"`
-	KodeParts string `db:"kode_parts"`
-	NamaParts string `db:"nama_parts"`
-	Harga     int    `db:"harga"`
+type Movie struct {
+	IdMovie   string `db:"id_movie"`
+	NamaMovie string `db:"nama_movie"`
 }
 
 type Faktur struct {
-	Id        int    `db:"id"`
-	NoFaktur  int    `db:"no_faktur"`
-	Tanggal   string `db:"tanggal"`
-	NoPolisi  string `db:"no_polisi"`
-	MekanikID string `db:"mekanik_id"`
-	KodeParts string `db:"kode_parts"`
-	Kuantitas int    `db:"kuantitas"`
-	Harga     int    `db:"harga"`
-	Discount  int    `db:"discount"`
-	Potongan  int    `db:"potongan"`
+	IdFaktur    string `db:"id_faktur"`
+	WaktuTayang string `db:"waktu_tayang"`
+	HargaTiket  int    `db:"harga_tiket"`
+	QtyTiket    int    `db:"qty_tiket"`
+	IdMember    string `db:"id_member"`
+	IdTheater   string `db:"id_theater"`
+	IdMovie     string `db:"id_movie"`
 }
 
 // Migrate digunakan untuk melakukan migrasi database dengan data yang dibutuhkan
@@ -54,12 +50,11 @@ func Migrate() (*sql.DB, error) {
 		panic(err)
 	}
 
-	sqlStmt := `CREATE TABLE IF NOT EXISTS vehicle_2nf (
-		id INTEGER PRIMARY KEY AUTOINCREMENT,
-		no_polisi VARCHAR(20),
-		warna VARCHAR(20),
-		merek VARCHAR(20),
-		tahun VARCHAR(20)
+	sqlStmt := `CREATE TABLE IF NOT EXISTS member_2nf (
+		id_member VARCHAR(12) PRIMARY KEY,
+		nama_member VARCHAR(12),
+		tipe_member VARCHAR(10),
+		keterangan_member VARCHAR(10)
 	);`
 
 	_, err = db.Exec(sqlStmt)
@@ -67,20 +62,20 @@ func Migrate() (*sql.DB, error) {
 		return nil, err
 	}
 	_, err = db.Exec(`
-			INSERT INTO 
-			vehicle_2nf (no_polisi, warna, merek, tahun)
-			VALUES 
-			    ("B3117lB", "Biru", "Supra X", "2020"),
-				("B3117lB", "Biru", "Supra X", "2020");`)
+	INSERT INTO 
+	member_2nf (id_member, nama_member, tipe_member, keterangan_member)
+	VALUES
+	("111", "Muri", "EPC", "Epic"),
+	("114", "Luga", "ELT", "Elite");`)
 
 	if err != nil {
 		panic(err)
 	}
 
-	sqlStmt = `CREATE TABLE IF NOT EXISTS mekanik_2nf (
-		id INTEGER PRIMARY KEY AUTOINCREMENT,
-		mekanik_id VARCHAR(20),
-		nama_mekanik VARCHAR(20)
+	sqlStmt = `CREATE TABLE IF NOT EXISTS theater_2nf (
+		id_theater VARCHAR(10) PRIMARY KEY,
+		nama_theater VARCHAR(10),
+		kota VARCHAR(10)
 	);`
 
 	_, err = db.Exec(sqlStmt)
@@ -90,19 +85,18 @@ func Migrate() (*sql.DB, error) {
 
 	_, err = db.Exec(`
 			INSERT INTO 
-			mekanik_2nf (mekanik_id, nama_mekanik)
+			theater_2nf (id_theater, nama_theater, kota)
 			VALUES 
-			    ("DDE", "Djoko Dewanto");`)
+			    ("T01", "Paris Van Java", "Bandung"),
+			    ( "T02", "Grand Indonesia", "Jakarta");`)
 
 	if err != nil {
 		panic(err)
 	}
 
-	sqlStmt = `CREATE TABLE IF NOT EXISTS parts_2nf (
-		id INTEGER PRIMARY KEY AUTOINCREMENT,
-		kode_parts VARCHAR(20),
-		nama_parts VARCHAR(20),
-		harga INTEGER
+	sqlStmt = `CREATE TABLE IF NOT EXISTS movie_2nf (
+		id_movie VARCHAR(12) PRIMARY KEY,
+		nama_movie VARCHAR(12)
 	);`
 
 	_, err = db.Exec(sqlStmt)
@@ -112,26 +106,24 @@ func Migrate() (*sql.DB, error) {
 
 	_, err = db.Exec(`
 			INSERT INTO 
-			parts_2nf (kode_parts, nama_parts, harga)
+			movie_2nf (id_movie, nama_movie)
 			VALUES 
-			    ("20W501000CC", "Oli Top1 1000CC", 27000),
-				("SERV001", "Engine Tune Up", 25000);`)
+			    ("M01", "Orang kaya baru"),
+				("M03", "Twice Land"),
+				("M04", "Escapee Room");`)
 
 	if err != nil {
 		panic(err)
 	}
 
 	sqlStmt = `CREATE TABLE IF NOT EXISTS faktur_2nf (
-		id INTEGER PRIMARY KEY AUTOINCREMENT,
-		no_faktur INTEGER,
-		tanggal VARCHAR(20),
-		no_polisi VARCHAR(20),
-		mekanik_id VARCHAR(20),
-		kode_parts VARCHAR(20),
-		kuantitas INTEGER,
-		harga INTEGER,
-		discount INTEGER,
-		potongan INTEGER
+		id_faktur VARCHAR(12) PRIMARY KEY,
+		waktu_tayang VARCHAR(12),
+		harga_tiket INTEGER,
+		qty_tiket INTEGER,
+		id_member VARCHAR(12),
+		id_theater VARCHAR(12),
+		id_movie VARCHAR(12)
 	);`
 
 	_, err = db.Exec(sqlStmt)
@@ -141,10 +133,12 @@ func Migrate() (*sql.DB, error) {
 
 	_, err = db.Exec(`
 			INSERT INTO 
-			faktur_2nf (no_faktur, tanggal, no_polisi, mekanik_id, kode_parts, kuantitas, harga, discount, potongan)
+			faktur_2nf (id_faktur, waktu_tayang, harga_tiket, qty_tiket, id_member, id_theater, id_movie)
 			VALUES 
-			    (05103214, "2020-01-01", "B3117lB", "DDE", "20W501000CC", 2, 27000, 1000, 2000),
-				(05103214, "2020-01-01", "B3117lB", "DDE", "SERV001", 1, 25000, 2000, 2000);`)
+			    ("F001", "22/01/2022 15:00", "30000", "1","111","T01","M01"),
+				("F002", "22/01/2022 18:00", "30000", "3","111","T01","M03"),
+				("F003", "22/02/2022 15:00", "30000", "2","114","T02","M03"),
+				("F004", "22/02/2022 18:00", "30000", "1","114","T02","M04");`)
 
 	if err != nil {
 		panic(err)
@@ -161,7 +155,7 @@ func main() {
 	}
 
 	// table 1
-	rows, err := db.Query("SELECT * FROM vehicle_2nf")
+	rows, err := db.Query("SELECT * FROM member_2nf")
 	if err != nil {
 		panic(err)
 	}
@@ -169,42 +163,42 @@ func main() {
 	defer rows.Close()
 
 	for rows.Next() {
-		var vehicle Vehicle
-		err = rows.Scan(&vehicle.Id, &vehicle.NoPolisi, &vehicle.Warna, &vehicle.Merek, &vehicle.Tahun)
+		var member Member
+		err = rows.Scan(&member.IdMember, &member.NamaMember, &member.TipeMember, &member.KeteranganMember)
 		if err != nil {
 			panic(err)
 		}
-		fmt.Printf("%+v\n", vehicle)
+		fmt.Printf("%+v\n", member)
 	}
 
 	// table 2
-	rows, err = db.Query("SELECT * FROM mekanik_2nf")
+	rows, err = db.Query("SELECT * FROM theater_2nf")
 	if err != nil {
 		panic(err)
 	}
 
 	for rows.Next() {
-		var mekanik Mekanik
-		err = rows.Scan(&mekanik.Id, &mekanik.MekanikID, &mekanik.NamaMekanik)
+		var theater Theater
+		err = rows.Scan(&theater.IdTheater, &theater.NamaTheater, &theater.Kota)
 		if err != nil {
 			panic(err)
 		}
-		fmt.Printf("%+v\n", mekanik)
+		fmt.Printf("%+v\n", theater)
 	}
 
 	// table 3
-	rows, err = db.Query("SELECT * FROM parts_2nf")
+	rows, err = db.Query("SELECT * FROM movie_2nf")
 	if err != nil {
 		panic(err)
 	}
 
 	for rows.Next() {
-		var parts Parts
-		err = rows.Scan(&parts.Id, &parts.KodeParts, &parts.NamaParts, &parts.Harga)
+		var movie Movie
+		err = rows.Scan(&movie.IdMovie, &movie.NamaMovie)
 		if err != nil {
 			panic(err)
 		}
-		fmt.Printf("%+v\n", parts)
+		fmt.Printf("%+v\n", movie)
 	}
 
 	// table 4
@@ -215,7 +209,7 @@ func main() {
 
 	for rows.Next() {
 		var faktur Faktur
-		err = rows.Scan(&faktur.Id, &faktur.NoFaktur, &faktur.Tanggal, &faktur.NoPolisi, &faktur.MekanikID, &faktur.KodeParts, &faktur.Kuantitas, &faktur.Harga, &faktur.Discount, &faktur.Potongan)
+		err = rows.Scan(&faktur.IdFaktur, &faktur.WaktuTayang, &faktur.HargaTiket, &faktur.QtyTiket, &faktur.IdMember, &faktur.IdTheater, &faktur.IdMovie)
 		if err != nil {
 			panic(err)
 		}

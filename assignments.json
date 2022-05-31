@@ -1522,6 +1522,13 @@
         "path": "backend/database/assigment/cashier-app/repository",
         "weight": 100,
         "totalTestCase": "10"
+      },
+      {
+        "subject": "Front End Programming",
+        "course": "frontend",
+        "path": "frontend/api/creating-api/creating-api-cp",
+        "weight": 100,
+        "totalTestCase": "4"
       }
     ]
 }

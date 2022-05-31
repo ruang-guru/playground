@@ -14,8 +14,8 @@ app.all("*", (req, res) =>
   res.send("You've tried reaching a route that doesn't exist.")
 );
 
-app.listen(PORT, () =>
+const server = app.listen(PORT, () =>
   console.log(`Server running on port: http://localhost:${PORT}`)
 );
 
-export default app;
+export default server;

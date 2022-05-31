@@ -53,7 +53,7 @@ describe("Update and Delete Books ", () => {
     );
 
     const deletedBook = await request(app).delete(`/books/${1234567890}`);
-    expect(deletedBook.statusCode).toEqual(500);
+    expect(deletedBook.statusCode).toEqual(404);
     expect(deletedBook.body.message).toEqual(
       `book with id ${1234567890} not found`
     );

@@ -5,6 +5,7 @@ import "fmt"
 func main() {
 	order("teh")
 	order("kopi")
+	defer fmt.Println("Terima kasih, Sampai jumpa lagi")
 }
 
 func order(drink string) {

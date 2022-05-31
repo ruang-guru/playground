@@ -12,8 +12,12 @@ func main() {
 
 	helloDante := hello("dante")
 	helloJack := hello("jack")
+	helloJack2 := hello("jack")
+
 
 	fmt.Println(helloDante("mas"))
 	fmt.Println(helloJack("bang"))
+	fmt.Println(helloJack2("captain"))
+
 
 }

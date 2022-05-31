@@ -61,4 +61,29 @@ func main() {
 	}
 
 	// TODO: answer here
+	var roles string
+	fmt.Scan(&roles)
+	 userFound :=[]User{}
+
+for _, v := range users {
+	if v.role == roles{
+		var userStruct User	 = User{
+			name:    v.name,
+			age:     v.age,
+			role:    v.role,
+		}
+		userFound = append(userFound,userStruct)
+		
+	}
+
+
+}
+if len(userFound)==0 {
+	fmt.Println("Role not found")
+}else{
+	for _, v := range userFound {
+		fmt.Println("name: ",v.name,"age: ",v.age,"role: ",v.role)
+	}
+}
+
 }

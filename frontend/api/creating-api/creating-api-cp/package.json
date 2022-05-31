@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "cross-env NODE_ENV=test jest --testTimeout=10000",
+    "test": "cross-env NODE_ENV=test PORT=5005 jest --testTimeout=10000",
     "start": "nodemon index.js"
   },
   "jest": {

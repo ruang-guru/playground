@@ -4,7 +4,7 @@ import bodyParser from "body-parser";
 import booksRoutes from "./routes/books.js";
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 app.use(bodyParser.json());
 

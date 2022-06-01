@@ -2,7 +2,6 @@ package api
 
 import (
 	"encoding/json"
-	"fmt"
 	"net/http"
 
 	"github.com/ruang-guru/playground/backend/database/assigment/cashier-app/repository"
@@ -26,6 +25,16 @@ type CartListSuccessResponse struct {
 	CartItems []repository.CartItem `json:"cart_items"`
 }
 
+type PayRequest struct {
+	Cash int `json:"cash"`
+}
+
+type PaySuccessResponse struct {
+	Cash    int `json:"cash"`
+	Total   int `json:"total_payment"`
+	Changes int `json:"changes"`
+}
+
 func (api *API) addToCart(w http.ResponseWriter, req *http.Request) {
 	api.AllowOrigin(w, req)
 
@@ -47,7 +56,7 @@ func (api *API) addToCart(w http.ResponseWriter, req *http.Request) {
 
 	cart, err := api.cartItemRepo.FetchCartByProductID(product.ID)
 	if err == nil && cart.ID != 0 {
-		err = api.cartItemRepo.UpdateCartItemQuantity(cart)
+		err = api.cartItemRepo.IncrementCartItemQuantity(cart)
 		if err != nil {
 			w.WriteHeader(http.StatusInternalServerError)
 			encoder.Encode(CartErrorResponse{Error: err.Error()})
@@ -80,8 +89,6 @@ func (api *API) addToCart(w http.ResponseWriter, req *http.Request) {
 		Price:    product.Price,
 		Category: product.Category,
 	})
-
-	return
 }
 
 func (api *API) clearCart(w http.ResponseWriter, req *http.Request) {
@@ -90,7 +97,7 @@ func (api *API) clearCart(w http.ResponseWriter, req *http.Request) {
 	encoder := json.NewEncoder(w)
 	defer func() {
 		if err != nil {
-			// TODO: answer here
+			w.WriteHeader(http.StatusBadRequest)
 			encoder.Encode(CartErrorResponse{Error: err.Error()})
 		}
 	}()
@@ -109,13 +116,19 @@ func (api *API) cartList(w http.ResponseWriter, req *http.Request) {
 		}
 	}()
 
-	fmt.Println(cartItems)
-
 	encoder.Encode(CartListSuccessResponse{CartItems: cartItems})
 }
 
 func (api *API) pay(w http.ResponseWriter, req *http.Request) {
 	api.AllowOrigin(w, req)
+
+	var requestBody PayRequest
+
+	err := json.NewDecoder(req.Body).Decode(&requestBody)
+	if err != nil {
+		w.WriteHeader(http.StatusBadRequest)
+		return
+	}
 
 	cartItems, err := api.cartItemRepo.FetchCartItems()
 	encoder := json.NewEncoder(w)
@@ -126,7 +139,19 @@ func (api *API) pay(w http.ResponseWriter, req *http.Request) {
 		}
 	}()
 
-	err = api.salesRepo.Add(cartItems)
+	sumPrice, err := api.cartItemRepo.TotalPrice()
+	if err != nil {
+		return
+	}
 
-	encoder.Encode(CartListSuccessResponse{CartItems: cartItems})
+	moneyChanges, err := api.transactionRepo.Pay(cartItems, requestBody.Cash)
+	if err != nil {
+		return
+	}
+
+	encoder.Encode(PaySuccessResponse{
+		Cash:    requestBody.Cash,
+		Total:   sumPrice,
+		Changes: moneyChanges,
+	})
 }

@@ -26,11 +26,9 @@ type AdminResponse struct {
 func (api *API) getDashboard(w http.ResponseWriter, req *http.Request) {
 	api.AllowOrigin(w, req)
 	productName := req.URL.Query().Get("product_name")
-	var startPeriod time.Time
-	var endPeriod time.Time
 
-	startPeriod, err := time.Parse("2006-01-02", req.URL.Query().Get("start_period"))
-	endPeriod, err = time.Parse("2006-01-02", req.URL.Query().Get("end_period"))
+	startPeriod, _ := time.Parse("2006-01-02", req.URL.Query().Get("start_period"))
+	endPeriod, _ := time.Parse("2006-01-02", req.URL.Query().Get("end_period"))
 
 	getSalesRequest := repository.GetSalesRequest{
 		ProductName: productName,

@@ -3,7 +3,6 @@ package repository
 import (
 	"database/sql"
 	"fmt"
-	"time"
 )
 
 type SalesRepository struct {
@@ -14,33 +13,17 @@ func NewSalesRepository(db *sql.DB) *SalesRepository {
 	return &SalesRepository{db: db}
 }
 
-func (u *SalesRepository) Add(cartItems []CartItem) error {
-	tx, err := u.db.Begin()
-	if err != nil {
-		return err
-	}
-	for _, cartItem := range cartItems {
-		_, err := tx.Exec("INSERT INTO sales (product_id, quantity, date) VALUES (?, ?, ?)", cartItem.ProductID, cartItem.Quantity, time.Now())
-		if err != nil {
-			tx.Rollback()
-			return err
-		}
-	}
-	tx.Commit()
-	return nil
-}
-
 func (u *SalesRepository) FetchSales(request GetSalesRequest) ([]Sales, error) {
 	sqlStmt := `SELECT 
 		s.id,
 		s.product_id,
 		s.quantity,
 		s.date,
-		p.name,
+		p.product_name,
 		p.price,
-		p.category,
+		p.category
 	FROM 
-		sales
+		sales s
 	INNER JOIN Products p ON s.product_id = p.id
 	`
 

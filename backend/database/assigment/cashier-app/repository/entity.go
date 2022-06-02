@@ -16,6 +16,7 @@ type Product struct {
 	Category    string `db:"category"`
 	ProductName string `db:"product_name"`
 	Price       int    `db:"price"`
+	Quantity    int    `db:"quantity"`
 }
 
 type CartItem struct {

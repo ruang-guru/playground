@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 // Nah sekarang kalian coba outputkan nilai terakhir dari array/slice dibawah
 // manfaatkan method len() ya.
 func main() {

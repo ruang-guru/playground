@@ -2,11 +2,10 @@ package main
 
 import (
 	"fmt"
-
-	"golang.org/x/crypto/bcrypt"
 )
 
 func main() {
+
 	hashedStr, err := encryptToBcrypt("hello")
 	if err != nil {
 		panic(err)

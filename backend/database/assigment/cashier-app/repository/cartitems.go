@@ -37,7 +37,7 @@ func (c *CartItemRepository) InsertCartItem(cartItem CartItem) error {
 	return nil // TODO: replace this
 }
 
-func (c *CartItemRepository) UpdateCartItemQuantity(cartItem CartItem) error {
+func (c *CartItemRepository) IncrementCartItemQuantity(cartItem CartItem) error {
 	//TODO : you must update the quantity of the cart item
 	return nil // TODO: replace this
 }

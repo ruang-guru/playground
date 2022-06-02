@@ -1480,6 +1480,55 @@
         "path": "frontend/react/state-management-zustand/2-zustand-cp",
         "weight": 100,
         "totalTestCase": "8"
+      },
+      {
+        "subject": "Back End Programming",
+        "course": "backend",
+        "path": "backend/database/normalization/1-unnormal-form-cp",
+        "weight": 100,
+        "totalTestCase": "2"
+      },
+      {
+        "subject": "Back End Programming",
+        "course": "backend",
+        "path": "backend/database/normalization/2-normal-form-1-cp",
+        "weight": 100,
+        "totalTestCase": "2"
+      },
+      {
+        "subject": "Back End Programming",
+        "course": "backend",
+        "path": "backend/database/normalization/3-normal-form-2-cp",
+        "weight": 100,
+        "totalTestCase": "6"
+      },
+      {
+        "subject": "Back End Programming",
+        "course": "backend",
+        "path": "backend/database/normalization/4-normal-form-3-cp",
+        "weight": 100,
+        "totalTestCase": "8"
+      },
+      {
+        "subject": "Back End Programming",
+        "course": "backend",
+        "path": "backend/database/normalization/5-surrogate-key-cp",
+        "weight": 100,
+        "totalTestCase": "3"
+      },
+      {
+        "subject": "Back End Programming",
+        "course": "backend",
+        "path": "backend/database/assigment/cashier-app/repository",
+        "weight": 100,
+        "totalTestCase": "10"
+      },
+      {
+        "subject": "Front End Programming",
+        "course": "frontend",
+        "path": "frontend/api/creating-api/creating-api-cp",
+        "weight": 100,
+        "totalTestCase": "4"
       }
     ]
 }

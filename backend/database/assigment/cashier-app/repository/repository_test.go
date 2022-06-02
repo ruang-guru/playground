@@ -2,7 +2,6 @@ package repository_test
 
 import (
 	"database/sql"
-	"os"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
@@ -17,7 +16,6 @@ var _ = Describe("Repository Test", func() {
 	var cartItemRepo *repository.CartItemRepository
 	var productRepo *repository.ProductRepository
 	var transactionRepo repository.TransactionRepository
-	var salesRepo *repository.SalesRepository
 
 	BeforeEach(func() {
 		// Setup
@@ -27,7 +25,7 @@ var _ = Describe("Repository Test", func() {
 		}
 
 		_, err = db.Exec(`
-		CREATE TABLE users (
+		CREATE TABLE IF NOT EXISTS users (
 			id integer not null primary key AUTOINCREMENT,
 			username varchar(255) not null,
 			password varchar(255) not null,
@@ -35,21 +33,22 @@ var _ = Describe("Repository Test", func() {
 			loggedin boolean not null
 		);
 
-		CREATE TABLE products (
+		CREATE TABLE IF NOT EXISTS products (
 			id integer not null primary key AUTOINCREMENT,
 			product_name varchar(255) not null,
 			category varchar(255) not null,
-			price integer not null
+			price integer not null,
+			quantity integer not null
 		);
 		
-		CREATE TABLE cart_items (
+		CREATE TABLE IF NOT EXISTS cart_items (
 			id integer not null primary key AUTOINCREMENT,
 			product_id integer not null,
 			quantity integer not null,
 			FOREIGN KEY (product_id) REFERENCES products(id)
 		);
 		
-		CREATE TABLE sales (
+		CREATE TABLE IF NOT EXISTS sales (
 			id integer not null primary key AUTOINCREMENT,
 			date DATE not null,
 			product_id integer not null,
@@ -62,20 +61,20 @@ var _ = Describe("Repository Test", func() {
 			('dina', '4321', 'employee', false),
 			('dito', '2552', 'employee', false);
 		
-		INSERT INTO products(product_name, category, price) VALUES
-			('Orange', 'Fruits', 5000),
-			('Apple', 'Fruits', 2000),
-			('Melon', 'Fruits', 4000),
-			('Watermelon', 'Fruits', 10000),
-			('Banana', 'Fruits', 4000),
-			('Carrot', 'Vegetables', 2000),
-			('Broccoli', 'Vegetables', 5200),
-			('Cucumber', 'Vegetables', 3400),
-			('Potato', 'Vegetables', 6500),
-			('Tomato', 'Vegetables', 2200),
-			('Coffee', 'Drink', 4300),
-			('Milk', 'Drink', 4000),
-			('Tea', 'Drink', 2700);`)
+		INSERT INTO products(product_name, category, price, quantity) VALUES
+			('Orange', 'Fruits', 5000, 100),
+			('Apple', 'Fruits', 2000, 100),
+			('Melon', 'Fruits', 4000, 100),
+			('Watermelon', 'Fruits', 10000, 100),
+			('Banana', 'Fruits', 4000, 100),
+			('Carrot', 'Vegetables', 2000, 100),
+			('Broccoli', 'Vegetables', 5200, 100),
+			('Cucumber', 'Vegetables', 3400, 100),
+			('Potato', 'Vegetables', 6500, 100),
+			('Tomato', 'Vegetables', 2200, 100),
+			('Coffee', 'Drink', 4300, 100),
+			('Milk', 'Drink', 4000, 100),
+			('Tea', 'Drink', 2700, 100);`)
 
 		if err != nil {
 			panic(err)
@@ -84,8 +83,7 @@ var _ = Describe("Repository Test", func() {
 		userRepo = repository.NewUserRepository(db)
 		productRepo = repository.NewProductRepository(db)
 		cartItemRepo = repository.NewCartItemRepository(db)
-		salesRepo = repository.NewSalesRepository(db)
-		transactionRepo = repository.NewTransactionRepository(*cartItemRepo, *salesRepo)
+		transactionRepo = repository.NewTransactionRepository(db, *productRepo, *cartItemRepo)
 	})
 
 	AfterEach(func() {
@@ -96,16 +94,14 @@ var _ = Describe("Repository Test", func() {
 		}
 
 		_, err = db.Exec(`
-		DROP TABLE users;
-		DROP TABLE products;
-		DROP TABLE cart_items;
-		DROP TABLE sales;`)
+		DROP TABLE IF EXISTS users;
+		DROP TABLE IF EXISTS products;
+		DROP TABLE IF EXISTS cart_items;
+		DROP TABLE IF EXISTS sales;`)
 
 		if err != nil {
 			panic(err)
 		}
-
-		os.Remove("./cashier-app.db")
 	})
 
 	Describe("Select All Users", func() {
@@ -196,7 +192,7 @@ var _ = Describe("Repository Test", func() {
 				})
 				cartItem, err := cartItemRepo.FetchCartByProductID(product.ID)
 				Expect(err).ToNot(HaveOccurred())
-				err = cartItemRepo.UpdateCartItemQuantity(cartItem)
+				err = cartItemRepo.IncrementCartItemQuantity(cartItem)
 				Expect(err).ToNot(HaveOccurred())
 				cartItems, err := cartItemRepo.FetchCartItems()
 				Expect(err).ToNot(HaveOccurred())
@@ -247,7 +243,7 @@ var _ = Describe("Repository Test", func() {
 
 	Describe("Pay", func() {
 		When("pay the total price ", func() {
-			It("will return the money changes", func() {
+			It("will do atomic operation to substract product qty and adding cart to sales table", func() {
 				cartItemRepo.ResetCartItems()
 				product, err := productRepo.FetchProductByName("Orange")
 				Expect(err).ToNot(HaveOccurred())
@@ -255,17 +251,22 @@ var _ = Describe("Repository Test", func() {
 				Expect(err).To(HaveOccurred())
 				cartItemRepo.InsertCartItem(repository.CartItem{
 					ProductID: product.ID,
-					Quantity:  1,
+					Quantity:  10,
 				})
-				product, err = productRepo.FetchProductByName("Apple")
+
+				cartItems, err := cartItemRepo.FetchCartItems()
 				Expect(err).ToNot(HaveOccurred())
-				_, err = cartItemRepo.FetchCartByProductID(product.ID)
-				Expect(err).To(HaveOccurred())
-				cartItemRepo.InsertCartItem(repository.CartItem{
-					ProductID: product.ID,
-					Quantity:  1,
-				})
-				Expect(transactionRepo.Pay([]repository.CartItem{}, 50000)).To(Equal(43000))
+
+				// drop sales table to imitate a db failure
+				_, err = db.Exec("DROP TABLE IF EXISTS sales;")
+				Expect(err).ToNot(HaveOccurred())
+
+				transactionRepo.Pay(cartItems, 100000)
+
+				product, err = productRepo.FetchProductByName("Orange")
+				Expect(err).ToNot(HaveOccurred())
+				// quantity should not be decreased
+				Expect(product.Quantity).To(Equal(100))
 			})
 		})
 	})

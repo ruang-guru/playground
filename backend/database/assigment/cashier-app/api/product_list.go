@@ -13,6 +13,7 @@ type Product struct {
 	Name     string `json:"name"`
 	Price    int    `json:"price"`
 	Category string `json:"category"`
+	Quantity int    `json:"quantity"`
 }
 
 type ProductListSuccessResponse struct {
@@ -43,6 +44,7 @@ func (api *API) productList(w http.ResponseWriter, req *http.Request) {
 			Name:     product.ProductName,
 			Price:    product.Price,
 			Category: product.Category,
+			Quantity: product.Quantity,
 		})
 	}
 

@@ -30,7 +30,7 @@ func NewAPI(usersRepo repository.UserRepository, productsRepo repository.Product
 	mux.Handle("/api/cart/add", api.POST(api.AuthMiddleWare(http.HandlerFunc(api.addToCart))))
 	mux.Handle("/api/cart/clear", api.GET(api.AuthMiddleWare(http.HandlerFunc(api.clearCart))))
 	mux.Handle("/api/carts", api.GET(api.AuthMiddleWare(http.HandlerFunc(api.cartList))))
-	mux.Handle("/api/dashboard", api.GET(api.AuthMiddleWare(http.HandlerFunc(api.dashboard))))
+	mux.Handle("/api/pay", api.POST(api.AuthMiddleWare(http.HandlerFunc(api.pay))))
 
 	// API with AuthMiddleware and AdminMiddleware
 	mux.Handle("/api/admin/sales", api.GET(api.AuthMiddleWare(api.AdminMiddleware(http.HandlerFunc(api.getDashboard)))))

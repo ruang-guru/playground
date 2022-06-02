@@ -39,7 +39,7 @@ go run backend\database\assigment\cashier-app\db\migration\main.go
 
 2. Main: run `main.go` inside directory `backend\database\assigment\cashier-app` to running main Service
 ```
-go run 2-read-data/main.go 2-read-data/sql-read-data.go
+go run backend\database\assigment\cashier-app\main.go
 ```
 
 3. Test Case: run `repository_suite_test.go` inside directory `backend\database\assigment\cashier-app\repository` with `grader-cli`

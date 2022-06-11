@@ -10,3 +10,5 @@
 // 7. Jika kelengkapan dari no. 6 ada yang kurang, lapor ke bagian administrasi, dan kembali menerima ulang kelengkapan tersebut. 
 // 7. Mengikuti orientasi.
 // 8. Kuliah berjalan.
+
+// ADITYA RIZQI ARDHANA - FE2273128 - FE4- Task Complete

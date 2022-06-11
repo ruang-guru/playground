@@ -1,4 +1,4 @@
----
+****---
 title: "RG KM Participants"
 
 date: 2022-03-04T21:42:03+07:00
@@ -12,4 +12,6 @@ draft: false
 - Akhner Frisca - President University - <Akhnerf24.github.io>
 - Sefen Giawa - ?
 - Richardo Ehbet Rejuli Lumban Raja (Richardo) - Universitas Methodist Indonesia
+- Dhani Fajar Nugroho - Politeknik Elektronika Negeri Surabaya - <dhanifajar15.github.io>
+- ADITYA RIZQI ARDHANA (adit) - Universitas Pembangunan Nasional "Veteran" Jawa Timur - <adityarizqi7.github.io>
 - Dhani Fajar Nugroho - Politeknik Elektronika Negeri Surabaya - <dhanifajar15.github.io>

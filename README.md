@@ -14,3 +14,16 @@
 - `git add .`
 - `git commit -nm "(sync)"`
 - `git push`
+
+## Adding or Modifying Assignment
+- Create or modify your assignment on your folder
+- Update file [assignments.json](./assignments.json)
+  - Assignment format should be:
+    ```json
+    {
+        "course": "<your course>",
+        "path": "path/to/your/assignment/directory",
+        "weight": 50.0
+    }
+    ```
+- Create pull request

@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 16px;
+}
+
+nav {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  padding: 32px;
+}
+
+img {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1 {
+  text-align: center;
+  padding-block: 80px;
+}
+
+button {
+  display: flex;
+}
+
+.poke-container {
+  padding: 16px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.poke-card {
+  padding: 16px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: lightgrey;
+  color: steelblue;
+}
+
+.poke-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+  width: 400px;
+  margin-inline: auto;
+  padding-bottom: 32px;
+  padding-inline: 16px;
+}
+
+.poke-detail h2 {
+  margin-bottom: 16px;
+}
+
+.poke-detail img {
+  margin-inline: auto;
+  margin-bottom: 64px;
+}
+
+.poke-moves,
+.poke-types {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+@media (min-width: 640px) {
+  .poke-container {
+    padding: 32px;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 32px;
+  }
+}

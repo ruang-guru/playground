@@ -1,0 +1,17 @@
+.state-props-1{
+    margin : 20px;
+    width: 30%;
+    .news-container{
+        .eachNews{
+            display: flex;
+            margin: 10px 0;
+            .description{
+                padding : 15px;
+                .text-grey{
+                    margin-top: 15px;
+                    color: rgb(168, 151, 151);
+                }
+            }
+        }
+    }
+}

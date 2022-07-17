@@ -17,6 +17,7 @@ package cmd
 
 import (
 	"fmt"
+	"os"
 
 	"github.com/ruang-guru/playground/cli/answerremover"
 	"github.com/spf13/cobra"
@@ -39,6 +40,7 @@ var removeCmd = &cobra.Command{
 			extensions,
 			excludeFolders); err != nil {
 			fmt.Println(err)
+			os.Exit(1)
 		}
 	},
 }
@@ -49,7 +51,7 @@ func init() {
 	removeCmd.Flags().StringVarP(&rootFolder, "rootFolder", "r", "", "Root folder of the project")
 	removeCmd.Flags().StringArrayVarP(&excludeFolders, "excludeFolders", "e", []string{"libs/tools/answerremover", "node_modules"}, "Exclude folders")
 	removeCmd.Flags().StringArrayVar(&fileNames, "filenames", []string{"Dockerfile", "Makefile", "docker-compoose.yaml"}, "Extensions")
-	removeCmd.Flags().StringArrayVar(&extensions, "extensions", []string{".ts", ".go", ".yaml", ".yml", ".js", ".css", ".tsx", ".proto", ".conf", ".md", ".html"}, "Extensions")
+	removeCmd.Flags().StringArrayVar(&extensions, "extensions", []string{".ts", ".go", ".yaml", ".yml", ".js", ".css", ".tsx", ".proto", ".conf", ".md", ".html", "jsx"}, "Extensions")
 
 	// Here you will define your flags and configuration settings.
 

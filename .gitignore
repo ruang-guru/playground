@@ -1,5 +1,6 @@
 .DS_Store
 .vscode
+.idea
 site/public
 site/.hugo_build.lock
 
@@ -135,3 +136,20 @@ dist
 .pnp.*
 
 *.ans
+
+english-words.csv
+english-definition.csv
+cypress/videos
+cypress/screenshots
+
+# grader
+grader-config.json
+grader-cli
+
+# db
+*.db
+
+# output of profiling file
+*.pprof
+*.test
+*.out

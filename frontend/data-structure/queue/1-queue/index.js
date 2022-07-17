@@ -1,0 +1,60 @@
+// Ada n orang dalam antrian untuk membeli tiket, dimana orang ke-0 berada di barisan paling depan dan orang (n - 1) berada di barisan paling belakang.
+// Diberikan array integer dengan nama "tickets" dengan panjang n di mana jumlah tiket yang ingin dibeli orang ke-i adalah tiket[i].
+// Setiap orang membutuhkan waktu tepat 1 detik untuk membeli tiket.
+// Seseorang hanya dapat membeli 1 tiket pada satu waktu dan harus kembali ke akhir baris jika ingin membeli lebih dari 1 tiket.
+// Jika seseorang sudah tidak ingin membeli tiket lagi, orang tersebut akan meninggalkan barisan.
+// Kembalikan waktu yang dibutuhkan orang di posisi k untuk menyelesaikan pembelian tiket.
+//
+// Contoh 1
+// Input: tickets = [2,3,2], k = 2
+// Output: 6
+// Explanation:
+// - Pada sesi pertama, semua orang dalam antrian membeli tiket dan antriannya menjadi [1, 2, 1].
+// - Pada sesi kedua, semua orang dalam antrian membeli tiket dan antriannya menjadi [0, 1, 0].
+// - Orang di posisi (indeks) 2 telah berhasil membeli 2 tiket dan butuh waktu 3+3 = 6 detik.
+//
+// Contoh 2
+// Input: tickets = [5,1,1,1], k = 0
+// Output: 8
+// Explanation:
+// - Pada sesi pertama, semua orang dalam antrean membeli tiket dan antreannya menjadi [4, 0, 0, 0].
+// - Dalam 4 sesi berikutnya, hanya orang di posisi (indeks) 0 yang membeli tiket.
+// - Orang yang berada di posisi (indeks) 0 telah berhasil membeli 5 tiket dan membutuhkan waktu 4+1+1+1+1= 8 detik.
+
+function timeRequiredToBuy(tickets, k) {
+    let time = 0;
+    let queue = tickets;
+
+    while(tickets[k] > 0) {
+        time++;
+
+        // uncomment this to help explain the logic
+        // console.log(queue, k)
+        let top = queue.shift();
+        top--;
+        if (top > 0) {
+            queue.push(top);
+        }
+        if (k == 0 && top == 0) {
+            break;
+        }
+        k = (k - 1 + queue.length) % queue.length;
+    }
+
+    return time;
+}
+let tickets = [2,3,2];
+let k = 0;
+console.log(timeRequiredToBuy(tickets, k));
+
+tickets = [2,3,2]
+k = 1;
+console.log(timeRequiredToBuy(tickets, k));
+
+tickets = [2,3,2]
+k = 2;
+console.log(timeRequiredToBuy(tickets, k));
+
+tickets = [5,1,1,1]
+k = 0;
+console.log(timeRequiredToBuy(tickets, k));

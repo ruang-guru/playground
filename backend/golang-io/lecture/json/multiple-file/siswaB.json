@@ -1,0 +1,23 @@
+[
+    {
+        "nama": "Budi",
+        "nilai": 87,
+        "kelas": "B"
+    },
+    {
+        "nama": "Bino",
+        "nilai": 85,
+        "kelas": "B"
+    },
+    {
+        "nama": "Bela",
+        "nilai": 93,
+        "kelas": "B"
+    }
+    ,
+    {
+        "nama": "Bana",
+        "nilai": 93,
+        "kelas": "B"
+    }
+]

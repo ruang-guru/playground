@@ -1,0 +1,18 @@
+@use '../../styles/variables.scss' as *;
+.dropdown{
+    margin-bottom: 3vh;
+    font-family: $primaryFont;
+
+    select{
+        background-color:#8547ac;
+        color: white;
+        padding: 5px;
+        border-radius: 8px;
+        option{
+            margin: 40p x;
+            background: #AA5CDB;
+            color: #fff;
+            text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+        }
+    }
+}

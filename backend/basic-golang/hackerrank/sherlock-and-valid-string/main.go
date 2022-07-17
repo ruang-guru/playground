@@ -18,43 +18,7 @@ import (
 //Problem statement: https://www.hackerrank.com/challenges/sherlock-and-valid-string/problem
 func isValid(s string) string {
 	// Write your code here
-	//beginanswer
-	count := make(map[rune]int)
-	for _, c := range s {
-		count[c]++
-	}
-
-	uniqCounts := make(map[int]int)
-	for _, v := range count {
-		uniqCounts[v] += 1
-	}
-
-	if len(uniqCounts) == 1 {
-		return "YES"
-	} else if len(uniqCounts) == 2 {
-		keys := []int{}
-		values := []int{}
-		for k, v := range uniqCounts {
-			keys = append(keys, k)
-			values = append(values, v)
-		}
-
-		for i := 0; i < 2; i++ {
-			if keys[i] == 1 && values[i] == 1 {
-				//since the count is 1, we can just remove it
-				return "YES"
-			}
-			//need to reduce by one
-			if keys[i]-keys[1-i] == 1 {
-				//only one item can be reduced
-				if values[i] == 1 {
-					return "YES"
-				}
-			}
-		}
-	}
-	return "NO"
-	//endanswer return ""
+	return "" // TODO: replace this
 }
 
 func main() {

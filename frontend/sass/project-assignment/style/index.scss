@@ -1,0 +1,69 @@
+nav {
+    background-color: aquamarine;
+    font-size: 80px;
+
+    ul {
+        margin: 0;
+        padding: 20px;
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        background-color: bisque;
+        font-size: 40px;
+    }
+
+    li {
+        display: inline-block;
+    }
+
+    a {
+        display: block;
+        padding: 12px;
+        text-decoration: none;
+        
+    }
+    button {
+        position: relative;
+        font-size: 20px;
+        margin: 30px 20px ;
+        float: right;
+        &:hover {
+            background-color: blue;
+        }
+    }
+}
+
+.jumbotron {
+    text-align: center;
+    align-items: center;
+}
+
+.card {
+    align-items: center;
+    text-align: center;
+    font-size: 15px;
+}
+
+body {
+    background-color: turquoise;
+    padding: 30px;
+}
+
+img {
+    width: 800px;
+    height: 800px;
+    align-items: center;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    font-size: 20px;
+
+    ul {
+        li {
+            align-items: center;
+            text-align: center;
+        }
+    }
+}

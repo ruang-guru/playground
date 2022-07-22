@@ -1,0 +1,64 @@
+nav {
+  background-color: aquamarine;
+  font-size: 80px;
+}
+nav ul {
+  margin: 0;
+  padding: 20px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  background-color: bisque;
+  font-size: 40px;
+}
+nav li {
+  display: inline-block;
+}
+nav a {
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+}
+nav button {
+  position: relative;
+  font-size: 20px;
+  margin: 30px 20px;
+  float: right;
+}
+nav button:hover {
+  background-color: blue;
+}
+
+.jumbotron {
+  text-align: center;
+  align-items: center;
+}
+
+.card {
+  align-items: center;
+  text-align: center;
+  font-size: 15px;
+}
+
+body {
+  background-color: turquoise;
+  padding: 30px;
+}
+
+img {
+  width: 800px;
+  height: 800px;
+  align-items: center;
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+  font-size: 20px;
+}
+footer ul li {
+  align-items: center;
+  text-align: center;
+}
+
+/*# sourceMappingURL=style.css.map */

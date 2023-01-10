@@ -14,4 +14,5 @@ func main() {
 		7, 15, 85, 19, 20, 61, 24, 56, 51,
 	}
 	// TODO: answer here
+	fmt.Println(len(array), cap(array))
 }

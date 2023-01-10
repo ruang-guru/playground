@@ -13,3 +13,4 @@ draft: false
 - Sefen Giawa - ?
 - Richardo Ehbet Rejuli Lumban Raja (Richardo) - Universitas Methodist Indonesia
 - Dhani Fajar Nugroho - Politeknik Elektronika Negeri Surabaya - <dhanifajar15.github.io>
+- Audhy Brilliant Pratama - UPN "Veteran" Jawa Timur - <audhypratama.github.io>

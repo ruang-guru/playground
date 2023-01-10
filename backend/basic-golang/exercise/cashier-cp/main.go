@@ -47,4 +47,37 @@ func main() {
 	orderMenu := make(map[string]int64)
 
 	// TODO: answer here
+	var order string
+	var orderMore bool
+	var totalPrice =0
+	fmt.Println("masukkan pesanan baru :")
+	fmt.Scan(&order)
+	for {
+
+		for k, v := range foodMenu {
+			if order==k {
+				orderMenu[order]=v
+			}
+			
+		}
+		fmt.Println("Apakah mau menambah pesanan ?|1 untuk ya|0 untuk Tidak")
+		fmt.Scan(&orderMore)
+		if !orderMore {
+			fmt.Println("Pesanan Anda :")
+			for k, v := range orderMenu {
+				fmt.Println("Menu: ",k,", Harga: ",v)
+				totalPrice=totalPrice+int(orderMenu[k])
+				
+			}
+			fmt.Println("Total Harga: ",totalPrice)
+			break
+		}
+
+	
+fmt.Println("masukkan pesanan baru :")
+fmt.Scan(&order)
+		
+	}
+
+
 }

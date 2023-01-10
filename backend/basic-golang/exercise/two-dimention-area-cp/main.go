@@ -36,4 +36,30 @@ import (
 
 func main() {
 	// TODO: answer here
+	var s,s1,input float32
+	
+	fmt.Scan(&input)
+	switch input {
+	case 1:
+		fmt.Scan(&s)
+		fmt.Print(s*s)
+		break
+	case 2 :
+		fmt.Scan(&s)
+		fmt.Scan(&s1)
+		fmt.Println(s*s1)
+		break
+	case 3 :
+		fmt.Scan(&s)
+		fmt.Scan(&s1)
+		fmt.Println(s*s1/2)
+		break
+	case 4 :
+		fmt.Scan(&s)
+		fmt.Println(math.Pi*s*s)
+		break
+	}
+
+
+
 }

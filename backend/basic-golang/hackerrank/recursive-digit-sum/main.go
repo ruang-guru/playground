@@ -1,12 +1,12 @@
 package main
 
 import (
-	"bufio"
-	"fmt"
-	"io"
-	"os"
-	"strconv"
-	"strings"
+    "bufio"
+    "fmt"
+    "io"
+    "os"
+    "strconv"
+    "strings"
 )
 
 /*
@@ -18,47 +18,75 @@ import (
  *  2. INTEGER k
  */
 
-//Problem statement: https://www.hackerrank.com/challenges/recursive-digit-sum/problem
 func superDigit(n string, k int32) int32 {
-	return 0 // TODO: replace this
+    // Write your code here
+	
+str := ""
+    
+for i := 0; i < int(k); i++ {
+	str +=n
+}
+
+var slice[]int32
+for i := 0; i < len(str); i++ {
+	j,e:=strconv.Atoi(string(str[i]))
+	if e==nil {
+	fmt.Println("Data tidak valid")
+	}
+	slice = append(slice,int32(j))
+}
+temp:= int32(0)
+for _, v := range slice {
+	temp +=v
+}
+
+
+if temp>=10 {
+	s:=strconv.Itoa(int(temp))
+	superDigit(s,1)
+} else {
+	return temp
+}
+
+
 }
 
 func main() {
-	reader := bufio.NewReaderSize(os.Stdin, 16*1024*1024)
+    reader := bufio.NewReaderSize(os.Stdin, 16 * 1024 * 1024)
 
-	stdout, err := os.Create(os.Getenv("OUTPUT_PATH"))
-	checkError(err)
+    stdout, err := os.Create(os.Getenv("OUTPUT_PATH"))
+    checkError(err)
 
-	defer stdout.Close()
+    defer stdout.Close()
 
-	writer := bufio.NewWriterSize(stdout, 16*1024*1024)
+    writer := bufio.NewWriterSize(stdout, 16 * 1024 * 1024)
 
-	firstMultipleInput := strings.Split(strings.TrimSpace(readLine(reader)), " ")
+    firstMultipleInput := strings.Split(strings.TrimSpace(readLine(reader)), " ")
 
-	n := firstMultipleInput[0]
+    n := firstMultipleInput[0]
 
-	kTemp, err := strconv.ParseInt(firstMultipleInput[1], 10, 64)
-	checkError(err)
-	k := int32(kTemp)
+    kTemp, err := strconv.ParseInt(firstMultipleInput[1], 10, 64)
+    checkError(err)
+    k := int32(kTemp)
 
-	result := superDigit(n, k)
+    result := superDigit(n, k)
 
-	fmt.Fprintf(writer, "%d\n", result)
+    fmt.Fprintf(writer, "%d\n", result)
 
-	writer.Flush()
+    writer.Flush()
 }
 
 func readLine(reader *bufio.Reader) string {
-	str, _, err := reader.ReadLine()
-	if err == io.EOF {
-		return ""
-	}
+    str, _, err := reader.ReadLine()
+    if err == io.EOF {
+        return ""
+    }
 
-	return strings.TrimRight(string(str), "\r\n")
+    return strings.TrimRight(string(str), "\r\n")
 }
 
 func checkError(err error) {
-	if err != nil {
-		panic(err)
-	}
+    if err != nil {
+        panic(err)
+    }
 }

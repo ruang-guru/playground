@@ -9,7 +9,7 @@ import "fmt"
 func points(base int) func(x int) int {
 		// TODO: answer here
 	}
-}
+
 
 func main() {
 	toni := points(100) // base value 100

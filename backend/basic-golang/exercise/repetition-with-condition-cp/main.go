@@ -37,6 +37,21 @@ func main() {
 	var sizeQueue int
 	fmt.Printf("Masukkan jumlah antrian : ")
 	fmt.Scan(&sizeQueue)
-
+var kualitas string
 	// TODO: answer here
+for i := 1; i <= sizeQueue; i++ {
+	if i<=5 {
+		kualitas = "[SUPER]"
+	}else 
+	if i<=10 {
+		kualitas = "[MEDIUM]"
+
+	}else {
+		kualitas = "[LOW]"
+	}
+	
+	fmt.Println("Antrian",i,"membeli beras 1 kg dengan kualitas",kualitas)
+	
+}
+
 }

@@ -7,5 +7,10 @@ import "fmt"
 // inisialisasi array nya menggunakan "var" ya.
 // Lalu outputkan array nya.
 func main() {
-	// TODO: answer here
+	var array [4]string
+	array[0] = "a"
+	array[1] = "d"
+	array[2] = "i"
+	array[3] = "t"
+	fmt.Println(array)
 }

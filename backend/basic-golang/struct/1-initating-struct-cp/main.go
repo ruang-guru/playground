@@ -4,7 +4,15 @@ import "fmt"
 
 //buat struct Rectangle dengan dua atribut yaitu Width dan Length
 
-// TODO: answer here
+type Rectangle struct {
+	Width  int64
+	Length int64
+}
+
+func (p *Rectangle) SetWidth(width int64, length int64) {
+	p.Width = width
+	p.Length = length
+}
 
 func main() {
 	var r Rectangle

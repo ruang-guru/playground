@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"math"
 )
 
 // Check Point:
@@ -36,4 +35,51 @@ import (
 
 func main() {
 	// TODO: answer here
+	var sisi int
+	var panjang int
+	var lebar int
+	var alas_segitiga int
+	var tinggi_segitiga int
+	var jari int
+	var phi = 22 / 7
+
+	var choice int = 0
+	var result int = 0
+	fmt.Println("1. Persegi")
+	fmt.Println("2. Persegi Panjang")
+	fmt.Println("3. Segitiga")
+	fmt.Println("4. Lingkaran")
+	fmt.Print("Hitung apa? ")
+	fmt.Scan(&choice)
+
+	switch choice {
+	case 1:
+		fmt.Printf("Masukkan sisi: ")
+		fmt.Scan(&sisi)
+		result = sisi * sisi
+		fmt.Print("Luas Persegi: ", result)
+
+	case 2:
+		fmt.Printf("Masukkan panjang: ")
+		fmt.Scan(&panjang)
+		fmt.Printf("Masukkan lebar: ")
+		fmt.Scan(&lebar)
+		result = panjang * lebar
+		fmt.Print("Luas Persegi panjang: ", result)
+
+	case 3:
+		fmt.Printf("Masukkan alas: ")
+		fmt.Scan(&alas_segitiga)
+		fmt.Printf("Masukkan tinggi: ")
+		fmt.Scan(&tinggi_segitiga)
+		result = (alas_segitiga * tinggi_segitiga) / 2
+		fmt.Print("Luas segitiga: ", result)
+
+	case 4:
+		fmt.Printf("Masukkan jari-jari: ")
+		fmt.Scan(&jari)
+		result = phi * jari * jari
+		fmt.Print("Luas lingkaran: ", result)
+	}
+
 }

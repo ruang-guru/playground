@@ -39,4 +39,7 @@ func main() {
 	fmt.Scan(&sizeQueue)
 
 	// TODO: answer here
+	if sizeQueue < 5 {
+
+	}
 }

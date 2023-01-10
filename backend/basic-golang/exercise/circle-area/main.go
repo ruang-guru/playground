@@ -25,3 +25,7 @@ func main() {
 	area = pi * (math.Pow(r, 2))
 	fmt.Printf("Jadi luasnya adalah : %f", area)
 }
+
+// %f untuk float
+// %s untuk str
+// %d untuk int

@@ -7,7 +7,7 @@ import "fmt"
 
 // studi kasus jika
 func main() {
-	nilai := 999
+	nilai := 400
 	if nilai > 100 {
 		if nilai < 500 {
 			fmt.Println("nilai diantara 100 dan 500")

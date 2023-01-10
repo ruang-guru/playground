@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
+	"log"
 	"os"
 	"path/filepath"
 )
@@ -27,7 +28,30 @@ func main() {
 }
 
 func writeJSON(fileName string, data []student) error {
-	return nil // TODO: replace this
+	fileName, err := filepath.Abs(fileName + ".json")
+	if err != nil {
+		log.Fatal(err)
+		return err
+	}
+
+	file, err := openFile(fileName)
+	if err != nil {
+		log.Fatal(err)
+		return err
+	}
+	defer file.Close()
+
+	byteData, err := json.Marshal(data)
+	if err != nil {
+		log.Fatal(err)
+		return err
+	}
+
+	err = ioutil.WriteFile(fileName, byteData, 0644)
+	if err != nil {
+		log.Fatal(err)
+	}
+	return err // TODO: replace this
 }
 
 func openFile(path string) (*os.File, error) {

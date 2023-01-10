@@ -10,8 +10,17 @@ import (
 //durasi yang digunakan 2 detik dan rate/frequency 10
 //target didapatkan dari parameter
 func vegetaGet(target string) *vegeta.Metrics {
-	metrics := &vegeta.Metrics{}
 	// TODO: answer here
+	duration := 2 * time.Second
+	freq := 10
+	rate := vegeta.Rate{
+		Freq: freq, Per: time.Second,
+	}
+	targeter := vegeta.NewStaticTargeter(vegeta.Target{
+		Method: "GET",
+		URL:    target,
+	})
+	metrics := vegetaAttack(targeter, rate, duration)
 	return metrics
 }
 
@@ -19,8 +28,17 @@ func vegetaGet(target string) *vegeta.Metrics {
 //durasi yang digunakan 2 detik dan rate/frequency 15
 //target didapatkan dari parameter fungsi ini
 func vegetaPost(target string) *vegeta.Metrics {
-	metrics := &vegeta.Metrics{}
 	// TODO: answer here
+	duration := 2 * time.Second
+	freq := 15
+	rate := vegeta.Rate{
+		Freq: freq, Per: time.Second,
+	}
+	targeter := vegeta.NewStaticTargeter(vegeta.Target{
+		Method: "POST",
+		URL:    target,
+	})
+	metrics := vegetaAttack(targeter, rate, duration)
 	return metrics
 }
 

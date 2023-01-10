@@ -46,5 +46,26 @@ func main() {
 }
 
 func CountStudents(students []int, sandwiches []int) int {
-	0 // TODO: replace this
+	wrong := 0
+	for {
+		if wrong == len(students) {
+			break
+		}
+
+		if students[0] == sandwiches[0] {
+			wrong = 0
+			students = students[1:]
+			sandwiches = sandwiches[1:]
+		} else {
+			wrong += 1
+			RotateLeft(students)
+		}
+	}
+	return len(students) // TODO: replace this
+}
+
+func RotateLeft(arr []int) {
+	for j := 0; j < len(arr)-1; j++ {
+		arr[j], arr[j+1] = arr[j+1], arr[j]
+	}
 }

@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"io/ioutil"
 	"net/http"
 )
 
@@ -21,8 +22,26 @@ type Pokemon struct {
 func GetPokemonData() (*Pokemon, error) {
 	apiPath := "https://pokeapi.co/api/v2/pokemon/1"
 	fmt.Println(apiPath)
+	req, err := http.NewRequest("GET", apiPath, nil)
+	if err != nil {
+		return nil, err
+	}
 
-	panic("Not yet implemented") // TODO: answer here
+	client := &http.Client{}
+	resp, err := client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	defer resp.Body.Close()
+
+	byteResp, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		return nil, err
+	}
+
+	pokemon := Pokemon{}
+	err = json.Unmarshal(byteResp, &pokemon)
+	return &pokemon, err // TODO: answer here
 }
 
 func main() {

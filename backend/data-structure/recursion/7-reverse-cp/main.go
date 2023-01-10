@@ -7,6 +7,10 @@ import "fmt"
 func Reverse(st []string, depth int) string {
 	str := ""
 	// TODO: answer here
+	if depth == -1 {
+		return str
+	}
+	str += st[depth] + Reverse(st, depth-1)
 	return str
 }
 

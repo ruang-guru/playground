@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+)
 
 func main() {
 	/*
@@ -30,5 +33,27 @@ func ConvertSecondToTimeString(second int) string {
 }
 
 func ConvertSecondToTimeStringCorrect(second int) string {
-	return "" // TODO: replace this
+	if second < 0 {
+		return ""
+	}
+	var hours, minutes int
+	if second >= 3600 {
+		hours = second / 3600
+		second -= hours * 3600
+	}
+
+	if second >= 60 {
+		minutes = second / 60
+		second -= minutes * 60
+	}
+
+	timeString := fmt.Sprintf("%v:%v:%v", addZero(hours), addZero(minutes), addZero(second))
+	return timeString // TODO: replace this
+}
+
+func addZero(timeInt int) string {
+	if timeInt < 10 {
+		return "0" + strconv.Itoa(timeInt)
+	}
+	return strconv.Itoa(timeInt)
 }

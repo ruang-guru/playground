@@ -6,6 +6,10 @@ type Sleeping struct {
 
 func (s Sleeping) Press() {
 	// TODO: answer here
+	if !s.Laptop.IsThereBattery() {
+		return
+	}
+	s.Laptop.ChangeState(&On{s.Laptop})
 }
 
 func (s Sleeping) CanTurnOnLaptop() bool {
@@ -14,4 +18,5 @@ func (s Sleeping) CanTurnOnLaptop() bool {
 
 func (s Sleeping) Sleep() {
 	// TODO: answer here
+	return
 }

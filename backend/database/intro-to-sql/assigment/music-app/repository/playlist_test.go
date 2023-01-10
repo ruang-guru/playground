@@ -15,6 +15,7 @@ var _ = Describe("Playlist", func() {
 		if err != nil {
 			panic(err)
 		}
+		defer db.Close()
 
 		_, err = db.Exec(`CREATE TABLE IF NOT EXISTS users (
 			id INTEGER PRIMARY KEY,
@@ -25,7 +26,7 @@ var _ = Describe("Playlist", func() {
 			panic(err)
 		}
 
-		_, err = db.Exec(`INSERT INTO users (id, name, created_at) VALUES
+		_, err = db.Exec(`INSERT or REPLACE INTO users (id, name, created_at) VALUES
 			(1, 'John', '2020-01-01 00:00:00');`)
 		if err != nil {
 			panic(err)
@@ -41,7 +42,7 @@ var _ = Describe("Playlist", func() {
 			panic(err)
 		}
 
-		_, err = db.Exec(`INSERT INTO playlists (id, name, created_at, user_id) VALUES
+		_, err = db.Exec(`INSERT or REPLACE INTO playlists (id, name, created_at, user_id) VALUES
 		(1, 'Chill Music', '2020-01-01 00:00:00', 1),
 		(2, 'POP 2022', '2020-01-01 00:00:00', 1),
 		(3, 'Rock', '2020-01-01 00:00:00', 1);`)
@@ -58,7 +59,7 @@ var _ = Describe("Playlist", func() {
 			panic(err)
 		}
 
-		_, err = db.Exec(`INSERT INTO tracks (id, name, artist, created_at) VALUES
+		_, err = db.Exec(`INSERT or REPLACE INTO tracks (id, name, artist, created_at) VALUES
 		(1, 'Music A', 'Robert', '2020-01-01 00:00:00'),
 		(2, 'Music B', 'Garnier', '2020-01-01 00:00:00'),
     	(3, 'Music C', 'Soppy', '2020-01-01 00:00:00'),
@@ -78,7 +79,7 @@ var _ = Describe("Playlist", func() {
 			panic(err)
 		}
 
-		_, err = db.Exec(`INSERT INTO playlist_tracks (playlist_id, track_id) VALUES 
+		_, err = db.Exec(`INSERT or REPLACE INTO playlist_tracks (playlist_id, track_id) VALUES 
 		(1, 1),
 		(1, 2),
 		(1, 3),
@@ -148,6 +149,7 @@ var _ = Describe("Playlist", func() {
 		It("should return user playlists", func() {
 			db, err := sql.Open("sqlite3", "./music-app.db")
 			Expect(err).To(BeNil())
+			defer db.Close()
 
 			playListRepo := NewPlaylistRepository(db)
 			playlists, err := playListRepo.FetchUserPlaylists(1)
@@ -160,6 +162,7 @@ var _ = Describe("Playlist", func() {
 		It("should create user playlist", func() {
 			db, err := sql.Open("sqlite3", "./music-app.db")
 			Expect(err).To(BeNil())
+			defer db.Close()
 
 			playListRepo := NewPlaylistRepository(db)
 			playlist := model.Playlist{
@@ -180,6 +183,7 @@ var _ = Describe("Playlist", func() {
 		It("should update user playlist", func() {
 			db, err := sql.Open("sqlite3", "./music-app.db")
 			Expect(err).To(BeNil())
+			defer db.Close()
 
 			playListRepo := NewPlaylistRepository(db)
 			playlist := model.Playlist{
@@ -202,6 +206,7 @@ var _ = Describe("Playlist", func() {
 		It("should return playlist track", func() {
 			db, err := sql.Open("sqlite3", "./music-app.db")
 			Expect(err).To(BeNil())
+			defer db.Close()
 
 			playListRepo := NewPlaylistRepository(db)
 

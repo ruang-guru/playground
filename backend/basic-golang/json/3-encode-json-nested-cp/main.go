@@ -32,10 +32,16 @@ import (
 
 type Ukuran struct {
 	// TODO: answer here
+	Panjang string `json:"panjang"`
+	Tinggi  string `json:"tinggi"`
 }
 
 type Meja struct {
 	// TODO: answer here
+	Jenis  string `json:"jenis"`
+	Warna  string `json:"warna"`
+	Jumlah int    `json:"jumlah"`
+	Ukuran Ukuran `json:"ukuran"`
 }
 
 type Items struct {
@@ -44,6 +50,11 @@ type Items struct {
 
 func (m Items) EncodeJSON() string {
 	// TODO: answer here
+	jsonData, err := json.Marshal(m.MejaMeja)
+	if err != nil {
+		log.Fatal(err)
+	}
+	return string(jsonData)
 }
 
 func NewMeja(m Items) Items {

@@ -6,5 +6,15 @@ import (
 )
 
 func SetupRouter(urlHandler handlers.URLHandler) *gin.Engine {
-	return &gin.Engine{} // TODO: replace this
+	engine := gin.Default()
+	engine.POST("/custom", func(ctx *gin.Context) {
+		urlHandler.CreateCustom(ctx)
+	})
+	engine.POST("/", func(ctx *gin.Context) {
+		urlHandler.Create(ctx)
+	})
+	engine.GET("/:short", func(ctx *gin.Context) {
+		urlHandler.Get(ctx)
+	})
+	return engine // TODO: replace this
 }

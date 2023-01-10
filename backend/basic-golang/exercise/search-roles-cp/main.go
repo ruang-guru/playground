@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 // Check Point:
 // Search Roles
@@ -61,4 +64,27 @@ func main() {
 	}
 
 	// TODO: answer here
+
+	var (
+		role   string
+		result []int
+	)
+
+	fmt.Print("Masukkan Role : ")
+	fmt.Scan(&role)
+
+	for index, val := range users {
+		if strings.EqualFold(strings.ToLower(val.role), strings.ToLower(role)) {
+			result = append(result, index)
+		}
+	}
+
+	if len(result) > 0 {
+		fmt.Println(role, "Found")
+		for _, val := range result {
+			fmt.Printf("Name : %s \t Age : %d \t Role : %s\n", users[val].name, users[val].age, users[val].role)
+		}
+	} else {
+		fmt.Printf("Role : %s Not Found!", role)
+	}
 }

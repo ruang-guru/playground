@@ -1,6 +1,6 @@
 // Mengembalikan boolean untuk mengecek apakah teks palindrom
 //
-// contoh: 
+// contoh:
 // teks1 = hello
 // teks2 = madam
 // teks3 = kasur ini rusak
@@ -10,7 +10,17 @@
 // teks3 dibalik sama menjadi kasur ini rusak, maka balikan akan true
 
 function checkPalindrome(string) {
-    // TODO: answer here
+  // TODO: answer here
+  ubahString = string.toLowerCase();
+  var pisahString = ubahString.split('');
+  var balikArray = pisahString.reverse();
+  var gabungArray = balikArray.join('');
+
+  if (gabungArray == ubahString) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 // masukan teks
